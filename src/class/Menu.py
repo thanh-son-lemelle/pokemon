@@ -25,6 +25,9 @@ def get_font(size):
 
 
 def main_menu():
+    musique= pygame.mixer.music.load("musique\main menu\Pokemon BlackWhite Music - Pokemon Center.mp3")
+    mixer.music.set_volume(0.1)
+    mixer.music.play(-1)
 
     while True:
 

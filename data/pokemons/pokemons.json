@@ -2,275 +2,383 @@
   "pokemons": [
     {
       "id": 1,
-      "name": "Bulbizarre",
+      "nom": "Bulbizarre",
       "type": "Plante/Poison",
       "stats": {
-        "hp": 45,
-        "attack": 49,
-        "defense": 49,
-        "speed": 45
+        "pv": 45,
+        "attaque": 49,
+        "défense": 49,
+        "vitesse": 45
       },
-      "evolution": {
-        "level": 16,
-        "to": 2
-      }
+      "évolution": {
+        "niveau": 16,
+        "vers": 2
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"},
+        {"niveau": 3, "nom": "Grozyeux"},
+        {"niveau": 7, "nom": "Poudre Toxik"}
+      ]
     },
     {
       "id": 2,
-      "name": "Herbizarre",
+      "nom": "Herbizarre",
       "type": "Plante/Poison",
       "stats": {
-        "hp": 60,
-        "attack": 62,
-        "defense": 63,
-        "speed": 60
+        "pv": 60,
+        "attaque": 62,
+        "défense": 63,
+        "vitesse": 60
       },
-      "evolution": {
-        "level": 32,
-        "to": 3
-      }
+      "évolution": {
+        "niveau": 32,
+        "vers": 3
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"},
+        {"niveau": 3, "nom": "Grozyeux"},
+        {"niveau": 7, "nom": "Poudre Toxik"},
+        {"niveau": 13, "nom": "Tranch'Herbe"}
+      ]
     },
     {
       "id": 3,
-      "name": "Florizarre",
+      "nom": "Florizarre",
       "type": "Plante/Poison",
       "stats": {
-        "hp": 80,
-        "attack": 82,
-        "defense": 83,
-        "speed": 80
-      }
+        "pv": 80,
+        "attaque": 82,
+        "défense": 83,
+        "vitesse": 80
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"},
+        {"niveau": 3, "nom": "Grozyeux"},
+        {"niveau": 7, "nom": "Poudre Toxik"},
+        {"niveau": 13, "nom": "Tranch'Herbe"},
+        {"niveau": 25, "nom": "Vampigraine"}
+      ]
     },
     {
       "id": 4,
-      "name": "Salamèche",
+      "nom": "Salamèche",
       "type": "Feu",
       "stats": {
-        "hp": 39,
-        "attack": 52,
-        "defense": 43,
-        "speed": 65
+        "pv": 39,
+        "attaque": 52,
+        "défense": 43,
+        "vitesse": 65
       },
-      "evolution": {
-        "level": 16,
-        "to": 5
-      }
+      "évolution": {
+        "niveau": 16,
+        "vers": 5
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Griffe"},
+        {"niveau": 7, "nom": "Flammèche"},
+        {"niveau": 10, "nom": "Grozyeux"}
+      ]
     },
     {
       "id": 5,
-      "name": "Reptincel",
+      "nom": "Reptincel",
       "type": "Feu",
       "stats": {
-        "hp": 58,
-        "attack": 64,
-        "defense": 58,
-        "speed": 80
+        "pv": 58,
+        "attaque": 64,
+        "défense": 58,
+        "vitesse": 80
       },
-      "evolution": {
-        "level": 36,
-        "to": 6
-      }
+      "évolution": {
+        "niveau": 36,
+        "vers": 6
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Griffe"},
+        {"niveau": 7, "nom": "Flammèche"},
+        {"niveau": 10, "nom": "Grozyeux"},
+        {"niveau": 20, "nom": "Dracogriffe"}
+      ]
     },
     {
       "id": 6,
-      "name": "Dracaufeu",
+      "nom": "Dracaufeu",
       "type": "Feu/Vol",
       "stats": {
-        "hp": 78,
-        "attack": 84,
-        "defense": 78,
-        "speed": 100
-      }
+        "pv": 78,
+        "attaque": 84,
+        "défense": 78,
+        "vitesse": 100
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Griffe"},
+        {"niveau": 7, "nom": "Flammèche"},
+        {"niveau": 10, "nom": "Grozyeux"},
+        {"niveau": 20, "nom": "Dracogriffe"},
+        {"niveau": 40, "nom": "Lance-Flammes"}
+      ]
     },
     {
       "id": 7,
-      "name": "Carapuce",
+      "nom": "Carapuce",
       "type": "Eau",
       "stats": {
-        "hp": 44,
-        "attack": 48,
-        "defense": 65,
-        "speed": 43
+        "pv": 44,
+        "attaque": 48,
+        "défense": 65,
+        "vitesse": 43
       },
-      "evolution": {
-        "level": 16,
-        "to": 8
-      }
+      "évolution": {
+        "niveau": 16,
+        "vers": 8
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Pistolet à O"},
+        {"niveau": 7, "nom": "Ecume"},
+        {"niveau": 10, "nom": "Morsure"}
+      ]
     },
     {
       "id": 8,
-      "name": "Carabaffe",
+      "nom": "Carabaffe",
       "type": "Eau",
       "stats": {
-        "hp": 59,
-        "attack": 63,
-        "defense": 80,
-        "speed": 58
+        "pv": 59,
+        "attaque": 63,
+        "défense": 80,
+        "vitesse": 58
       },
-      "evolution": {
-        "level": 36,
-        "to": 9
-      }
+      "évolution": {
+        "niveau": 36,
+        "vers": 9
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Pistolet à O"},
+        {"niveau": 7, "nom": "Ecume"},
+        {"niveau": 10, "nom": "Morsure"},
+        {"niveau": 22, "nom": "Hydrocanon"}
+      ]
     },
     {
       "id": 9,
-      "name": "Tortank",
+      "nom": "Tortank",
       "type": "Eau",
       "stats": {
-        "hp": 79,
-        "attack": 83,
-        "defense": 100,
-        "speed": 78
-      }
+        "pv": 79,
+        "attaque": 83,
+        "défense": 100,
+        "vitesse": 78
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Pistolet à O"},
+        {"niveau": 7, "nom": "Ecume"},
+        {"niveau": 10, "nom": "Morsure"},
+        {"niveau": 22, "nom": "Hydrocanon"},
+        {"niveau": 42, "nom": "Danse Pluie"}
+      ]
     },
     {
       "id": 10,
-      "name": "Chenipan",
+      "nom": "Chenipan",
       "type": "Insecte",
       "stats": {
-        "hp": 45,
-        "attack": 30,
-        "defense": 35,
-        "speed": 45
+        "pv": 45,
+        "attaque": 30,
+        "défense": 35,
+        "vitesse": 45
       },
-      "evolution": {
-        "level": 7,
-        "to": 11
-      }
+      "évolution": {
+        "niveau": 7,
+        "vers": 11
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"}
+      ]
     },
     {
       "id": 11,
-      "name": "Chrysacier",
+      "nom": "Chrysacier",
       "type": "Insecte",
       "stats": {
-        "hp": 50,
-        "attack": 20,
-        "defense": 55,
-        "speed": 30
+        "pv": 50,
+        "attaque": 20,
+        "défense": 55,
+        "vitesse": 30
       },
-      "evolution": {
-        "level": 10,
-        "to": 12
-      }
+      "évolution": {
+        "niveau": 10,
+        "vers": 12
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"}
+      ]
     },
     {
       "id": 12,
-      "name": "Papilusion",
+      "nom": "Papilusion",
       "type": "Insecte/Vol",
       "stats": {
-        "hp": 60,
-        "attack": 45,
-        "defense": 50,
-        "speed": 70
-      }
+        "pv": 60,
+        "attaque": 45,
+        "défense": 50,
+        "vitesse": 70
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"},
+        {"niveau": 3, "nom": "Grozyeux"},
+        {"niveau": 7, "nom": "Poudre Toxik"},
+        {"niveau": 13, "nom": "Papillodanse"}
+      ]
     },
     {
       "id": 13,
-      "name": "Aspicot",
+      "nom": "Aspicot",
       "type": "Insecte/Poison",
       "stats": {
-        "hp": 40,
-        "attack": 35,
-        "defense": 30,
-        "speed": 50
+        "pv": 40,
+        "attaque": 35,
+        "défense": 30,
+        "vitesse": 50
       },
-      "evolution": {
-        "level": 7,
-        "to": 14
-      }
+      "évolution": {
+        "niveau": 7,
+        "vers": 14
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Dard-Venin"}
+      ]
     },
     {
       "id": 14,
-      "name": "Coconfort",
+      "nom": "Coconfort",
       "type": "Insecte/Poison",
       "stats": {
-        "hp": 45,
-        "attack": 25,
-        "defense": 50,
-        "speed": 35
+        "pv": 45,
+        "attaque": 25,
+        "défense": 50,
+        "vitesse": 35
       },
-      "evolution": {
-        "level": 10,
-        "to": 15
-      }
+      "évolution": {
+        "niveau": 10,
+        "vers": 15
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Dard-Venin"}
+      ]
     },
     {
       "id": 15,
-      "name": "Dardargnan",
+      "nom": "Dardargnan",
       "type": "Insecte/Poison",
       "stats": {
-        "hp": 65,
-        "attack": 80,
-        "defense": 40,
-        "speed": 75
-      }
+        "pv": 65,
+        "attaque": 80,
+        "défense": 40,
+        "vitesse": 75
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Dard-Venin"},
+        {"niveau": 3, "nom": "Grozyeux"},
+        {"niveau": 7, "nom": "Poudre Toxik"},
+        {"niveau": 13, "nom": "Papillodanse"},
+        {"niveau": 30, "nom": "Toile Gluante"}
+      ]
     },
     {
       "id": 16,
-      "name": "Roucool",
+      "nom": "Roucool",
       "type": "Normal/Vol",
       "stats": {
-        "hp": 40,
-        "attack": 45,
-        "defense": 40,
-        "speed": 56
+        "pv": 40,
+        "attaque": 45,
+        "défense": 40,
+        "vitesse": 56
       },
-      "evolution": {
-        "level": 18,
-        "to": 17
-      }
+      "évolution": {
+        "niveau": 18,
+        "vers": 17
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Jet de Sable"},
+        {"niveau": 5, "nom": "Rugissement"},
+        {"niveau": 12, "nom": "Picpic"}
+      ]
     },
     {
       "id": 17,
-      "name": "Roucoups",
+      "nom": "Roucoups",
       "type": "Normal/Vol",
       "stats": {
-        "hp": 63,
-        "attack": 60,
-        "defense": 55,
-        "speed": 71
+        "pv": 63,
+        "attaque": 60,
+        "défense": 55,
+        "vitesse": 71
       },
-      "evolution": {
-        "level": 36,
-        "to": 18
-      }
+      "évolution": {
+        "niveau": 36,
+        "vers": 18
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Jet de Sable"},
+        {"niveau": 5, "nom": "Rugissement"},
+        {"niveau": 12, "nom": "Picpic"},
+        {"niveau": 25, "nom": "Atterissage"}
+      ]
     },
     {
       "id": 18,
-      "name": "Roucarnage",
+      "nom": "Roucarnage",
       "type": "Normal/Vol",
       "stats": {
-        "hp": 83,
-        "attack": 80,
-        "defense": 75,
-        "speed": 101
-      }
+        "pv": 83,
+        "attaque": 80,
+        "défense": 75,
+        "vitesse": 101
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Jet de Sable"},
+        {"niveau": 5, "nom": "Rugissement"},
+        {"niveau": 12, "nom": "Picpic"},
+        {"niveau": 25, "nom": "Atterissage"},
+        {"niveau": 45, "nom": "Voler"}
+      ]
     },
     {
       "id": 19,
-      "name": "Rattata",
+      "nom": "Rattata",
       "type": "Normal",
       "stats": {
-        "hp": 30,
-        "attack": 56,
-        "defense": 35,
-        "speed": 72
+        "pv": 30,
+        "attaque": 56,
+        "défense": 35,
+        "vitesse": 72
       },
-      "evolution": {
-        "level": 20,
-        "to": 20
-      }
+      "évolution": {
+        "niveau": 20,
+        "vers": 20
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"},
+        {"niveau": 5, "nom": "Mimi-queue"},
+        {"niveau": 13, "nom": "Morsure"}
+      ]
     },
     {
       "id": 20,
-      "name": "Rattatac",
+      "nom": "Rattatac",
       "type": "Normal",
       "stats": {
-        "hp": 55,
-        "attack": 81,
-        "defense": 60,
-        "speed": 97
-      }
+        "pv": 55,
+        "attaque": 81,
+        "défense": 60,
+        "vitesse": 97
+      },
+      "compétences": [
+        {"niveau": 1, "nom": "Charge"},
+        {"niveau": 5, "nom": "Mimi-queue"},
+        {"niveau": 13, "nom": "Morsure"},
+        {"niveau": 30, "nom": "Croc de Mort"}
+      ]
     }
   ]
 }

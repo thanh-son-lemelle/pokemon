@@ -18,10 +18,10 @@ class Combat():
         self.__liste_musique = ["musique\combat\Pokémon Black & White - Critical Health Music (HQ).mp3","musique\combat\Pokémon Diamond, Pearl & Platinum - Champion Cynthia Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Primal Kyogre & Groudon Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Zinnia Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Kieran Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Nemona Battle Music (HQ)(1).mp3","musique\combat\Pokémon Sun & Moon - Battle Legend Red & Blue Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Rival Gladion Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Team Skull Leader Guzma Battle Music (HQ).mp3","musique\combat\Pokémon HeartGold & SoulSilver - Champion & Red Battle Music (HQ).mp3"]
         self.__choice_musique = random.choice(self.__liste_musique)
         self.max_hp = 250
-        self.hp = 250
+        self.hp = self.max_hp
         self.ratio = self.hp / self.max_hp
-        self.degats_subi_joueur = 0
-        self.degats_subi_adverssaire = 0 
+        self.degats_subi_joueur = 0 #Créer une conditions si degat subis == hp max --> pokemon ko --> Victoire/defaites
+        self.degats_subi_adverssaire = 0 #Créer une conditions si degat subis == hp max --> pokemon ko --> Victoire/defaites
         self.multiplicateur_joueur = int(self.max_hp) - self.degats_subi_joueur
         self.multiplicateur_adverssaire = int(self.max_hp) - self.degats_subi_adverssaire
 

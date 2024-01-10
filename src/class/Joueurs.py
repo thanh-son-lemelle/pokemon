@@ -1,10 +1,10 @@
 import json
-import Personnages
-from Personnages import *
+import Dresseurs
+from Dresseurs import *
 
-class Dresseurs(Personnages): 
+class Joueurs(Dresseurs): 
     def __init__(self, nom, x, y, listePokemons):
-        Personnages.__init__(self, nom, x, y)
+        Dresseurs.__init__(self, nom, x, y)
         self.__nom = nom
         self.x = x
         self.y = y 
@@ -14,10 +14,8 @@ class Dresseurs(Personnages):
 with open('data\Dresseurs.json', 'r') as file:
     data = json.load(file)
 
-for dresseur in data["dresseurs"]:
-    print(f"\nDresseur : {dresseur['nom']}")
+for joueur in data["dresseurs"]:
+    print(f"\nJoueur : {joueur['nom']}")
     print("Pokémon :")
-    for pokemon in dresseur['pokemon']:
-        print(f" - {pokemon}")
-
-    
+    for pokemon in joueur['pokemon']:
+        print(f" - {pokemon}") 

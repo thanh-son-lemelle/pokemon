@@ -27,7 +27,7 @@ class Combat():
         self.multiplicateur_joueur = int(self.max_hp) - self.degats_subi_joueur
         self.multiplicateur_adverssaire = int(self.max_hp) - self.degats_subi_adverssaire
         self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
-        self.__nom = self.police.render("Pikachu :", True, "black")
+        self.__nom = self.police.render("Pikachu :", True, "black")#remplacer nom par le get_nom pokemon 
         self.__adversaire = self.police.render("Salamèche :", True, "black")
 
 

@@ -9,7 +9,6 @@ class Combat():
 
     def __init__(self):
         pygame.init()
-        Menu().__init__()
         self.__WIDTH = 722
         self.__HEIGHT = 541
         self.__SCREEN = pygame.display.set_mode((self.__WIDTH, self.__HEIGHT))
@@ -27,7 +26,7 @@ class Combat():
         self.degats_subi_adverssaire = 100 #Créer une conditions si degat subis == hp max --> pokemon ko --> Victoire/defaites
         self.multiplicateur_joueur = int(self.max_hp) - self.degats_subi_joueur
         self.multiplicateur_adverssaire = int(self.max_hp) - self.degats_subi_adverssaire
-        self.police = Menu.get_font(20)
+        self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
         self.__nom = self.police.render("Pikachu :", True, "black")
         self.__adversaire = self.police.render("Salamèche :", True, "black")
 

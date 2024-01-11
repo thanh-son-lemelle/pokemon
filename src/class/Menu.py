@@ -14,11 +14,13 @@ class Menu():
         self.BG = pygame.image.load("images\\background\menu\Fond pokemon.jpg")
 
     def get_font(self,size): 
-        return pygame.font.Font("C:\Windows\Fonts\Arial.ttf", size)
+        return pygame.font.Font("font\Pokemon Classic.ttf", size)
 
 
     def main_menu(self):
         pygame.init()
+        size = (722,541)
+        'self.BG = pygame.transform.scale(self.BG, size)'
         pygame.display.set_caption("Menu")
         musique= pygame.mixer.music.load("musique\main menu\Pokemon BlackWhite Music - Pokemon Center.mp3")
         mixer.music.set_volume(0.1)
@@ -31,11 +33,11 @@ class Menu():
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
 
-            PLAY_BUTTON = Button(image=pygame.image.load("images\\button\images\Play Rect.png"), pos=(200, 300), 
-                                text_input="PLAY", font=self.get_font(50), base_color="#d7fcd4", hovering_color="White")
+            PLAY_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 300), 
+                                text_input="PLAY", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
             
-            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\images\Quit Rect.png"), pos=(200, 450), 
-                                text_input="QUIT", font=self.get_font(50), base_color="#d7fcd4", hovering_color="White")
+            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 450), 
+                                text_input="QUIT", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
 
 
             for button in [PLAY_BUTTON, QUIT_BUTTON]:
@@ -70,5 +72,6 @@ class Menu():
             pygame.display.update()
 
 
-
-
+'''
+menu = Menu()
+menu.main_menu()'''

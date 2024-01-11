@@ -9,7 +9,7 @@ class Pokemon:
         self.__type = None
         self.__stats = None
         self.__evolution = None
-        self.__level = 1
+        self.__level = 10
         self.__xp = 0
         self.loadData()
         self.__abilities = []

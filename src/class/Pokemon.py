@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import json
+import pygame
+import sys
 
 class Pokemon:
     def __init__(self, id ) -> None:
@@ -11,8 +13,10 @@ class Pokemon:
         self.__evolution = None
         self.__level = 10
         self.__xp = 0
-        self.loadData()
         self.__abilities = []
+        self.__imageFace = None
+        self.__imageBack = None
+        self.loadData()
 
 
     def get_id(self):
@@ -33,9 +37,15 @@ class Pokemon:
     def get_xp(self):
         return self.__xp
     
+    def get_imageFace(self):
+        return self.__imageFace
+    
+    def get_imageBack(self):
+        return self.__imageBack
+    
     # Charge les données du fichier pokemon.json
     def loadData(self):
-        with open('data\pokemons\pokemons.json', 'r') as fichier:
+        with open(r"data\pokemons\pokemons.json", "r") as fichier:
             donnees = json.load(fichier)
 
         # Rechercher les données du Pokémon avec l'ID correspondant
@@ -45,7 +55,9 @@ class Pokemon:
             self.__name = pokemon_data.get("name")
             self.__type = pokemon_data.get("type")
             self.__stats = pokemon_data.get("stats")
-            self.__evolution = pokemon_data.get("evolution")
+            self.__evolution = pokemon_data.get("evolution")           
+            self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{self.__id}.gif")
+            self.__imageBack = pygame.image.load(f"images\\sprite_pokemon\\Back\\{self.__id}.gif")
         return pokemon_data
 
     # Test de l'affichage des stats
@@ -90,5 +102,52 @@ class Pokemon:
 starter = Pokemon (1)
 starter.afficher_infos()
 starter.evolue()
+starter.evolue()
+
+"""starter.loadData()
+print(starter.get_imageFace())
+starter.evolue()
+print(starter.get_imageFace())
 starter.afficher_infos()
+
+
 print(starter.get_AbilitiesByLevel())
+
+
+"""
+pygame.init()
+
+largeur_fenetre = 800
+hauteur_fenetre = 600
+
+
+fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
+pygame.display.set_caption('Fenêtre Pygame avec Image')
+
+
+
+image = starter.get_imageFace()
+
+# Obtenir la position de l'image dans la fenêtre
+image_rect = image.get_rect()
+image_rect.center = (largeur_fenetre // 2, hauteur_fenetre // 2)
+
+# Boucle principale
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Effacer l'écran
+    fenetre.fill((0, 0, 0))  # Fond blanc
+
+    # Dessiner l'image
+    fenetre.blit(image, image_rect)
+
+    # Mettre à jour l'affichage
+    pygame.display.flip()
+
+# Quitter Pygame
+pygame.quit()
+sys.exit()

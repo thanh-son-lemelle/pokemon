@@ -8,7 +8,6 @@ class Dresseurs:
         self.__y = y 
         self.__listePokemons = []
 
-    
     def get_nom(self):
         return self.__nom
     
@@ -26,16 +25,12 @@ class Dresseurs:
         self.__nom = random.choice(adversaire)
     
     def set_nomJoueur(self):
-        self.__nom = input ("veuillez rentrez le nom du joueur: ")
-        
-
+        self.__nom = input ("veuillez entrer le nom du joueur: ")
         
 joueur1 = Dresseurs(1, 2)
-print(joueur1.get_nom())
 joueur1.set_nomJoueur()
-
-adversaire1 = Dresseurs(4, 8)
-print(adversaire1.loadData())
-adversaire1.set_nomAdversaire()
 print(joueur1.get_nom())
+print("VS")
+adversaire1 = Dresseurs(4, 8)
+adversaire1.set_nomAdversaire()
 print(adversaire1.get_nom())

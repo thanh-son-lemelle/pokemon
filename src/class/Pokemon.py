@@ -104,17 +104,6 @@ starter.afficher_infos()
 starter.evolue()
 starter.evolue()
 
-"""starter.loadData()
-print(starter.get_imageFace())
-starter.evolue()
-print(starter.get_imageFace())
-starter.afficher_infos()
-
-
-print(starter.get_AbilitiesByLevel())
-
-
-"""
 pygame.init()
 
 largeur_fenetre = 800

@@ -4,6 +4,7 @@ import json
 class Pokemon:
     def __init__(self, id ) -> None:
         self.__id = id
+        self.__pokemonData = self.loadData()
         self.__name = None
         self.__type = None
         self.__stats = None
@@ -28,6 +29,10 @@ class Pokemon:
 
     def get_evolution(self):
         return self.__evolution
+    
+    def get_xp(self):
+        return self.__xp
+    
     # Charge les données du fichier pokemon.json
     def loadData(self):
         with open('data\pokemons\pokemons.json', 'r') as fichier:
@@ -41,6 +46,7 @@ class Pokemon:
             self.__type = pokemon_data.get("type")
             self.__stats = pokemon_data.get("stats")
             self.__evolution = pokemon_data.get("evolution")
+        return pokemon_data
 
     # Test de l'affichage des stats
     def afficher_infos(self):
@@ -48,23 +54,41 @@ class Pokemon:
             print("Stats:")
             for stat, value in self.__stats.items():
                 print(f"  {stat.capitalize()}: {value}")
+            print(f"  Level: {self.__level}")
             
             if self.__evolution:
                 print(f"Évolution: Niveau {self.__evolution['level']} vers {self.__evolution['to']}")
             print("\n")
 
-    def set_xp(self,xpGagnee): # xpGagnée à définir dans la class Combat
-        self.__xp += xpGagnee
+    def set_xp(self,AddXp): # xpGagnée à définir dans la class Combat
+        self.__xp += AddXp
+
+    def get_abilities(self):
+        self.__abilities = self.__pokemonData.get("abilities")
+
+
+    def get_AbilitiesByLevel(self):
+        abilities = []
+        self.get_abilities()
+        for ability in self.__abilities:
+            abilityLevel = ability ["level"]
+            if abilityLevel <= self.__level:
+                abilities.append(ability["name"])
+        self.__abilities = abilities
+        return self.__abilities
+
+
 
     # Prend les valeurs de l'évolution id name stat etc...
     def evolue (self):
         self.__id = self.__evolution.get("to")
         self.loadData()
 
+    
+
 # Test de la class
 starter = Pokemon (1)
 starter.afficher_infos()
 starter.evolue()
 starter.afficher_infos()
-
-
+print(starter.get_AbilitiesByLevel())

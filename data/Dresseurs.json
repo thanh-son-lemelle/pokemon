@@ -1,88 +1,14 @@
 {
   "dresseurs": [
-    {
-      "nom": "Sacha",
-      "pokemon": []
-    },
-    {
-      "nom": "Misty",
-      "pokemon": []
-    },
-    {
-      "nom": "Brock",
-      "pokemon": []
-    },
-    {
-      "nom": "May",
-      "pokemon": []
-    },
-    {
-      "nom": "Drew",
-      "pokemon": []
-    },
-    {
-      "nom": "Serena",
-      "pokemon": []
-    },
-    {
-      "nom": "Gary",
-      "pokemon": []
-    },
-    {
-      "nom": "Dawn",
-      "pokemon": []
-    },
-    {
-      "nom": "Paul",
-      "pokemon": []
-    },
-    {
-      "nom": "Cynthia",
-      "pokemon": []
-    },
-    {
-      "nom": "Red",
-      "pokemon": []
-    },
-    {
-      "nom": "Blue",
-      "pokemon": []
-    },
-    {
-      "nom": "Leaf",
-      "pokemon": []
-    },
-    {
-      "nom": "Ethan",
-      "pokemon": []
-    },
-    {
-      "nom": "Lyra",
-      "pokemon": []
-    },
-    {
-      "nom": "Nate",
-      "pokemon": []
-    },
-    {
-      "nom": "Rosa",
-      "pokemon": []
-    },
-    {
-      "nom": "Calem",
-      "pokemon": []
-    },
-    {
-      "nom": "Selene",
-      "pokemon": []
-    },
-    {
-      "nom": "Elio",
-      "pokemon": []
-    },
-    {
-      "nom": "Lillie",
-      "pokemon": []
-    }
+    "Sacha",
+    "Misty",
+    "Brock",
+    "May",
+    "Dawn",
+    "Gary",
+    "Serena",
+    "Cynthia",
+    "Red",
+    "Blue"
   ]
 }

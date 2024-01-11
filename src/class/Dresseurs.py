@@ -1,23 +1,28 @@
 import json
-import Personnages
-from Personnages import *
+import random 
 
-class Dresseurs(Personnages): 
-    def __init__(self, nom, x, y, listePokemons):
-        Personnages.__init__(self, nom, x, y)
-        self.__nom = nom
-        self.x = x
-        self.y = y 
-        self.__listePokemons = listePokemons 
-        self.itemsInventaire = ()
-
-with open('data\Dresseurs.json', 'r') as file:
-    data = json.load(file)
-
-for dresseur in data["dresseurs"]:
-    print(f"\nDresseur : {dresseur['nom']}")
-    print("Pokémon :")
-    for pokemon in dresseur['pokemon']:
-        print(f" - {pokemon}")
-
+class Dresseurs: 
+    def __init__(self, x, y):
+        self.__nom = None
+        self.__x = x
+        self.__y = y 
+        self.__listePokemons = []
+        self.loadData()
     
+    def get_nom(self):
+        return self.__nom
+    
+    def position(self):
+        position = (self.__x, self.__y) 
+        return position 
+    
+    def loadData(self):
+        with open(r"data\Dresseurs.json", "r") as fichier_json:
+            listeNom = json.load(fichier_json)
+    
+        dresseursnom = [dresseurs["nom"] for dresseurs in listeNom["dresseurs"]]
+        self.__nom = random.choice(dresseursnom)
+        
+
+dresseur1 = Dresseurs(1, 2)
+print(dresseur1.get_nom())

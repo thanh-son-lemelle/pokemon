@@ -11,6 +11,7 @@ class Pokemon:
         self.__level = 1
         self.__xp = 0
         self.loadData()
+        self.__abilities = []
 
 
     def get_id(self):

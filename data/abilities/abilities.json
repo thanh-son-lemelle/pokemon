@@ -1,0 +1,28 @@
+{
+    "abilities": [
+      {"name": "Charge", "stats": {"power": 40, "accuracy": 100, "type": "Normal"}},
+      {"name": "Grozyeux", "stats": {"power": 50, "accuracy": 90, "type": "Normal"}},
+      {"name": "Poudre Toxik", "stats": {"power": 0, "accuracy": 75, "type": "Poison"}},
+      {"name": "Tranch'Herbe", "stats": {"power": 55, "accuracy": 95, "type": "Plante"}},
+      {"name": "Flammèche", "stats": {"power": 40, "accuracy": 100, "type": "Feu"}},
+      {"name": "Griffe", "stats": {"power": 50, "accuracy": 95, "type": "Normal"}},
+      {"name": "Dracogriffe", "stats": {"power": 80, "accuracy": 90, "type": "Dragon"}},
+      {"name": "Lance-Flammes", "stats": {"power": 90, "accuracy": 85, "type": "Feu"}},
+      {"name": "Pistolet à O", "stats": {"power": 40, "accuracy": 100, "type": "Eau"}},
+      {"name": "Ecume", "stats": {"power": 30, "accuracy": 100, "type": "Eau"}},
+      {"name": "Morsure", "stats": {"power": 60, "accuracy": 90, "type": "Ténèbres"}},
+      {"name": "Hydrocanon", "stats": {"power": 110, "accuracy": 80, "type": "Eau"}},
+      {"name": "Danse Pluie", "stats": {"power": 0, "accuracy": 0, "type": "Eau"}},
+      {"name": "Dard-Venin", "stats": {"power": 15, "accuracy": 100, "type": "Poison"}},
+      {"name": "Papillodanse", "stats": {"power": 0, "accuracy": 0, "type": "Normal"}},
+      {"name": "Toile Gluante", "stats": {"power": 0, "accuracy": 0, "type": "Insecte"}},
+      {"name": "Jet de Sable", "stats": {"power": 0, "accuracy": 100, "type": "Sol"}},
+      {"name": "Rugissement", "stats": {"power": 0, "accuracy": 0, "type": "Normal"}},
+      {"name": "Picpic", "stats": {"power": 35, "accuracy": 100, "type": "Vol"}},
+      {"name": "Atterrissage", "stats": {"power": 0, "accuracy": 0, "type": "Normal"}},
+      {"name": "Voler", "stats": {"power": 70, "accuracy": 95, "type": "Vol"}},
+      {"name": "Mimi-queue", "stats": {"power": 0, "accuracy": 100, "type": "Normal"}},
+      {"name": "Croc de Mort", "stats": {"power": 80, "accuracy": 90, "type": "Ténèbres"}}
+    ]
+  }
+  

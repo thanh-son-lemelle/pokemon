@@ -280,6 +280,77 @@ class Combat():
         elif type_pokemon_joueur == "Psy" and type_pokemon_adv == "Combat":
             self.multiplicateur_degat = 2 
 
+        #---------------------------------------------------------------------
+    
+
+
+
+        #-----------------------------Roche----------------------------------
+
+
+        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Feu":
+            self.multiplicateur_degat = 2 
+        
+        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Glace":
+            self.multiplicateur_degat = 2 
+
+
+        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Insecte":
+            self.multiplicateur_degat = 2 
+        
+        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Vol":
+            self.multiplicateur_degat = 2 
+
+        #---------------------------------------------------------------------
+    
+        #-----------------------------Sol----------------------------------
+
+
+        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Feu":
+            self.multiplicateur_degat = 2 
+        
+        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Electrik":
+            self.multiplicateur_degat = 2 
+
+
+        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Poison":
+            self.multiplicateur_degat = 2 
+        
+        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Roche":
+            self.multiplicateur_degat = 2 
+
+        #---------------------------------------------------------------------
+
+        #-----------------------------Spectre----------------------------------
+
+
+        elif type_pokemon_joueur == "Spectre" and type_pokemon_adv == "Spectre":
+            self.multiplicateur_degat = 2 
+        
+        #---------------------------------------------------------------------
+        
+        #-----------------------------Vol----------------------------------
+
+
+        elif type_pokemon_joueur == "Vol" and type_pokemon_adv == "Insecte":
+            self.multiplicateur_degat = 2 
+        
+        elif type_pokemon_joueur == "Vol" and type_pokemon_adv == "Plante":
+            self.multiplicateur_degat = 2 
+
+        elif type_pokemon_joueur == "Vol" and type_pokemon_adv == "Combat":
+            self.multiplicateur_degat = 2 
+
+        #---------------------------------------------------------------------
+        
+        
+        #---------------------------------------------------------------------
+        #-----------------------------Défensif--------------------------------
+        #---------------------------------------------------------------------
+        
+        
+        #---------------------------------------------------------------------
+        #-----------------------------Inefficace------------------------------
         #---------------------------------------------------------------------'''
             
 

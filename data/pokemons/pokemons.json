@@ -10,6 +10,12 @@
         "defense": 49,
         "speed": 45
       },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 2
+      },
       "evolution": {
         "level": 16,
         "to": 2
@@ -29,6 +35,12 @@
         "attack": 62,
         "defense": 63,
         "speed": 60
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "speed": 3
       },
       "evolution": {
         "level": 32,
@@ -50,6 +62,12 @@
         "attack": 82,
         "defense": 83,
         "speed": 80
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "speed": 4
       },
       "abilities": [
         {"level": 1, "name": "Charge"},
@@ -73,6 +91,12 @@
         "level": 16,
         "to": 5
       },
+      "growth": {
+        "hp": 1,
+        "attack": 3,
+        "defense": 1,
+        "speed": 3
+      },
       "abilities": [
         {"level": 1, "name": "Griffe"},
         {"level": 7, "name": "Flammèche"},
@@ -93,6 +117,12 @@
         "level": 36,
         "to": 6
       },
+      "growth": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "speed": 4
+      },
       "abilities": [
         {"level": 1, "name": "Griffe"},
         {"level": 7, "name": "Flammèche"},
@@ -109,6 +139,12 @@
         "attack": 84,
         "defense": 78,
         "speed": 100
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "speed": 5
       },
       "abilities": [
         {"level": 1, "name": "Griffe"},
@@ -132,6 +168,12 @@
         "level": 16,
         "to": 8
       },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 2,
+        "speed": 2
+      },
       "abilities": [
         {"level": 1, "name": "Pistolet à O"},
         {"level": 7, "name": "Ecume"},
@@ -152,6 +194,12 @@
         "level": 36,
         "to": 9
       },
+      "growth": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 3,
+        "speed": 3
+      },
       "abilities": [
         {"level": 1, "name": "Pistolet à O"},
         {"level": 7, "name": "Ecume"},
@@ -168,6 +216,12 @@
         "attack": 83,
         "defense": 100,
         "speed": 78
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 5,
+        "speed": 4
       },
       "abilities": [
         {"level": 1, "name": "Pistolet à O"},
@@ -191,6 +245,12 @@
         "level": 7,
         "to": 11
       },
+      "growth": {
+        "hp": 1,
+        "attack": 1,
+        "defense": 1,
+        "speed": 2
+      },
       "abilities": [
         {"level": 1, "name": "Charge"}
       ]
@@ -209,6 +269,12 @@
         "level": 10,
         "to": 12
       },
+      "growth": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 3,
+        "speed": 1
+      },
       "abilities": [
         {"level": 1, "name": "Charge"}
       ]
@@ -222,6 +288,12 @@
         "attack": 45,
         "defense": 50,
         "speed": 70
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 2,
+        "defense": 2,
+        "speed": 3
       },
       "abilities": [
         {"level": 1, "name": "Charge"},
@@ -244,6 +316,12 @@
         "level": 7,
         "to": 14
       },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 2
+      },
       "abilities": [
         {"level": 1, "name": "Dard-Venin"}
       ]
@@ -262,6 +340,12 @@
         "level": 10,
         "to": 15
       },
+      "growth": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 3,
+        "speed": 1
+      },
       "abilities": [
         {"level": 1, "name": "Dard-Venin"}
       ]
@@ -275,6 +359,12 @@
         "attack": 80,
         "defense": 40,
         "speed": 75
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 2,
+        "speed": 3
       },
       "abilities": [
         {"level": 1, "name": "Dard-Venin"},
@@ -298,6 +388,12 @@
         "level": 18,
         "to": 17
       },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 3
+      },
       "abilities": [
         {"level": 1, "name": "Jet de Sable"},
         {"level": 5, "name": "Rugissement"},
@@ -318,6 +414,12 @@
         "level": 36,
         "to": 18
       },
+      "growth": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "speed": 4
+      },
       "abilities": [
         {"level": 1, "name": "Jet de Sable"},
         {"level": 5, "name": "Rugissement"},
@@ -334,6 +436,12 @@
         "attack": 80,
         "defense": 75,
         "speed": 101
+      },
+      "growth": {
+        "hp": 5,
+        "attack": 5,
+        "defense": 5,
+        "speed": 6
       },
       "abilities": [
         {"level": 1, "name": "Jet de Sable"},
@@ -352,6 +460,12 @@
         "attack": 56,
         "defense": 35,
         "speed": 72
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 2,
+        "speed": 4
       },
       "evolution": {
         "level": 20,
@@ -372,6 +486,12 @@
         "attack": 81,
         "defense": 60,
         "speed": 97
+      },
+      "growth": {
+        "hp": 5,
+        "attack": 5,
+        "defense": 4,
+        "speed": 5
       },
       "abilities": [
         {"level": 1, "name": "Charge"},

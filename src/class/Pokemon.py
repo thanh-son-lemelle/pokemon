@@ -46,6 +46,7 @@ class Pokemon:
         return self.__xp
     
     def get_imageFace(self):
+        self.__imageFace = pygame.transform.scale(self.__imageFace, (200, 200)) # à voir si Utile ou pas
         return self.__imageFace
     
     def get_imageBack(self):
@@ -237,6 +238,47 @@ class Pokemon:
             self.chooseAbilities()
             self.__abilities = self.__abilities[0:4]
         return self.__abilities
+    
+    def get_ability(self, index):
+        return self.__abilities[index]
+    
+    def get_ability_by_name(self, name):
+        for ability in self.__abilities:
+            if ability == name:
+                return ability
+        return None
+    
+    def get_abilityStats(self, name):
+        ability = self.get_ability_by_name(name)
+        with open(r"data\abilities\abilities.json", "r") as fichier:
+            abilityStats = json.load(fichier)
+        for ability in abilityStats["abilities"]:
+            if ability["name"] == name:
+                return ability["stats"]
+            return None
+    # Renvoie les stats de l'ability à l'index donné vu avec Lyes Hamici pour l'appel de la fonction plus facile à utiliser par la suite
+    def get_abilityStatsByIndex(self, index):
+        name = self.get_ability(index)
+        return self.get_abilityStats(name)
+    
+    def get_abilityNameByIndex(self, index):
+        return self.get_ability(index)
+#============================================================================
+        # gestion des stats des attaques
+#============================================================================
+    
+    def get_abilityPowerByName(self, name):
+        abilityStats = self.get_abilityStats(name)
+        return abilityStats["power"]
+    
+    def get_abilityAccuracyByName(self, name):
+        abilityStats = self.get_abilityStats(name)
+        return abilityStats["accuracy"]
+    
+    def get_abilityTypeByName(self, name):
+        abilityStats = self.get_abilityStats(name)
+        return abilityStats["type"] 
+    
 
 
     
@@ -247,8 +289,9 @@ starter = Pokemon (1)
 print(starter.get_baseStats())
 starter.set_xp(100)
 starter.set_xp(1500)
-starter.set_xp(1500)
 starter.get_currentAbilities()
+print(starter.get_ability_by_name("Charge"))   
+print(starter.get_abilityStats("Charge"))
 
 pygame.init()
 

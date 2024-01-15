@@ -4,7 +4,7 @@ import sys
 from pygame import *
 from pygame.locals import *
 import random
-from Menu import *
+
 
 class Combat():
 

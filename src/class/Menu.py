@@ -72,5 +72,3 @@ class Menu():
             pygame.display.update()
 
 
-menu = Menu()
-menu.main_menu()

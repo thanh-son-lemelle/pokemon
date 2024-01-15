@@ -13,7 +13,12 @@
       "evolution": {
         "level": 16,
         "to": 2
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"},
+        {"level": 3, "name": "Grozyeux"},
+        {"level": 7, "name": "Poudre Toxik"}
+      ]
     },
     {
       "id": 2,
@@ -28,7 +33,13 @@
       "evolution": {
         "level": 32,
         "to": 3
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"},
+        {"level": 3, "name": "Grozyeux"},
+        {"level": 7, "name": "Poudre Toxik"},
+        {"level": 13, "name": "Tranch'Herbe"}
+      ]
     },
     {
       "id": 3,
@@ -39,7 +50,14 @@
         "attack": 82,
         "defense": 83,
         "speed": 80
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"},
+        {"level": 3, "name": "Grozyeux"},
+        {"level": 7, "name": "Poudre Toxik"},
+        {"level": 13, "name": "Tranch'Herbe"},
+        {"level": 25, "name": "Vampigraine"}
+      ]
     },
     {
       "id": 4,
@@ -54,7 +72,12 @@
       "evolution": {
         "level": 16,
         "to": 5
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Griffe"},
+        {"level": 7, "name": "Flammèche"},
+        {"level": 10, "name": "Grozyeux"}
+      ]
     },
     {
       "id": 5,
@@ -69,7 +92,13 @@
       "evolution": {
         "level": 36,
         "to": 6
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Griffe"},
+        {"level": 7, "name": "Flammèche"},
+        {"level": 10, "name": "Grozyeux"},
+        {"level": 20, "name": "Dracogriffe"}
+      ]
     },
     {
       "id": 6,
@@ -80,7 +109,14 @@
         "attack": 84,
         "defense": 78,
         "speed": 100
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Griffe"},
+        {"level": 7, "name": "Flammèche"},
+        {"level": 10, "name": "Grozyeux"},
+        {"level": 20, "name": "Dracogriffe"},
+        {"level": 40, "name": "Lance-Flammes"}
+      ]
     },
     {
       "id": 7,
@@ -95,7 +131,12 @@
       "evolution": {
         "level": 16,
         "to": 8
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Pistolet à O"},
+        {"level": 7, "name": "Ecume"},
+        {"level": 10, "name": "Morsure"}
+      ]
     },
     {
       "id": 8,
@@ -110,7 +151,13 @@
       "evolution": {
         "level": 36,
         "to": 9
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Pistolet à O"},
+        {"level": 7, "name": "Ecume"},
+        {"level": 10, "name": "Morsure"},
+        {"level": 22, "name": "Hydrocanon"}
+      ]
     },
     {
       "id": 9,
@@ -121,7 +168,14 @@
         "attack": 83,
         "defense": 100,
         "speed": 78
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Pistolet à O"},
+        {"level": 7, "name": "Ecume"},
+        {"level": 10, "name": "Morsure"},
+        {"level": 22, "name": "Hydrocanon"},
+        {"level": 42, "name": "Danse Pluie"}
+      ]
     },
     {
       "id": 10,
@@ -136,7 +190,10 @@
       "evolution": {
         "level": 7,
         "to": 11
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"}
+      ]
     },
     {
       "id": 11,
@@ -151,7 +208,10 @@
       "evolution": {
         "level": 10,
         "to": 12
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"}
+      ]
     },
     {
       "id": 12,
@@ -162,7 +222,13 @@
         "attack": 45,
         "defense": 50,
         "speed": 70
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"},
+        {"level": 3, "name": "Grozyeux"},
+        {"level": 7, "name": "Poudre Toxik"},
+        {"level": 13, "name": "Papillodanse"}
+      ]
     },
     {
       "id": 13,
@@ -177,7 +243,10 @@
       "evolution": {
         "level": 7,
         "to": 14
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Dard-Venin"}
+      ]
     },
     {
       "id": 14,
@@ -192,7 +261,10 @@
       "evolution": {
         "level": 10,
         "to": 15
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Dard-Venin"}
+      ]
     },
     {
       "id": 15,
@@ -203,7 +275,14 @@
         "attack": 80,
         "defense": 40,
         "speed": 75
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Dard-Venin"},
+        {"level": 3, "name": "Grozyeux"},
+        {"level": 7, "name": "Poudre Toxik"},
+        {"level": 13, "name": "Papillodanse"},
+        {"level": 30, "name": "Toile Gluante"}
+      ]
     },
     {
       "id": 16,
@@ -218,7 +297,12 @@
       "evolution": {
         "level": 18,
         "to": 17
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Jet de Sable"},
+        {"level": 5, "name": "Rugissement"},
+        {"level": 12, "name": "Picpic"}
+      ]
     },
     {
       "id": 17,
@@ -233,7 +317,13 @@
       "evolution": {
         "level": 36,
         "to": 18
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Jet de Sable"},
+        {"level": 5, "name": "Rugissement"},
+        {"level": 12, "name": "Picpic"},
+        {"level": 25, "name": "Atterissage"}
+      ]
     },
     {
       "id": 18,
@@ -244,7 +334,14 @@
         "attack": 80,
         "defense": 75,
         "speed": 101
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Jet de Sable"},
+        {"level": 5, "name": "Rugissement"},
+        {"level": 12, "name": "Picpic"},
+        {"level": 25, "name": "Atterissage"},
+        {"level": 45, "name": "Voler"}
+      ]
     },
     {
       "id": 19,
@@ -259,7 +356,12 @@
       "evolution": {
         "level": 20,
         "to": 20
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"},
+        {"level": 5, "name": "Mimi-queue"},
+        {"level": 13, "name": "Morsure"}
+      ]
     },
     {
       "id": 20,
@@ -270,7 +372,13 @@
         "attack": 81,
         "defense": 60,
         "speed": 97
-      }
+      },
+      "abilities": [
+        {"level": 1, "name": "Charge"},
+        {"level": 5, "name": "Mimi-queue"},
+        {"level": 13, "name": "Morsure"},
+        {"level": 30, "name": "Croc de Mort"}
+      ]
     }
   ]
 }

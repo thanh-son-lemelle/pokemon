@@ -4,6 +4,7 @@ import sys
 from pygame import *
 from pygame.locals import *
 import random
+from Menu import *
 
 class Combat():
 
@@ -33,7 +34,7 @@ class Combat():
         self.nouveau_hp = int(self.max_hp) - self.degats_subi_joueur
         self.nouveau_hp_adv = int(self.max_hp) - self.degats_subi_adverssaire
         self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
-        self.__nom = self.police.render("Pikachu :", True, "black")
+        self.__nom = self.police.render("Pikachu :", True, "black")#remplacer nom par le get_nom pokemon 
         self.__adversaire = self.police.render("Salamèche :", True, "black")
         
 

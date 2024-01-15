@@ -1,0 +1,88 @@
+{
+  "dresseurs": [
+    {
+      "nom": "Sacha",
+      "pokemon": ["Pikachu", "Bulbasaur", "Charizard", "Squirtle", "Butterfree", "Kingler"]
+    },
+    {
+      "nom": "Misty",
+      "pokemon": ["Starmie", "Psyduck", "Corsola", "Lanturn", "Azumarill", "Vaporeon"]
+    },
+    {
+      "nom": "Brock",
+      "pokemon": ["Onix", "Geodude", "Vulpix", "Kabutops", "Golem", "Steelix"]
+    },
+    {
+      "nom": "May",
+      "pokemon": ["Blaziken", "Beautifly", "Skitty", "Swampert", "Munchlax", "Flygon"]
+    },
+    {
+      "nom": "Drew",
+      "pokemon": ["Roselia", "Flygon", "Masquerain", "Absol", "Shiftry", "Cacturne"]
+    },
+    {
+      "nom": "Serena",
+      "pokemon": ["Braixen", "Pancham", "Sylveon", "Fennekin", "Meowstic", "Altaria"]
+    },
+    {
+      "nom": "Gary",
+      "pokemon": ["Blastoise", "Arcanine", "Umbreon", "Nidoking", "Scizor", "Electivire"]
+    },
+    {
+      "nom": "Dawn",
+      "pokemon": ["Piplup", "Buneary", "Pachirisu", "Mamoswine", "Quilava", "Togekiss"]
+    },
+    {
+      "nom": "Paul",
+      "pokemon": ["Electivire", "Torterra", "Honchkrow", "Weavile", "Magmortar", "Ursaring"]
+    },
+    {
+      "nom": "Cynthia",
+      "pokemon": ["Garchomp", "Lucario", "Milotic", "Spiritomb", "Togekiss", "Roserade"]
+    },
+    {
+      "nom": "Red",
+      "pokemon": ["Charizard", "Snorlax", "Espeon", "Lapras", "Pikachu", "Jolteon"]
+    },
+    {
+      "nom": "Blue",
+      "pokemon": ["Blastoise", "Alakazam", "Exeggutor", "Machamp", "Gyarados", "Arcanine"]
+    },
+    {
+      "nom": "Leaf",
+      "pokemon": ["Venusaur", "Jolteon", "Clefable", "Lapras", "Nidoqueen", "Victreebel"]
+    },
+    {
+      "nom": "Ethan",
+      "pokemon": ["Typhlosion", "Espeon", "Umbreon", "Ampharos", "Quagsire", "Sudowoodo"]
+    },
+    {
+      "nom": "Lyra",
+      "pokemon": ["Meganium", "Feraligatr", "Ampharos", "Togetic", "Jumpluff", "Noctowl"]
+    },
+    {
+      "nom": "Nate",
+      "pokemon": ["Samurott", "Zoroark", "Krookodile", "Scrafty", "Vanilluxe", "Golurk"]
+    },
+    {
+      "nom": "Rosa",
+      "pokemon": ["Serperior", "Lilligant", "Unfezant", "Emboar", "Musharna", "Cinccino"]
+    },
+    {
+      "nom": "Calem",
+      "pokemon": ["Greninja", "Talonflame", "Meowstic", "Hawlucha", "Sylveon", "Tyrantrum"]
+    },
+    {
+      "nom": "Selene",
+      "pokemon": ["Decidueye", "Incineroar", "Primarina", "Lycanroc", "Mimikyu", "Salazzle"]
+    },
+    {
+      "nom": "Elio",
+      "pokemon": ["Incineroar", "Primarina", "Decidueye", "Lycanroc", "Vikavolt", "Tsareena"]
+    },
+    {
+      "nom": "Lillie",
+      "pokemon": ["Nebby", "Vulpix", "Ninetales", "Clefairy", "Mismagius", "Ribombee"]
+    }
+  ]
+}

@@ -46,10 +46,11 @@ class Pokemon:
         return self.__xp
     
     def get_imageFace(self):
-        self.__imageFace = pygame.transform.scale(self.__imageFace, (200, 200)) # à voir si Utile ou pas
+        self.__imageFace = self.resizeImage(self.__imageFace, 200) # à voir si Utile ou pas
         return self.__imageFace
     
     def get_imageBack(self):
+        self.__imageBack = self.resizeImage(self.__imageBack, 200) # à voir si Utile ou pas
         return self.__imageBack
     
     def get_level(self):
@@ -278,8 +279,16 @@ class Pokemon:
     def get_abilityTypeByName(self, name):
         abilityStats = self.get_abilityStats(name)
         return abilityStats["type"] 
+#============================================================================
+    # Traitement des images
+#============================================================================
     
-
+    def resizeImage(self, image, newwidth):
+        newHeight = None
+        originalWidth, originalHeight = image.get_size()
+        newHeight = int(newwidth / originalWidth * originalHeight)
+        image = pygame.transform.scale(image, (newwidth, newHeight))
+        return image
 
     
 
@@ -292,6 +301,7 @@ starter.set_xp(1500)
 starter.get_currentAbilities()
 print(starter.get_ability_by_name("Charge"))   
 print(starter.get_abilityStats("Charge"))
+print(starter.get_abilityAccuracyByName("Charge"))
 
 pygame.init()
 
@@ -322,7 +332,7 @@ while True:
     fenetre.fill((0, 0, 0))  # Fond blanc
 
     # Dessiner l'image
-    fenetre.blit(imageModifier, image_rect)
+    fenetre.blit(starter.get_imageBack(), image_rect)
     fenetre.blit(image, (0, 25))
 
     # Mettre à jour l'affichage

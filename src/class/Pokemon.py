@@ -115,8 +115,19 @@ class Pokemon:
             print(f"  Level: {self.__level}")
             print(f"  XP: {self.__xp}")
             print("\n")
+#============================================================================
+            # getter des stats
 
-
+    def get_statHp(self):
+        return self.__stats["hp"]
+    
+    def get_statAttack(self):
+        return self.__stats["attack"]
+    def get_statDefense(self):
+        return self.__stats["defense"]
+    def get_statSpeed(self):
+        return self.__stats["speed"]
+    
 #============================================================================
         # gestion de l'xp, du level up et de l'évolution
 #============================================================================

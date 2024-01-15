@@ -21,7 +21,9 @@ class Pokemon:
         self.loadData()
         self.__baseStats = copy.deepcopy(self.__pokemonData.get("stats"))
 
-
+#============================================================================
+        # setter et getter
+#============================================================================
     def get_id(self):
         return self.__id
 
@@ -60,6 +62,10 @@ class Pokemon:
     
     def get_pokemonData(self):
         return self.__pokemonData
+
+#============================================================================
+        # stat de base
+#============================================================================
     
     # Charge les données du fichier pokemon.json
     def loadData(self):
@@ -71,6 +77,7 @@ class Pokemon:
             if pokemon["id"] == self.__id:
                 self.__pokemonData = pokemon
                 break
+        # Si les données ont été trouvées, on les charge
         if self.__pokemonData:
             self.__name = self.__pokemonData.get("name")
             self.__type = self.__pokemonData.get("type")
@@ -78,7 +85,8 @@ class Pokemon:
             if self.__stats is None:
                 self.__stats = self.__baseStats
             self.__growth = self.__pokemonData.get("growth")
-            self.__evolution = self.__pokemonData.get("evolution")           
+            self.__evolution = self.__pokemonData.get("evolution")
+            # Chargement des images           
             self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{self.__id}.gif")
             self.__imageBack = pygame.image.load(f"images\\sprite_pokemon\\back\\{self.__id}.gif")
 
@@ -95,6 +103,22 @@ class Pokemon:
                 print(f"Évolution: Niveau {self.__evolution['level']} vers {self.__evolution['to']}")
             print("\n")
 
+    def afficherStats(self):
+        if self.__stats:
+
+            print(f"#{self.__id} {self.__name} - Type: {self.__type}")
+            print("Stats actuelles:/niveau:")
+            for stat, value in self.__stats.items():
+                print(f"  {stat.capitalize()}: {value}")
+            print(f"  Level: {self.__level}")
+            print(f"  XP: {self.__xp}")
+            print("\n")
+
+
+#============================================================================
+        # gestion de l'xp, du level up et de l'évolution
+#============================================================================
+
     def set_xp(self, AddXp): # xp gagnée à définir dans la class Combat
         self.__xp += AddXp
 
@@ -107,23 +131,7 @@ class Pokemon:
                 if self.__evolution is not None:
                     if self.__level >= self.__evolution["level"]:
                         self.evolue()
-
-    def get_abilities(self):
-
-        self.__abilities = self.__pokemonData.get("abilities")
-
-
-    def get_AbilitiesByLevel(self):
-
-        abilities = []
-        self.get_abilities()
-        for ability in self.__abilities:
-            abilityLevel = ability ["level"]
-            if abilityLevel <= self.__level:
-                abilities.append(ability["name"])
-        self.__abilities = abilities
-        return self.__abilities
-
+                        # break (utile ou pas ?)
     def level_up(self):
 
         self.__level += 1
@@ -149,18 +157,7 @@ class Pokemon:
                 self.__stats[stat] = self.__stats[stat] + value * (self.__level - 1)
             print(f"--self.__stats after growth: {self.__stats}")
 
-    def afficherStats(self):
-        if self.__stats:
-
-            print(f"#{self.__id} {self.__name} - Type: {self.__type}")
-            print("Stats actuelles:/niveau:")
-            for stat, value in self.__stats.items():
-                print(f"  {stat.capitalize()}: {value}")
-            print(f"  Level: {self.__level}")
-            print(f"  XP: {self.__xp}")
-            print("\n")
-
-    # Prend les valeurs de l'évolution id name stat etc...
+        # Prend les valeurs de l'évolution id name stat etc...
     def evolue (self):
         evolutionName = self.get_name_by_id(self.__id + 1)
         print(f"{self.__name} a évolué en {evolutionName} !")
@@ -182,6 +179,66 @@ class Pokemon:
         if pokemonName:
             evolutionName = pokemonName
         return evolutionName
+#============================================================================
+        # gestion des abilities
+#============================================================================
+
+    def get_abilities(self):
+
+        self.__abilities = self.__pokemonData.get("abilities")
+
+
+    def get_AbilitiesByLevel(self):
+
+        abilities = []
+        self.get_abilities()
+        print (abilities)
+        for ability in self.__abilities:
+            abilityLevel = ability ["level"]
+            if abilityLevel <= self.__level:
+                abilities.append(ability["name"])
+        self.__abilities = abilities
+        return self.__abilities
+    
+    def chooseAbilities(self):
+        chooseAbilities = []
+        self.get_AbilitiesByLevel()
+        chooseAbilities = self.__abilities
+        self.__abilities = []
+        print(f"Choisissez les abilities de {self.__name}:")
+        for ability in chooseAbilities:
+            print(f"  {ability}")
+        print("\n")
+        for i in range(4):
+            ability = input(f"Ability {i+1}: ")
+            while True:
+                # Verifier que l'ability existe
+                if ability not in chooseAbilities:
+                    print("Ability invalide !")
+                    ability = input(f"Ability {i+1}: ")
+                # Verifier que l'ability n'est pas déjà dans la liste
+                elif ability in self.__abilities:
+                    print(f"{ability} est déjà dans la liste !")
+                    ability = input(f"Ability {i+1}: ")
+                break
+            self.__abilities.append(ability)
+            print(self.__abilities)
+        print("\n")
+        print(f"Les abilities de {self.__name} sont maintenant:")
+        for ability in self.__abilities:
+            print(f"  {ability}")
+        print("\n")
+        return self.__abilities
+    
+    def get_currentAbilities(self):
+        self.get_AbilitiesByLevel()
+        if len(self.get_AbilitiesByLevel()) > 4:
+            # L'utilisateur choisi les 4 abilities qu'il veut garder
+            self.chooseAbilities()
+            self.__abilities = self.__abilities[0:4]
+        return self.__abilities
+
+
     
 
 # Test de la class
@@ -189,10 +246,9 @@ class Pokemon:
 starter = Pokemon (1)
 print(starter.get_baseStats())
 starter.set_xp(100)
-print(starter.get_id())
 starter.set_xp(1500)
-print(starter.get_baseStats())
 starter.set_xp(1500)
+starter.get_currentAbilities()
 
 pygame.init()
 

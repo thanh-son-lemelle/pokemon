@@ -305,7 +305,7 @@ class Pokemon:
 
 # Test de la class
 
-starter = Pokemon (1)
+starter = Pokemon (6)
 print(starter.get_baseStats())
 starter.set_xp(100)
 starter.set_xp(1500)

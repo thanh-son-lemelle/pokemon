@@ -58,13 +58,25 @@ class Pokemon:
         return self.__level
     
     def set_level(self, level):
-        self.__level = level
+        while self.__level < level:
+            self.level_up()
+        
     
     def get_growth(self):
         return self.__growth
     
     def get_pokemonData(self):
         return self.__pokemonData
+    
+    def get_abilities(self):
+        return self.__abilities
+    
+    def get_4abilities(self):
+        if len(self.__abilities) < 4:
+            while len(self.__abilities) < 4:
+                self.__abilities.append("-")
+            
+        return self.__abilities[0:4]
 
 #============================================================================
         # stat de base
@@ -72,7 +84,7 @@ class Pokemon:
     
     # Charge les données du fichier pokemon.json
     def loadData(self):
-        with open(r"data\pokemons\pokemons.json", "r") as fichier:
+        with open(r"data\pokemons\pokemons.json", "r", encoding="utf-8") as fichier:
             donnees = json.load(fichier)
         # Rechercher les données du Pokémon avec l'ID correspondant
         self.__pokemonData = None
@@ -118,6 +130,7 @@ class Pokemon:
             print("\n")
 #============================================================================
             # getter des stats
+#============================================================================
 
     def get_statHp(self):
         return self.__stats["hp"]
@@ -182,7 +195,7 @@ class Pokemon:
         print(self.afficherBaseStats())
 
     def get_name_by_id(self, idDonne):
-        with open(r"data\pokemons\pokemons.json", "r") as fichier:
+        with open(r"data\pokemons\pokemons.json", "r", encoding="utf-8") as fichier:
             donnees = json.load(fichier)
         # Rechercher les données du Pokémon avec l'ID correspondant
         pokemonName = None
@@ -197,7 +210,7 @@ class Pokemon:
         # gestion des abilities
 #============================================================================
 
-    def get_abilities(self):
+    def get_abilitiesFromPokemonData(self):
 
         self.__abilities = self.__pokemonData.get("abilities")
 
@@ -205,7 +218,7 @@ class Pokemon:
     def get_AbilitiesByLevel(self):
 
         abilities = []
-        self.get_abilities()
+        self.get_abilitiesFromPokemonData()
         print (abilities)
         for ability in self.__abilities:
             abilityLevel = ability ["level"]
@@ -253,7 +266,7 @@ class Pokemon:
         if len(self.get_AbilitiesByLevel()) > 4:
             # L'utilisateur choisi les 4 abilities qu'il veut garder
             self.chooseAbilities()
-            self.__abilities = self.__abilities[0:4]
+        self.__abilities = self.__abilities[0:4]
         return self.__abilities
     
     def get_ability(self, index):
@@ -310,11 +323,20 @@ class Pokemon:
 
 # Test de la class
 
-starter = Pokemon (6)
+starter = Pokemon (4)
+starter.set_level(10)
+
+print("ici",starter.get_4abilities())
+"""
+
 print(starter.get_ability(0))
+print(starter.get_ability(1))
+print(starter.get_ability(2))
+print(starter.get_ability(4))"""
+
 """    print(starter.get_baseStats())
     print(starter.get_pokemonData())
-    print(starter.get_abilities())
+    print(starter.get_abilitiesFromPokemonData())
     starter.set_xp(100)
     starter.set_xp(1500)
     starter.set_xp(2000)

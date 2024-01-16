@@ -1,6 +1,6 @@
 import json 
 import pygame
-# from class_Pokemon import * 
+from Pokemon import * 
 import sys
 from pygame import *
 from pygame.locals import *

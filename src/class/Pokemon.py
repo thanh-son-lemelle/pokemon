@@ -305,7 +305,7 @@ class Pokemon:
 
 # Test de la class
 
-starter = Pokemon (1)
+'''starter = Pokemon (1)
 print(starter.get_baseStats())
 starter.set_xp(100)
 starter.set_xp(1500)
@@ -351,4 +351,4 @@ while True:
 
 # Quitter Pygame
 pygame.quit()
-sys.exit()
+sys.exit()'''

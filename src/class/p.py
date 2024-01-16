@@ -1,26 +1,29 @@
 import json 
 import pygame
-# from class_Pokemon import * 
+from Pokemon import *
 import sys
 from pygame import *
 from pygame.locals import *
 
-pygame.init()
-
 class Pokedex():
     def __init__(self, id):
+        pygame.init()
         self.__id = id
-        # self.__pokemonData = self.loadData()
-        self.__name = None
-        self.__type = None
-        self.__stats = None
+        self.__nom = []
+        self.__description = []
+        self.__type = []
+        self.__stats = []
         self.__descriptif = None
-        self.__evolution = None
         self.__imageFace = None
-        # self.loadData()
+        self.__evolution = None
+        # self.__pokemonData = self.loadData()
+         # self.loadData()
+        self.__currentPos = 1
         self.WIDTH = 1000
         self.HEIGHT = 700
-       
+        self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
+        pygame.display.set_caption("Pokedex")
+    
         self.fond = pygame.image.load("images\\pokedex\\fond pokedex.jpg")
         self.pokdx = pygame.image.load("images\\pokedex\\pokedex.png")
         self.police_larger = pygame.font.Font("font\\Pokemon Classic.ttf", 30)
@@ -30,42 +33,65 @@ class Pokedex():
         self.__type = self.police_medium.render("Type :", True, "black")
         self.__stats = self.police_small.render("Statistiques : ", True, "black")
         
+
     # def loadData(self):
     #     with open(r"data\pokemons\pokemons.json", "r") as fichier:
     #         donnees = json.load(fichier)
     
-    def loadDescription(self):
 
+    def get_description(self):
+        return self.__description
+    
+
+    def loadDescription(self):
         with open(r'data\\pokedex\\description.json', 'r', encoding='utf-8') as file:
             pokemonsDescription = json.load(file)
 
-        for pokemon in pokemonsDescription:
-            return pokemon['id'], pokemon['nom'], pokemon['description']
+        for pokemon in pokemonsDescription['pokemons']:
+            self.__nom.append(pokemon['nom'])
+     
+            self.__description.append(pokemon['description'])
+           
+        return pokemon['id'], self.__nom, self.__description, self.__imageFace, self.__type, self.__stats
+    
+    def loadStats(self):
+        with open(r'data\\pokemons\\pokemons.json', 'r', encoding='utf-8') as file:
+            pokemonsData = json.load(file)
+
+        for pokemon in pokemonsData['pokemons']:
+            self.__type.append(pokemon['type'])
+            self.__stats.append(pokemon['stats'])
+
+    def loadGif(self, id):
+        self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{id}.gif")
+        self.__imageFace = Pokemon.resizeImage(self, self.__imageFace, 150) # à voir si Utile ou pas
+        return self.__imageFace
+            # self.__imageFace.append(pokemon['imageFace'])
+
+    def inserer_saut_ligne(self, chaine, longueur_ligne=29):
+        lignes = [chaine[i:i+longueur_ligne] for i in range(0, len(chaine), longueur_ligne)]
+        chaine_formatee = "\n".join(lignes)
+        return chaine_formatee
+
+
+    def recupereDescriptionById(self,id):
+        self.loadDescription()
+        currentDescription = self.__description[id-1]
+        currentDescription = self.inserer_saut_ligne(currentDescription)
+
+        return currentDescription
+    
+    
+    def recupereNomById (self,id):
+        self.loadDescription()
+        return self.__nom[id-1]
+
 
     def affichePokedex(self):
-
         size = (400,700) 
         self.pokdx = pygame.transform.scale(self.pokdx, size)
         self.fond = pygame.transform.scale(self.fond, (self.WIDTH, self.HEIGHT))
-        self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
-        self.SCREEN.blit(self.fond,(0,0))
-        self.SCREEN.blit(self.pokdx, (self.WIDTH//3.5,0))
-        self.SCREEN.blit(self.__descriptif, (330,350))
-        self.SCREEN.blit(self.police_larger.render(pokedex.loadDescription()[1] ,True,"black"), (360,120))
-        self.SCREEN.blit(self.__type, (330,520))
-        self.SCREEN.blit(self.police_small.render(pokedex.loadDescription()[2], True, "black"), (330, 390))
-        self.SCREEN.blit(self.__stats, (420, 570))
 
-        # musique= pygame.mixer.music.load("musique\main menu\Pokemon BlackWhite Music - Pokemon Center.mp3")
-        # mixer.music.set_volume(0.1)
-        # mixer.music.play(-1)
-
-    
-        pygame.display.set_caption("Pokedex")
-        
-        pygame.display.update()
-
-        current_pos = [0, 0]
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -73,15 +99,29 @@ class Pokedex():
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RIGHT:
-                        current_pos[0] += 1
+                        self.__currentPos += 1
+                        print(self.__currentPos)
                         
                     elif event.key == pygame.K_LEFT:
-                        current_pos[0] -= 1
-                       
-          
+                        self.__currentPos -= 1
+            
+            self.SCREEN.blit(self.fond,(0,0))
+            self.SCREEN.blit(self.pokdx, (self.WIDTH//3.5,0))
+            self.SCREEN.blit(self.__descriptif, (330,370))
+            self.SCREEN.blit(self.police_larger.render(pokedex.recupereNomById(self.__currentPos) ,True,"black"), (350,120))
+            self.SCREEN.blit(self.__type, (330,520))
+            self.SCREEN.blit(self.police_small.render(pokedex.recupereDescriptionById(self.__currentPos), True, "black"), (330, 400))
+            self.SCREEN.blit(self.__stats, (420, 570))
+            self.SCREEN.blit(self.loadGif(self.__currentPos),(410,190))
 
-   
+            # musique= pygame.mixer.music.load("musique\main menu\Pokemon BlackWhite Music - Pokemon Center.mp3")
+            # mixer.music.set_volume(0.1)
+            # mixer.music.play(-1)
+            
+            pygame.display.update()
+
 pokedex = Pokedex(1)
 pokedex.affichePokedex()
 print(pokedex.loadDescription())
-
+print(pokedex.get_description())
+print(pokedex.recupereDescriptionById(1))

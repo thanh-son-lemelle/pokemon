@@ -20,6 +20,7 @@ class Pokemon:
         self.__imageBack = None
         self.loadData()
         self.__baseStats = copy.deepcopy(self.__pokemonData.get("stats"))
+        self.__abilities = self.get_currentAbilities()
 
 #============================================================================
         # setter et getter
@@ -148,7 +149,7 @@ class Pokemon:
     def level_up(self):
 
         self.__level += 1
-        self.get_AbilitiesByLevel()
+        self.get_currentAbilities()
 
         self.growUp()
         print(self.afficherBaseStats())
@@ -219,8 +220,11 @@ class Pokemon:
         chooseAbilities = self.__abilities
         self.__abilities = []
         print(f"Choisissez les abilities de {self.__name}:")
+        dialogue1 =f"Choisissez les abilities de {self.__name}:"
+        dialogue2 = ""
         for ability in chooseAbilities:
             print(f"  {ability}")
+            dialogue2 += f"  {ability}"
         print("\n")
         for i in range(4):
             ability = input(f"Ability {i+1}: ")
@@ -228,12 +232,13 @@ class Pokemon:
                 # Verifier que l'ability existe
                 if ability not in chooseAbilities:
                     print("Ability invalide !")
+                    dialogue3 = "Ability invalide !"
                     ability = input(f"Ability {i+1}: ")
                 # Verifier que l'ability n'est pas déjà dans la liste
                 elif ability in self.__abilities:
                     print(f"{ability} est déjà dans la liste !")
+                    dialogue4 = f"{ability} est déjà dans la liste !"
                     ability = input(f"Ability {i+1}: ")
-                break
             self.__abilities.append(ability)
             print(self.__abilities)
         print("\n")
@@ -306,14 +311,19 @@ class Pokemon:
 # Test de la class
 
 starter = Pokemon (6)
-print(starter.get_baseStats())
-starter.set_xp(100)
-starter.set_xp(1500)
-starter.get_currentAbilities()
-print(starter.get_ability_by_name("Charge"))   
-print(starter.get_abilityStats("Charge"))
-print(starter.get_abilityAccuracyByName("Charge"))
-
+print(starter.get_ability(0))
+"""    print(starter.get_baseStats())
+    print(starter.get_pokemonData())
+    print(starter.get_abilities())
+    starter.set_xp(100)
+    starter.set_xp(1500)
+    starter.set_xp(2000)
+    print(starter.get_AbilitiesByLevel())
+    print("ici",starter.get_currentAbilities())
+    print(starter.get_ability_by_name("Charge"))   
+    print(starter.get_abilityStats("Charge"))
+    print(starter.get_abilityAccuracyByName("Charge"))
+"""
 pygame.init()
 
 largeur_fenetre = 800

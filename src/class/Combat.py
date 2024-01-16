@@ -20,19 +20,19 @@ class Combat():
         self.__zone = pygame.transform.scale(self.__arene, self.__size_image)
         self.__liste_musique = ["musique\combat\Pokémon Black & White - Critical Health Music (HQ).mp3","musique\combat\Pokémon Diamond, Pearl & Platinum - Champion Cynthia Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Primal Kyogre & Groudon Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Zinnia Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Kieran Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Nemona Battle Music (HQ)(1).mp3","musique\combat\Pokémon Sun & Moon - Battle Legend Red & Blue Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Rival Gladion Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Team Skull Leader Guzma Battle Music (HQ).mp3","musique\combat\Pokémon HeartGold & SoulSilver - Champion & Red Battle Music (HQ).mp3","musique\combat\Battle! Gym Leader - Remix Cover (Pokémon Sword and Shield).mp3","musique\combat\Driftveil City Past Paradox (Remix) ► Pokémon Black & White Toothless Dancing.mp3","musique\combat\Red vs Gold (Theme).mp3","musique\combat\Volo Theme (Piano Etude) Pokémon.mp3"]
         self.__choice_musique = random.choice(self.__liste_musique)
+
         self.max_hp = 250
         self.max_hp_adv = 250
+
         self.multiplicateur_degat_adv = 1
         self.multiplicateur_degat = 1
-        self.degats_effectuer = 0 * self.multiplicateur_degat
-        self.hp = self.max_hp - self.degats_effectuer
-        self.hp_adv = self.max_hp_adv - self.degats_effectuer
+
+        self.hp = self.max_hp 
+        self.hp_adv = self.max_hp_adv 
+
         self.ratio = self.hp / self.max_hp
         self.ratio_adv = self.hp_adv / self.max_hp_adv
-        self.degats_subi_joueur = 0 * self.multiplicateur_degat_adv #Créer une conditions si degat subis == hp max --> pokemon ko --> Victoire/defaites
-        self.degats_subi_adverssaire = 0 * self.multiplicateur_degat #Créer une conditions si degat subis == hp max --> pokemon ko --> Victoire/defaites
-        self.nouveau_hp = int(self.max_hp) - self.degats_subi_joueur
-        self.nouveau_hp_adv = int(self.max_hp) - self.degats_subi_adverssaire
+
         self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
         self.__nom = self.police.render(starter.get_nom() + " :", True, "black")#remplacer nom par le get_nom pokemon 
         self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
@@ -70,7 +70,7 @@ class Combat():
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
             ATT1 = Button(image=pygame.image.load("images\\button\images\\sprite_test3.png"), pos=(250, 550), 
-                                text_input="ATT1", font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=starter.get_ability(), font=self.police, base_color="#000000", hovering_color="White")
             
             ATT2 = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(250, 650), 
                                 text_input="ATT2", font=self.police, base_color="#000000", hovering_color="White")
@@ -222,14 +222,23 @@ class Combat():
         #-----------------------------Feu-------------------------------------
 
 
-        if type_pokemon_joueur == "Feu" and type_pokemon_adv == "Plante":
-            self.multiplicateur_degat = 2 
+        if type_attaque_pokemon == "Feu" and type_pokemon_adv == "Plante":
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
         
-        elif type_pokemon_joueur == "Feu" and type_pokemon_adv == "Glace":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Feu" and type_pokemon_adv == "Glace":
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Feu" and type_pokemon_adv == "Insecte":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Feu" and type_pokemon_adv == "Insecte":
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
         #---------------------------------------------------------------------
@@ -237,14 +246,26 @@ class Combat():
 
         #-----------------------------Eau-------------------------------------
 
-        elif type_pokemon_joueur == "Eau" and type_pokemon_adv == "Feu":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Eau" and type_pokemon_adv == "Feu":
         
-        elif type_pokemon_joueur == "Eau" and type_pokemon_adv == "Roche":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Eau" and type_pokemon_adv == "Roche":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Eau" and type_pokemon_adv == "Sol":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Eau" and type_pokemon_adv == "Sol":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
         #---------------------------------------------------------------------
@@ -254,14 +275,26 @@ class Combat():
         #-----------------------------Plante----------------------------------
 
 
-        elif type_pokemon_joueur == "Plante" and type_pokemon_adv == "Eau":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Plante" and type_pokemon_adv == "Eau":
         
-        elif type_pokemon_joueur == "Plante" and type_pokemon_adv == "Roche":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Plante" and type_pokemon_adv == "Roche":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Plante" and type_pokemon_adv == "Sol":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Plante" and type_pokemon_adv == "Sol":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
         #---------------------------------------------------------------------
@@ -270,14 +303,26 @@ class Combat():
         #-----------------------------Combat----------------------------------
 
 
-        elif type_pokemon_joueur == "Combat" and type_pokemon_adv == "Glace":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Combat" and type_pokemon_adv == "Glace":
         
-        elif type_pokemon_joueur == "Combat" and type_pokemon_adv == "Roche":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Combat" and type_pokemon_adv == "Roche":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Combat" and type_pokemon_adv == "Normal":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Combat" and type_pokemon_adv == "Normal":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
         #---------------------------------------------------------------------
@@ -287,8 +332,12 @@ class Combat():
         #-----------------------------Dragon----------------------------------
 
 
-        elif type_pokemon_joueur == "Dragon" and type_pokemon_adv == "Dragon":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Dragon" and type_pokemon_adv == "Dragon":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
         
         #---------------------------------------------------------------------
             
@@ -297,11 +346,19 @@ class Combat():
         #-----------------------------Electrick----------------------------------
 
 
-        elif type_pokemon_joueur == "Electrik" and type_pokemon_adv == "Eau":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Electrik" and type_pokemon_adv == "Eau":
         
-        elif type_pokemon_joueur == "Electrik" and type_pokemon_adv == "Vol":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Electrik" and type_pokemon_adv == "Vol":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
         #---------------------------------------------------------------------
             
@@ -309,17 +366,33 @@ class Combat():
         #-----------------------------Glace----------------------------------
 
 
-        elif type_pokemon_joueur == "Glace" and type_pokemon_adv == "Dragon":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Glace" and type_pokemon_adv == "Dragon":
         
-        elif type_pokemon_joueur == "Glace" and type_pokemon_adv == "Plante":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Glace" and type_pokemon_adv == "Plante":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Glace" and type_pokemon_adv == "Sol":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Glace" and type_pokemon_adv == "Sol":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Glace" and type_pokemon_adv == "Vol":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Glace" and type_pokemon_adv == "Vol":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
         #---------------------------------------------------------------------
@@ -330,14 +403,26 @@ class Combat():
         #-----------------------------Insecte----------------------------------
 
 
-        elif type_pokemon_joueur == "Insecte" and type_pokemon_adv == "Poison":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Insecte" and type_pokemon_adv == "Poison":
         
-        elif type_pokemon_joueur == "Insecte" and type_pokemon_adv == "Plante":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Insecte" and type_pokemon_adv == "Plante":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Insecte" and type_pokemon_adv == "Psy":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Insecte" and type_pokemon_adv == "Psy":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
         #---------------------------------------------------------------------
             
@@ -347,11 +432,19 @@ class Combat():
         #-----------------------------Poisson----------------------------------
 
 
-        elif type_pokemon_joueur == "Poison" and type_pokemon_adv == "Insecte":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Poison" and type_pokemon_adv == "Insecte":
         
-        elif type_pokemon_joueur == "Poison" and type_pokemon_adv == "Plante":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Poison" and type_pokemon_adv == "Plante":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
         #---------------------------------------------------------------------
@@ -361,11 +454,19 @@ class Combat():
         #-----------------------------Psy----------------------------------
 
 
-        elif type_pokemon_joueur == "Psy" and type_pokemon_adv == "Poison":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Psy" and type_pokemon_adv == "Poison":
         
-        elif type_pokemon_joueur == "Psy" and type_pokemon_adv == "Combat":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Psy" and type_pokemon_adv == "Combat":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
         #---------------------------------------------------------------------
     
@@ -375,58 +476,107 @@ class Combat():
         #-----------------------------Roche----------------------------------
 
 
-        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Feu":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Roche" and type_pokemon_adv == "Feu":
         
-        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Glace":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Roche" and type_pokemon_adv == "Glace":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
-        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Insecte":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Roche" and type_pokemon_adv == "Insecte":
         
-        elif type_pokemon_joueur == "Roche" and type_pokemon_adv == "Vol":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Roche" and type_pokemon_adv == "Vol":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
         #---------------------------------------------------------------------
     
         #-----------------------------Sol----------------------------------
 
 
-        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Feu":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Sol" and type_pokemon_adv == "Feu":
         
-        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Electrik":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Sol" and type_pokemon_adv == "Electrik":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
 
-        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Poison":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Sol" and type_pokemon_adv == "Poison":
         
-        elif type_pokemon_joueur == "Sol" and type_pokemon_adv == "Roche":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+        
+        elif type_attaque_pokemon == "Sol" and type_pokemon_adv == "Roche":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
         #---------------------------------------------------------------------
 
         #-----------------------------Spectre----------------------------------
 
 
-        elif type_pokemon_joueur == "Spectre" and type_pokemon_adv == "Spectre":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Spectre" and type_pokemon_adv == "Spectre":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
         
         #---------------------------------------------------------------------
         
         #-----------------------------Vol----------------------------------
 
 
-        elif type_pokemon_joueur == "Vol" and type_pokemon_adv == "Insecte":
-            self.multiplicateur_degat = 2 
+        elif type_attaque_pokemon == "Vol" and type_pokemon_adv == "Insecte":
         
-        elif type_pokemon_joueur == "Vol" and type_pokemon_adv == "Plante":
-            self.multiplicateur_degat = 2 
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
-        elif type_pokemon_joueur == "Vol" and type_pokemon_adv == "Combat":
-            self.multiplicateur_degat = 2 
+        
+        elif type_attaque_pokemon == "Vol" and type_pokemon_adv == "Plante":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
+
+        elif type_attaque_pokemon == "Vol" and type_pokemon_adv == "Combat":
+        
+            self.multiplicateur_degat = 2
+            degat_recu = degat_attaque * self.multiplicateur_degat - defense_pokemon_adv
+            self.hp_adv -= degat_recu
+            self.multiplicateur_degat = 1 
 
         #---------------------------------------------------------------------
         

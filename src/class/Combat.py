@@ -70,16 +70,16 @@ class Combat():
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
             ATT1 = Button(image=pygame.image.load("images\\button\images\\sprite_test3.png"), pos=(250, 550), 
-                                text_input=starter.get_ability(0), font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=starter.get_4abilities()[0], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT2 = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(250, 650), 
-                                text_input="ATT2", font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=starter.get_4abilities()[1], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT3 = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(750, 550), 
-                                text_input="ATT3", font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=starter.get_4abilities()[2], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT4 = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(750, 650), 
-                                text_input="ATT4", font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=starter.get_4abilities()[3], font=self.police, base_color="#000000", hovering_color="White")
 
 
             for button in [ATT1,ATT2,ATT3,ATT4]:
@@ -598,6 +598,8 @@ class Combat():
 random_id = random.randint(1,20)
 adv = Pokemon (random_id)
 starter = Pokemon(4)
+starter.set_level(30)
+
 
 combat = Combat()
 combat.fight()

@@ -4,7 +4,7 @@ import sys
 from pygame import *
 from pygame.locals import *
 import random
-
+from Pokemon import *
 
 class Combat():
 
@@ -34,8 +34,8 @@ class Combat():
         self.nouveau_hp = int(self.max_hp) - self.degats_subi_joueur
         self.nouveau_hp_adv = int(self.max_hp) - self.degats_subi_adverssaire
         self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
-        self.__nom = self.police.render("Pikachu :", True, "black")#remplacer nom par le get_nom pokemon 
-        self.__adversaire = self.police.render("Salamèche :", True, "black")
+        self.__nom = self.police.render(starter.get_nom() + " :", True, "black")#remplacer nom par le get_nom pokemon 
+        self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
         
 
 
@@ -54,11 +54,14 @@ class Combat():
         musique = pygame.mixer.music.load(self.__choice_musique)
         mixer.music.set_volume(0.2)
         mixer.music.play(-1)
+
         
         self.__SCREEN.blit(capa, (0, 500))
         self.__SCREEN.blit(self.__zone, (0, 0))
+        self.__SCREEN.blit(starter.get_imageBack(),(150,290))
         self.__SCREEN.blit(self.__nom, (30, 10))
         self.__SCREEN.blit(self.__adversaire, (700, 10))
+        self.__SCREEN.blit(adv.get_imageFace(),(650,120))
         self.health_bar()
 
         while jouer:
@@ -442,7 +445,10 @@ class Combat():
         
 
 
-
+random_id = random.randint(1,20)
+adv = Pokemon (random_id)
+starter = Pokemon(4)
+starter.set_level(12)
 
 combat = Combat()
 combat.fight()

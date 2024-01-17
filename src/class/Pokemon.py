@@ -165,8 +165,8 @@ class Pokemon:
         self.get_currentAbilities()
 
         self.growUp()
-        print(self.afficherBaseStats())
-        print(self.afficherStats())
+        self.afficherBaseStats()
+        self.afficherStats()
 
     def updateStats(self):
         self.__stats = self.__baseStats
@@ -177,12 +177,9 @@ class Pokemon:
             
         else:
             growth = self.get_growth()
-            print(f"self.__growth: {self.__growth}")
             growth = self.get_growth()
-            print(f"--self.__stats before growth: {self.__stats}")
             for stat, value in growth.items():
-                self.__stats[stat] = self.__stats[stat] + value * (self.__level - 1)
-            print(f"--self.__stats after growth: {self.__stats}")
+                self.__stats[stat] = self.__baseStats[stat] + value * (self.__level - 1)
 
         # Prend les valeurs de l'évolution id name stat etc...
     def evolue (self):
@@ -325,16 +322,21 @@ class Pokemon:
 
 starter = Pokemon (4)
 starter.set_level(10)
-
+print("ici",starter.get_stats())
+herb = Pokemon(4)
+herb.set_xp(900)
+"""
 print("ici",starter.get_4abilities())
 """
-
+"""
 print(starter.get_ability(0))
 print(starter.get_ability(1))
 print(starter.get_ability(2))
-print(starter.get_ability(4))"""
+print(starter.get_ability(4))
 
-"""    print(starter.get_baseStats())
+"""
+"""
+    print(starter.get_baseStats())
     print(starter.get_pokemonData())
     print(starter.get_abilitiesFromPokemonData())
     starter.set_xp(100)

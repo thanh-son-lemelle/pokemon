@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "Bulbizarre",
-      "type": "Plante/Poison",
+      "type1": "Plante",
+      "type2": "Poison",
       "stats": {
         "hp": 45,
         "attack": 49,
@@ -29,7 +30,8 @@
     {
       "id": 2,
       "name": "Herbizarre",
-      "type": "Plante/Poison",
+      "type1": "Plante",
+      "type2": "Poison",
       "stats": {
         "hp": 60,
         "attack": 62,
@@ -56,7 +58,8 @@
     {
       "id": 3,
       "name": "Florizarre",
-      "type": "Plante/Poison",
+      "type1": "Plante",
+      "type2": "Poison",
       "stats": {
         "hp": 80,
         "attack": 82,
@@ -80,7 +83,8 @@
     {
       "id": 4,
       "name": "Salamèche",
-      "type": "Feu",
+      "type1": "Feu",
+      "type2": "None",
       "stats": {
         "hp": 39,
         "attack": 52,
@@ -106,7 +110,8 @@
     {
       "id": 5,
       "name": "Reptincel",
-      "type": "Feu",
+      "type1": "Feu",
+      "type2": "None",
       "stats": {
         "hp": 58,
         "attack": 64,
@@ -133,7 +138,8 @@
     {
       "id": 6,
       "name": "Dracaufeu",
-      "type": "Feu/Vol",
+      "type1": "Feu",
+      "type2": "Vol",
       "stats": {
         "hp": 78,
         "attack": 84,
@@ -157,7 +163,8 @@
     {
       "id": 7,
       "name": "Carapuce",
-      "type": "Eau",
+      "type1": "Eau",
+      "type2": "None",
       "stats": {
         "hp": 44,
         "attack": 48,
@@ -183,7 +190,8 @@
     {
       "id": 8,
       "name": "Carabaffe",
-      "type": "Eau",
+      "type1": "Eau",
+      "type2": "None",
       "stats": {
         "hp": 59,
         "attack": 63,
@@ -210,7 +218,8 @@
     {
       "id": 9,
       "name": "Tortank",
-      "type": "Eau",
+      "type1": "Eau",
+      "type2": "None",
       "stats": {
         "hp": 79,
         "attack": 83,
@@ -234,7 +243,8 @@
     {
       "id": 10,
       "name": "Chenipan",
-      "type": "Insecte",
+      "type1": "Insecte",
+      "type2": "None",
       "stats": {
         "hp": 45,
         "attack": 30,
@@ -258,7 +268,8 @@
     {
       "id": 11,
       "name": "Chrysacier",
-      "type": "Insecte",
+      "type1": "Insecte",
+      "type2": "None",
       "stats": {
         "hp": 50,
         "attack": 20,
@@ -282,7 +293,8 @@
     {
       "id": 12,
       "name": "Papilusion",
-      "type": "Insecte/Vol",
+      "type1": "Insecte",
+      "type2": "Vol",
       "stats": {
         "hp": 60,
         "attack": 45,
@@ -305,7 +317,8 @@
     {
       "id": 13,
       "name": "Aspicot",
-      "type": "Insecte/Poison",
+      "type1": "Insecte",
+      "type2": "Poison",
       "stats": {
         "hp": 40,
         "attack": 35,
@@ -329,7 +342,8 @@
     {
       "id": 14,
       "name": "Coconfort",
-      "type": "Insecte/Poison",
+      "type1": "Insecte",
+      "type2": "Poison",
       "stats": {
         "hp": 45,
         "attack": 25,
@@ -353,7 +367,8 @@
     {
       "id": 15,
       "name": "Dardargnan",
-      "type": "Insecte/Poison",
+      "type1": "Insecte",
+      "type2": "Poison",
       "stats": {
         "hp": 65,
         "attack": 80,
@@ -377,7 +392,8 @@
     {
       "id": 16,
       "name": "Roucool",
-      "type": "Normal/Vol",
+      "type1": "Normal",
+      "type2": "Vol",
       "stats": {
         "hp": 40,
         "attack": 45,
@@ -402,8 +418,36 @@
     },
     {
       "id": 17,
+      "name": "Roucool",
+      "type1": "Normal",
+      "type2": "Vol",
+      "stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 40,
+        "speed": 56
+      },
+      "evolution": {
+        "level": 18,
+        "to": 18
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 3
+      },
+      "abilities": [
+        {"level": 1, "name": "Jet de Sable"},
+        {"level": 5, "name": "Rugissement"},
+        {"level": 12, "name": "Picpic"}
+      ]
+    },
+    {
+      "id": 18,
       "name": "Roucoups",
-      "type": "Normal/Vol",
+      "type1": "Normal",
+      "type2": "Vol",
       "stats": {
         "hp": 63,
         "attack": 60,
@@ -424,37 +468,14 @@
         {"level": 1, "name": "Jet de Sable"},
         {"level": 5, "name": "Rugissement"},
         {"level": 12, "name": "Picpic"},
-        {"level": 25, "name": "Atterissage"}
-      ]
-    },
-    {
-      "id": 18,
-      "name": "Roucarnage",
-      "type": "Normal/Vol",
-      "stats": {
-        "hp": 83,
-        "attack": 80,
-        "defense": 75,
-        "speed": 101
-      },
-      "growth": {
-        "hp": 5,
-        "attack": 5,
-        "defense": 5,
-        "speed": 6
-      },
-      "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"},
-        {"level": 25, "name": "Atterissage"},
-        {"level": 45, "name": "Voler"}
+        {"level": 25, "name": "Atterrissage"}
       ]
     },
     {
       "id": 19,
       "name": "Rattata",
-      "type": "Normal",
+      "type1": "Normal",
+      "type2": "None",
       "stats": {
         "hp": 30,
         "attack": 56,
@@ -480,7 +501,8 @@
     {
       "id": 20,
       "name": "Rattatac",
-      "type": "Normal",
+      "type1": "Normal",
+      "type2": "None",
       "stats": {
         "hp": 55,
         "attack": 81,

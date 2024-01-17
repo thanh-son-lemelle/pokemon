@@ -9,8 +9,10 @@ class Pokemon:
         self.__id = id
         self.__pokemonData = None
         self.__name = None
-        self.__type = None
+        self.__type1 = None
+        self.__type2 = None
         self.__stats = None
+        self.__baseStats = None
         self.__growth = None
         self.__evolution = None
         self.__level = 1
@@ -19,7 +21,7 @@ class Pokemon:
         self.__imageFace = None
         self.__imageBack = None
         self.loadData()
-        self.__baseStats = copy.deepcopy(self.__pokemonData.get("stats"))
+        
         self.__abilities = self.get_currentAbilities()
 
 #============================================================================
@@ -31,8 +33,11 @@ class Pokemon:
     def get_nom(self):
         return self.__name
 
-    def get_type(self):
-        return self.__type
+    def get_type1(self):
+        return self.__type1
+    
+    def get_type2(self):
+        return self.__type2
     
     def get_baseStats(self):
         return self.__baseStats
@@ -95,11 +100,11 @@ class Pokemon:
         # Si les données ont été trouvées, on les charge
         if self.__pokemonData:
             self.__name = self.__pokemonData.get("name")
-            self.__type = self.__pokemonData.get("type")
+            self.__type1 = self.__pokemonData.get("type1")
+            self.__type2 = self.__pokemonData.get("type2")
             self.__baseStats = self.__pokemonData.get("stats")
             if self.__stats is None:
-                self.__stats = self.__baseStats
-            self.__growth = self.__pokemonData.get("growth")
+                self.growUp()
             self.__evolution = self.__pokemonData.get("evolution")
             # Chargement des images           
             self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{self.__id}.gif")
@@ -108,7 +113,7 @@ class Pokemon:
     # Test de l'affichage des stats
     def afficherBaseStats(self):
             
-            print(f"#{self.__id} {self.__name} - Type: {self.__type}")
+            print(f"#{self.__id} {self.__name} - Type: {self.__type1, self.__type2}")
             print("Stats de base:")
             for baseStat, value in self.__baseStats.items():
                 print(f"  {baseStat.capitalize()}: {value}")
@@ -121,7 +126,7 @@ class Pokemon:
     def afficherStats(self):
         if self.__stats:
 
-            print(f"#{self.__id} {self.__name} - Type: {self.__type}")
+            print(f"#{self.__id} {self.__name} - Type: {self.__type1, self.__type2}")
             print("Stats actuelles:/niveau:")
             for stat, value in self.__stats.items():
                 print(f"  {stat.capitalize()}: {value}")
@@ -165,24 +170,18 @@ class Pokemon:
         self.get_currentAbilities()
 
         self.growUp()
-        print(self.afficherBaseStats())
-        print(self.afficherStats())
-
+        self.afficherBaseStats()
+        self.afficherStats()
     def updateStats(self):
-        self.__stats = self.__baseStats
+        self.__stats = self.__baseStats.copy()
 
     def growUp(self):
-        if self.__stats is None:
             self.updateStats()
-            
-        else:
-            growth = self.get_growth()
-            print(f"self.__growth: {self.__growth}")
-            growth = self.get_growth()
-            print(f"--self.__stats before growth: {self.__stats}")
-            for stat, value in growth.items():
-                self.__stats[stat] = self.__stats[stat] + value * (self.__level - 1)
-            print(f"--self.__stats after growth: {self.__stats}")
+            for stat in self.__baseStats.keys():
+                self.__stats[stat] = int(((2 * self.__baseStats[stat] * self.__level)/100) + self.__level +10)
+  
+
+
 
         # Prend les valeurs de l'évolution id name stat etc...
     def evolue (self):
@@ -262,6 +261,7 @@ class Pokemon:
         return self.__abilities
     
     def get_currentAbilities(self):
+        print("test") # a revoir me ressor deux listes vide
         self.get_AbilitiesByLevel()
         if len(self.get_AbilitiesByLevel()) > 4:
             # L'utilisateur choisi les 4 abilities qu'il veut garder
@@ -324,28 +324,10 @@ class Pokemon:
 # Test de la class
 
 starter = Pokemon (4)
-starter.set_level(10)
+starter.set_level(50)
+print(starter.get_4abilities())
 
-print("ici",starter.get_4abilities())
-"""
 
-print(starter.get_ability(0))
-print(starter.get_ability(1))
-print(starter.get_ability(2))
-print(starter.get_ability(4))"""
-
-"""    print(starter.get_baseStats())
-    print(starter.get_pokemonData())
-    print(starter.get_abilitiesFromPokemonData())
-    starter.set_xp(100)
-    starter.set_xp(1500)
-    starter.set_xp(2000)
-    print(starter.get_AbilitiesByLevel())
-    print("ici",starter.get_currentAbilities())
-    print(starter.get_ability_by_name("Charge"))   
-    print(starter.get_abilityStats("Charge"))
-    print(starter.get_abilityAccuracyByName("Charge"))
-"""
 pygame.init()
 
 largeur_fenetre = 800
@@ -363,6 +345,10 @@ imageModifier = pygame.transform.scale(image, (200, 200))
 # Obtenir la position de l'image dans la fenêtre
 image_rect = image.get_rect()
 image_rect.center = (largeur_fenetre // 2, hauteur_fenetre // 2)
+image_rect2 = image.get_rect()
+image_rect2.center = (largeur_fenetre // 1.2, hauteur_fenetre // 1.2)
+image_rect3 = image.get_rect()
+image_rect3.center = (largeur_fenetre // 1.5, hauteur_fenetre // 1.2)
 
 # Boucle principale
 while True:
@@ -375,8 +361,11 @@ while True:
     fenetre.fill((0, 0, 0))  # Fond blanc
 
     # Dessiner l'image
+    fenetre.blit(starter.get_imageFace(), image_rect)
     fenetre.blit(starter.get_imageBack(), image_rect)
-    fenetre.blit(image, (0, 25))
+    fenetre.blit(starter.get_imageBack(), image_rect2)
+    fenetre.blit(starter.get_imageFace(), image_rect3)
+    """fenetre.blit(image, (0, 25))"""
 
     # Mettre à jour l'affichage
     pygame.display.flip()

@@ -183,28 +183,6 @@ class Combat():
 
                 if  ATT4.checkForInput(MENU_MOUSE_POS):
                     press = False
- 
-
-
-
-
-                    
-
-
-
-
-                ##if ATT2.checkForInput(MENU_MOUSE_POS):
-
-                
-                    
-
-                #if ATT3.checkForInput(MENU_MOUSE_POS):
-
-
-                #if ATT4.checkForInput(MENU_MOUSE_POS):
-
-                    
-
 
                 pygame.display.flip()
 

@@ -210,7 +210,8 @@
         "Psy" :2,
         "Roche" : 1,
         "Sol" : 1,
-        "Spectre" : 0.5,        "Vol" : 0.5,
+        "Spectre" : 0.5,        
+        "Vol" : 0.5,
         "None" : 1
 
     },

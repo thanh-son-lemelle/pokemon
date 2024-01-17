@@ -160,8 +160,9 @@ class Combat():
                         if self.hp_adv < 0:
                             self.hp_adv = 0
                             print(self.hp_adv)
-                            self.Victoire()
                             self.lvl_up()
+                            self.Victoire()
+                            
                         self.health_bar()
                         self.__attaque = starter.get_4abilities()[3]
                         #self.multiplicateur_type()

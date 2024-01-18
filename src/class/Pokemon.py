@@ -320,7 +320,7 @@ class Pokemon:
         return image
 
     
-
+"""
 # Test de la class
 
 starter = Pokemon (4)
@@ -365,7 +365,7 @@ while True:
     fenetre.blit(starter.get_imageBack(), image_rect)
     fenetre.blit(starter.get_imageBack(), image_rect2)
     fenetre.blit(starter.get_imageFace(), image_rect3)
-    """fenetre.blit(image, (0, 25))"""
+    fenetre.blit(image, (0, 25))
 
     # Mettre à jour l'affichage
     pygame.display.flip()
@@ -373,3 +373,5 @@ while True:
 # Quitter Pygame
 pygame.quit()
 sys.exit()
+
+"""

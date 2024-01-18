@@ -92,17 +92,17 @@ class Pokedex():
             self.SCREEN.blit(self.pokdx, (self.WIDTH // 3.5, 0))
             self.SCREEN.blit(self.__descriptif, (330, 370))
 
-            # Render and position the name
+
             name_rendered = self.police_larger.render(pokedex.recupereNomById(self.__currentPos), True, "black")
             self.SCREEN.blit(name_rendered, (350, 120))
 
-            # Render and position the description with line breaks
+            
             description_lines = pokedex.recupereDescriptionById(self.__currentPos).split('\n')
             y_position = 400
             for line in description_lines:
                 description_rendered = self.police_small.render(line, True, "black")
                 self.SCREEN.blit(description_rendered, (330, y_position))
-                y_position += description_rendered.get_rect().height  # Move to the next line
+                y_position += description_rendered.get_rect().height 
 
             self.SCREEN.blit(self.__type, (330, 520))
             self.SCREEN.blit(self.__stats, (420, 570))

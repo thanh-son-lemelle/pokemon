@@ -6,6 +6,7 @@ from pygame.locals import *
 import random
 from Pokemon import *
 import json
+import time
 
 class Combat():
 
@@ -42,6 +43,8 @@ class Combat():
         self.police_moyen = pygame.font.Font("font\Pokemon Classic.ttf", 20)
         self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
         self.win = self.police_moyen.render("Victoire : Appuiyez sur le clavier pour quitter",True,"white")
+
+        self.rater = self.police_moyen.render("L'action a échoué",True,"white")
         
 
 
@@ -105,67 +108,28 @@ class Combat():
 
                 if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
                     press = True
-                    '''self.hp_adv -= 30
-                    print(self.hp_adv)
-                    
-                    self.ratio = self.hp / self.max_hp
-                    self.ratio_adv = self.hp_adv / self.max_hp_adv
-                    if self.hp_adv < 0:
-                        self.hp_adv = 0
-                        print(self.hp_adv)
-                    self.health_bar()'''
                     self.__attaque = starter.get_4abilities()[0]
-                    #self.multiplicateur_type()
+                    self.multiplicateur_type()
 
 
                 if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
-                        '''self.hp_adv -= 30
-                        print(self.hp_adv)
-                        
-                        self.ratio = self.hp / self.max_hp
-                        self.ratio_adv = self.hp_adv / self.max_hp_adv
-                        if self.hp_adv < 0:
-                            self.hp_adv = 0
-                            print(self.hp_adv)
-                        self.health_bar()'''
                         self.__attaque = starter.get_4abilities()[1]
-                        #self.multiplicateur_type()
+                        self.multiplicateur_type()
 
 
 
                 if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
-                        '''self.hp_adv -= 30
-                        print(self.hp_adv)
-                        
-                        self.ratio = self.hp / self.max_hp
-                        self.ratio_adv = self.hp_adv / self.max_hp_adv
-                        if self.hp_adv < 0:
-                            self.hp_adv = 0
-                            print(self.hp_adv)
-                        self.health_bar()'''
                         self.__attaque = starter.get_4abilities()[2]
-                        #self.multiplicateur_type()
+                        self.multiplicateur_type()
 
 
 
                 if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
-                        self.hp_adv -= 30
-                        print(self.hp_adv)
-                        
-                        self.ratio = self.hp / self.max_hp
-                        self.ratio_adv = self.hp_adv / self.max_hp_adv
-                        if self.hp_adv < 0:
-                            self.hp_adv = 0
-                            print(self.hp_adv)
-                            self.lvl_up()
-                            self.Victoire()
-                            
-                        self.health_bar()
                         self.__attaque = starter.get_4abilities()[3]
-                        #self.multiplicateur_type()
+                        self.multiplicateur_type()
                     
 
 
@@ -283,33 +247,52 @@ class Combat():
 
             
 
-    '''import random #gere le taux de reussite des attaques (à adapter)
 
-        
-
-        if nombre_aleatoire <= probabilite_reussite:
-            L'action a réussi
-        else:
-            L'action a échoué'''
 
 
     def multiplicateur_type(self):
+
+        size_capa = (1000,200)
+        capa = pygame.image.load("images\\background\combat\panel.png")
+        capa = pygame.transform.scale(capa, size_capa)
+
 
         probabilite_reussite = starter.get_abilityAccuracyByName(self.__attaque)
         nombre_aleatoire = random.uniform(0, 100)
 
         if probabilite_reussite >= nombre_aleatoire:
 
-            if self.__attaque == "physique":
-                degats = int((((((starter.get_level() * 0.4 + 2) * starter.get_statAttack() * starter.get_abilityAccuracyByName(self.__attaque)) / adv.get_statDefense()) / 50) + 2))
+            if starter.get_abilityCategoryByName(self.__attaque) == "Physique":
+                degats = int((((((starter.get_level() * 0.4 + 2) * starter.get_statAttack() * starter.get_abilityPowerByName(self.__attaque)) / adv.get_statDefense()) / 50) + 2))
 
-            elif self.__attaque == "special":
-                degats = int((((((starter.get_level() * 0.4 + 2) *starter.get_statAttack() * starter.get_abilityAccuracyByName(self.__attaque)) / adv.get_statDefenseSpé()) / 50) + 2))
+            elif starter.get_abilityCategoryByName(self.__attaque) == "Special":
+                degats = int((((((starter.get_level() * 0.4 + 2) *starter.get_statSpecialAttack() * starter.get_abilityPowerByName(self.__attaque)) / adv.get_statSpecialDefense()) / 50) + 2))
 
 
-        with open("data\pokemons\Type.json","r") as f: 
-            file = json.load(f)
-            self.multiplicateur_degat = file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type1()]* file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type2()]
+            with open("data\pokemons\Type.json","r") as f: 
+                file = json.load(f)
+                self.multiplicateur_degat = file[starter.get_abilityPowerByName(self.__attaque)][adv.get_type1()]* file[starter.get_abilityPowerByName(self.__attaque)][adv.get_type2()]
+                self.hp_adv -= degats * self.multiplicateur_degat
+                self.health_bar()
+                
+                if self.hp_adv < 0:
+                                self.hp_adv = 0
+                                self.lvl_up()
+                                self.health_bar()
+
+        else:
+            self.__SCREEN.blit(self.rater,(self.__WIDTH //2,self.__HEIGHT//2))
+            time.sleep(1)
+            self.__SCREEN.blit(capa, (0, 500))
+            self.__SCREEN.blit(self.__zone, (0, 0))
+            self.__SCREEN.blit(starter.get_imageBack(),(150,290))
+            self.__SCREEN.blit(self.__nom, (30, 10))
+            self.__SCREEN.blit(self.__adversaire, (700, 10))
+            self.__SCREEN.blit(adv.get_imageFace(),(650,120))
+            self.health_bar()
+
+                    
+
 
         
         

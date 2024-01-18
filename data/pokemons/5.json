@@ -1,0 +1,220 @@
+{
+    "alt-versions": [],
+    "nom": "Reptincel",
+    "Reptincel": {
+        "donnees_pokedex": {
+            "Numero National": "005",
+            "Type": [
+                "Feu"
+            ],
+            "Espece": "Pokemon Flamme",
+            "Taille": "1.1 m (3'07\")",
+            "Poids": "19.0 kg (41.9 livres)",
+            "Capacites": {
+                "Brasier": {
+                    "lien": "/capacite/brasier",
+                    "effet": "Augmente la puissance des attaques de type Feu en cas de besoin.",
+                    "cache": false
+                },
+                "Force Soleil": {
+                    "lien": "/capacite/solar-power",
+                    "effet": "Sous le soleil, l'Attaque Spéciale augmente mais les PV diminuent.",
+                    "cache": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "1 Att. Spe., 1 Vitesse",
+            "Taux Capture": "45",
+            "Amitie de Base": "50",
+            "Exp. de Base": "142",
+            "Taux de Croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "87.5% mâle, 12.5% femelle"
+        },
+        "stats_de_base": {
+            "PV": {
+                "Base": "58",
+                "Min": "226",
+                "Max": "320"
+            },
+            "Attaque": {
+                "Base": "64",
+                "Min": "119",
+                "Max": "249"
+            },
+            "Defense": {
+                "Base": "58",
+                "Min": "108",
+                "Max": "236"
+            },
+            "Att. Spe.": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Def. Spe.": {
+                "Base": "65",
+                "Min": "121",
+                "Max": "251"
+            },
+            "Vitesse": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Total": "405"
+        },
+        "stats_de_defense": {
+            "par_defaut": {
+                "Feu": "peu efficace",
+                "Eau": "super-efficace",
+                "Plante": "peu efficace",
+                "Glace": "peu efficace",
+                "Sol": "super-efficace",
+                "Insecte": "peu efficace",
+                "Roche": "super-efficace",
+                "Acier": "peu efficace",
+                "Fee": "peu efficace"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Salamèche",
+                    "numeroNational": "#0004",
+                    "type": [
+                        "Feu"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Reptincel",
+                    "numeroNational": "#0005",
+                    "type": [
+                        "Feu"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 16)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Reptincel",
+                    "numeroNational": "#0005",
+                    "type": [
+                        "Feu"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Dracaufeu",
+                    "numeroNational": "#0006",
+                    "type": [
+                        "Feu",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 36)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "mouvements": {
+            "Flammèche": "1",
+            "Groz'Yeux": "1",
+            "Griffe": "1",
+            "Buée Noire": "1",
+            "Dracosouffle": "12",
+            "Crocs Feu": "19",
+            "Tranche": "24",
+            "Lance-Flamme": "30",
+            "Grimace": "37",
+            "Feu d'Enfer": "48",
+            "Boutefeu": "54"
+        },
+        "oeuf": {
+            "Pouvoir Antique": null,
+            "Grimace": null,
+            "Morsure": null,
+            "Coupe": null,
+            "Dracocharge": null,
+            "Queue de Fer": null,
+            "Draco-Queue": null,
+            "Tranche-Nuit": null
+        },
+        "ct": {
+            "Bélier": "01",
+            "Grimace": "06",
+            "Protection": "07",
+            "Crocs Feu": "08",
+            "Tourbi-Sable": "24",
+            "Facade": "25",
+            "Météores": "32",
+            "Tomberoche": "36",
+            "Nitrocharge": "38",
+            "Dégommage": "43",
+            "Queue de Dragon": "44",
+            "Coup d'Boule": "47",
+            "Abri": "49",
+            "Tunnel": "55",
+            "Mania": "57",
+            "Casse-Brique": "58",
+            "Trancheombre": "61",
+            "Plaquage": "66",
+            "Poing de Feu": "67",
+            "Poing-Éclair": "68",
+            "Blabla Dodo": "70",
+            "Dracogriffe": "78",
+            "Repos": "85",
+            "Éboulement": "86",
+            "Danse-Lames": "88",
+            "Danse Draco": "100",
+            "Clonage": "103",
+            "Feu Follet": "107",
+            "Mâchouille": "108",
+            "Dracochoc": "115",
+            "Canicule": "118",
+            "Lance-Flammes": "125",
+            "Coup d'Main": "130",
+            "Déflagration": "141",
+            "Aire d'Eau": "144",
+            "Draco Ascendant": "156",
+            "Surchauffe": "157",
+            "Boutefeu": "165",
+            "Téra Explosion": "171"
+        }
+    },
+    "descriptions": {
+        "Reptincel": [
+            "Quand il agite sa queue enflammée, il élève la température à des niveaux insupportables.",
+            "Les combats difficiles peuvent exciter ce Pokémon. Quand il est excité, il peut souffler des flammes blanc-bleu.",
+            "Il a un tempérament très colérique, alors il cherche constamment des adversaires. Il se calme seulement quand il gagne.",
+            "Il a une nature barbare. En combat, il agite sa queue enflammée et lacère avec des griffes tranchantes.",
+            "S'il s'agite pendant le combat, il crache des flammes intenses, incinérant son environnement.",
+            "Reptincel détruit impitoyablement ses ennemis avec ses griffes acérées. S'il rencontre un adversaire puissant, il devient agressif. Dans cet état excité, la flamme au bout de sa queue flotte avec une couleur blanc-bleu.",
+            "Il fouette sa queue pour abattre son ennemi. Il déchire ensuite le rival tombé avec ses griffes acérées.",
+            "Quand il agite sa queue enflammée, il élève la température de l'air à des niveaux insupportables.",
+            "Sans pitié, ses griffes tranchantes détruisent les ennemis. S'il rencontre un ennemi fort, il devient agité, et la flamme de sa queue flotte avec une couleur blanc-bleu.",
+            "Dans les montagnes rocheuses où vivent les Reptincel, leurs queues enflammées brillent la nuit comme des étoiles.",
+            "Il a une nature très colérique, alors il cherche constamment des adversaires. Il se calme seulement quand il gagne.",
+            "Il a une nature barbare. En combat, il agite sa queue enflammée et lacère avec des griffes tranchantes.",
+            "Dans les montagnes rocheuses où vivent les Reptincel, leurs queues enflammées brillent la nuit comme des étoiles.",
+            "Il fouette sa queue pour abattre son ennemi. Il déchire ensuite le rival tombé avec ses griffes acérées.",
+            "Quand il agite sa queue enflammée, il élève la température de l'air à des niveaux insupportables.",
+            "Reptincel détruit impitoyablement ses ennemis avec ses griffes acérées. S'il rencontre un adversaire puissant, il devient agressif. Dans cet état excité, la flamme au bout de sa queue flotte avec une couleur blanc-bleu.",
+            "Les combats difficiles peuvent exciter ce Pokémon. Quand excité, il peut souffler des flammes blanc-bleu.",
+            "Il a une nature barbare. En combat, il agite sa queue enflammée et lacère avec des griffes tranchantes.",
+            "S'il s'agite pendant le combat, il crache des flammes intenses, incinérant son environnement.",
+            "Dans les montagnes rocheuses où vivent les Reptincel, leurs queues enflammées brillent la nuit comme des étoiles."
+        ]
+    },
+    "image_discord": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786627627372595/5.png",
+    "sprite_discord": "<:P5:1131972112593207387>"
+}

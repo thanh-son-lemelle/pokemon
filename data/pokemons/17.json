@@ -1,0 +1,204 @@
+{
+    "alt-version(s)": [],
+    "nom": "Roucoups",
+    "Roucoups": {
+        "donnees_pokedex": {
+            "Numero National": "0017",
+            "Type": [
+                "Normal",
+                "Vol"
+            ],
+            "Espece": "Pokémon Oiseau",
+            "Taille": "1.1 m (3'07\")",
+            "Poids": "30.0 kg (66.1 lbs)",
+            "Capacites": {
+                "Regard Vif": {
+                    "lien": "/ability/keen-eye",
+                    "effet": "Empêche les autres Pokémon de réduire la précision.",
+                    "cache": false
+                },
+                "Baigne Sable": {
+                    "lien": "/ability/tangled-feet",
+                    "effet": "Augmente l'esquive si le Pokémon est confus.",
+                    "cache": false
+                },
+                "Cœur de Coq": {
+                    "lien": "/ability/big-pecks",
+                    "effet": "Protège le Pokémon contre les attaques réduisant la Défense.",
+                    "cache": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "2 Vitesse",
+            "Taux de capture": "120",
+            "Amitie de base": "50",
+            "Exp de base": "122",
+            "Taux de croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "50% mâle, 50% femelle"
+        },
+        "stats_base": {
+            "PV": {
+                "Base": "63",
+                "Min": "236",
+                "Max": "330"
+            },
+            "Attaque": {
+                "Base": "60",
+                "Min": "112",
+                "Max": "240"
+            },
+            "Defense": {
+                "Base": "55",
+                "Min": "103",
+                "Max": "229"
+            },
+            "Attaque Speciale": {
+                "Base": "50",
+                "Min": "94",
+                "Max": "218"
+            },
+            "Defense Speciale": {
+                "Base": "50",
+                "Min": "94",
+                "Max": "218"
+            },
+            "Vitesse": {
+                "Base": "71",
+                "Min": "132",
+                "Max": "265"
+            },
+            "Total": "349"
+        },
+        "stats_defense": {
+            "default": {
+                "Electrique": "super efficace",
+                "Plante": "peu efficace",
+                "Glace": "super efficace",
+                "Sol": "pas d'effet",
+                "Insecte": "peu efficace",
+                "Roche": "super efficace",
+                "Spectre": "pas d'effet"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Roucool",
+                    "numeroNational": "#0016",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Roucoups",
+                    "numeroNational": "#0017",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 18)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Roucoups",
+                    "numeroNational": "#0017",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Roucarnage",
+                    "numeroNational": "#0018",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 36)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "attaques": {
+            "Cyclone": "17",
+            "Jet de Sable": "5",
+            "Charge": "1",
+            "Coup Rapide": "13",
+            "Tornade": "22",
+            "Ouragan": "27",
+            "Danse Plume": "32",
+            "Hâte": "37",
+            "Cru-Aile": "42",
+            "Rôost": "47",
+            "Vent Arrière": "52",
+            "Aéropiqué": "57",
+            "Tranch'Air": "62"
+        },
+        "oeuf": {
+            "Tranch'Air": null,
+            "Vent Violent": null,
+            "Aile d'Acier": null,
+            "Vacarme": null
+        },
+        "ct": {
+            "Hâte": "10",
+            "Jour de Paye": "11",
+            "Protection": "17",
+            "Danse Pluie": "18",
+            "Clonage": "32",
+            "Aéropiqué": "40",
+            "Façade": "42",
+            "Repos": "44",
+            "Attraction": "45",
+            "Larcin": "46",
+            "Aile d'Acier": "47",
+            "Rôost": "51",
+            "Aurore": "58",
+            "Clonage": "82",
+            "Provoc": "87",
+            "Plaquage": "88",
+            "U-turn": "89",
+            "Substitut": "90",
+            "Vol": "94",
+            "Anti-Brume": "97"
+        }
+    },
+    "descriptions": {
+        "Roucoups": [
+            "Très protecteur de sa vaste zone territoriale, ce Pokémon picorera férocement tout intrus.",
+            "Ce Pokémon est plein de vitalité. Il vole constamment autour de son vaste territoire à la recherche de proies.",
+            "Il a une vision exceptionnelle. Peu importe à quelle altitude il vole, il est capable de distinguer les mouvements de sa proie.",
+            "Il immobilise sa proie avec des griffes bien développées, puis transporte la proie sur plus de 60 miles jusqu'à son nid.",
+            "Il vole lentement en cercle, tout en restant vigilant à la recherche de proies.",
+            "ROUCOUPS revendique une grande zone comme son propre territoire. Ce Pokémon vole autour, patrouillant dans son espace de vie. Si son territoire est violé, il ne montre aucune pitié en punissant sévèrement l'ennemi avec ses griffes acérées.",
+            "Les griffes de ses pieds sont bien développées. Il peut transporter une proie comme un EXEGGCUTE jusqu'à son nid à plus de 60 miles.",
+            "Très protecteur de sa vaste zone territoriale, ce Pokémon picorera férocement tout intrus.",
+            "Ce Pokémon vole autour, patrouillant dans son vaste territoire. Si son espace de vie est violé, il ne montre aucune pitié en punissant sévèrement l'ennemi avec ses griffes acérées.",
+            "Il vole au-dessus de son vaste territoire à la recherche de proies, les abattant avec ses griffes très développées.",
+            "Il a une vision exceptionnelle. Peu importe à quelle altitude il vole, il est capable de distinguer les mouvements de sa proie.",
+            "Il immobilise sa proie avec des griffes bien développées, puis transporte la proie sur plus de 60 miles jusqu'à son nid.",
+            "Il vole au-dessus de son vaste territoire à la recherche de proies, les abattant avec ses griffes très développées.",
+            "Les griffes de ses pieds sont bien développées. Il peut transporter une proie comme un Exeggcute jusqu'à son nid à plus de 60 miles.",
+            "Très protecteur de sa vaste zone territoriale, ce Pokémon picorera férocement tout intrus.",
+            "Roucoups revendique une grande zone comme son propre territoire. Ce Pokémon vole autour, patrouillant dans son espace de vie. Si son territoire est violé, il ne montre aucune pitié en punissant sévèrement l'ennemi avec ses griffes acérées.",
+            "Ce Pokémon est plein de vitalité. Il vole constamment autour de son vaste territoire à la recherche de proies.",
+            "Il vole au-dessus de son vaste territoire à la recherche de proies, les abattant avec ses griffes très développées."
+        ]
+    },
+    "discord_image": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786721105809498/17.png",
+    "discord_sprite": "<:P17:1131972639716560987>"
+}

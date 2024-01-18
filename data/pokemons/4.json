@@ -1,0 +1,223 @@
+{
+    "alt-version(s)": [],
+    "nome": "Salamèche",
+    "Salamèche": {
+        "donnees_pokedex": {
+            "numeroNational": "0004",
+            "Type": [
+                "Feu"
+            ],
+            "Espece": "Pokémon lézard",
+            "Taille": "0,6 m (2'00\")",
+            "Poids": "8,5 kg (18,7 livres)",
+            "Capacites": {
+                "Brasier": {
+                    "href": "/ability/blaze",
+                    "effect": "Augmente la puissance des attaques de type Feu en cas de besoin.",
+                    "hidden": false
+                },
+                "Puissance Solaire": {
+                    "href": "/ability/solar-power",
+                    "effect": "Sous le soleil, l'Atq Sp. augmente mais les PV diminuent.",
+                    "hidden": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "1 Vitesse",
+            "Taux de Capture": "45",
+            "Amitié de Base": "50",
+            "Exp. de base": "62",
+            "Taux de Croissance": "Moyen lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "87,5 % mâle, 12,5 % femelle"
+        },
+        "stats_de_base": {
+            "PV": {
+                "Base": "39",
+                "Min": "188",
+                "Max": "282"
+            },
+            "Attaque": {
+                "Base": "52",
+                "Min": "98",
+                "Max": "223"
+            },
+            "Défense": {
+                "Base": "43",
+                "Min": "81",
+                "Max": "203"
+            },
+            "Att. Spe.": {
+                "Base": "60",
+                "Min": "112",
+                "Max": "240"
+            },
+            "Def Spe.": {
+                "Base": "50",
+                "Min": "94",
+                "Max": "218"
+            },
+            "Vitesse": {
+                "Base": "65",
+                "Min": "121",
+                "Max": "251"
+            },
+            "Total": "309"
+        },
+        "stats_defense": {
+            "par_defaut": {
+                "Feu": "peu efficace",
+                "Eau": "super efficace",
+                "Plante": "peu efficace",
+                "Glace": "peu efficace",
+                "Sol": "super efficace",
+                "Insecte": "peu efficace",
+                "Roche": "super efficace",
+                "Acier": "peu efficace",
+                "Fée": "peu efficace"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Salamèche",
+                    "numeroNational": "#0004",
+                    "type": [
+                        "Feu"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Reptincel",
+                    "numeroNational": "#0005",
+                    "type": [
+                        "Feu"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 16)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Reptincel",
+                    "numeroNational": "#0005",
+                    "type": [
+                        "Feu"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Dracaufeu",
+                    "numeroNational": "#0006",
+                    "type": [
+                        "Feu",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 36)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "mouvements": {
+            "Rugissement": "1",
+            "Griffe": "1",
+            "Flammeche": "4",
+            "Brouillard": "8",
+            "Dracosouffle": "12",
+            "Crocs Feu": "17",
+            "Tranche": "20",
+            "Lance-Flammes": "24",
+            "Grimace": "28",
+            "Danse Flamme": "32",
+            "Feu d'Enfer": "36",
+            "Boutefeu": "40"
+        },
+        "oeuf": {
+            "Pouvoir Antique": null,
+            "Cognobidon": null,
+            "Morsure": null,
+            "Riposte": null,
+            "Dracocharge": null,
+            "Queue de Fer": null,
+            "Draco-Queue": null,
+            "Pince-Masse": null
+        },
+        "ct": {
+            "Bélier": "01",
+            "Grimace": "06",
+            "Protection": "07",
+            "Crocs Feu": "08",
+            "Danse Flamme": "24",
+            "Façade": "25",
+            "Queue de Fer": "31",
+            "Vive-Attaque": "32",
+            "Tomberoche": "36",
+            "Nitrocharge": "38",
+            "Fléau": "43",
+            "Queue de Dragon": "44",
+            "Ténacité": "47",
+            "Zénith": "49",
+            "Tunnel": "55",
+            "Faux-Chage": "57",
+            "Casse-Brique": "58",
+            "Trancheombre": "61",
+            "Plaquage": "66",
+            "Poing de Feu": "67",
+            "Poing-Éclair": "68",
+            "Blabla Dodo": "70",
+            "Dracogriffe": "78",
+            "Repos": "85",
+            "Éboulement": "86",
+            "Danse-Lames": "88",
+            "Danse Draco": "100",
+            "Clonage": "103",
+            "Feu Follet": "107",
+            "Martobois": "108",
+            "Dracochoc": "115",
+            "Canicule": "118",
+            "Lance-Flammes": "125",
+            "Coup d'Main": "130",
+            "Déflagration": "141",
+            "Lance Soleil": "144",
+            "Dracolère": "156",
+            "Surchauffe": "157",
+            "Exploforce": "158",
+            "Boutefeu": "165",
+            "Téra Explosion": "171"
+        }
+    },
+    "desciptions": {
+        "Salamèche": [
+            "Préfère évidemment les endroits chauds. Quand il pleut, de la vapeur est censée jaillir de la pointe de sa queue.",
+            "La flamme à la pointe de sa queue émet un son en brûlant. On ne peut l'entendre que dans des endroits calmes.",
+            "La flamme de sa queue montre la force de sa vitalité. Si elle est faible, la flamme brûle aussi faiblement.",
+            "La flamme de sa queue indique la force de la vitalité de Salamèche. Si elle est en bonne santé, la flamme brûle brillamment.",
+            "Si elle est en bonne santé, la flamme à la pointe de sa queue brûlera vigoureusement, même si elle est un peu mouillée.",
+            "La flamme qui brûle à la pointe de sa queue est une indication de ses émotions. La flamme vacille quand Salamèche s'amuse. Si le Pokémon devient furieux, la flamme brûle violemment.",
+            "Dès sa naissance, une flamme brûle à la pointe de sa queue. Sa vie se terminerait si la flamme s'éteignait.",
+            "Il a une préférence pour les choses chaudes. Quand il pleut, de la vapeur est censée jaillir de la pointe de sa queue.",
+            "La flamme qui brûle à la pointe de sa queue est une indication de ses émotions. La flamme vacille quand Salamèche est heureux et flamboie quand il est furieux.",
+            "Le feu à la pointe de sa queue est une mesure de sa vie. Si Salamèche est en bonne santé, sa queue brûle intensément.",
+            "La flamme de sa queue montre la force de sa vitalité. Si elle est faible, la flamme brûle aussi faiblement.",
+            "La flamme de sa queue indique la force de la vitalité de Salamèche. Si elle est en bonne santé, la flamme brûle brillamment.",
+            "Le feu à la pointe de sa queue est une mesure de sa vie. Si Salamèche est en bonne santé, sa queue brûle intensément.",
+            "La flamme de sa queue indique la vitalité de Salamèche. Si elle est en bonne santé, la flamme brûle brillamment.",
+            "Dès sa naissance, une flamme brûle à la pointe de sa queue. Sa vie se terminerait si la flamme s'éteignait.",
+            "La flamme qui brûle à la pointe de sa queue est une indication de ses émotions. La flamme vacille quand Salamèche s'amuse. Si le Pokémon devient furieux, la flamme brûle violemment.",
+            "La flamme à la pointe de sa queue émet un son en brûlant. On ne peut l'entendre que dans des endroits calmes.",
+            "Il a une préférence pour les choses chaudes. Quand il pleut, de la vapeur est censée jaillir de la pointe de sa queue.",
+            "Dès sa naissance, une flamme brûle à la pointe de sa queue. Sa vie se terminerait si la flamme s'éteignait.",
+            "Le feu à la pointe de sa queue est une mesure de sa vie. Si le Pokémon est en bonne santé, sa queue brûle intensément."
+        ]
+    },
+    "image_discord": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786620165705788/4.png",
+    "sprite_discord": "<:P4:1131972068729180170>"
+}

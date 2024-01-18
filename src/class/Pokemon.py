@@ -82,6 +82,9 @@ class Pokemon:
                 self.__abilities.append("-")
             
         return self.__abilities[0:4]
+    
+    def get_vu(self):
+        return self.__pokemonData["vu"]
 
 #============================================================================
         # stat de base
@@ -142,10 +145,18 @@ class Pokemon:
     
     def get_statAttack(self):
         return self.__stats["attack"]
+    
     def get_statDefense(self):
         return self.__stats["defense"]
+    
     def get_statSpeed(self):
         return self.__stats["speed"]
+    
+    def get_statSpecialAttack(self):
+        return self.__stats["special-attack"]
+    
+    def get_statSpecialDefense(self):  
+        return self.__stats["special-defense"]
     
 #============================================================================
         # gestion de l'xp, du level up et de l'évolution
@@ -308,6 +319,10 @@ class Pokemon:
     def get_abilityTypeByName(self, name):
         abilityStats = self.get_abilityStats(name)
         return abilityStats["type"] 
+    
+    def get_abilityCategoryByName(self, name):
+        abilityStats = self.get_abilityStats(name)
+        return abilityStats["category"]
 #============================================================================
     # Traitement des images
 #============================================================================

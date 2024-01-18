@@ -1,0 +1,180 @@
+{
+    "alt-versions": [],
+    "nom": "Carabaffe",
+    "Carabaffe": {
+        "donnees_pokedex": {
+            "Numero_national": "0008",
+            "Type": ["Eau"],
+            "Espece": "Pokémon Tortue",
+            "Taille": "1.0 m (3'03\")",
+            "Poids": "22.5 kg (49.6 lbs)",
+            "Capacites": {
+                "Torrent": {
+                    "lien": "/ability/torrent",
+                    "effet": "Renforce les attaques de type Eau en cas de besoin.",
+                    "cachee": false
+                },
+                "Cuvettes": {
+                    "lien": "/ability/rain-dish",
+                    "effet": "Le Pokémon récupère progressivement des PV sous la pluie.",
+                    "cachee": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement_EV": "1 en Défense, 1 en Défense Spéciale",
+            "Taux_capture": "45",
+            "Amitie_base": "50",
+            "Exp_base": "142",
+            "Taux_croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "87,5% mâle, 12,5% femelle"
+        },
+        "stats_base": {
+            "PV": {"Base": "59", "Min": "228", "Max": "322"},
+            "Attaque": {"Base": "63", "Min": "117", "Max": "247"},
+            "Défense": {"Base": "80", "Min": "148", "Max": "284"},
+            "Attaque_Speciale": {"Base": "65", "Min": "121", "Max": "251"},
+            "Défense_Speciale": {"Base": "80", "Min": "148", "Max": "284"},
+            "Vitesse": {"Base": "58", "Min": "108", "Max": "236"},
+            "Total": "405"
+        },
+        "stats_defense": {
+            "defaut": {
+                "Feu": "peu efficace",
+                "Eau": "peu efficace",
+                "Électrik": "super efficace",
+                "Plante": "super efficace",
+                "Glace": "peu efficace",
+                "Acier": "peu efficace"
+            }
+        }
+    },
+    "evolutions": [
+        [
+            {
+                "de": {
+                    "nom": "Carapuce",
+                    "numeroNational": "#0007",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Carabaffe",
+                    "numeroNational": "#0008",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 16)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Carabaffe",
+                    "numeroNational": "#0008",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Tortank",
+                    "numeroNational": "#0009",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 36)",
+                "mue": null
+            }
+        ]
+    ],
+    "attaques_data": {
+        "mouvements": {
+            "Charge": "1",
+            "Groz'Yeux": "1",
+            "Pistolet_à_O": "1",
+            "Retraite": "1",
+            "Tour_Rapide": "9",
+            "Morsure": "12",
+            "Éclat_d'Eau": "15",
+            "Abri": "20",
+            "Danse_Pluie": "25",
+            "Hydroqueue": "30",
+            "Force-Nature": "35",
+            "Garde_de_Fer": "40",
+            "Hydrocanon": "45",
+            "Coud'Bouclier": "50"
+        },
+        "œuf": {
+            "Aqua-Jet": null,
+            "Anneau_Hydro": null,
+            "Aura_Sphère": null,
+            "Coup_Bas": null,
+            "Fléau": null,
+            "Buée_Noire": null,
+            "Brume": null,
+            "Coat_Mirror": null,
+            "Buée": null,
+            "Ocroupi": null,
+            "Gigot": null,
+            "Yawn": null
+        },
+        "CT": {
+            "Poing_Focus": "01",
+            "Éclat_d'Eau": "03",
+            "Grelot_Coque": "07",
+            "Entraînement": "10",
+            "Laser_Glace": "13",
+            "Blizzard": "14",
+            "Abri": "17",
+            "Danse_Pluie": "18",
+            "Queue_de_Fer": "23",
+            "Tunnel": "28",
+            "Casse-Brique": "31",
+            "Clonage": "32",
+            "Tomberoche": "39",
+            "Façade": "42",
+            "Repos": "44",
+            "Attraction": "45",
+            "Ébullition": "49",
+            "Faux-Chage": "54",
+            "Saumure": "55",
+            "Larcin": "56",
+            "Cognobidon": "58",
+            "Dracochoc": "59",
+            "Gyroballe": "74",
+            "Blabla_Dodo": "82",
+            "Provoc": "87",
+            "Substitut": "90",
+            "Surf": "95",
+            "Force": "96",
+            "Éclate-Roc": "98",
+            "Cascade": "99"
+        }
+    },
+    "descriptions": {
+        "Carabaffe": [
+            "Se cache souvent dans l'eau pour traquer les proies imprudentes. Pour nager rapidement, il bouge ses oreilles pour maintenir son équilibre.",
+            "Quand on le touche, ce Pokémon rentre la tête, mais sa queue dépasse encore un peu.",
+            "Il est reconnu comme un symbole de longévité. Si sa carapace a des algues, c'est qu'il est très vieux.",
+            "Il contrôle habilement ses oreilles et sa queue poilue pour maintenir son équilibre en nageant.",
+            "Sa longue queue poilue est un symbole de longévité, le rendant assez populaire parmi les personnes âgées.",
+            "Sa queue est grande et recouverte d'une fourrure dense. La couleur de la queue devient de plus en plus profonde à mesure que Carabaffe vieillit. Les égratignures sur sa carapace sont la preuve de la résistance de ce Pokémon au combat.",
+            "Ce Pokémon est très populaire comme animal de compagnie. Sa queue recouverte de fourrure est un symbole de longévité.",
+            "Il se cache souvent dans l'eau pour traquer les proies imprudentes. Pour nager rapidement, il bouge ses oreilles pour maintenir son équilibre.",
+            "Sa grande queue est recouverte d'une fourrure dense qui devient plus profonde en couleur avec l'âge. Les égratignures sur sa carapace sont la preuve de la robustesse de ce Pokémon au combat.",
+            "On dit qu'il vit 10 000 ans. Sa queue poilue est populaire comme symbole de longévité.",
+            "Il est bien établi comme symbole de longévité. Si sa carapace a des algues, c'est qu'il est très vieux.",
+            "Il contrôle habilement ses oreilles et sa queue poilue pour maintenir son équilibre en nageant.",
+            "On dit qu'il vit 10 000 ans. Sa queue poilue est populaire comme symbole de longévité.",
+            "Quand on le touche, ce Pokémon rentre la tête, mais sa queue dépasse encore un peu.",
+            "On dit qu'il vit 10 000 ans. Sa queue poilue est populaire comme symbole de longévité.",
+            "Sa queue est grande et recouverte d'une fourrure dense. La couleur de la queue devient de plus en plus profonde à mesure que Carabaffe vieillit. Les égratignures sur sa carapace sont la preuve de la résistance de ce Pokémon au combat.",
+            "Quand on le touche sur la tête, ce Pokémon rentre la tête, mais sa queue dépasse encore un peu.",
+            "Il est reconnu comme un symbole de longévité. Si sa carapace a des algues, c'est que Carabaffe est très vieux.",
+            "Il contrôle habilement ses oreilles et sa queue poilue pour maintenir son équilibre en nageant.",
+            "On dit qu'il vit 10 000 ans. Sa queue poilue est populaire comme symbole de longévité."
+        ]
+    },
+    "image_discord": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786650842824745/8.png",
+    "discord_sprite": "<:P8:1131972244608917576>"
+}

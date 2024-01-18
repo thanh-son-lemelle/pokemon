@@ -280,10 +280,10 @@ class Pokemon:
         self.__abilities = self.__abilities[0:4]
         return self.__abilities
     
-    def get_ability(self, index):
+    def get_ability(self, index):   #fonctionnel
         return self.__abilities[index]
     
-    def get_ability_by_name(self, name):
+    def get_ability_by_name(self, name): #fonctionnel
         for ability in self.__abilities:
             if ability == name:
                 return ability
@@ -291,12 +291,12 @@ class Pokemon:
     
     def get_abilityStats(self, name):
         ability = self.get_ability_by_name(name)
-        with open(r"data\abilities\abilities.json", "r") as fichier:
+        with open(r"data\abilities\abilities.json", "r", encoding="utf-8") as fichier:
             abilityStats = json.load(fichier)
         for ability in abilityStats["abilities"]:
             if ability["name"] == name:
                 return ability["stats"]
-            return None
+        return None
     # Renvoie les stats de l'ability à l'index donné vu avec Lyes Hamici pour l'appel de la fonction plus facile à utiliser par la suite
     def get_abilityStatsByIndex(self, index):
         name = self.get_ability(index)
@@ -323,6 +323,10 @@ class Pokemon:
     def get_abilityCategoryByName(self, name):
         abilityStats = self.get_abilityStats(name)
         return abilityStats["category"]
+    
+    def get_abilityStatutChangeByName(self, name):
+        abilityStats = self.get_abilityStats(name)
+        return abilityStats["status_changes"]
 #============================================================================
     # Traitement des images
 #============================================================================
@@ -337,10 +341,26 @@ class Pokemon:
     
 
 # Test de la class
-
+"""
 starter = Pokemon (4)
 starter.set_level(50)
 print(starter.get_4abilities())
+print(starter.get_abilityStatsByIndex(0)) #marche pas
+print(starter.get_abilities())
+print(starter.get_abilityStats("Poudre Toxik")) #marche pas
+print(starter.get_AbilitiesByLevel())
+print(starter.get_ability_by_name("Poudre Toxik"))
+print(starter.get_abilityAccuracyByName("Poudre Toxik"))
+print(starter.get_abilityCategoryByName("Poudre Toxik"))
+print(starter.get_abilityPowerByName("Poudre Toxik"))
+print(starter.get_abilityTypeByName("Poudre Toxik"))
+print(starter.get_abilityStats("Poudre Toxik"))
+print(starter.get_abilityStatutChangeByName("Poudre Toxik")["turns"])
+print(starter.get_abilityStatutChangeByName("Poudre Toxik"))
+
+print(starter.get_ability(0))
+print(starter.get_pokemonData())
+
 
 
 pygame.init()
@@ -380,7 +400,7 @@ while True:
     fenetre.blit(starter.get_imageBack(), image_rect)
     fenetre.blit(starter.get_imageBack(), image_rect2)
     fenetre.blit(starter.get_imageFace(), image_rect3)
-    """fenetre.blit(image, (0, 25))"""
+    fenetre.blit(image, (0, 25))
 
     # Mettre à jour l'affichage
     pygame.display.flip()
@@ -388,3 +408,4 @@ while True:
 # Quitter Pygame
 pygame.quit()
 sys.exit()
+"""

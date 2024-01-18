@@ -207,15 +207,7 @@ class Combat():
 
 
 
-        '''import random #gere le taux de reussite des attaques (à adapter)
-
-        probabilite_reussite = starter.get_press
-        nombre_aleatoire = random.uniform(0, 100)
-
-        if nombre_aleatoire <= probabilite_reussite:
-            L'action a réussi
-        else:
-            L'action a échoué'''
+        
                    
 
 
@@ -259,6 +251,8 @@ class Combat():
 
         running = True
 
+        self.fight()
+
         while running:
 
             for event in pygame.event.get():
@@ -271,30 +265,51 @@ class Combat():
 
 
                 if event.type == pygame.KEYDOWN:
-
                     pygame.quit()
 
                     quit()
 
-            
-
-
-            
+                    
 
             
-            
+
 
             
 
             
+            
 
-    
+            
+
+            
+
+    '''import random #gere le taux de reussite des attaques (à adapter)
+
+        
+
+        if nombre_aleatoire <= probabilite_reussite:
+            L'action a réussi
+        else:
+            L'action a échoué'''
 
 
     def multiplicateur_type(self):
+
+        probabilite_reussite = starter.get_abilityAccuracyByName(self.__attaque)
+        nombre_aleatoire = random.uniform(0, 100)
+
+        if probabilite_reussite >= nombre_aleatoire:
+
+            if self.__attaque == "physique":
+                degats = int((((((starter.get_level() * 0.4 + 2) * starter.get_statAttack() * starter.get_abilityAccuracyByName(self.__attaque)) / adv.get_statDefense()) / 50) + 2))
+
+            elif self.__attaque == "special":
+                degats = int((((((starter.get_level() * 0.4 + 2) *starter.get_statAttack() * starter.get_abilityAccuracyByName(self.__attaque)) / adv.get_statDefenseSpé()) / 50) + 2))
+
+
         with open("data\pokemons\Type.json","r") as f: 
             file = json.load(f)
-            self.multiplicateur_degat = file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type()]* file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type()]
+            self.multiplicateur_degat = file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type1()]* file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type2()]
 
         
         
@@ -310,7 +325,7 @@ class Combat():
 random_id = random.randint(1,20)
 adv = Pokemon (random_id)
 starter = Pokemon(4)
-starter.set_level(5)
+starter.set_level(15)
 
 
 

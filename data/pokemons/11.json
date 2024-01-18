@@ -1,0 +1,160 @@
+{
+    "alt-versions": [],
+    "nom": "Chrysacier",
+    "Chrysacier": {
+        "donnees_pokedex": {
+            "Numero National": "0011",
+            "Type": [
+                "Insecte"
+            ],
+            "Espece": "Pokémon Chrysalide",
+            "Taille": "0.7 m (2'04\")",
+            "Poids": "9.9 kg (21.8 lbs)",
+            "Capacites": {
+                "Mue": {
+                    "lien": "/ability/shed-skin",
+                    "effet": "Le Pokémon peut soigner ses propres problèmes de statut.",
+                    "cache": false
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "2 en Défense",
+            "Taux de capture": "120",
+            "Amitie de base": "50",
+            "Exp de base": "72",
+            "Taux de croissance": "Moyen Rapide"
+        },
+        "donnees_reproduction": {
+            "Genre": "50% mâle, 50% femelle"
+        },
+        "stats_base": {
+            "PV": {
+                "Base": "50",
+                "Min": "210",
+                "Max": "304"
+            },
+            "Attaque": {
+                "Base": "20",
+                "Min": "40",
+                "Max": "152"
+            },
+            "Defense": {
+                "Base": "55",
+                "Min": "103",
+                "Max": "229"
+            },
+            "Attaque Speciale": {
+                "Base": "25",
+                "Min": "49",
+                "Max": "163"
+            },
+            "Defense Speciale": {
+                "Base": "25",
+                "Min": "49",
+                "Max": "163"
+            },
+            "Vitesse": {
+                "Base": "30",
+                "Min": "58",
+                "Max": "174"
+            },
+            "Total": "205"
+        },
+        "stats_defense": {
+            "defaut": {
+                "Feu": "super efficace",
+                "Plante": "peu efficace",
+                "Combat": "peu efficace",
+                "Sol": "peu efficace",
+                "Vol": "super efficace",
+                "Roche": "super efficace"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Chenipan",
+                    "numeroNational": "#0010",
+                    "type": [
+                        "Insecte"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Chrysacier",
+                    "numeroNational": "#0011",
+                    "type": [
+                        "Insecte"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 7)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Chrysacier",
+                    "numeroNational": "#0011",
+                    "type": [
+                        "Insecte"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Papilusion",
+                    "numeroNational": "#0012",
+                    "type": [
+                        "Insecte",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 10)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "attaques": {
+            "Armure": "1"
+        },
+        "evolution": {
+            "Armure": "\u2014"
+        },
+        "oeuf": null,
+        "tm": null
+    },
+    "donnees_entries": {
+        "Chrysacier": [
+            "Ce Pokémon est vulnérable aux attaques tant que sa carapace est molle, exposant son corps faible et tendre.",
+            "Il renforce sa carapace pour se protéger. Cependant, un choc important peut le faire sortir de sa coquille.",
+            "À l'intérieur de la coquille, il est mou et faible alors qu'il se prépare à évoluer. Il reste immobile dans la coquille.",
+            "Il se prépare à évoluer en durcissant sa carapace autant que possible pour protéger son corps tendre.",
+            "C'est sa forme pré-évoluée. À ce stade, il ne peut que durcir, restant immobile pour éviter les attaques.",
+            "La coquille recouvrant le corps de ce Pokémon est aussi dure qu'une plaque de fer. CHRYSACIER ne bouge pas beaucoup. Il reste immobile car il prépare ses entrailles molles pour l'évolution à l'intérieur de la coquille dure.",
+            "Bien qu'elle soit recouverte d'une coque solide, la carrosserie à l'intérieur est tendre. Elle ne peut pas résister à une attaque violente.",
+            "Ce Pokémon est vulnérable aux attaques tant que sa carapace est molle, exposant son corps faible et tendre.",
+            "Sa coquille est aussi dure qu'une plaque de fer. Un CHRYSACIER ne bouge pas beaucoup car il prépare ses entrailles molles pour l'évolution à l'intérieur de la coquille.",
+            "Une coque en acier protège son corps tendre. Il endure silencieusement les épreuves en attendant l'évolution.",
+            "À l'intérieur de la coquille, il est mou et faible alors qu'il se prépare à évoluer. Il reste immobile dans la coquille.",
+            "Il se prépare à évoluer en durcissant sa carapace autant que possible pour protéger son corps tendre.",
+            "Une coque en acier protège son corps tendre. Il endure silencieusement les épreuves en attendant l'évolution.",
+            "Une coque en acier protège son corps tendre. Il endure silencieusement les épreuves en attendant l'évolution.",
+            "Ce Pokémon est vulnérable aux attaques tant que sa carapace est molle, exposant son corps faible et tendre.",
+            "La coquille recouvrant le corps de ce Pokémon est aussi dure qu'une plaque de fer. Chrysacier ne bouge pas beaucoup. Il reste immobile car il prépare ses entrailles molles pour l'évolution à l'intérieur de la coquille dure.",
+            "Sa coquille est remplie d'un liquide épais. Il ne bouge pas beaucoup par crainte de renverser imprudemment ses entrailles.",
+            "Sa coquille est dure, mais ce n'est quand même qu'une carapace de coléoptère. Il est connu pour se briser, il vaut donc mieux éviter des combats intenses avec lui.",
+            "Sa coquille est remplie d'un liquide épais. Toutes les cellules de son corps sont reconstruites en vue de l'évolution.",
+            "Sa coquille dure ne se fissure pas du tout même si Picassaut la picore, mais elle basculera, renversant ses entrailles.",
+            "Il renforce sa carapace pour se protéger. Cependant, un choc important peut le faire sortir de sa coquille.",
+            "Il attend le moment d'évoluer. À ce stade, il ne peut que durcir, restant immobile pour éviter les attaques.",
+            "Bien qu'elle soit recouverte d'une coque solide, la carrosserie à l'intérieur est tendre. Elle ne peut pas résister à une attaque violente.",
+            "Une coque en acier protège son corps tendre. Le Pokémon endure silencieusement les épreuves en attendant l'évolution."
+        ]
+    },
+    "discord_image": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786674662277191/11.png",
+    "discord_sprite": "<:P11:1131972377111175258>"
+}

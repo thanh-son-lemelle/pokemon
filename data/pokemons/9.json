@@ -1,0 +1,241 @@
+{
+    "alt-versions": ["Méga-Tortank"],
+    "nom": "Tortank",
+    "Tortank": {
+        "donnees_pokedex": {
+            "Numero_national": "0009",
+            "Type": ["Eau"],
+            "Espece": "Pokémon Coquillage",
+            "Taille": "1.6 m (5'03\")",
+            "Poids": "85.5 kg (188.5 lbs)",
+            "Capacites": {
+                "Torrent": {
+                    "lien": "/ability/torrent",
+                    "effet": "Renforce les attaques de type Eau en cas de besoin.",
+                    "cachee": false
+                },
+                "Cuvettes": {
+                    "lien": "/ability/rain-dish",
+                    "effet": "Le Pokémon récupère progressivement des PV sous la pluie.",
+                    "cachee": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement_EV": "3 en Défense Spéciale",
+            "Taux_capture": "45",
+            "Amitie_base": "50",
+            "Exp_base": "239",
+            "Taux_croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "87.5% mâle, 12.5% femelle"
+        },
+        "stats_base": {
+            "PV": {"Base": "79", "Min": "268", "Max": "362"},
+            "Attaque": {"Base": "83", "Min": "153", "Max": "291"},
+            "Défense": {"Base": "100", "Min": "184", "Max": "328"},
+            "Attaque_Speciale": {"Base": "85", "Min": "157", "Max": "295"},
+            "Défense_Speciale": {"Base": "105", "Min": "193", "Max": "339"},
+            "Vitesse": {"Base": "78", "Min": "144", "Max": "280"},
+            "Total": "530"
+        },
+        "stats_defense": {
+            "defaut": {
+                "Feu": "peu efficace",
+                "Eau": "peu efficace",
+                "Électrik": "super efficace",
+                "Plante": "super efficace",
+                "Glace": "peu efficace",
+                "Acier": "peu efficace"
+            }
+        }
+    },
+    "Méga-Tortank": {
+        "donnees_pokedex": {
+            "Numero_national": "0009",
+            "Type": ["Eau"],
+            "Espece": "Pokémon Coquillage",
+            "Taille": "1.6 m (5'03\")",
+            "Poids": "101.1 kg (222.9 lbs)",
+            "Capacites": {
+                "Mega Launcher": {
+                    "lien": "/ability/mega-launcher",
+                    "effet": "Augmente la puissance des attaques de type aura et impulsion.",
+                    "cachee": false
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement_EV": "3 en Défense Spéciale",
+            "Taux_capture": "45",
+            "Amitie_base": "50",
+            "Exp_base": "284",
+            "Taux_croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "87.5% mâle, 12.5% femelle"
+        },
+        "stats_base": {
+            "PV": {"Base": "79", "Min": "268", "Max": "362"},
+            "Attaque": {"Base": "103", "Min": "189", "Max": "335"},
+            "Défense": {"Base": "120", "Min": "220", "Max": "372"},
+            "Attaque_Speciale": {"Base": "135", "Min": "247", "Max": "405"},
+            "Défense_Speciale": {"Base": "115", "Min": "211", "Max": "361"},
+            "Vitesse": {"Base": "78", "Min": "144", "Max": "280"},
+            "Total": "630"
+        },
+        "stats_defense": {
+            "defaut": {
+                "Feu": "peu efficace",
+                "Eau": "peu efficace",
+                "Électrik": "super efficace",
+                "Plante": "super efficace",
+                "Glace": "peu efficace",
+                "Acier": "peu efficace"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Carapuce",
+                    "numeroNational": "#0007",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Carabaffe",
+                    "numeroNational": "#0008",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 16)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Carabaffe",
+                    "numeroNational": "#0008",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Tortank",
+                    "numeroNational": "#0009",
+                    "type": ["Eau"],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 36)",
+                "mue": null
+            }
+        ]
+    ],
+    "attaques_data": {
+        "mouvements": {
+            "Luminocanon": "1",
+            "Charge": "1",
+            "Groz'Yeux": "1",
+            "Pistolet_à_O": "1",
+            "Retraite": "1",
+            "Tour_Rapide": "9",
+            "Morsure": "12",
+            "Éclat_d'Eau": "15",
+            "Abri": "20",
+            "Danse_Pluie": "25",
+            "Hydroqueue": "30",
+            "Force-Nature": "35",
+            "Garde_de_Fer": "42",
+            "Hydrocanon": "49",
+            "Coud'Bouclier": "56"
+        },
+        "evolution": {
+            "Luminocanon": "80"
+        },
+        "oeuf": {
+            "Aqua-Jet": null,
+            "Anneau_Hydro": null,
+            "Aura_Sphère": null,
+            "Coup_Bas": null,
+            "Fléau": null,
+            "Buée_Noire": null,
+            "Brume": null,
+            "Coat_Mirror": null,
+            "Brume": null,
+            "Ondes_Étranges": null,
+            "Giclédo": null,
+            "Bâillement": null
+        },
+        "nul": {
+            "Hydroblast": "150"
+        },
+        "tm": {
+            "Poing-Focus": "01",
+            "Éclat_d'Eau": "03",
+            "Hurlement": "05",
+            "Graîne": "07",
+            "Force": "10",
+            "Laser_Glace": "13",
+            "Blizzard": "14",
+            "Ultralaser": "15",
+            "Abri": "17",
+            "Danse_Pluie": "18",
+            "Queue_de_Fer": "23",
+            "Séisme": "26",
+            "Creusement": "28",
+            "Casse-Brique": "31",
+            "Clonage": "32",
+            "Tomberoche": "39",
+            "Facade": "42",
+            "Repos": "44",
+            "Attraction": "45",
+            "Plongée": "49",
+            "Exploforce": "52",
+            "Balayette": "54",
+            "Saumure": "55",
+            "Larcin": "56",
+            "Escalade": "58",
+            "Dracochoc": "59",
+            "Gyroballe": "74",
+            "Blabla_Dodo": "82",
+            "Provoc": "87",
+            "Substitut": "90",
+            "Luminocanon": "91",
+            "Surf": "95",
+            "Force": "96",
+            "Éclate_Roc": "98",
+            "Cascade": "99",
+            "Montée": "100"
+        }
+    },
+    "entrées": {
+        "Tortank": [
+            "Un Pokémon brutal avec des jets d'eau sous pression sur sa carapace. Ils sont utilisés pour des charges à grande vitesse.",
+            "Une fois qu'il vise son ennemi, il expulse de l'eau avec une force encore plus grande qu'un tuyau d'incendie.",
+            "Il se rend délibérément lourd pour pouvoir supporter le recul des jets d'eau qu'il tire.",
+            "Les canons à roquettes sur sa carapace tirent des jets d'eau capables de percer des trous à travers de l'acier épais.",
+            "Il plante fermement ses pieds au sol avant de tirer de l'eau par les jets sur son dos.",
+            "TORTANK a des canons à eau qui dépassent de sa carapace. Les canons à eau sont très précis. Ils peuvent tirer des balles d'eau avec assez de précision pour frapper des canettes vides à une distance de plus de 160 pieds.",
+            "Il écrase son ennemi sous son corps lourd pour le faire s'évanouir. En cas de besoin, il se retirera dans sa carapace.",
+            "Les jets d'eau sous pression sur la carapace de ce Pokémon brutal sont utilisés pour des charges à grande vitesse.",
+            "Les canons à eau qui dépassent de sa carapace sont très précis. Leurs balles d'eau peuvent frapper précisément des boîtes de conserve vides à une distance de plus de 160 pieds.",
+            "Les jets d'eau qu'il crache des canons à roquettes sur sa carapace peuvent percer de l'acier épais.",
+            "Il se rend délibérément lourd pour pouvoir supporter le recul des jets d'eau qu'il tire.",
+            "Les canons à roquettes sur sa carapace tirent des jets d'eau capables de percer des trous à travers de l'acier épais.",
+            "Les jets d'eau qu'il crache des canons à roquettes sur sa carapace peuvent percer de l'acier épais.",
+            "Il écrase son ennemi sous son corps lourd pour le faire s'évanouir. En cas de besoin, il se retirera dans sa carapace.",
+            "Les jets d'eau sous pression sur cette carapace brutale de Pokémon sont utilisés pour des charges à grande vitesse.",
+            "Tortank a des canons à eau qui dépassent de sa carapace. Les canons à eau sont très précis. Ils peuvent tirer des balles d'eau avec assez de précision pour frapper des canettes vides à une distance de plus de 160 pieds.",
+            "Une fois qu'il vise son ennemi, il expulse de l'eau avec une force encore plus grande qu'un tuyau d'incendie.",
+            "Il écrase son ennemi sous son corps lourd pour le faire s'évanouir. En cas de besoin, il se retirera dans sa carapace.",
+            "Les canons à roquettes sur sa carapace tirent des jets d'eau capables de percer des trous à travers de l'acier épais.",
+            "Les jets d'eau qu'il crache des canons à roquettes sur sa carapace peuvent percer de l'acier épais."
+        ],
+        "Méga-Tortank": [
+            "Le canon sur son dos est aussi puissant qu'un canon de char. Ses jambes solides lui permettent de supporter le recul du tir du canon."
+        ]
+    },
+    "image_discord": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786658627453049/9.png",
+    "discord_sprite": "<:P9:1131972288607162458>"
+}

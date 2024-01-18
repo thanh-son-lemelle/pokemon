@@ -1,0 +1,282 @@
+{
+    "alt-version(s)": [
+        "Méga-Roucarnage"
+    ],
+    "nom": "Roucarnage",
+    "Roucarnage": {
+        "donnees_pokedex": {
+            "Numero National": "0018",
+            "Type": [
+                "Normal",
+                "Vol"
+            ],
+            "Espece": "Pokémon Oiseau",
+            "Taille": "1.5 m (4'11\")",
+            "Poids": "39.5 kg (87.1 lbs)",
+            "Capacites": {
+                "Regard Vif": {
+                    "lien": "/ability/keen-eye",
+                    "effet": "Empêche les autres Pokémon de réduire la précision.",
+                    "cache": false
+                },
+                "Baigne Sable": {
+                    "lien": "/ability/tangled-feet",
+                    "effet": "Augmente l'esquive si le Pokémon est confus.",
+                    "cache": false
+                },
+                "Cœur de Coq": {
+                    "lien": "/ability/big-pecks",
+                    "effet": "Protège le Pokémon contre les attaques réduisant la Défense.",
+                    "cache": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "3 Vitesse",
+            "Taux de capture": "45",
+            "Amitie de base": "50",
+            "Exp de base": "216",
+            "Taux de croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "50% mâle, 50% femelle"
+        },
+        "stats_base": {
+            "PV": {
+                "Base": "83",
+                "Min": "276",
+                "Max": "370"
+            },
+            "Attaque": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Defense": {
+                "Base": "75",
+                "Min": "139",
+                "Max": "273"
+            },
+            "Attaque Speciale": {
+                "Base": "70",
+                "Min": "130",
+                "Max": "262"
+            },
+            "Defense Speciale": {
+                "Base": "70",
+                "Min": "130",
+                "Max": "262"
+            },
+            "Vitesse": {
+                "Base": "101",
+                "Min": "186",
+                "Max": "331"
+            },
+            "Total": "479"
+        },
+        "stats_defense": {
+            "default": {
+                "Electrique": "super efficace",
+                "Plante": "peu efficace",
+                "Glace": "super efficace",
+                "Sol": "pas d'effet",
+                "Insecte": "peu efficace",
+                "Roche": "super efficace",
+                "Spectre": "pas d'effet"
+            }
+        }
+    },
+    "Méga-Roucarnage": {
+        "donnees_pokedex": {
+            "Numero National": "0018",
+            "Type": [
+                "Normal",
+                "Vol"
+            ],
+            "Espece": "Pokémon Oiseau",
+            "Taille": "2.2 m (7'03\")",
+            "Poids": "50.5 kg (111.3 lbs)",
+            "Capacites": {
+                "Annule Garde": {
+                    "lien": "/ability/no-guard",
+                    "effet": "Assure que les attaques par ou contre le Pokémon atteignent leur cible.",
+                    "cache": false
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "3 Vitesse",
+            "Taux de capture": "45",
+            "Amitie de base": "50",
+            "Exp de base": "261",
+            "Taux de croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "50% mâle, 50% femelle"
+        },
+        "stats_base": {
+            "PV": {
+                "Base": "83",
+                "Min": "276",
+                "Max": "370"
+            },
+            "Attaque": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Defense": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Attaque Speciale": {
+                "Base": "135",
+                "Min": "247",
+                "Max": "405"
+            },
+            "Defense Speciale": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Vitesse": {
+                "Base": "121",
+                "Min": "222",
+                "Max": "375"
+            },
+            "Total": "579"
+        },
+        "stats_defense": {
+            "default": {
+                "Electrique": "super efficace",
+                "Plante": "peu efficace",
+                "Glace": "super efficace",
+                "Sol": "pas d'effet",
+                "Insecte": "peu efficace",
+                "Roche": "super efficace",
+                "Spectre": "pas d'effet"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Roucool",
+                    "numeroNational": "#0016",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Roucoups",
+                    "numeroNational": "#0017",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 18)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Roucoups",
+                    "numeroNational": "#0017",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Roucarnage",
+                    "numeroNational": "#0018",
+                    "type": [
+                        "Normal",
+                        "Vol"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 36)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "attaques": {
+            "Cyclone": "17",
+            "Ouragan": "68",
+            "Coup Rapide": "13",
+            "Jet de Sable": "5",
+            "Charge": "1",
+            "Tornade": "22",
+            "Danse Plume": "27",
+            "Hâte": "44",
+            "Tranche": "50",
+            "Atterrissage": "56",
+            "Lame d'Air": "62"
+        },
+        "oeuf": {
+            "Tranch'Air": null,
+            "Lame d'Air": null,
+            "Coup Brave": null,
+            "Carnavale": null
+        },
+        "ct": {
+            "Dynamopoing": "01",
+            "Poinglace": "08",
+            "Ultralaser": "15",
+            "Protection": "17",
+            "Danse Pluie": "18",
+            "Repli": "32",
+            "Lame d'Air": "40",
+            "Facade": "42",
+            "Repos": "44",
+            "Attraction": "45",
+            "Larcin": "46",
+            "Aile d'Acier": "47",
+            "Atterrissage": "51",
+            "Garde": "58",
+            "Gigotement": "68",
+            "Clonage": "82",
+            "Mimique": "86",
+            "Plaquage": "88",
+            "Change Eclair": "89",
+            "Substitution": "90",
+            "Vol": "94",
+            "Anti-Brume": "97"
+        }
+    },
+    "entrees": {
+        "Roucarnage": [
+            "En chasse, il frôle la surface de l'eau à grande vitesse pour attraper des proies imprudentes telles que MAGICARPE.",
+            "Ce Pokémon vole à une vitesse de Mach 2, à la recherche de proies. Ses grandes serres sont redoutées comme des armes redoutables.",
+            "Ses muscles pectoraux bien développés le rendent assez fort pour créer une tempête venteuse avec seulement quelques battements d'ailes.",
+            "Il étend largement ses belles ailes pour effrayer ses ennemis. Il peut voler à une vitesse de Mach 2.",
+            "Sa vision exceptionnelle lui permet de repérer des MAGICARPE éclaboussant, même en volant à 3300 pieds.",
+            "Ce Pokémon a un plumage éblouissant de plumes brillantes. De nombreux DRESSEURS sont captivés par la beauté frappante des plumes sur sa tête, les poussant à choisir ROUCARNAGE comme leur Pokémon.",
+            "Il étend largement ses magnifiques ailes pour intimider les ennemis. Il file à travers les cieux à la vitesse de Mach-2.",
+            "En chasse, il frôle la surface de l'eau à grande vitesse pour attraper des proies imprudentes telles que MAGICARPE.",
+            "Ce Pokémon a de magnifiques plumes brillantes. De nombreux DRESSEURS sont tellement captivés par les belles plumes sur sa tête qu'ils choisissent ROUCARNAGE comme leur Pokémon.",
+            "En agitant ses ailes de toutes ses forces, ROUCARNAGE peut créer une rafale de vent capable de plier de grands arbres.",
+            "Ses muscles pectoraux bien développés le rendent assez fort pour créer une tempête venteuse avec seulement quelques battements d'ailes.",
+            "Il étend largement ses belles ailes pour effrayer ses ennemis. Il peut voler à une vitesse de Mach 2.",
+            "En agitant ses ailes de toutes ses forces, ROUCARNAGE peut créer une rafale de vent capable de plier de grands arbres.",
+            "En chasse, il frôle la surface de l'eau à grande vitesse pour attraper des proies imprudentes telles que Magikarp.",
+            "Il étend largement ses magnifiques ailes pour intimider les ennemis. Il file à travers les cieux à la vitesse de Mach-2.",
+            "Ce Pokémon a un plumage éblouissant de plumes brillantes. De nombreux Dresseurs sont captivés par la beauté frappante des plumes sur sa tête, les poussant à choisir Roucarnage comme leur Pokémon.",
+            "Ce Pokémon vole à une vitesse de Mach 2, à la recherche de proies. Ses grandes serres sont redoutées comme des armes redoutables.",
+            "En agitant ses ailes de toutes ses forces, Roucarnage peut créer une rafale de vent capable de plier de grands arbres."
+        ],
+        "Méga-Roucarnage": [
+            "Avec sa force musculaire maintenant considérablement augmentée, il peut voler continuellement pendant deux semaines sans se reposer."
+        ]
+    },
+    "discord_image": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786728596844594/18.png",
+    "discord_sprite": "<:P18:1131972683911925821>"
+}

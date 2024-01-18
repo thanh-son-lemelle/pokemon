@@ -1,0 +1,219 @@
+{
+    "alt-versions": [],
+    "nom": "Herbizarre",
+    "Herbizarre": {
+        "donnees_pokedex": {
+            "Numero National": "0002",
+            "Type": [
+                "Plante",
+                "Poison"
+            ],
+            "Espece": "Pokemon Graine",
+            "Taille": "1.0 m (3'03\")",
+            "Poids": "13.0 kg (28.7 livres)",
+            "Capacites": {
+                "Engrais": {
+                    "lien": "/capacite/engrais",
+                    "effet": "Augmente la puissance des attaques de type Plante en cas de besoin.",
+                    "caché": false
+                },
+                "Chlorophylle": {
+                    "lien": "/capacite/chlorophylle",
+                    "effet": "Augmente la Vitesse du Pokémon sous le soleil.",
+                    "caché": true
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "1 Att. Spe., 1 Def. Spe.",
+            "Taux Capture": "45",
+            "Amitie de Base": "50",
+            "Exp. de Base": "142",
+            "Taux de Croissance": "Moyen Lent"
+        },
+        "donnees_reproduction": {
+            "Genre": "87.5% mâle, 12.5% femelle"
+        },
+        "stats_de_base": {
+            "PV": {
+                "Base": "60",
+                "Min": "230",
+                "Max": "324"
+            },
+            "Attaque": {
+                "Base": "62",
+                "Min": "116",
+                "Max": "245"
+            },
+            "Defense": {
+                "Base": "63",
+                "Min": "117",
+                "Max": "247"
+            },
+            "Att. Spe.": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Def. Spe.": {
+                "Base": "80",
+                "Min": "148",
+                "Max": "284"
+            },
+            "Vitesse": {
+                "Base": "60",
+                "Min": "112",
+                "Max": "240"
+            },
+            "Total": "405"
+        },
+        "stats_defense": {
+            "par_defaut": {
+                "Feu": "super-efficace",
+                "Eau": "peu efficace",
+                "Electrique": "peu efficace",
+                "Plante": "peu efficace",
+                "Glace": "super-efficace",
+                "Combat": "peu efficace",
+                "Vol": "super-efficace",
+                "Psy": "super-efficace",
+                "Fee": "peu efficace"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Bulbizarre",
+                    "numeroNational": "#0001",
+                    "type": [
+                        "Plante",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Herbizarre",
+                    "numeroNational": "#0002",
+                    "type": [
+                        "Plante",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 16)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Herbizarre",
+                    "numeroNational": "#0002",
+                    "type": [
+                        "Plante",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Florizarre",
+                    "numeroNational": "#0003",
+                    "type": [
+                        "Plante",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 32)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "mouvements": {
+            "Rugissement": "1",
+            "Croissance": "1",
+            "Charge": "1",
+            "Fouet Lianes": "1",
+            "Vampigraine": "9",
+            "Tranch'Herbe": "12",
+            "Poudre Toxik": "15",
+            "Dodo": "15",
+            "Canon Graine": "20",
+            "Chargeur": "25",
+            "Doux Parfum": "30",
+            "Synthèse": "35",
+            "Soucigraine": "40",
+            "Damoclès": "45",
+            "Laser Glace": "50"
+        },
+        "oeuf": {
+            "Amnésie": null,
+            "Charme": null,
+            "Malédiction": null,
+            "Tertre": null,
+            "Lianes en Masse": null,
+            "Tempête Verte": null,
+            "Feuille Magik": null,
+            "Poudreclat": null,
+            "Danse-Fleur": null,
+            "Fouet Matraque": null,
+            "Gaz Toxik": null,
+            "Détricanon": null
+        },
+        "ct": {
+            "Toxik": "06",
+            "Graines Canon": "09",
+            "Hâte": "10",
+            "Zénith": "11",
+            "Mur Lumière": "16",
+            "Abri": "17",
+            "Giga-Sangsue": "19",
+            "Rune Protect": "20",
+            "Laser Glace": "22",
+            "Clonage": "32",
+            "Bomb-Beurk": "36",
+            "Façade": "42",
+            "Repos": "44",
+            "Attraction": "45",
+            "Ball'Ombre": "53",
+            "Coupe-Vent": "54",
+            "Lame de Roc": "58",
+            "Flash": "70",
+            "Danse-Lames": "75",
+            "Blabla Dodo": "82",
+            "Noeud Herbe": "86",
+            "Provoc": "87",
+            "Substitut": "90",
+            "Coupe": "93",
+            "Force": "96",
+            "Éclate-Roc": "98"
+        }
+    },
+    "descriptions": {
+        "Herbizarre": [
+            "Lorsque le bulbe sur son dos devient gros, il semble perdre la capacité de se tenir sur ses pattes arrière.",
+            "Le bulbe sur son dos grandit en absorbant de l'énergie. Il émet un arôme lorsqu'il est prêt à fleurir.",
+            "L'exposition au soleil renforce ses pouvoirs. La lumière du soleil fait également croître le bourgeon sur son dos.",
+            "Si le bourgeon sur son dos commence à sentir bon, c'est la preuve que la grande fleur va bientôt éclore.",
+            "Le bulbe sur son dos grandit en absorbant des nutriments. Le bulbe dégage un agréable arôme lorsqu'il fleurit.",
+            "Il y a un bourgeon sur le dos de ce Pokémon. Pour soutenir son poids, les jambes et le tronc d'HERBIZARRE deviennent épais et forts. S'il commence à passer plus de temps allongé au soleil, c'est un signe que le bourgeon va bientôt fleurir en une grande fleur.",
+            "Il y a un bulbe de plante sur son dos. Lorsqu'il absorbe des nutriments, le bulbe est censé éclore en une grande fleur.",
+            "Lorsque le bulbe sur son dos devient gros, il semble perdre la capacité de se tenir sur ses pattes arrière.",
+            "Pour soutenir son bulbe, les jambes d'HERBIZARRE deviennent robustes. S'il passe plus de temps allongé au soleil, le bourgeon va bientôt fleurir en une grande fleur.",
+            "Lorsque le bourgeon sur son dos commence à enfler, un doux parfum se répand pour indiquer la floraison imminente de la fleur.",
+            "L'exposition au soleil renforce ses pouvoirs. La lumière du soleil fait également croître le bourgeon sur son dos.",
+            "Si le bourgeon sur son dos commence à sentir bon, c'est la preuve que la grande fleur va bientôt éclore.",
+            "Lorsque le bourgeon sur son dos commence à enfler, un doux parfum se répand pour indiquer la floraison imminente de la fleur.",
+            "Il y a un bulbe de plante sur son dos. Lorsqu'il absorbe des nutriments, le bulbe est censé éclore en une grande fleur.",
+            "Lorsque le bourgeon sur son dos commence à enfler, un doux parfum se répand pour indiquer la floraison imminente de la fleur.",
+            "Il y a un bourgeon sur le dos de ce Pokémon. Pour soutenir son poids, les jambes et le tronc d'Herbizarre deviennent épais et forts. S'il commence à passer plus de temps allongé au soleil, c'est un signe que le bourgeon va bientôt fleurir en une grande fleur.",
+            "Le bulbe sur son dos grandit en absorbant de l'énergie. Il émet un arôme lorsqu'il est prêt à fleurir.",
+            "Lorsque le bulbe sur son dos devient gros, il semble perdre la capacité de se tenir sur ses pattes arrière.",
+            "L'exposition au soleil renforce ses pouvoirs. La lumière du soleil fait également croître le bourgeon sur son dos.",
+            "Lorsque le bourgeon sur son dos commence à enfler, un doux parfum se répand pour indiquer la floraison imminente de la fleur."
+        ]
+    },
+    "image_discord": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786605225582612/2.png",
+    "sprite_discord": "<:P2:1131971981743501433>"
+}

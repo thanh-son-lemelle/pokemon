@@ -6,7 +6,6 @@ from pygame.locals import *
 import random
 from Pokemon import *
 import json
-import time
 
 class Combat():
 
@@ -23,8 +22,8 @@ class Combat():
         self.__liste_musique = ["musique\combat\Pokémon Black & White - Critical Health Music (HQ).mp3","musique\combat\Pokémon Diamond, Pearl & Platinum - Champion Cynthia Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Primal Kyogre & Groudon Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Zinnia Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Kieran Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Nemona Battle Music (HQ)(1).mp3","musique\combat\Pokémon Sun & Moon - Battle Legend Red & Blue Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Rival Gladion Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Team Skull Leader Guzma Battle Music (HQ).mp3","musique\combat\Pokémon HeartGold & SoulSilver - Champion & Red Battle Music (HQ).mp3","musique\combat\Battle! Gym Leader - Remix Cover (Pokémon Sword and Shield).mp3","musique\combat\Driftveil City Past Paradox (Remix) ► Pokémon Black & White Toothless Dancing.mp3","musique\combat\Red vs Gold (Theme).mp3","musique\combat\Volo Theme (Piano Etude) Pokémon.mp3"]
         self.__choice_musique = random.choice(self.__liste_musique)
 
-        self.max_hp = 250
-        self.max_hp_adv = 250
+        self.max_hp = starter.get_statHp()
+        self.max_hp_adv = adv.get_statHp()
 
         self.multiplicateur_degat_adv = 1
         self.multiplicateur_degat = 1
@@ -44,7 +43,7 @@ class Combat():
         self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
         self.win = self.police_moyen.render("Victoire : Appuiyez sur le clavier pour quitter",True,"white")
 
-        self.rater = self.police_moyen.render("L'action a échoué",True,"white")
+        self.rater = self.police_moyen.render("L'action a échoué",True,"red")
         
 
 
@@ -62,7 +61,6 @@ class Combat():
         mixer.music.set_volume(0.2)
         mixer.music.play(-1)
 
-        
         self.__SCREEN.blit(capa, (0, 500))
         self.__SCREEN.blit(self.__zone, (0, 0))
         self.__SCREEN.blit(starter.get_imageBack(),(150,290))
@@ -104,53 +102,60 @@ class Combat():
 
                     sys.exit()
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.MOUSEBUTTONDOWN:
 
-                if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
-                    press = True
-                    self.__attaque = starter.get_4abilities()[0]
-                    self.multiplicateur_type()
-
-
-                if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
+                    if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
-                        self.__attaque = starter.get_4abilities()[1]
+                        self.__attaque = starter.get_4abilities()[0]
                         self.multiplicateur_type()
 
 
+                    if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
+                            press = True
+                            self.__attaque = starter.get_4abilities()[1]
+                            if self.__attaque == "-":
+                                self.fight()
 
-                if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
-                        press = True
-                        self.__attaque = starter.get_4abilities()[2]
-                        self.multiplicateur_type()
-
-
-
-                if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
-                        press = True
-                        self.__attaque = starter.get_4abilities()[3]
-                        self.multiplicateur_type()
-                    
+                            self.multiplicateur_type()
 
 
-            elif event.type == pygame.MOUSEBUTTONUP:
-                if  ATT1.checkForInput(MENU_MOUSE_POS):
-                    press = False
+
+                    if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
+                            press = True
+                            self.__attaque = starter.get_4abilities()[2]
+                            if self.__attaque == "-":
+                                self.fight()
+                            self.multiplicateur_type()
 
 
-                if  ATT2.checkForInput(MENU_MOUSE_POS):
-                    press = False
+
+                    if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
+                            press = True
+                            self.__attaque = starter.get_4abilities()[3]
+                            if self.__attaque == "-":
+                                self.fight()
+                            self.multiplicateur_type()
+                        
 
 
-                if  ATT3.checkForInput(MENU_MOUSE_POS):
-                    press = False
+                elif event.type == pygame.MOUSEBUTTONUP:
+                    if  ATT1.checkForInput(MENU_MOUSE_POS):
+                        press = False
 
-                if  ATT4.checkForInput(MENU_MOUSE_POS):
-                    press = False
 
-                pygame.display.flip()
+                    if  ATT2.checkForInput(MENU_MOUSE_POS):
+                        press = False
 
-            pygame.display.flip() 
+
+                    if  ATT3.checkForInput(MENU_MOUSE_POS):
+                        press = False
+
+                    if  ATT4.checkForInput(MENU_MOUSE_POS):
+                        press = False
+
+                    pygame.display.flip()
+
+                pygame.display.flip() 
 
 
 
@@ -204,54 +209,34 @@ class Combat():
     def Victoire(self):
         pygame.display.update()
         pygame.display.set_caption("Win Menu")
-        size_capa = (1000,700)
+        size_capa = (1000, 700)
         Back = pygame.image.load("images\\background\menu\emerald.png")
         Back = pygame.transform.scale(Back, size_capa)
-        self.__SCREEN.blit(Back, (0,0))
-        self.__SCREEN.blit(self.win,(150,100))
+        self.__SCREEN.blit(Back, (0, 0))
+        self.__SCREEN.blit(self.win, (150, 100))
         pygame.display.update()
-        
-        
 
-        running = True
+        # Pause for 2 seconds
+        delay_time = 2000
+        start_time = pygame.time.get_ticks()
 
-        self.fight()
-
-        while running:
-
+        while pygame.time.get_ticks() - start_time < delay_time:
             for event in pygame.event.get():
-
                 if event.type == pygame.QUIT:
-
                     pygame.quit()
+                    sys.exit()
 
-                    quit()
+        pygame.quit()
+        sys.exit()
 
-
-                if event.type == pygame.KEYDOWN:
-                    pygame.quit()
-
-                    quit()
-
-                    
-
-            
-
-
-            
-
-            
-            
-
-            
-
-            
-
-
-
+        
+        
 
     def multiplicateur_type(self):
-
+        capa_adv = adv.get_4abilities()[random.randint(0,3)]
+        while capa_adv == "-":
+            capa_adv = adv.get_4abilities()[random.randint(0,3)]
+             
         size_capa = (1000,200)
         capa = pygame.image.load("images\\background\combat\panel.png")
         capa = pygame.transform.scale(capa, size_capa)
@@ -269,27 +254,78 @@ class Combat():
                 degats = int((((((starter.get_level() * 0.4 + 2) *starter.get_statSpecialAttack() * starter.get_abilityPowerByName(self.__attaque)) / adv.get_statSpecialDefense()) / 50) + 2))
 
 
+            #elif = status --> if feu / poison / etc ... ---> baise hp de x hp par tour (fonction a dupliquer pour l'adv)
+
+
+            if adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statDefense()) / 50) + 2))
+
+            elif adv.get_abilityCategoryByName(capa_adv) == "Special":
+                degats = int((((((adv.get_level() * 0.4 + 2) *adv.get_statSpecialAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statSpecialDefense()) / 50) + 2))
+
+
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
-                self.multiplicateur_degat = file[starter.get_abilityPowerByName(self.__attaque)][adv.get_type1()]* file[starter.get_abilityPowerByName(self.__attaque)][adv.get_type2()]
+                self.multiplicateur_degat = file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type1()]* file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type2()]
                 self.hp_adv -= degats * self.multiplicateur_degat
+
+                self.multiplicateur_degat_adv = file[adv.get_abilityTypeByName(capa_adv)][starter.get_type1()]* file[adv.get_abilityTypeByName(capa_adv)][starter.get_type2()]
+                self.hp -= degats * self.multiplicateur_degat_adv
+
+
+                self.ratio = self.hp / self.max_hp
+                self.ratio_adv = self.hp_adv / self.max_hp_adv
                 self.health_bar()
                 
                 if self.hp_adv < 0:
                                 self.hp_adv = 0
                                 self.lvl_up()
                                 self.health_bar()
+                                self.Victoire()
 
         else:
-            self.__SCREEN.blit(self.rater,(self.__WIDTH //2,self.__HEIGHT//2))
-            time.sleep(1)
-            self.__SCREEN.blit(capa, (0, 500))
-            self.__SCREEN.blit(self.__zone, (0, 0))
-            self.__SCREEN.blit(starter.get_imageBack(),(150,290))
-            self.__SCREEN.blit(self.__nom, (30, 10))
-            self.__SCREEN.blit(self.__adversaire, (700, 10))
-            self.__SCREEN.blit(adv.get_imageFace(),(650,120))
+
+            if adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statDefense()) / 50) + 2))
+
+            elif adv.get_abilityCategoryByName(capa_adv) == "Special":
+                degats = int((((((adv.get_level() * 0.4 + 2) *adv.get_statSpecialAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statSpecialDefense()) / 50) + 2))
+
+
+            self.rater = self.police_moyen.render("L'action a échoué", False, "red")
+            self.__SCREEN.blit(self.rater, (150, 250))
+            pygame.display.update()
+
+            delay_time = 1000
+            start_time = pygame.time.get_ticks()
+
+            with open("data\pokemons\Type.json","r") as f: 
+                file = json.load(f)
+                self.multiplicateur_degat_adv = file[adv.get_abilityTypeByName(capa_adv)][starter.get_type1()]* file[adv.get_abilityTypeByName(capa_adv)][starter.get_type2()]
+                self.hp -= degats * self.multiplicateur_degat_adv
+
+
+            self.ratio = self.hp / self.max_hp
+            self.ratio_adv = self.hp_adv / self.max_hp_adv
             self.health_bar()
+            
+            if self.hp_adv < 0:
+                            self.hp_adv = 0
+                            self.lvl_up()
+                            self.health_bar()
+                            self.Victoire()
+
+            while pygame.time.get_ticks() - start_time < delay_time:
+                self.__SCREEN.blit(capa, (0, 500))
+                self.__SCREEN.blit(self.__zone, (0, 0))
+                self.__SCREEN.blit(starter.get_imageBack(),(150,290))
+                self.__SCREEN.blit(self.__nom, (30, 10))
+                self.__SCREEN.blit(self.__adversaire, (700, 10))
+                self.__SCREEN.blit(adv.get_imageFace(),(650,120))
+                self.health_bar()
+                pygame.time.Clock().tick(60)
+
+        
 
                     
 
@@ -306,11 +342,13 @@ class Combat():
 
 
 random_id = random.randint(1,20)
-adv = Pokemon (random_id)
+adv = Pokemon (4)
 starter = Pokemon(4)
-starter.set_level(15)
+starter.set_level(30)
+adv.set_level(1)
 
-
+print("STARTER hp : ",starter.get_statHp())
+print("ADV hp : ",adv.get_statHp())
 
 
 combat = Combat()

@@ -153,10 +153,10 @@ class Pokemon:
         return self.__stats["speed"]
     
     def get_statSpecialAttack(self):
-        return self.__stats["spe_attack"]
+        return self.__stats["sp_attack"]
     
     def get_statSpecialDefense(self):  
-        return self.__stats["spe_defense"]
+        return self.__stats["sp_defense"]
     
 #============================================================================
         # gestion de l'xp, du level up et de l'évolution

@@ -274,6 +274,13 @@ class Combat():
                 degats = int((((((starter.get_level() * 0.4 + 2) *starter.get_statSpecialAttack() * starter.get_abilityPowerByName(self.__attaque)) / adv.get_statSpecialDefense()) / 50) + 2))
 
 
+            if adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statDefense()) / 50) + 2))
+
+            elif adv.get_abilityCategoryByName(capa_adv) == "Special":
+                degats = int((((((adv.get_level() * 0.4 + 2) *adv.get_statSpecialAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statSpecialDefense()) / 50) + 2))
+
+
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
                 self.multiplicateur_degat = file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type1()]* file[starter.get_abilityTypeByName(self.__attaque)][adv.get_type2()]
@@ -294,12 +301,36 @@ class Combat():
                                 self.Victoire()
 
         else:
+
+            if adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statDefense()) / 50) + 2))
+
+            elif adv.get_abilityCategoryByName(capa_adv) == "Special":
+                degats = int((((((adv.get_level() * 0.4 + 2) *adv.get_statSpecialAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statSpecialDefense()) / 50) + 2))
+
+
             self.rater = self.police_moyen.render("L'action a échoué", False, "red")
             self.__SCREEN.blit(self.rater, (150, 250))
             pygame.display.update()
 
             delay_time = 1000
             start_time = pygame.time.get_ticks()
+
+            with open("data\pokemons\Type.json","r") as f: 
+                file = json.load(f)
+                self.multiplicateur_degat_adv = file[adv.get_abilityTypeByName(capa_adv)][starter.get_type1()]* file[adv.get_abilityTypeByName(capa_adv)][starter.get_type2()]
+                self.hp -= degats * self.multiplicateur_degat_adv
+
+
+            self.ratio = self.hp / self.max_hp
+            self.ratio_adv = self.hp_adv / self.max_hp_adv
+            self.health_bar()
+            
+            if self.hp_adv < 0:
+                            self.hp_adv = 0
+                            self.lvl_up()
+                            self.health_bar()
+                            self.Victoire()
 
             while pygame.time.get_ticks() - start_time < delay_time:
                 self.__SCREEN.blit(capa, (0, 500))
@@ -331,7 +362,7 @@ random_id = random.randint(1,20)
 adv = Pokemon (4)
 starter = Pokemon(4)
 starter.set_level(30)
-adv.set_level(30)
+adv.set_level(1)
 
 print("STARTER hp : ",starter.get_statHp())
 print("ADV hp : ",adv.get_statHp())

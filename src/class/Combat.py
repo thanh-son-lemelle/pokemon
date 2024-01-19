@@ -6,7 +6,6 @@ from pygame.locals import *
 import random
 from Pokemon import *
 import json
-import time
 
 class Combat():
 
@@ -232,25 +231,6 @@ class Combat():
 
         
         
-        
-
-
-                    
-
-            
-
-
-            
-
-            
-            
-
-            
-
-            
-
-
-
 
     def multiplicateur_type(self):
         capa_adv = adv.get_4abilities()[random.randint(0,3)]

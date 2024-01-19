@@ -43,12 +43,13 @@ class Pokedex():
         self.__affSpeed = self.police_small.render("Speed : ", True, "black")
 
     def loadDescription(self):
-        with open(r'data\\pokedex\\description.json', 'r', encoding='utf-8') as file:
+        with open(r'data\\pokedex\\pokedex.json', 'r', encoding='utf-8') as file:
             pokemonsDescription = json.load(file)
 
         for pokemon in pokemonsDescription['pokemons']:
             self.__nom.append(pokemon['nom'])
             self.__description.append(pokemon['description'])
+
 
         return pokemon['id'], self.__nom, self.__description
 

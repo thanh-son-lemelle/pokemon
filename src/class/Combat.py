@@ -274,6 +274,9 @@ class Combat():
                 degats = int((((((starter.get_level() * 0.4 + 2) *starter.get_statSpecialAttack() * starter.get_abilityPowerByName(self.__attaque)) / adv.get_statSpecialDefense()) / 50) + 2))
 
 
+            #elif = status --> if feu / poison / etc ... ---> baise hp de x hp par tour (fonction a dupliquer pour l'adv)
+
+
             if adv.get_abilityCategoryByName(capa_adv) == "Physique":
                 degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / starter.get_statDefense()) / 50) + 2))
 

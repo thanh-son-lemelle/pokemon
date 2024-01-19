@@ -1,12 +1,57 @@
 import pygame
 import os
+from Pokemon import Pokemon
 
-def resizeImage(image, multiplier):
-    originalWidth, originalHeight = image.get_size()
-    newHeight = int(multiplier * originalHeight)
-    newWidth = int(multiplier * originalWidth)
-    image = pygame.transform.scale(image, (newWidth, newHeight))
-    return image
+class Animation:
+    def __init__(self, target) -> None:
+        self.Id = target.get_id()
+        self.frames = []
+        self.current_frame = 0
+        self.current_framebis = 0
+        self.x = 0
+        self.y = 0
+        self.sc_w = 800
+        self.sc_h = 400
+        self.FPS = 30
+        self.clock = pygame.time.Clock()
+        self.running = True
+        self.ospath = os.path.dirname(__file__)
+        self.split_gif = os.path.join("images", "sprite_pokemon", "front", "split_gif")
+        self.bg = pygame.image.load("images\\background\combat\sprite_combat_background02.png")
+        self.bg = pygame.transform.scale(self.bg, (self.sc_w, self.sc_h))
+        self.screen = pygame.display.set_mode((self.sc_w, self.sc_h))
+        self.loadFrames()
+    
+    
+
+    def loadFrames(self):
+        for i in range(105):
+            if i < 10:
+                frame = (pygame.image.load(f"images\\sprite_pokemon\\front\\split_gif\\4\\frame_00{i}_delay-0.05s.gif").convert_alpha())
+                
+            elif i < 100:
+                frame = (pygame.image.load(f"images\\sprite_pokemon\\front\split_gif\\4\\frame_0{i}_delay-0.05s.gif").convert_alpha())
+            else:
+                frame = (pygame.image.load(f"images\\sprite_pokemon\\front\split_gif\\4\\frame_{i}_delay-0.05s.gif").convert_alpha())
+
+            frameresized = self.resizeImage(frame, 1.5)
+            self.frames.append(frameresized)
+        pass
+    def resizeImage(image, multiplier):
+        originalWidth, originalHeight = image.get_size()
+        newHeight = int(multiplier * originalHeight)
+        newWidth = int(multiplier * originalWidth)
+        image = pygame.transform.scale(image, (newWidth, newHeight))
+        return image
+
+
+
+
+
+
+
+
+
 
 pygame.init()
 sc_w, sc_h = 800, 400

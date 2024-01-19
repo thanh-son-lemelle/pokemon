@@ -52,11 +52,11 @@ class Pokemon:
         return self.__xp
     
     def get_imageFace(self):
-        self.__imageFace = self.resizeImage(self.__imageFace, 200) # à voir si Utile ou pas
+        self.__imageFace = self.resizeImage(self.__imageFace, 2) # à voir si Utile ou pas
         return self.__imageFace
     
     def get_imageBack(self):
-        self.__imageBack = self.resizeImage(self.__imageBack, 200) # à voir si Utile ou pas
+        self.__imageBack = self.resizeImage(self.__imageBack, 2) # à voir si Utile ou pas
         return self.__imageBack
     
     def get_level(self):
@@ -153,10 +153,10 @@ class Pokemon:
         return self.__stats["speed"]
     
     def get_statSpecialAttack(self):
-        return self.__stats["special-attack"]
+        return self.__stats["spe_attack"]
     
     def get_statSpecialDefense(self):  
-        return self.__stats["special-defense"]
+        return self.__stats["spe_defense"]
     
 #============================================================================
         # gestion de l'xp, du level up et de l'évolution
@@ -331,17 +331,18 @@ class Pokemon:
     # Traitement des images
 #============================================================================
     
-    def resizeImage(self, image, newwidth):
+    def resizeImage(self, image, multiplier):
         newHeight = None
         originalWidth, originalHeight = image.get_size()
-        newHeight = int(newwidth / originalWidth * originalHeight)
-        image = pygame.transform.scale(image, (newwidth, newHeight))
+        newHeight = int(multiplier * originalHeight)
+        newWidth = int(multiplier * originalWidth)
+        image = pygame.transform.scale(image, (newWidth, newHeight))
         return image
 
     
 
 # Test de la class
-"""
+
 starter = Pokemon (4)
 starter.set_level(50)
 print(starter.get_4abilities())
@@ -365,8 +366,8 @@ print(starter.get_pokemonData())
 
 pygame.init()
 
-largeur_fenetre = 800
-hauteur_fenetre = 600
+largeur_fenetre = 1000
+hauteur_fenetre = 500
 
 
 fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
@@ -375,15 +376,9 @@ pygame.display.set_caption('Fenêtre Pygame avec Image')
 
 
 image = starter.get_imageFace()
-imageModifier = pygame.transform.scale(image, (200, 200))
 
 # Obtenir la position de l'image dans la fenêtre
 image_rect = image.get_rect()
-image_rect.center = (largeur_fenetre // 2, hauteur_fenetre // 2)
-image_rect2 = image.get_rect()
-image_rect2.center = (largeur_fenetre // 1.2, hauteur_fenetre // 1.2)
-image_rect3 = image.get_rect()
-image_rect3.center = (largeur_fenetre // 1.5, hauteur_fenetre // 1.2)
 
 # Boucle principale
 while True:
@@ -393,19 +388,15 @@ while True:
             sys.exit()
 
     # Effacer l'écran
-    fenetre.fill((0, 0, 0))  # Fond blanc
+    fenetre.fill((255,255,255))  # Fond blanc
 
     # Dessiner l'image
-    fenetre.blit(starter.get_imageFace(), image_rect)
-    fenetre.blit(starter.get_imageBack(), image_rect)
-    fenetre.blit(starter.get_imageBack(), image_rect2)
-    fenetre.blit(starter.get_imageFace(), image_rect3)
-    fenetre.blit(image, (0, 25))
+    fenetre.blit(image, image_rect)
+
 
     # Mettre à jour l'affichage
     pygame.display.flip()
 
-# Quitter Pygame
+    # Quitter Pygame
 pygame.quit()
 sys.exit()
-"""

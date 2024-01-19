@@ -23,8 +23,8 @@ class Combat():
         self.__liste_musique = ["musique\combat\Pokémon Black & White - Critical Health Music (HQ).mp3","musique\combat\Pokémon Diamond, Pearl & Platinum - Champion Cynthia Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Primal Kyogre & Groudon Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Zinnia Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Kieran Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Nemona Battle Music (HQ)(1).mp3","musique\combat\Pokémon Sun & Moon - Battle Legend Red & Blue Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Rival Gladion Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Team Skull Leader Guzma Battle Music (HQ).mp3","musique\combat\Pokémon HeartGold & SoulSilver - Champion & Red Battle Music (HQ).mp3","musique\combat\Battle! Gym Leader - Remix Cover (Pokémon Sword and Shield).mp3","musique\combat\Driftveil City Past Paradox (Remix) ► Pokémon Black & White Toothless Dancing.mp3","musique\combat\Red vs Gold (Theme).mp3","musique\combat\Volo Theme (Piano Etude) Pokémon.mp3"]
         self.__choice_musique = random.choice(self.__liste_musique)
 
-        self.max_hp = 250
-        self.max_hp_adv = 250
+        self.max_hp = starter.get_statHp()
+        self.max_hp_adv = adv.get_statHp()
 
         self.multiplicateur_degat_adv = 1
         self.multiplicateur_degat = 1
@@ -331,9 +331,10 @@ random_id = random.randint(1,20)
 adv = Pokemon (4)
 starter = Pokemon(4)
 starter.set_level(30)
+adv.set_level(30)
 
-print(starter.get_statHp())
-print(adv.get_statHp())
+print("STARTER hp : ",starter.get_statHp())
+print("ADV hp : ",adv.get_statHp())
 
 
 combat = Combat()

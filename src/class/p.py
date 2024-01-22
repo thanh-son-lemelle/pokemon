@@ -1,6 +1,7 @@
 import json
 import pygame
-from Pokemon import Pokemon
+from Pokemon import *
+from Menu import *
 import sys
 from pygame import *
 from pygame.locals import *
@@ -228,12 +229,3 @@ class Pokedex():
 
 pokedex = Pokedex(1)
 pokedex.affichePokedex()
-
-
-
-
-
-
-
-
-

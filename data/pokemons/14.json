@@ -1,0 +1,161 @@
+{
+    "alt-versions": [],
+    "nom": "Coconfort",
+    "Coconfort": {
+        "donnees_pokedex": {
+            "Numero National": "0014",
+            "Type": [
+                "Insecte",
+                "Poison"
+            ],
+            "Espece": "Pokémon Cocon",
+            "Taille": "0.6 m (2'00\")",
+            "Poids": "10.0 kg (22.0 lbs)",
+            "Capacites": {
+                "Mue": {
+                    "lien": "/ability/shed-skin",
+                    "effet": "Le Pokémon peut soigner ses propres problèmes d'état.",
+                    "cache": false
+                }
+            }
+        },
+        "donnees_entrainement": {
+            "Rendement EV": "2 Défense",
+            "Taux de capture": "120",
+            "Amitie de base": "50",
+            "Exp de base": "72",
+            "Taux de croissance": "Moyen Rapide"
+        },
+        "donnees_reproduction": {
+            "Genre": "50% mâle, 50% femelle"
+        },
+        "stats_base": {
+            "PV": {
+                "Base": "45",
+                "Min": "200",
+                "Max": "294"
+            },
+            "Attaque": {
+                "Base": "25",
+                "Min": "49",
+                "Max": "163"
+            },
+            "Defense": {
+                "Base": "50",
+                "Min": "94",
+                "Max": "218"
+            },
+            "Attaque Speciale": {
+                "Base": "25",
+                "Min": "49",
+                "Max": "163"
+            },
+            "Defense Speciale": {
+                "Base": "25",
+                "Min": "49",
+                "Max": "163"
+            },
+            "Vitesse": {
+                "Base": "35",
+                "Min": "67",
+                "Max": "185"
+            },
+            "Total": "205"
+        },
+        "stats_defense": {
+            "default": {
+                "Feu": "super efficace",
+                "Plante": "peu efficace",
+                "Combat": "peu efficace",
+                "Poison": "peu efficace",
+                "Vol": "super efficace",
+                "Psy": "super efficace",
+                "Insecte": "peu efficace",
+                "Roche": "super efficace",
+                "Fée": "peu efficace"
+            }
+        }
+    },
+    "evo_stats": [
+        [
+            {
+                "de": {
+                    "nom": "Aspicot",
+                    "numeroNational": "#0013",
+                    "type": [
+                        "Insecte",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Coconfort",
+                    "numeroNational": "#0014",
+                    "type": [
+                        "Insecte",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 7)",
+                "mue": null
+            },
+            {
+                "de": {
+                    "nom": "Coconfort",
+                    "numeroNational": "#0014",
+                    "type": [
+                        "Insecte",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "vers": {
+                    "nom": "Dardargnan",
+                    "numeroNational": "#0015",
+                    "type": [
+                        "Insecte",
+                        "Poison"
+                    ],
+                    "surnom": null
+                },
+                "exigence": "(Niveau 10)",
+                "mue": null
+            }
+        ]
+    ],
+    "donnees_attaques": {
+        "attaques": {
+            "Blindage": "1"
+        },
+        "evolution": {
+            "Blindage": "\u2014"
+        },
+        "oeuf": null,
+        "ct": null
+    },
+    "entries": {
+        "Coconfort": [
+            "Presque incapable de bouger, ce Pokémon ne peut que durcir sa coquille pour se protéger des prédateurs.",
+            "Capable de se déplacer seulement légèrement. En danger, il peut sortir son dard et empoisonner son ennemi.",
+            "Bien que ce soit un cocon, il peut bouger un peu. Il peut étendre son dard empoisonné s'il est attaqué.",
+            "De cette forme, il évoluera en adulte. À mesure que son corps devient plus mou, la coquille externe se durcit.",
+            "Presque incapable de bouger, il s'appuie contre des arbres robustes en attendant son évolution.",
+            "COCONFORT reste pratiquement immobile en s'accrochant à un arbre. Cependant, à l'intérieur, il est extrêmement occupé à se préparer à son évolution imminente. Cela se manifeste par la chaleur de la coquille au toucher.",
+            "Ce Pokémon est dans une étape temporaire tout en fabriquant son corps. Il est presque complètement incapable de se déplacer seul.",
+            "Presque incapable de bouger, ce Pokémon ne peut que durcir sa coquille pour se protéger quand il est en danger.",
+            "Il reste pratiquement immobile tout en s'accrochant à un arbre. Cependant, à l'intérieur, il se prépare activement à l'évolution. Cela se manifeste par la chaleur de sa coquille.",
+            "En attendant son évolution, il se cache des prédateurs sous les feuilles et dans les recoins des branches.",
+            "Bien que ce soit un cocon, il peut bouger un peu. Il peut étendre son dard empoisonné s'il est attaqué.",
+            "De cette forme, il évoluera en adulte. À mesure que son corps devient plus mou, la coquille externe se durcit.",
+            "En attendant son évolution, il se cache des prédateurs sous les feuilles et dans les recoins des branches.",
+            "Presque incapable de bouger, ce Pokémon ne peut que durcir sa coquille pour se protéger quand il est en danger.",
+            "En attendant son évolution, il se cache des prédateurs sous les feuilles et dans les recoins des branches.",
+            "Coconfort reste pratiquement immobile en s'accrochant à un arbre. Cependant, à l'intérieur, il est extrêmement occupé à se préparer à son évolution imminente. Cela se manifeste par la chaleur de la coquille au toucher.",
+            "Capable de se déplacer seulement légèrement. En danger, il peut sortir son dard et empoisonner son ennemi.",
+            "En attendant son évolution, il se cache des prédateurs sous les feuilles et dans les recoins des branches."
+        ]
+    },
+    "discord_image": "https://cdn.discordapp.com/attachments/1131758889575137330/1131786697974231060/14.png",
+    "discord_sprite": "<:P14:1131972508430651533>"
+}

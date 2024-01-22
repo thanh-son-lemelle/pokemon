@@ -1,0 +1,27 @@
+{
+  "abilities": [
+    {"name": "Charge", "stats": {"power": 40, "accuracy": 100, "type": "Normal", "category": "Physique"}},
+    {"name": "Grozyeux", "stats": {"power": 50, "accuracy": 90, "type": "Normal", "category": "Physique"}},
+    {"name": "Poudre Toxik", "stats": {"power": 0, "accuracy": 75, "type": "Poison", "category": "Statut" ,"status_changes": {"name": "Empoisonnement", "effect": "Inflige des dégâts à l'adversaire à chaque tour", "turns": -1}}},
+    {"name": "Tranch'Herbe", "stats": {"power": 55, "accuracy": 95, "type": "Plante", "category": "Special"}},
+    {"name": "Flammèche", "stats": {"power": 40, "accuracy": 100, "type": "Feu", "category": "Special"}},
+    {"name": "Griffe", "stats": {"power": 50, "accuracy": 95, "type": "Normal", "category": "Physique"}},
+    {"name": "Dracogriffe", "stats": {"power": 80, "accuracy": 90, "type": "Dragon", "category": "Physique"}},
+    {"name": "Lance-Flammes", "stats": {"power": 90, "accuracy": 85, "type": "Feu", "category": "Special", "status_changes": {"name": "Brûlure", "effect": "Peut infliger une brûlure à l'adversaire", "turns": -1}}},
+    {"name": "Pistolet à O", "stats": {"power": 40, "accuracy": 100, "type": "Eau", "category": "Special"}},
+    {"name": "Ecume", "stats": {"power": 30, "accuracy": 100, "type": "Eau", "category": "Special"}},
+    {"name": "Morsure", "stats": {"power": 60, "accuracy": 90, "type": "Ténèbres", "category": "Physique"}},
+    {"name": "Hydrocanon", "stats": {"power": 110, "accuracy": 80, "type": "Eau", "category": "Special"}},
+    {"name": "Danse Pluie", "stats": {"power": 0, "accuracy": 0, "type": "Eau", "category": "Statut","status_changes": {"name": "Pluie", "effect": "Modifie la météo en pluie", "turns": 5}}},
+    {"name": "Dard-Venin", "stats": {"power": 15, "accuracy": 100, "type": "Poison", "category": "Physique", "status_changes": {"name": "Empoisonnement", "effect": "Inflige empoisonnement à l'adversaire", "turns": -1}}},
+    {"name": "Papillodanse", "stats": {"power": 0, "accuracy": 0, "type": "Normal", "category": "Statut"}},
+    {"name": "Toile Gluante", "stats": {"power": 0, "accuracy": 0, "type": "Insecte", "category": "Statut"}},
+    {"name": "Jet de Sable", "stats": {"power": 0, "accuracy": 100, "type": "Sol", "category": "Statut","status_changes": {"name": "Baisse de Précision", "effect": "Diminue la précision de l'adversaire", "turns": 2}}},
+    {"name": "Rugissement", "stats": {"power": 0, "accuracy": 0, "type": "Normal", "category": "Statut"}},
+    {"name": "Picpic", "stats": {"power": 35, "accuracy": 100, "type": "Vol", "category": "Physique"}},
+    {"name": "Atterrissage", "stats": {"power": 0, "accuracy": 0, "type": "Normal", "category": "Statut"}},
+    {"name": "Voler", "stats": {"power": 70, "accuracy": 95, "type": "Vol", "category": "Physique"}},
+    {"name": "Mimi-queue", "stats": {"power": 0, "accuracy": 100, "type": "Normal", "category": "Statut"}},
+    {"name": "Croc de Mort", "stats": {"power": 80, "accuracy": 90, "type": "Ténèbres", "category": "Physique"}}
+  ]
+}

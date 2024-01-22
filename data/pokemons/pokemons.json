@@ -24,11 +24,20 @@
         "to": 2
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 3,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 7,
+          "name": "Poudre Toxik"
+        }
       ],
-      "vu": 0
+      "vu": 3
     },
     {
       "id": 2,
@@ -54,10 +63,22 @@
         "to": 3
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Tranch'Herbe"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 3,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 7,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 13,
+          "name": "Tranch'Herbe"
+        }
       ],
       "vu": 0
     },
@@ -81,17 +102,32 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Tranch'Herbe"},
-        {"level": 25, "name": "Vampigraine"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 3,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 7,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 13,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 25,
+          "name": "Vampigraine"
+        }
       ],
       "vu": 0
     },
     {
       "id": 4,
-      "name": "Salamèche",
+      "name": "Salam\u00c3\u00a8che",
       "type1": "Feu",
       "type2": "None",
       "stats": {
@@ -113,9 +149,18 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Griffe"},
-        {"level": 7, "name": "Flammèche"},
-        {"level": 10, "name": "Grozyeux"}
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 7,
+          "name": "Flamm\u00c3\u00a8che"
+        },
+        {
+          "level": 10,
+          "name": "Grozyeux"
+        }
       ],
       "vu": 0
     },
@@ -143,10 +188,22 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Griffe"},
-        {"level": 7, "name": "Flammèche"},
-        {"level": 10, "name": "Grozyeux"},
-        {"level": 20, "name": "Dracogriffe"}
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 7,
+          "name": "Flamm\u00c3\u00a8che"
+        },
+        {
+          "level": 10,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 20,
+          "name": "Dracogriffe"
+        }
       ],
       "vu": 0
     },
@@ -170,11 +227,26 @@
         "speed": 5
       },
       "abilities": [
-        {"level": 1, "name": "Griffe"},
-        {"level": 7, "name": "Flammèche"},
-        {"level": 10, "name": "Grozyeux"},
-        {"level": 20, "name": "Dracogriffe"},
-        {"level": 40, "name": "Lance-Flammes"}
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 7,
+          "name": "Flamm\u00c3\u00a8che"
+        },
+        {
+          "level": 10,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 20,
+          "name": "Dracogriffe"
+        },
+        {
+          "level": 40,
+          "name": "Lance-Flammes"
+        }
       ],
       "vu": 0
     },
@@ -202,9 +274,18 @@
         "speed": 2
       },
       "abilities": [
-        {"level": 1, "name": "Pistolet à O"},
-        {"level": 7, "name": "Ecume"},
-        {"level": 10, "name": "Morsure"}
+        {
+          "level": 1,
+          "name": "Pistolet \u00c3\u00a0 O"
+        },
+        {
+          "level": 7,
+          "name": "Ecume"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        }
       ],
       "vu": 0
     },
@@ -232,10 +313,22 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Pistolet à O"},
-        {"level": 7, "name": "Ecume"},
-        {"level": 10, "name": "Morsure"},
-        {"level": 22, "name": "Hydrocanon"}
+        {
+          "level": 1,
+          "name": "Pistolet \u00c3\u00a0 O"
+        },
+        {
+          "level": 7,
+          "name": "Ecume"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        },
+        {
+          "level": 22,
+          "name": "Hydrocanon"
+        }
       ],
       "vu": 0
     },
@@ -259,11 +352,26 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Pistolet à O"},
-        {"level": 7, "name": "Ecume"},
-        {"level": 10, "name": "Morsure"},
-        {"level": 22, "name": "Hydrocanon"},
-        {"level": 42, "name": "Danse Pluie"}
+        {
+          "level": 1,
+          "name": "Pistolet \u00c3\u00a0 O"
+        },
+        {
+          "level": 7,
+          "name": "Ecume"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        },
+        {
+          "level": 22,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 42,
+          "name": "Danse Pluie"
+        }
       ],
       "vu": 0
     },
@@ -291,7 +399,10 @@
         "speed": 2
       },
       "abilities": [
-        {"level": 1, "name": "Charge"}
+        {
+          "level": 1,
+          "name": "Charge"
+        }
       ],
       "vu": 0
     },
@@ -319,7 +430,10 @@
         "speed": 1
       },
       "abilities": [
-        {"level": 1, "name": "Charge"}
+        {
+          "level": 1,
+          "name": "Charge"
+        }
       ],
       "vu": 0
     },
@@ -343,10 +457,22 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Papillodanse"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 3,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 7,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 13,
+          "name": "Papillodanse"
+        }
       ],
       "vu": 0
     },
@@ -374,7 +500,10 @@
         "speed": 2
       },
       "abilities": [
-        {"level": 1, "name": "Dard-Venin"}
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        }
       ],
       "vu": 0
     },
@@ -402,7 +531,10 @@
         "speed": 1
       },
       "abilities": [
-        {"level": 1, "name": "Dard-Venin"}
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        }
       ],
       "vu": 0
     },
@@ -426,11 +558,26 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Dard-Venin"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Papillodanse"},
-        {"level": 30, "name": "Toile Gluante"}
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 3,
+          "name": "Grozyeux"
+        },
+        {
+          "level": 7,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 13,
+          "name": "Papillodanse"
+        },
+        {
+          "level": 30,
+          "name": "Toile Gluante"
+        }
       ],
       "vu": 0
     },
@@ -458,9 +605,18 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"}
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 5,
+          "name": "Rugissement"
+        },
+        {
+          "level": 12,
+          "name": "Picpic"
+        }
       ],
       "vu": 0
     },
@@ -488,9 +644,18 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"}
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 5,
+          "name": "Rugissement"
+        },
+        {
+          "level": 12,
+          "name": "Picpic"
+        }
       ],
       "vu": 0
     },
@@ -518,10 +683,22 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"},
-        {"level": 25, "name": "Atterrissage"}
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 5,
+          "name": "Rugissement"
+        },
+        {
+          "level": 12,
+          "name": "Picpic"
+        },
+        {
+          "level": 25,
+          "name": "Atterrissage"
+        }
       ],
       "vu": 0
     },
@@ -549,9 +726,18 @@
         "to": 20
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 5, "name": "Mimi-queue"},
-        {"level": 13, "name": "Morsure"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 5,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 13,
+          "name": "Morsure"
+        }
       ],
       "vu": 0
     },
@@ -575,11 +761,24 @@
         "speed": 5
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 5, "name": "Mimi-queue"},
-        {"level": 13, "name": "Morsure"},
-        {"level": 30, "name": "Croc de Mort"}
-      ]
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 5,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 13,
+          "name": "Morsure"
+        },
+        {
+          "level": 30,
+          "name": "Croc de Mort"
+        }
+      ],
+      "vu":0
     }
   ]
 }

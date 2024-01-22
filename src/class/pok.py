@@ -43,12 +43,10 @@ class Pokedex():
         self.__affDefense = self.police_small.render("Defense : ", True, "black")
         self.__affSpeed = self.police_small.render("Speed : ", True, "black")
 
-        self.pokemon_rencontres = []  
-        self.mode_combat = False  
 
     def ajouter_pokemon_rencontre(self, id):
         if id not in self.pokemon_rencontres:
-            self.pokemon_rencontres.append(id)
+            self.pokemon_rencontres.append()
             
     def loadDescription(self):
         with open(r'data\\pokedex\\pokedex.json', 'r', encoding='utf-8') as file:
@@ -61,6 +59,7 @@ class Pokedex():
     def loadStats(self):
         with open(r'data\\pokemons\\pokemons.json', 'r', encoding='utf-8') as file:
             pokemonsData = json.load(file)
+            print(pokemonsData)
 
         for pokemon in pokemonsData['pokemons']:
             self.__type1.append(pokemon['type1'])
@@ -142,36 +141,37 @@ class Pokedex():
             self.SCREEN.blit(self.__affSpeed, (420, 640))
             self.SCREEN.blit(self.loadPoint(self.__currentPos), (410,190))
             
-            if self.mode_combat and self.__currentPos in self.pokemon_rencontres:
-                name_rendered = self.police_larger.render(self.recupereNomById(self.__currentPos), True, "black")
-                self.SCREEN.blit(name_rendered, (350, 120))
-                
-                self.SCREEN.blit(self.loadGif(self.__currentPos), (410, 190))
 
-                description_lines = self.recupereDescriptionById(self.__currentPos).split('\n')
-                y_position = 400
-                for line in description_lines:
-                    description_rendered = self.police_small.render(line, True, "black")
-                    self.SCREEN.blit(description_rendered, (330, y_position))
-                    y_position += description_rendered.get_rect().height
 
-                type1_rendered = self.police_small.render(self.recupereType1ById(self.__currentPos), True, "black")
-                self.SCREEN.blit(type1_rendered, (460, 527))
+            name_rendered = self.police_larger.render(self.recupereNomById(self.__currentPos), True, "black")
+            self.SCREEN.blit(name_rendered, (350, 120))
+            
+            self.SCREEN.blit(self.loadGif(self.__currentPos), (410, 190))
 
-                type2_rendered = self.police_small.render(self.recupereType2ById(self.__currentPos), True, "black")
-                self.SCREEN.blit(type2_rendered, (550, 527))
+            description_lines = self.recupereDescriptionById(self.__currentPos).split('\n')
+            y_position = 400
+            for line in description_lines:
+                description_rendered = self.police_small.render(line, True, "black")
+                self.SCREEN.blit(description_rendered, (330, y_position))
+                y_position += description_rendered.get_rect().height
 
-                hp_rendered = self.police_small.render(str(self.recupereHpById(self.__currentPos)), True, "black")
-                self.SCREEN.blit(hp_rendered, (530, 592))
+            type1_rendered = self.police_small.render(self.recupereType1ById(self.__currentPos), True, "black")
+            self.SCREEN.blit(type1_rendered, (460, 527))
 
-                attack_rendered = self.police_small.render(str(self.recupereAttackById(self.__currentPos)), True, "black")
-                self.SCREEN.blit(attack_rendered, (530, 608))
+            type2_rendered = self.police_small.render(self.recupereType2ById(self.__currentPos), True, "black")
+            self.SCREEN.blit(type2_rendered, (550, 527))
 
-                defense_rendered = self.police_small.render(str(self.recupereDefenseById(self.__currentPos)), True, "black")
-                self.SCREEN.blit(defense_rendered, (530, 624))
+            hp_rendered = self.police_small.render(str(self.recupereHpById(self.__currentPos)), True, "black")
+            self.SCREEN.blit(hp_rendered, (530, 592))
 
-                speed_rendered = self.police_small.render(str(self.recupereSpeedById(self.__currentPos)), True, "black")
-                self.SCREEN.blit(speed_rendered, (530, 640))
+            attack_rendered = self.police_small.render(str(self.recupereAttackById(self.__currentPos)), True, "black")
+            self.SCREEN.blit(attack_rendered, (530, 608))
+
+            defense_rendered = self.police_small.render(str(self.recupereDefenseById(self.__currentPos)), True, "black")
+            self.SCREEN.blit(defense_rendered, (530, 624))
+
+            speed_rendered = self.police_small.render(str(self.recupereSpeedById(self.__currentPos)), True, "black")
+            self.SCREEN.blit(speed_rendered, (530, 640))
 
             pygame.display.update()
 

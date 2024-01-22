@@ -21,6 +21,7 @@ class Pokedex():
         self.__attack = []
         self.__defense = []
         self.__speed = []
+        self.__vu = []
         self.__imageFace = None
         self.__evolution = None
         self.__currentPos = 1
@@ -41,6 +42,9 @@ class Pokedex():
         self.__affAttack = self.police_small.render("Attack : ", True, "black")
         self.__affDefense = self.police_small.render("Defense : ", True, "black")
         self.__affSpeed = self.police_small.render("Speed : ", True, "black")
+
+    def get_vu(self):
+        return self.__vu
 
     def loadDescription(self):
         with open(r'data\\pokedex\\pokedex.json', 'r', encoding='utf-8') as file:
@@ -64,14 +68,21 @@ class Pokedex():
             self.__attack.append(pokemon['stats']['attack'])
             self.__defense.append(pokemon['stats']['defense'])
             self.__speed.append(pokemon['stats']['speed'])
+            self.__vu.append(pokemon['vu'])
         
-        return pokemon['id'], self.__type1, self.__type2, self.__infostats, self.__hp, self.__attack, self.__defense, self.__speed
+        return pokemon['id'], self.__type1, self.__type2, self.__infostats, self.__hp, self.__attack, self.__defense, self.__speed, self.__vu
 
     def loadGif(self, id):
         self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{id}.gif")
-        self.__imageFace = Pokemon.resizeImage(self, self.__imageFace, 150)  
+        self.__imageFace = Pokemon.resizeImage(self, self.__imageFace, 2)
+          
 
         return self.__imageFace
+    
+    def loadPoint(self, id):
+        self.__imagePoint = pygame.image.load(f"images\pokedex\point d'interrogation.jpg")
+        self.__imagePoint = pygame.transform.scale(self.__imagePoint,(130,120))
+        return self.__imagePoint
 
     def recupereNomById(self, id):
         self.loadDescription()
@@ -113,6 +124,10 @@ class Pokedex():
         self.loadStats()
 
         return self.__speed[id - 1]
+    
+    def recupereVu (self, id):
+        self.loadStats()
+        return self.__vu[id- 1]
 
     def affichePokedex(self):
         rectangle = Rect(330, 400, 100, 100)
@@ -124,7 +139,7 @@ class Pokedex():
         musique= pygame.mixer.music.load("musique\main menu\Pokemon BlackWhite Music - Pokemon Center.mp3")
         mixer.music.set_volume(0.1)
         mixer.music.play(-1)
-        
+        self.loadStats()
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -152,40 +167,47 @@ class Pokedex():
             self.SCREEN.blit(self.__affDefense, (420, 624))
             self.SCREEN.blit(self.__affSpeed, (420, 640))
 
-            name_rendered = self.police_larger.render(pokedex.recupereNomById(self.__currentPos), True, "black")
-            self.SCREEN.blit(name_rendered, (350, 120))
+            if self.recupereVu(self.__currentPos) >=1:
+                name_rendered = self.police_larger.render(pokedex.recupereNomById(self.__currentPos), True, "black")
+                self.SCREEN.blit(name_rendered, (350, 120))
+                self.__imageFace = self.loadGif(self.__currentPos)
+                rect = self.__imageFace.get_rect()
+                rect.midbottom = (490, self.WIDTH // 3 + 30)
+                self.SCREEN.blit(self.__imageFace, rect)
 
-            self.SCREEN.blit(self.loadGif(self.__currentPos), (410, 190))
+                description_lines = pokedex.recupereDescriptionById(self.__currentPos).split('\n')
+                y_position = 400
+                for line in description_lines:
+                    description_rendered = self.police_small.render(line, True, "black")
+                    self.SCREEN.blit(description_rendered, (330, y_position))
+                    y_position += description_rendered.get_rect().height  
 
-            description_lines = pokedex.recupereDescriptionById(self.__currentPos).split('\n')
-            y_position = 400
-            for line in description_lines:
-                description_rendered = self.police_small.render(line, True, "black")
-                self.SCREEN.blit(description_rendered, (330, y_position))
-                y_position += description_rendered.get_rect().height  
+                type1_rendered = self.police_small.render(pokedex.recupereType1ById(self.__currentPos), True, "black")
+                self.SCREEN.blit(type1_rendered, (460, 527))
 
-            type1_rendered = self.police_small.render(pokedex.recupereType1ById(self.__currentPos), True, "black")
-            self.SCREEN.blit(type1_rendered, (460, 527))
+                type2_rendered = self.police_small.render(pokedex.recupereType2ById(self.__currentPos), True, "black")
+                self.SCREEN.blit(type2_rendered, (550, 527))
 
-            type2_rendered = self.police_small.render(pokedex.recupereType2ById(self.__currentPos), True, "black")
-            self.SCREEN.blit(type2_rendered, (550, 527))
+                hp_rendered = self.police_small.render(str(pokedex.recupereHpById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(hp_rendered, (530,592))
 
-            hp_rendered = self.police_small.render(str(pokedex.recupereHpById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(hp_rendered, (530,592))
+                attack_rendered = self.police_small.render(str(pokedex.recupereAttackById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(attack_rendered, (530,608))
 
-            attack_rendered = self.police_small.render(str(pokedex.recupereAttackById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(attack_rendered, (530,608))
+                defense_rendered = self.police_small.render(str(pokedex.recupereDefenseById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(defense_rendered, (530,624))
 
-            defense_rendered = self.police_small.render(str(pokedex.recupereDefenseById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(defense_rendered, (530,624))
-
-            speed_rendered = self.police_small.render(str(pokedex.recupereSpeedById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(speed_rendered, (530,640))
-
+                speed_rendered = self.police_small.render(str(pokedex.recupereSpeedById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(speed_rendered, (530,640))
+            else:
+                self.SCREEN.blit(self.loadPoint(self.__currentPos), (410,190))
             pygame.display.update()
 
 
 pokedex = Pokedex(1)
+pokedex.loadStats()
+print(pokedex.get_vu())
+print(pokedex.recupereVu(1))
 pokedex.affichePokedex()
 
 

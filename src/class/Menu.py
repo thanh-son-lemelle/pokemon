@@ -1,4 +1,5 @@
-from Button import *
+from Button import Button
+from Pokedex import Pokedex
 import pygame
 import sys
 from pygame import *
@@ -61,10 +62,17 @@ class Menu():
                 if event.type == pygame.MOUSEBUTTONDOWN:
 
                     #if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        print("play")
+                        pass
 
 
 
                     ##if PLAY_POKEDEX.checkForInput(MENU_MOUSE_POS):
+                    if POKEDEX_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        pokedex = Pokedex(1)
+                        pokedex.affichePokedex()
+                        
 
                     
                         

@@ -340,9 +340,9 @@ class Pokemon:
         return image
 
     
-
-# Test de la class
 """
+# Test de la class
+
 starter = Pokemon (4)
 starter.set_level(50)
 print(starter.get_4abilities())

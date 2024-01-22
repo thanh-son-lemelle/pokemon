@@ -53,7 +53,7 @@ class Combat():
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
         self.lvl_adv = self.police.render(str(adv.get_level()), True, "black")
         self.aff_lvl = self.police.render("Lv : ", True, "black")
-        self.liste_poke = []
+        self.liste_poke = [3,5,5]
         self.liste_poke_adv = []
     
         
@@ -67,11 +67,8 @@ class Combat():
         self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
         self.max_hp = self.starter.get_statHp()
-        self.max_hp_adv = adv.get_statHp()
         self.hp = self.max_hp
-        self.hp_adv = self.max_hp_adv
         self.ratio = self.hp / self.max_hp
-        self.ratio_adv = self.hp_adv / self.max_hp_adv
         size_capa = (1000,200)
         press = False
         capa = pygame.image.load("images\\background\combat\panel.png")
@@ -297,6 +294,8 @@ class Combat():
 
 
     def Defaite(self):
+        self.max_hp_adv = adv.get_statHp()
+        self.hp_adv = self.max_hp_adv
         pygame.display.update()
         pygame.display.set_caption("Loose Menu")
         size_capa = (1000, 700)
@@ -512,6 +511,20 @@ class Combat():
 
 
             pygame.display.update()
+
+
+    def vu(self):
+    # Étape 1: Lire le fichier JSON existant
+        with open("data/pokemons/pokemons.json", "r") as f:
+            file = json.load(f)
+
+            for i in file['pokemons']:
+                if i["id"] == self.starter.get_id():
+                    i["vu"] += 1
+                    print(i["vu"])
+
+        with open("data/pokemons/pokemons.json", "w") as f:
+            json.dump(file, f, indent=2)
          
 
         
@@ -538,6 +551,6 @@ print("ADV hp : ",adv.get_statHp())
 
 
 combat = Combat()
-combat.choix_pokemon()
+combat.vu()
 
 

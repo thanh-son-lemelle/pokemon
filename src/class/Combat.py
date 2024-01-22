@@ -26,7 +26,9 @@ class Combat():
         self.__choice_musique = random.choice(self.__liste_musique)
         self.starter = Pokemon(1)
         self.max_hp = self.starter.get_statHp()
-        self.max_hp_adv = adv.get_statHp()
+        random_id = random.randint(1,20)
+        self.adv = Pokemon (random_id)
+        self.max_hp_adv = self.adv.get_statHp()
 
         self.multiplicateur_degat_adv = 1
         self.multiplicateur_degat = 1
@@ -45,13 +47,13 @@ class Combat():
         self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
         self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
         
-        self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
+        self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
         self.win = self.police_grande.render("Victoire",True,"white")
         self.loose = self.police_grande.render("Défaite",True,"white")
 
         self.rater = self.police_moyen.render("L'action a échoué",True,"red")
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
-        self.lvl_adv = self.police.render(str(adv.get_level()), True, "black")
+        self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
         self.aff_lvl = self.police.render("Lv : ", True, "black")
         self.liste_poke = [3,5,5]
         self.liste_poke_adv = []
@@ -64,7 +66,7 @@ class Combat():
     def fight(self):
         self.starter.set_level(10)
         self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
-        self.__adversaire = self.police.render(adv.get_nom() + " :", True, "black")
+        self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
         self.max_hp = self.starter.get_statHp()
         self.hp = self.max_hp
@@ -85,7 +87,7 @@ class Combat():
         self.__SCREEN.blit(self.starter.get_imageBack(),(150,290))
         self.__SCREEN.blit(self.__nom, (30, 10))
         self.__SCREEN.blit(self.__adversaire, (700, 10))
-        self.__SCREEN.blit(adv.get_imageFace(),(650,120))
+        self.__SCREEN.blit(self.adv.get_imageFace(),(650,120))
         self.__SCREEN.blit(self.aff_lvl,(30,40))
         self.__SCREEN.blit(self.aff_lvl,(700,40))
         self.__SCREEN.blit(self.lvl_start,(60,40))
@@ -294,7 +296,7 @@ class Combat():
 
 
     def Defaite(self):
-        self.max_hp_adv = adv.get_statHp()
+        self.max_hp_adv = self.adv.get_statHp()
         self.hp_adv = self.max_hp_adv
         pygame.display.update()
         pygame.display.set_caption("Loose Menu")
@@ -319,9 +321,9 @@ class Combat():
         i = 0
         less_press = 0
         degats_stat = 0
-        capa_adv = adv.get_4abilities()[random.randint(0,3)]
+        capa_adv = self.adv.get_4abilities()[random.randint(0,3)]
         while capa_adv == "-":
-            capa_adv = adv.get_4abilities()[random.randint(0,3)]
+            capa_adv = self.adv.get_4abilities()[random.randint(0,3)]
              
         size_capa = (1000,200)
         capa = pygame.image.load("images\\background\combat\panel.png")
@@ -334,10 +336,10 @@ class Combat():
         if probabilite_reussite >= nombre_aleatoire:
 
             if self.starter.get_abilityCategoryByName(self.__attaque) == "Physique":
-                degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / adv.get_statDefense()) / 50) + 2))
+                degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))
 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Special":
-                degats = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / adv.get_statSpecialDefense()) / 50) + 2))
+                degats = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statSpecialDefense()) / 50) + 2))
 
 
             #elif = status --> if feu / poison / etc ... ---> baise hp de x hp par tour (fonction a dupliquer pour l'adv)
@@ -353,19 +355,19 @@ class Combat():
                     less_press = 10
 
 
-            if adv.get_abilityCategoryByName(capa_adv) == "Physique":
-                degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2)+ degats_stat)
+            if self.adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                degats = int((((((self.adv.get_level() * 0.4 + 2) * self.adv.get_statAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2)+ degats_stat)
 
-            elif adv.get_abilityCategoryByName(capa_adv) == "Special":
-                degats = int((((((adv.get_level() * 0.4 + 2) *adv.get_statSpecialAttack() * adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2)+ degats_stat)
+            elif self.adv.get_abilityCategoryByName(capa_adv) == "Special":
+                degats = int((((((self.adv.get_level() * 0.4 + 2) *self.adv.get_statSpecialAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2)+ degats_stat)
 
 
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
-                self.multiplicateur_degat = file[self.starter.get_abilityTypeByName(self.__attaque)][adv.get_type1()]* file[self.starter.get_abilityTypeByName(self.__attaque)][adv.get_type2()]
+                self.multiplicateur_degat = file[self.starter.get_abilityTypeByName(self.__attaque)][self.adv.get_type1()]* file[self.starter.get_abilityTypeByName(self.__attaque)][self.adv.get_type2()]
                 self.hp_adv -= degats * self.multiplicateur_degat + degats_stat
 
-                self.multiplicateur_degat_adv = file[adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
+                self.multiplicateur_degat_adv = file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
                 self.hp -= degats * self.multiplicateur_degat_adv
 
 
@@ -374,12 +376,14 @@ class Combat():
                 self.health_bar()
                 
                 if self.hp_adv <= 0:
+                                self.vu()
                                 self.hp_adv = 0
                                 self.lvl_up()
                                 self.health_bar()
                                 self.Victoire()
 
                 if self.hp <= 0:
+                                self.vu()
                                 self.liste_poke.pop(i)
                                 self.hp = 0
                                 self.health_bar()
@@ -392,11 +396,11 @@ class Combat():
 
         else:
 
-            if adv.get_abilityCategoryByName(capa_adv) == "Physique":
-                degats = int((((((adv.get_level() * 0.4 + 2) * adv.get_statAttack() * adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2))
+            if self.adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                degats = int((((((self.adv.get_level() * 0.4 + 2) * self.adv.get_statAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2))
 
-            elif adv.get_abilityCategoryByName(capa_adv) == "Special":
-                degats = int((((((adv.get_level() * 0.4 + 2) *adv.get_statSpecialAttack() * adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2))
+            elif self.adv.get_abilityCategoryByName(capa_adv) == "Special":
+                degats = int((((((self.adv.get_level() * 0.4 + 2) *self.adv.get_statSpecialAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2))
 
 
             self.rater = self.police_moyen.render("L'action a échoué", False, "red")
@@ -408,7 +412,7 @@ class Combat():
 
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
-                self.multiplicateur_degat_adv = file[adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
+                self.multiplicateur_degat_adv = file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
                 self.hp -= degats * self.multiplicateur_degat_adv
 
 
@@ -417,12 +421,14 @@ class Combat():
             self.health_bar()
             
             if self.hp_adv <= 0:
+                                self.vu()
                                 self.hp_adv = 0
                                 self.lvl_up()
                                 self.health_bar()
                                 self.Victoire()
 
             if self.hp <= 0:
+                            self.vu()
                             self.liste_poke.pop(i)
                             self.hp = 0
                             self.health_bar()
@@ -439,7 +445,7 @@ class Combat():
                 self.__SCREEN.blit(self.starter.get_imageBack(),(150,290))
                 self.__SCREEN.blit(self.__nom, (30, 10))
                 self.__SCREEN.blit(self.__adversaire, (700, 10))
-                self.__SCREEN.blit(adv.get_imageFace(),(650,120))
+                self.__SCREEN.blit(self.adv.get_imageFace(),(650,120))
                 self.__SCREEN.blit(self.aff_lvl,(30,40))
                 self.__SCREEN.blit(self.aff_lvl,(700,40))
                 self.__SCREEN.blit(self.lvl_start,(60,40))
@@ -523,6 +529,10 @@ class Combat():
                     i["vu"] += 1
                     print(i["vu"])
 
+                if i["id"] == self.adv.get_id():
+                    i["vu"] += 1
+                    print(i["vu"])
+
         with open("data/pokemons/pokemons.json", "w") as f:
             json.dump(file, f, indent=2)
          
@@ -543,14 +553,10 @@ class Combat():
         
 
 
-random_id = random.randint(1,20)
-adv = Pokemon (4)
-adv.set_level(30)
 
-print("ADV hp : ",adv.get_statHp())
 
 
 combat = Combat()
-combat.vu()
+combat.fight()
 
 

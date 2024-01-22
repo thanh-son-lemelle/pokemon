@@ -33,10 +33,10 @@ class Menu():
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
 
-            PLAY_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 300), 
+            PLAY_BUTTON = Button(image=pygame.image.load("images\\button\\images\\button main.png"), pos=(100, 300), 
                                 text_input="PLAY", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
             
-            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 450), 
+            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\\images\\button main.png"), pos=(100, 450), 
                                 text_input="QUIT", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
 
 

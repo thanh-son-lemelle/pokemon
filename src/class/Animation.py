@@ -9,8 +9,8 @@ class Animation():
         self.frames = []
         self.delay = []
         self.current_frame = 0
-        self.sc_w = 800
-        self.sc_h = 400
+        self.sc_w = 1000
+        self.sc_h = 500
         self.FPS = 60
         self.clock = pygame.time.Clock()
         self.running = True
@@ -82,7 +82,7 @@ class Animation():
     def displayFrontAnimation(self):
             
             rect = self.frames[self.current_frame].get_rect()
-            rect.midbottom = (600,260)
+            rect.midbottom = (770,320)
             self.screen.blit(self.frames[self.current_frame], rect)
             self.current_frame += 1
             self.current_frame %= len(self.frames)
@@ -90,7 +90,7 @@ class Animation():
     
     def displayBackAnimation(self): 
             rect = self.frames[self.current_frame].get_rect()
-            rect.midbottom = (200,400)
+            rect.midbottom = (270,500)
             self.screen.blit(self.frames[self.current_frame], rect)
             self.current_frame += 1
             self.current_frame %= len(self.frames)

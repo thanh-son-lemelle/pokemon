@@ -2,7 +2,6 @@ import pygame
 import os
 from Pokemon import Pokemon
 import re
-import threading
 
 class Animation():
     def __init__(self, target) -> None:
@@ -87,11 +86,7 @@ class Animation():
             self.screen.blit(self.frames[self.current_frame], rect)
             self.current_frame += 1
             self.current_frame %= len(self.frames)
-            self.delayFinished = False
-            delayThread = threading.Thread(target=self.delaythread, args=(int(self.delay[self.current_frame]*500),))
-            delayThread.start()
-            while not self.delayFinished:
-                pass
+            pygame.time.delay(int(self.delay[self.current_frame]*500))
     
     def displayBackAnimation(self): 
             rect = self.frames[self.current_frame].get_rect()
@@ -99,17 +94,13 @@ class Animation():
             self.screen.blit(self.frames[self.current_frame], rect)
             self.current_frame += 1
             self.current_frame %= len(self.frames)
-            self.delayFinished = False
-            delayThread = threading.Thread(target=self.delaythread, args=(int(self.delay[self.current_frame]*500),))
-            delayThread.start()
-            while not self.delayFinished:
-                pass
+            pygame.time.delay(int(self.delay[self.current_frame]*500))
 
     def delaythread(self, delay):
         pygame.time.delay(delay)
         self.delayFinished = True
         
-"""
+
 
 starter = Pokemon(3)
 animation = Animation(starter)
@@ -150,4 +141,3 @@ while running:
     pygame.display.flip()
     animation.clock.tick(animation.FPS)
 
-"""

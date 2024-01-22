@@ -181,6 +181,9 @@ class Pokedex():
             self.SCREEN.blit(self.__affAttack, (420, 608))
             self.SCREEN.blit(self.__affDefense, (420, 624))
             self.SCREEN.blit(self.__affSpeed, (420, 640))
+            self.SCREEN.blit(self.__affvu, (350, 180))
+            self.SCREEN.blit(self.button_menu, (875, 575))
+
 
             if self.recupereVu(self.__currentPos) >= 1:
                 name_rendered = self.police_larger.render(self.recupereNomById(self.__currentPos), True, "black")
@@ -190,38 +193,42 @@ class Pokedex():
                 rect.midbottom = (490, self.WIDTH // 3 + 30)
                 self.SCREEN.blit(self.__imageFace, rect)
 
-            self.SCREEN.blit(self.loadGif(self.__currentPos), (410, 190))
+                description_lines = self.recupereDescriptionById(self.__currentPos).split('\n')
+                y_position = 400
+                for line in description_lines:
+                    description_rendered = self.police_small.render(line, True, "black")
+                    self.SCREEN.blit(description_rendered, (330, y_position))
+                    y_position += description_rendered.get_rect().height
 
-            description_lines = pokedex.recupereDescriptionById(self.__currentPos).split('\n')
-            y_position = 400
-            for line in description_lines:
-                description_rendered = self.police_small.render(line, True, "black")
-                self.SCREEN.blit(description_rendered, (330, y_position))
-                y_position += description_rendered.get_rect().height  
+                type1_rendered = self.police_small.render(self.recupereType1ById(self.__currentPos), True, "black")
+                self.SCREEN.blit(type1_rendered, (460, 527))
 
-            type1_rendered = self.police_small.render(self.recupereType1ById(self.__currentPos), True, "black")
-            self.SCREEN.blit(type1_rendered, (460, 527))
+                type2_rendered = self.police_small.render(self.recupereType2ById(self.__currentPos), True, "black")
+                self.SCREEN.blit(type2_rendered, (550, 527))
 
-            type2_rendered = self.police_small.render(pokedex.recupereType2ById(self.__currentPos), True, "black")
-            self.SCREEN.blit(type2_rendered, (550, 527))
+                hp_rendered = self.police_small.render(str(self.recupereHpById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(hp_rendered, (530, 592))
 
-            hp_rendered = self.police_small.render(str(pokedex.recupereHpById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(hp_rendered, (530,592))
+                attack_rendered = self.police_small.render(str(self.recupereAttackById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(attack_rendered, (530, 608))
 
-            attack_rendered = self.police_small.render(str(pokedex.recupereAttackById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(attack_rendered, (530,608))
+                defense_rendered = self.police_small.render(str(self.recupereDefenseById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(defense_rendered, (530, 624))
 
-            defense_rendered = self.police_small.render(str(self.recupereDefenseById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(defense_rendered, (530,624))
+                speed_rendered = self.police_small.render(str(self.recupereSpeedById(self.__currentPos)), True, "black")
+                self.SCREEN.blit(speed_rendered, (530, 640))
 
-            speed_rendered = self.police_small.render(str(self.recupereSpeedById(self.__currentPos)), True, "black")
-            self.SCREEN.blit(speed_rendered, (530,640))
+                vu_rendered = self.police_medium.render(str(self.recupereVu(self.__currentPos)), True, "black")
+                self.SCREEN.blit(vu_rendered, (550, 171))
+
+            else:
+                self.SCREEN.blit(self.loadPoint(self.__currentPos), (420, 230))
 
             pygame.display.update()
 
 
-
-
+pokedex = Pokedex(1)
+pokedex.affichePokedex()
 
 
 

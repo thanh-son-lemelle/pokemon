@@ -42,6 +42,7 @@ class Pokedex():
         self.__affAttack = self.police_small.render("Attack : ", True, "black")
         self.__affDefense = self.police_small.render("Defense : ", True, "black")
         self.__affSpeed = self.police_small.render("Speed : ", True, "black")
+        self.__affvu = self.police_small.render("Pokemon apperçu : ", True, "black")
 
     def get_vu(self):
         return self.__vu
@@ -166,6 +167,7 @@ class Pokedex():
             self.SCREEN.blit(self.__affAttack, (420, 608))
             self.SCREEN.blit(self.__affDefense, (420, 624))
             self.SCREEN.blit(self.__affSpeed, (420, 640))
+            self.SCREEN.blit(self.__affvu, (350,180))
 
             if self.recupereVu(self.__currentPos) >=1:
                 name_rendered = self.police_larger.render(pokedex.recupereNomById(self.__currentPos), True, "black")
@@ -199,8 +201,12 @@ class Pokedex():
 
                 speed_rendered = self.police_small.render(str(pokedex.recupereSpeedById(self.__currentPos)), True, "black")
                 self.SCREEN.blit(speed_rendered, (530,640))
+
+                vu_rendered = self.police_medium.render(str(pokedex.recupereVu(self.__currentPos)), True, "black")
+                self.SCREEN.blit(vu_rendered, (550, 171))
+
             else:
-                self.SCREEN.blit(self.loadPoint(self.__currentPos), (410,190))
+                self.SCREEN.blit(self.loadPoint(self.__currentPos), (420,230))
             pygame.display.update()
 
 

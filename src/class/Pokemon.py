@@ -342,7 +342,7 @@ class Pokemon:
     
 
 # Test de la class
-
+"""
 starter = Pokemon (4)
 starter.set_level(50)
 print(starter.get_4abilities())
@@ -400,3 +400,4 @@ while True:
     # Quitter Pygame
 pygame.quit()
 sys.exit()
+"""

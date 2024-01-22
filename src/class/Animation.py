@@ -110,7 +110,6 @@ class Animation():
         self.delayFinished = True
         
 """
-
 starter = Pokemon(3)
 animation = Animation(starter)
 animation.loadFrames(isFront=False)
@@ -149,5 +148,4 @@ while running:
 
     pygame.display.flip()
     animation.clock.tick(animation.FPS)
-
 """

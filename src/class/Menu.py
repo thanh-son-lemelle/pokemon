@@ -12,10 +12,10 @@ class Menu():
         self.HEIGHT = 700
         self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
         self.white = (255 , 255 , 255)
-        self.BG = pygame.image.load("images\\background\menu\Fond pokemon.jpg")
+        self.BG = pygame.image.load("images\\background\\menu\\Fond pokemon.jpg")
 
     def get_font(self,size): 
-        return pygame.font.Font("font\Pokemon Classic.ttf", size)
+        return pygame.font.Font("font\\Pokemon Classic.ttf", size)
 
 
     def main_menu(self):
@@ -23,7 +23,7 @@ class Menu():
         size = (1000,700)
         self.BG = pygame.transform.scale(self.BG, size)
         pygame.display.set_caption("Menu")
-        musique= pygame.mixer.music.load("musique\main menu\Pokemon BlackWhite Music - Pokemon Center.mp3")
+        musique= pygame.mixer.music.load("musique\\main menu\\Pokemon BlackWhite Music - Pokemon Center.mp3")
         mixer.music.set_volume(0.1)
         mixer.music.play(-1)
 

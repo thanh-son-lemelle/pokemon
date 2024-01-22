@@ -37,7 +37,7 @@
           "name": "Poudre Toxik"
         }
       ],
-      "vu": 0
+      "vu": 3
     },
     {
       "id": 2,
@@ -778,7 +778,11 @@
           "name": "Croc de Mort"
         }
       ],
+<<<<<<< HEAD
       "vu": 0
+=======
+      "vu":0
+>>>>>>> Pokedex
     }
   ]
 }

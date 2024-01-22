@@ -1,48 +1,59 @@
 import json
-import random 
-import pygame
+import os
+import random
+from Pokemon import Pokemon
 
-class Dresseurs: 
-    def __init__(self, x, y):
-        self.__nom = None
-        self.__x = x
-        self.__y = y 
+class Dresseurs(): 
+    def __init__(self, nom=None):
+        self.__nom = nom
         self.__listePokemons = []
-        self.__imageFace = None
-        self.__imageBack = None
+        self.itemsInventaire = ()
+        if self.__nom is None:
+            self.setRandomName()
+            self.getRoster(7)
 
-    def get_nom(self):
+
+    def get_lisPokemons(self):
+        return self.__listePokemons
+
+    def loadData(self):
+        # Get the directory of the current script
+        dresseurPath = os.path.join('data', 'dresseurs', 'Dresseurs.json')
+        with open(dresseurPath, 'r') as file:
+            data = json.load(file)
+        return data
+
+    def setRandomName(self):
+        data = self.loadData()
+        self.__nom = random.choice(data['dresseurs'])
         return self.__nom
     
-    def position(self):
-        position = (self.__x, self.__y) 
-        return position 
+    def randomId(self):
+        return random.randint(1, 20)
     
-    def loadData(self):
-        with open("data\\Dresseurs.json", 'r') as fichier:
-            donnees = json.load(fichier)
-            return donnees['dresseurs']
-    
-    def set_nomAdversaire (self):
-        adversaire = self.loadData()
-        self.__nom = random.choice(adversaire)
-    
-    def set_nomJoueur(self):
-        self.__nom = input ("veuillez entrer le nom du joueur: ")
-
-    def image(self):
-        self.__imageFace = pygame.image.load(f"images\\sprite_characters\\ennemies\\{self.__nom}.gif")
-        self.__imageBack = pygame.image.load(f"images\\sprite_characters\\SelfCharacter\\{self.__nom}.gif")
-
-        
-joueur1 = Dresseurs(1, 2)
-joueur1.set_nomJoueur()
-print(joueur1.get_nom())
-print("VS")
-adversaire1 = Dresseurs(4, 8)
-adversaire1.set_nomAdversaire()
-print(adversaire1.get_nom())
+    def getRoster(self, level, nombrePokemons=6 ):
+        while len(self.__listePokemons) < nombrePokemons:
+            pokemon = Pokemon(random.randint(1, 20))
+            pokemon.set_level(level)
+            self.__listePokemons.append(pokemon)        
+        return self.__listePokemons
 
 
+"""
+adversaire = Dresseurs()
+print(adversaire.setRandomName())
+print(adversaire.get_lisPokemons())
+print(Pokemon.get_nom(adversaire.get_lisPokemons()[0]))
+print(Pokemon.get_nom(adversaire.get_lisPokemons()[1]))
+print(Pokemon.get_nom(adversaire.get_lisPokemons()[2]))
+print(Pokemon.get_nom(adversaire.get_lisPokemons()[3]))
+print(Pokemon.get_nom(adversaire.get_lisPokemons()[4]))
+print(Pokemon.get_nom(adversaire.get_lisPokemons()[5]))
 
-
+print(Pokemon.get_level(adversaire.get_lisPokemons()[0]))
+print(Pokemon.get_level(adversaire.get_lisPokemons()[1]))
+print(Pokemon.get_level(adversaire.get_lisPokemons()[2]))
+print(Pokemon.get_level(adversaire.get_lisPokemons()[3]))
+print(Pokemon.get_level(adversaire.get_lisPokemons()[4]))
+print(Pokemon.get_level(adversaire.get_lisPokemons()[5]))
+"""

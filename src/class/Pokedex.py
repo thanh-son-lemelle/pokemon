@@ -183,16 +183,3 @@ class Pokedex():
             self.SCREEN.blit(speed_rendered, (530,640))
 
             pygame.display.update()
-
-
-
-
-
-
-
-
-
-
-
-
-

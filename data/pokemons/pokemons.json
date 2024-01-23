@@ -127,7 +127,7 @@
     },
     {
       "id": 4,
-      "name": "Salam\u00c3\u00a8che",
+      "name": "Salamèche",
       "type1": "Feu",
       "type2": "None",
       "stats": {
@@ -155,7 +155,7 @@
         },
         {
           "level": 7,
-          "name": "Flamm\u00c3\u00a8che"
+          "name": "Flammèche"
         },
         {
           "level": 10,
@@ -194,7 +194,7 @@
         },
         {
           "level": 7,
-          "name": "Flamm\u00c3\u00a8che"
+          "name": "Flammèche"
         },
         {
           "level": 10,
@@ -233,7 +233,7 @@
         },
         {
           "level": 7,
-          "name": "Flamm\u00c3\u00a8che"
+          "name": "Flammèche"
         },
         {
           "level": 10,
@@ -276,7 +276,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet \u00c3\u00a0 O"
+          "name": "Pistolet à O"
         },
         {
           "level": 7,
@@ -315,7 +315,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet \u00c3\u00a0 O"
+          "name": "Pistolet à O"
         },
         {
           "level": 7,
@@ -354,7 +354,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet \u00c3\u00a0 O"
+          "name": "Pistolet à O"
         },
         {
           "level": 7,

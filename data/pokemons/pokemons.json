@@ -37,7 +37,7 @@
           "name": "Poudre Toxik"
         }
       ],
-      "vu": 3
+      "vu": 1
     },
     {
       "id": 2,
@@ -80,7 +80,7 @@
           "name": "Tranch'Herbe"
         }
       ],
-      "vu": 0
+      "vu": 6
     },
     {
       "id": 3,
@@ -123,11 +123,11 @@
           "name": "Vampigraine"
         }
       ],
-      "vu": 1
+      "vu": 3
     },
     {
       "id": 4,
-      "name": "Salam\u00c3\u00a8che",
+      "name": "Salamèche",
       "type1": "Feu",
       "type2": "None",
       "stats": {
@@ -155,7 +155,7 @@
         },
         {
           "level": 7,
-          "name": "Flamm\u00c3\u00a8che"
+          "name": "Flammèche"
         },
         {
           "level": 10,
@@ -194,7 +194,7 @@
         },
         {
           "level": 7,
-          "name": "Flamm\u00c3\u00a8che"
+          "name": "Flammèche"
         },
         {
           "level": 10,
@@ -205,7 +205,7 @@
           "name": "Dracogriffe"
         }
       ],
-      "vu": 0
+      "vu": 4
     },
     {
       "id": 6,
@@ -233,7 +233,7 @@
         },
         {
           "level": 7,
-          "name": "Flamm\u00c3\u00a8che"
+          "name": "Flammèche"
         },
         {
           "level": 10,
@@ -276,7 +276,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet \u00c3\u00a0 O"
+          "name": "Pistolet à O"
         },
         {
           "level": 7,
@@ -287,7 +287,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 0
+      "vu": 5
     },
     {
       "id": 8,
@@ -315,7 +315,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet \u00c3\u00a0 O"
+          "name": "Pistolet à O"
         },
         {
           "level": 7,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 9,
@@ -354,7 +354,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet \u00c3\u00a0 O"
+          "name": "Pistolet à O"
         },
         {
           "level": 7,
@@ -435,7 +435,7 @@
           "name": "Charge"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 12,
@@ -505,7 +505,7 @@
           "name": "Dard-Venin"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 14,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 16,
@@ -618,7 +618,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 17,
@@ -657,7 +657,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 18,
@@ -700,7 +700,7 @@
           "name": "Atterrissage"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 19,
@@ -778,11 +778,7 @@
           "name": "Croc de Mort"
         }
       ],
-<<<<<<< HEAD
       "vu": 0
-=======
-      "vu":0
->>>>>>> Pokedex
     }
   ]
 }

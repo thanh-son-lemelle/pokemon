@@ -31,7 +31,7 @@ class Combat():
         self.__choice_musique = random.choice(self.__liste_musique)
 
 
-        self.starter = Pokemon(3)
+        self.starter = Pokemon(8)
         self.max_hp = self.starter.get_statHp()
         random_id = random.randint(1,20)
         self.adv = Pokemon(random_id)
@@ -78,6 +78,9 @@ class Combat():
 
 
     def fight(self):
+        self.max_hp_adv = self.adv.get_statHp()
+        self.hp_adv = self.max_hp_adv 
+        self.ratio_adv = self.hp_adv / self.max_hp_adv
         self.starter.set_level(10)
         self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
         self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
@@ -104,7 +107,7 @@ class Combat():
                 
         
         self.animation.clock = pygame.time.Clock()
-
+        self.vu()
         while jouer:
             self.__SCREEN.blit(capa, (0, 500))
             self.__SCREEN.blit(self.__zone, (0, 0))
@@ -522,6 +525,8 @@ class Combat():
                         num1 = random.randint(1,20)
                         self.starter = Pokemon(num1)
                         self.liste_poke.append(num1)
+                        self.animation = Animation(self.starter)
+                        self.animation.loadFrames(isFront=False)
                         self.fight()
                        
 
@@ -530,6 +535,8 @@ class Combat():
                         num2 = random.randint(1,20)
                         self.liste_poke.append(num2)
                         self.starter = Pokemon(num2)
+                        self.animation = Animation(self.starter)
+                        self.animation.loadFrames(isFront=False)
                         self.fight()
                         
                             
@@ -540,6 +547,8 @@ class Combat():
                         num3 = random.randint(1,20)
                         self.liste_poke.append(num3)
                         self.starter = Pokemon(num3)
+                        self.animation = Animation(self.starter)
+                        self.animation.loadFrames(isFront=False)
                         self.fight()
                             
 
@@ -549,7 +558,7 @@ class Combat():
 
     def vu(self):
     # Étape 1: Lire le fichier JSON existant
-        with open("data/pokemons/pokemons.json", "r") as f:
+        with open("data/pokemons/pokemons.json", "r",encoding="utf-8") as f:
             file = json.load(f)
 
             for i in file['pokemons']:
@@ -561,8 +570,8 @@ class Combat():
                     i["vu"] += 1
                     print(i["vu"])
 
-        with open("data/pokemons/pokemons.json", "w") as f:
-            json.dump(file, f, indent=2)
+        with open("data/pokemons/pokemons.json", "w",encoding="utf-8") as f:
+            json.dump(file, f, indent=2,ensure_ascii=False)
          
 
         

@@ -229,7 +229,6 @@ class Pokemon:
 
         abilities = []
         self.get_abilitiesFromPokemonData()
-        print (abilities)
         for ability in self.__abilities:
             abilityLevel = ability ["level"]
             if abilityLevel <= self.__level:
@@ -272,7 +271,6 @@ class Pokemon:
         return self.__abilities
     
     def get_currentAbilities(self):
-        print("test") # a revoir me ressor deux listes vide
         self.get_AbilitiesByLevel()
         if len(self.get_AbilitiesByLevel()) > 4:
             # L'utilisateur choisi les 4 abilities qu'il veut garder
@@ -340,48 +338,5 @@ class Pokemon:
         return image
 
     
-"""
-# Test de la class
 
 starter = Pokemon (4)
-starter.set_level(50)
-print(starter.get_4abilities())
-
-
-pygame.init()
-
-largeur_fenetre = 1000
-hauteur_fenetre = 500
-
-
-fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-pygame.display.set_caption('Fenêtre Pygame avec Image')
-
-
-
-image = starter.get_imageFace()
-
-# Obtenir la position de l'image dans la fenêtre
-image_rect = image.get_rect()
-
-# Boucle principale
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-
-    # Effacer l'écran
-    fenetre.fill((255,255,255))  # Fond blanc
-
-    # Dessiner l'image
-    fenetre.blit(image, image_rect)
-
-
-    # Mettre à jour l'affichage
-    pygame.display.flip()
-
-    # Quitter Pygame
-pygame.quit()
-sys.exit()
-"""

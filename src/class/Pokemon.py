@@ -13,7 +13,7 @@ class Pokemon:
         self.__type2 = None
         self.__stats = None
         self.__baseStats = None
-        self.__growth = None
+        self.__growth = None 
         self.__evolution = None
         self.__level = 1
         self.__xp = 0
@@ -340,28 +340,12 @@ class Pokemon:
         return image
 
     
-"""
+
 # Test de la class
 
 starter = Pokemon (4)
 starter.set_level(50)
 print(starter.get_4abilities())
-print(starter.get_abilityStatsByIndex(0)) #marche pas
-print(starter.get_abilities())
-print(starter.get_abilityStats("Poudre Toxik")) #marche pas
-print(starter.get_AbilitiesByLevel())
-print(starter.get_ability_by_name("Poudre Toxik"))
-print(starter.get_abilityAccuracyByName("Poudre Toxik"))
-print(starter.get_abilityCategoryByName("Poudre Toxik"))
-print(starter.get_abilityPowerByName("Poudre Toxik"))
-print(starter.get_abilityTypeByName("Poudre Toxik"))
-print(starter.get_abilityStats("Poudre Toxik"))
-print(starter.get_abilityStatutChangeByName("Poudre Toxik")["turns"])
-print(starter.get_abilityStatutChangeByName("Poudre Toxik"))
-
-print(starter.get_ability(0))
-print(starter.get_pokemonData())
-
 
 
 pygame.init()
@@ -400,4 +384,3 @@ while True:
     # Quitter Pygame
 pygame.quit()
 sys.exit()
-"""

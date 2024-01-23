@@ -276,7 +276,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet à O"
+          "name": "Pistolet à Oyyy"
         },
         {
           "level": 7,
@@ -315,7 +315,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet à O"
+          "name": "Pistolet àyyy O"
         },
         {
           "level": 7,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 2
+      "vu": 5
     },
     {
       "id": 9,
@@ -354,7 +354,7 @@
       "abilities": [
         {
           "level": 1,
-          "name": "Pistolet à O"
+          "name": "Pistolet àyyy O"
         },
         {
           "level": 7,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 2
+      "vu": 3
     },
     {
       "id": 16,

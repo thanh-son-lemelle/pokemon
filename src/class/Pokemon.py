@@ -340,7 +340,7 @@ class Pokemon:
         return image
 
     
-
+"""
 # Test de la class
 
 starter = Pokemon (4)
@@ -384,3 +384,4 @@ while True:
     # Quitter Pygame
 pygame.quit()
 sys.exit()
+"""

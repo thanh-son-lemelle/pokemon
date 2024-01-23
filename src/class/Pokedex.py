@@ -226,8 +226,6 @@ class Pokedex():
             pygame.display.update()
 
 
-pokedex = Pokedex(1)
-pokedex.affichePokedex()
 
 
 

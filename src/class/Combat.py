@@ -7,6 +7,7 @@ import random
 from Pokemon import *
 import json
 from Animation import Animation
+from Dresseurs import Dresseurs
 
 
 
@@ -31,53 +32,66 @@ class Combat():
         self.__choice_musique = random.choice(self.__liste_musique)
 
 
-        self.starter = Pokemon(8)
-        self.max_hp = self.starter.get_statHp()
-        random_id = random.randint(1,20)
-        self.adv = Pokemon(random_id)
-
-
-        self.animation = Animation(self.starter)
-        self.animation.loadFrames(isFront=False)
-        self.animationAdversaire = Animation(self.adv)
-        self.animationAdversaire.loadFrames()
-
-        self.max_hp_adv = self.adv.get_statHp()
-
-        self.multiplicateur_degat_adv = 1
-        self.multiplicateur_degat = 1
-        self.__attaque = ""
-                    
-
-        self.hp = self.max_hp 
-        self.hp_adv = self.max_hp_adv 
-
-        
-        self.ratio = self.hp / self.max_hp
-        self.ratio_adv = self.hp_adv / self.max_hp_adv
-
-        self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
-        self.police_moyen = pygame.font.Font("font\Pokemon Classic.ttf", 20)
-        self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
-        self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
-        
-        self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
-        self.win = self.police_grande.render("Victoire",True,"white")
-        self.loose = self.police_grande.render("Défaite",True,"white")
-
-        self.rater = self.police_moyen.render("L'action a échoué",True,"red")
-        self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
-        self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
-        self.aff_lvl = self.police.render("Lv : ", True, "black")
-        self.liste_poke = [3,5,5]
+        self.liste_poke = []
         self.liste_poke_adv = []
+        self.starter = None
+        self.adv = None
+
+            
+    def initialis_combat(self):
+        if self.starter is not None:
+            self.starter = self.starter
+            self.adv = self.adv
+            self.animation = Animation(self.starter)
+            self.animation.loadFrames(isFront=False)
+            self.animationAdversaire = Animation(self.adv)
+            self.animationAdversaire.loadFrames()
+            self.max_hp = self.starter.get_statHp()
+            self.max_hp_adv = self.adv.get_statHp()
+
+            self.multiplicateur_degat_adv = 1
+            self.multiplicateur_degat = 1
+            self.__attaque = ""
+                        
+
+            self.hp = self.max_hp 
+            self.hp_adv = self.max_hp_adv 
+
+            
+            self.ratio = self.hp / self.max_hp
+            self.ratio_adv = self.hp_adv / self.max_hp_adv
+
+            self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
+            self.police_moyen = pygame.font.Font("font\Pokemon Classic.ttf", 20)
+            self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
+            self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
+            
+            self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
+            self.win = self.police_grande.render("Victoire",True,"white")
+            self.loose = self.police_grande.render("Défaite",True,"white")
+
+            self.rater = self.police_moyen.render("L'action a échoué",True,"red")
+            self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
+            self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
+            self.aff_lvl = self.police.render("Lv : ", True, "black")
     
         
 
+    def get_liste_dresseurs(self,l,l1):
+        for i in l:
+              self.liste_poke.append(i)
+        for i in l1:
+             self.liste_poke_adv.append(i)
 
+        self.starter = self.liste_poke[0]
+        print(self.starter)
+        self.adv = self.liste_poke_adv[0]
+        print(self.adv)
+        
 
 
     def fight(self):
+        self.initialis_combat()
         self.max_hp_adv = self.adv.get_statHp()
         self.hp_adv = self.max_hp_adv 
         self.ratio_adv = self.hp_adv / self.max_hp_adv
@@ -573,27 +587,3 @@ class Combat():
         with open("data/pokemons/pokemons.json", "w",encoding="utf-8") as f:
             json.dump(file, f, indent=2,ensure_ascii=False)
          
-
-        
-
-                    
-
-
-        
-        
-
-
-        
-            
-
-
-        
-
-
-
-
-
-combat = Combat()
-combat.fight()
-
-

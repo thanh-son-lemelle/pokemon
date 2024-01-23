@@ -13,7 +13,11 @@ class Menu():
         self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
         self.white = (255 , 255 , 255)
         self.BG = pygame.image.load("images\\background\\menu\\Fond pokemon.jpg")
+        self.__playgame = False
 
+    def get_playgame (self):
+        return self.__playgame
+    
     def get_font(self,size): 
         return pygame.font.Font("font\\Pokemon Classic.ttf", size)
 
@@ -26,8 +30,8 @@ class Menu():
         musique= pygame.mixer.music.load("musique\\main menu\\Pokemon BlackWhite Music - Pokemon Center.mp3")
         mixer.music.set_volume(0.1)
         mixer.music.play(-1)
-
-        while True:
+        running = True
+        while running:
 
             self.SCREEN.blit(self.BG, (0, 0))
 
@@ -63,8 +67,10 @@ class Menu():
 
                     #if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
                     if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                        print("play")
-                        pass
+                        self.__playgame = True
+                        print(self.__playgame)
+                        running = False
+                    
 
 
 

@@ -205,7 +205,7 @@
           "name": "Dracogriffe"
         }
       ],
-      "vu": 4
+      "vu": 5
     },
     {
       "id": 6,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 2
+      "vu": 5
     },
     {
       "id": 9,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 2
+      "vu": 4
     },
     {
       "id": 16,
@@ -739,7 +739,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 20,

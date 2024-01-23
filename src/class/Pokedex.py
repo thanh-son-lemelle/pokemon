@@ -168,7 +168,8 @@ class Pokedex():
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1: 
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
-                            pygame.quit()
+                            menu = Menu()
+                            menu.main_menu()
 
 
             self.SCREEN.blit(self.fond, (0, 0))

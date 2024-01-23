@@ -6,6 +6,7 @@ from pygame.locals import *
 import random
 from Pokemon import *
 import json
+from Animation import Animation
 
 
 
@@ -17,17 +18,30 @@ class Combat():
         self.__WIDTH = 1000
         self.__HEIGHT = 700
         self.__SCREEN = pygame.display.set_mode((self.__WIDTH, self.__HEIGHT))
+
+
         self.__fond = ["images\\background\combat\sprite_combat_background01.png","images\\background\combat\sprite_combat_background02.png","images\\background\combat\sprite_combat_background03.png","images\\background\combat\sprite_combat_background04.png","images\\background\combat\sprite_combat_background05.png","images\\background\combat\sprite_combat_background06.png","images\\background\combat\sprite_combat_background07.png","images\\background\combat\sprite_combat_background08.png","images\\background\combat\sprite_combat_background09.png","images\\background\combat\sprite_combat_background10.png","images\\background\combat\sprite_combat_background11.png"]
         self.__choice = random.choice(self.__fond)
         self.__arene = pygame.image.load(self.__choice)
         self.__size_image = (1000,500)
         self.__zone = pygame.transform.scale(self.__arene, self.__size_image)
+
+
         self.__liste_musique = ["musique\combat\Pokémon Black & White - Critical Health Music (HQ).mp3","musique\combat\Pokémon Diamond, Pearl & Platinum - Champion Cynthia Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Primal Kyogre & Groudon Battle Music (HQ).mp3","musique\combat\Pokémon Omega Ruby & Alpha Sapphire - Zinnia Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Kieran Battle Music (HQ).mp3","musique\combat\Pokémon Scarlet & Violet - Champion Nemona Battle Music (HQ)(1).mp3","musique\combat\Pokémon Sun & Moon - Battle Legend Red & Blue Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Rival Gladion Battle Music (HQ).mp3","musique\combat\Pokémon Sun & Moon - Team Skull Leader Guzma Battle Music (HQ).mp3","musique\combat\Pokémon HeartGold & SoulSilver - Champion & Red Battle Music (HQ).mp3","musique\combat\Battle! Gym Leader - Remix Cover (Pokémon Sword and Shield).mp3","musique\combat\Driftveil City Past Paradox (Remix) ► Pokémon Black & White Toothless Dancing.mp3","musique\combat\Red vs Gold (Theme).mp3","musique\combat\Volo Theme (Piano Etude) Pokémon.mp3"]
         self.__choice_musique = random.choice(self.__liste_musique)
-        self.starter = Pokemon(1)
+
+
+        self.starter = Pokemon(8)
         self.max_hp = self.starter.get_statHp()
         random_id = random.randint(1,20)
-        self.adv = Pokemon (random_id)
+        self.adv = Pokemon(random_id)
+
+
+        self.animation = Animation(self.starter)
+        self.animation.loadFrames(isFront=False)
+        self.animationAdversaire = Animation(self.adv)
+        self.animationAdversaire.loadFrames()
+
         self.max_hp_adv = self.adv.get_statHp()
 
         self.multiplicateur_degat_adv = 1
@@ -64,6 +78,9 @@ class Combat():
 
 
     def fight(self):
+        self.max_hp_adv = self.adv.get_statHp()
+        self.hp_adv = self.max_hp_adv 
+        self.ratio_adv = self.hp_adv / self.max_hp_adv
         self.starter.set_level(10)
         self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
         self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
@@ -81,21 +98,29 @@ class Combat():
         musique = pygame.mixer.music.load(self.__choice_musique)
         mixer.music.set_volume(0.2)
         mixer.music.play(-1)
+        
 
-        self.__SCREEN.blit(capa, (0, 500))
-        self.__SCREEN.blit(self.__zone, (0, 0))
-        self.__SCREEN.blit(self.starter.get_imageBack(),(150,290))
-        self.__SCREEN.blit(self.__nom, (30, 10))
-        self.__SCREEN.blit(self.__adversaire, (700, 10))
-        self.__SCREEN.blit(self.adv.get_imageFace(),(650,120))
-        self.__SCREEN.blit(self.aff_lvl,(30,40))
-        self.__SCREEN.blit(self.aff_lvl,(700,40))
-        self.__SCREEN.blit(self.lvl_start,(60,40))
-        self.__SCREEN.blit(self.lvl_adv,(730,40))
-        self.health_bar()
+        self.animation.displayBackAnimation()
 
+        self.animationAdversaire.displayFrontAnimation()
+                
+                
+        
+        self.animation.clock = pygame.time.Clock()
+        self.vu()
         while jouer:
+            self.__SCREEN.blit(capa, (0, 500))
+            self.__SCREEN.blit(self.__zone, (0, 0))
+            self.__SCREEN.blit(self.__nom, (30, 10))
+            self.__SCREEN.blit(self.__adversaire, (700, 10))
+            self.__SCREEN.blit(self.aff_lvl,(30,40))
+            self.__SCREEN.blit(self.aff_lvl,(700,40))
+            self.__SCREEN.blit(self.lvl_start,(60,40))
+            self.__SCREEN.blit(self.lvl_adv,(730,40))
+            self.animation.displayBackAnimation()
 
+            self.animationAdversaire.displayFrontAnimation()
+            self.health_bar()
             
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
@@ -126,6 +151,8 @@ class Combat():
                     pygame.quit()
 
                     sys.exit()
+
+            
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
 
@@ -162,7 +189,7 @@ class Combat():
                             self.multiplicateur_type()
                         
 
-
+                
                 elif event.type == pygame.MOUSEBUTTONUP:
                     if  ATT1.checkForInput(MENU_MOUSE_POS):
                         press = False
@@ -180,7 +207,11 @@ class Combat():
 
                     pygame.display.flip()
 
-                pygame.display.flip() 
+            pygame.display.flip() 
+            self.animation.clock.tick(self.animation.FPS)
+                
+
+            
 
 
 
@@ -494,6 +525,8 @@ class Combat():
                         num1 = random.randint(1,20)
                         self.starter = Pokemon(num1)
                         self.liste_poke.append(num1)
+                        self.animation = Animation(self.starter)
+                        self.animation.loadFrames(isFront=False)
                         self.fight()
                        
 
@@ -502,6 +535,8 @@ class Combat():
                         num2 = random.randint(1,20)
                         self.liste_poke.append(num2)
                         self.starter = Pokemon(num2)
+                        self.animation = Animation(self.starter)
+                        self.animation.loadFrames(isFront=False)
                         self.fight()
                         
                             
@@ -512,6 +547,8 @@ class Combat():
                         num3 = random.randint(1,20)
                         self.liste_poke.append(num3)
                         self.starter = Pokemon(num3)
+                        self.animation = Animation(self.starter)
+                        self.animation.loadFrames(isFront=False)
                         self.fight()
                             
 
@@ -521,7 +558,7 @@ class Combat():
 
     def vu(self):
     # Étape 1: Lire le fichier JSON existant
-        with open("data/pokemons/pokemons.json", "r") as f:
+        with open("data/pokemons/pokemons.json", "r",encoding="utf-8") as f:
             file = json.load(f)
 
             for i in file['pokemons']:
@@ -533,8 +570,8 @@ class Combat():
                     i["vu"] += 1
                     print(i["vu"])
 
-        with open("data/pokemons/pokemons.json", "w") as f:
-            json.dump(file, f, indent=2)
+        with open("data/pokemons/pokemons.json", "w",encoding="utf-8") as f:
+            json.dump(file, f, indent=2,ensure_ascii=False)
          
 
         

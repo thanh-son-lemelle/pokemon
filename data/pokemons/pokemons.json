@@ -37,7 +37,7 @@
           "name": "Poudre Toxik"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 2,
@@ -80,7 +80,7 @@
           "name": "Tranch'Herbe"
         }
       ],
-      "vu": 0
+      "vu": 6
     },
     {
       "id": 3,
@@ -123,7 +123,7 @@
           "name": "Vampigraine"
         }
       ],
-      "vu": 0
+      "vu": 3
     },
     {
       "id": 4,
@@ -205,7 +205,7 @@
           "name": "Dracogriffe"
         }
       ],
-      "vu": 0
+      "vu": 4
     },
     {
       "id": 6,
@@ -248,7 +248,7 @@
           "name": "Lance-Flammes"
         }
       ],
-      "vu": 0
+      "vu": 3
     },
     {
       "id": 7,
@@ -287,7 +287,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 0
+      "vu": 5
     },
     {
       "id": 8,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 9,
@@ -435,7 +435,7 @@
           "name": "Charge"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 12,
@@ -505,7 +505,7 @@
           "name": "Dard-Venin"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 14,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 16,
@@ -618,7 +618,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 0
+      "vu": 1
     },
     {
       "id": 17,
@@ -657,7 +657,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 18,
@@ -700,7 +700,7 @@
           "name": "Atterrissage"
         }
       ],
-      "vu": 0
+      "vu": 2
     },
     {
       "id": 19,

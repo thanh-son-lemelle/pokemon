@@ -153,7 +153,7 @@ class Pokedex():
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RIGHT:
-                        self._s += 1
+                        self.__currentPos += 1
                         if self.__currentPos > 20:
                             self.__currentPos = 1
 

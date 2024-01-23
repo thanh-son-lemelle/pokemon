@@ -145,15 +145,15 @@ class Pokedex():
         mixer.music.play(-1)
         self.loadStats()
 
-
-        while True:
+        running = True
+        while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RIGHT:
-                        self.__currentPos += 1
+                        self._s += 1
                         if self.__currentPos > 20:
                             self.__currentPos = 1
 
@@ -168,10 +168,9 @@ class Pokedex():
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1: 
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
-                            menu = Menu()
-                            menu.main_menu()
-
-
+                            running = False
+                            
+        
             self.SCREEN.blit(self.fond, (0, 0))
             self.SCREEN.blit(self.pokdx, (self.WIDTH // 3.5, 0))
             self.SCREEN.blit(self.__descriptif, (330, 370))
@@ -225,6 +224,7 @@ class Pokedex():
                 self.SCREEN.blit(self.loadPoint(self.__currentPos), (420, 230))
 
             pygame.display.update()
+
 
 
 

@@ -100,6 +100,7 @@ class Combat():
 
 
     def fight(self):
+        self.initialis_combat()
         self.max_hp_adv = self.adv.get_statHp()
         self.hp_adv = self.max_hp_adv 
         self.ratio_adv = self.hp_adv / self.max_hp_adv
@@ -495,29 +496,29 @@ class Combat():
             
             
             if self.hp_adv <= 0:
-                                self.vu()
-                                self.liste_poke_adv.pop(i)
-                                self.hp_adv = 0
-                                self.health_bar()
-                                if len(self.liste_poke_adv)-1 >= 1:
-                                    self.adv = Pokemon(self.liste_poke_adv[i])
-                                    self.fight()
-                                self.max_hp_adv = self.hp_adv
-                                if len(self.liste_poke_adv) <=0: 
-                                    self.lvl_up()
-                                    self.Victoire()
+                self.vu()
+                self.liste_poke_adv.pop(i)
+                self.hp_adv = 0
+                self.health_bar()
+                if len(self.liste_poke_adv)-1 >= 1:
+                    self.adv = self.liste_poke_adv[i]
+                    self.fight()
+                self.max_hp_adv = self.hp_adv
+                if len(self.liste_poke_adv) <=0: 
+                    self.lvl_up()
+                    self.Victoire()
 
             if self.hp <= 0:
-                            self.vu()
-                            self.liste_poke.pop(i)
-                            self.hp = 0
-                            self.health_bar()
-                            if len(self.liste_poke)-1 >= 1:
-                                self.starter = Pokemon(self.liste_poke[i])
-                                self.fight()
-                            self.hp = self.max_hp
-                            if len(self.liste_poke) <=0: 
-                                self.Defaite()
+                self.vu()
+                self.liste_poke.pop(i)
+                self.hp = 0
+                self.health_bar()
+                if len(self.liste_poke)-1 >= 1:
+                    self.starter = self.liste_poke[i]
+                    self.fight()
+                self.hp = self.max_hp
+                if len(self.liste_poke) <=0: 
+                    self.Defaite()
 
             if self.hp >= 1 and self.max_hp >= 1:
                     self.ratio = self.hp / self.max_hp
@@ -527,10 +528,8 @@ class Combat():
             while pygame.time.get_ticks() - start_time < delay_time:
                 self.__SCREEN.blit(capa, (0, 500))
                 self.__SCREEN.blit(self.__zone, (0, 0))
-                self.__SCREEN.blit(self.starter.get_imageBack(),(150,290))
                 self.__SCREEN.blit(self.__nom, (30, 10))
                 self.__SCREEN.blit(self.__adversaire, (700, 10))
-                self.__SCREEN.blit(self.adv.get_imageFace(),(650,120))
                 self.__SCREEN.blit(self.aff_lvl,(30,40))
                 self.__SCREEN.blit(self.aff_lvl,(700,40))
                 self.__SCREEN.blit(self.lvl_start,(60,40))

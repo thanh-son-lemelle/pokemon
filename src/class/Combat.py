@@ -40,6 +40,11 @@ class Combat():
         musique = pygame.mixer.music.load(self.__choice_musique)
         mixer.music.set_volume(0.2)
         mixer.music.play(-1)
+        self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
+        self.police_moyen = pygame.font.Font("font\Pokemon Classic.ttf", 20)
+        self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
+        self.text_bulle = pygame.font.Font("font\Pokemon Classic.ttf", 30)
+        self.nom_dresseur = self.text_bulle.render("Le Dresseur "+"get_nom_dresseur()"+"\n"+"vous défie.",True,"black")
 
             
     def initialis_combat(self):
@@ -65,9 +70,7 @@ class Combat():
             self.ratio = self.hp / self.max_hp
             self.ratio_adv = self.hp_adv / self.max_hp_adv
 
-            self.police = pygame.font.Font("font\Pokemon Classic.ttf", 10)
-            self.police_moyen = pygame.font.Font("font\Pokemon Classic.ttf", 20)
-            self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
+            
             self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
             
             self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
@@ -97,7 +100,6 @@ class Combat():
 
 
     def fight(self):
-        self.initialis_combat()
         self.max_hp_adv = self.adv.get_statHp()
         self.hp_adv = self.max_hp_adv 
         self.ratio_adv = self.hp_adv / self.max_hp_adv
@@ -318,6 +320,9 @@ class Combat():
                     pygame.quit()
 
                     sys.exit()
+
+
+
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
 
@@ -621,4 +626,55 @@ class Combat():
 
         with open("data/pokemons/pokemons.json", "w",encoding="utf-8") as f:
             json.dump(file, f, indent=2,ensure_ascii=False)
+         
+
+
+
+    def start_anim(self):
+        '''
+
+         remplacer zone des capaciter par une zone de texte clikable (bouton avec pos haut gauche de la bulle texte , bas droit de la bulle texte) 
+         debut de la def appel de animation desserur 
+         si clique sur zone texte --> renvoi animation dresseur de retour 
+         renvoi vers fight
+
+        '''
+        size_zone_text = (1000,200)
+        zone_text = pygame.image.load("images\\background\menu\TextZone.png")
+        zone_text = pygame.transform.scale(zone_text, size_zone_text)
+        lance_anim = True
+        NEXT = pygame.image.load("images\\background\menu\\arrow_text.png")
+        button_next_size = (50,50)
+        NEXT = pygame.transform.scale(NEXT, button_next_size)
+        self.initialis_combat()
+        while lance_anim : 
+
+            self.__SCREEN.blit(self.__zone, (0, 0))
+            self.__SCREEN.blit(zone_text,(0, 500))
+            self.__SCREEN.blit(self.nom_dresseur,(50,520))
+            self.__SCREEN.blit(NEXT,(330,575))
+            # appel de animation desserur 
+            pygame.display.update()
+          
+            for event in pygame.event.get():
+
+                if event.type == pygame.QUIT:
+
+                    pygame.quit()
+
+                    sys.exit()
+
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1: 
+                        if 330 <= event.pos[0] <= 380 and 575 <= event.pos[1] <= 690:
+                            #revoyer fonction retour d'anim
+                            
+                            self.fight()
+
+                
+
+        
+
+                
+        
          

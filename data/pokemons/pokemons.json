@@ -205,7 +205,7 @@
           "name": "Dracogriffe"
         }
       ],
-      "vu": 5
+      "vu": 11
     },
     {
       "id": 6,
@@ -248,7 +248,7 @@
           "name": "Lance-Flammes"
         }
       ],
-      "vu": 3
+      "vu": 5
     },
     {
       "id": 7,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 5
+      "vu": 29
     },
     {
       "id": 9,
@@ -435,7 +435,7 @@
           "name": "Charge"
         }
       ],
-      "vu": 1
+      "vu": 12
     },
     {
       "id": 12,
@@ -505,7 +505,7 @@
           "name": "Dard-Venin"
         }
       ],
-      "vu": 1
+      "vu": 10
     },
     {
       "id": 14,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 4
+      "vu": 6
     },
     {
       "id": 16,
@@ -618,7 +618,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 1
+      "vu": 3
     },
     {
       "id": 17,
@@ -657,7 +657,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 2
+      "vu": 3
     },
     {
       "id": 18,
@@ -739,7 +739,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 2
+      "vu": 3
     },
     {
       "id": 20,

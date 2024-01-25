@@ -37,7 +37,7 @@
           "name": "Poudre Toxik"
         }
       ],
-      "vu": 2
+      "vu": 4
     },
     {
       "id": 2,
@@ -205,7 +205,7 @@
           "name": "Dracogriffe"
         }
       ],
-      "vu": 7
+      "vu": 15
     },
     {
       "id": 6,
@@ -248,7 +248,7 @@
           "name": "Lance-Flammes"
         }
       ],
-      "vu": 4
+      "vu": 6
     },
     {
       "id": 7,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 7
+      "vu": 15
     },
     {
       "id": 9,
@@ -404,7 +404,7 @@
           "name": "Charge"
         }
       ],
-      "vu": 102
+      "vu": 103
     },
     {
       "id": 11,
@@ -435,7 +435,7 @@
           "name": "Charge"
         }
       ],
-      "vu": 116
+      "vu": 118
     },
     {
       "id": 12,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 83
+      "vu": 85
     },
     {
       "id": 16,
@@ -657,7 +657,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 3
+      "vu": 5
     },
     {
       "id": 18,
@@ -778,7 +778,7 @@
           "name": "Croc de Mort"
         }
       ],
-      "vu": 60
+      "vu": 61
     }
   ]
 }

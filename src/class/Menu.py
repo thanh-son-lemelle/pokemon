@@ -1,5 +1,6 @@
 from Button import Button
 from Pokedex import Pokedex
+from Pokeballs import Pokeballs
 import pygame
 import sys
 from pygame import *

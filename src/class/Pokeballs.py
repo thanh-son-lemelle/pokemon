@@ -22,6 +22,11 @@ class Pokeballs():
         self.police_small = pygame.font.Font("font\\Pokemon Classic.ttf", 12)
         self.button_menu = pygame.image.load("images\\pokedex\\bouton exit.png")
         self.button_menu = pygame.transform.scale(self.button_menu, (100, 100))
+        largeur, hauteur = 1000, 700
+        noir = (0, 0, 0)
+        fenetre = pygame.display.set_mode((largeur, hauteur))
+        fenetre.fill(noir)
+        pygame.draw.rect(fenetre, noir, (100, 50, 200, 200))
 
     def loadDescription(self):
             with open(r'data\\pokedex\\pokedex.json', 'r', encoding='utf-8') as file:
@@ -72,12 +77,29 @@ class Pokeballs():
                     if event.button == 1: 
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
                             running = False
-                            
-        
+
+                        if 329 <= event.pos[0] <= 389 and 303 <= event.pos[1] <= 360:
+                            print("Poke1")
+                    
+                        if 526 <= event.pos[0] <= 575 and 273 <= event.pos[1] <= 328:
+                            print("Poke2")
+
+                        if 670 <= event.pos[0] <= 717 and 253 <= event.pos[1] <= 299:
+                            print("Poke3")
+
             self.SCREEN.blit(self.pokeballs, (0, 0))
             self.SCREEN.blit(self.button_menu, (875, 575))
 
+            pygame.display.flip()
             pygame.display.update()
-
+            
 pokeballs= Pokeballs(1)
 pokeballs.affichePokeballs()
+
+
+
+
+
+        
+ 
+

@@ -27,7 +27,7 @@ while True:
 
         combat = Combat()
         combat.get_liste_dresseurs(joueur.get_lisPokemons(),adversaire.get_lisPokemons())
-        combat.fight()
+        combat.start_anim()
 
 
 

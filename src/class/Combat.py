@@ -45,6 +45,7 @@ class Combat():
         self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
         self.text_bulle = pygame.font.Font("font\Pokemon Classic.ttf", 30)
         self.nom_dresseur = self.text_bulle.render("Le Dresseur "+"get_nom_dresseur()"+"\n"+"vous défie.",True,"black")
+        self.running = True
 
             
     def initialis_combat(self):
@@ -115,7 +116,7 @@ class Combat():
         capa = pygame.image.load("images\\background\combat\panel.png")
         capa = pygame.transform.scale(capa, size_capa)
         
-        jouer = True
+        
         pygame.display.set_caption("Fight")
         
         
@@ -128,7 +129,7 @@ class Combat():
         
         self.animation.clock = pygame.time.Clock()
         self.vu()
-        while jouer:
+        while self.running:
             self.__SCREEN.blit(capa, (0, 500))
             self.__SCREEN.blit(self.__zone, (0, 0))
             self.__SCREEN.blit(self.__nom, (30, 10))
@@ -293,7 +294,7 @@ class Combat():
         self.__SCREEN.blit(self.win, (50, 10))
         pygame.display.update()
 
-        while True:
+        while self.running:
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
 
@@ -333,7 +334,8 @@ class Combat():
                        
 
 
-                    #if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
+                         self.running = False
                         
                             
 
@@ -443,7 +445,7 @@ class Combat():
                                 self.liste_poke_adv.pop(i)
                                 self.hp_adv = 0
                                 self.health_bar()
-                                if len(self.liste_poke_adv)-1 >= 1:
+                                if len(self.liste_poke_adv) >= 1:
                                     self.adv = self.liste_poke_adv[i]
                                     self.fight()
                                 self.max_hp_adv = self.hp_adv
@@ -453,15 +455,19 @@ class Combat():
 
                 if self.hp <= 0:
                                 self.vu()
+                                print(self.liste_poke[i].get_nom())
                                 self.liste_poke.pop(i)
                                 self.hp = 0
                                 self.health_bar()
-                                if len(self.liste_poke)-1 >= 1:
+                                if len(self.liste_poke) >= 1:
                                     self.starter = self.liste_poke[i]
+                                    print(self.liste_poke[i].get_nom())
                                     self.fight()
                                 self.hp = self.max_hp
                                 if len(self.liste_poke) <=0: 
                                     self.Defaite()
+
+
                 if self.hp_adv >= 1 and self.max_hp_adv >= 1:
                     self.ratio = self.hp / self.max_hp
                     self.ratio_adv = self.hp_adv / self.max_hp_adv
@@ -500,7 +506,7 @@ class Combat():
                 self.liste_poke_adv.pop(i)
                 self.hp_adv = 0
                 self.health_bar()
-                if len(self.liste_poke_adv)-1 >= 1:
+                if len(self.liste_poke_adv) >= 1:
                     self.adv = self.liste_poke_adv[i]
                     self.fight()
                 self.max_hp_adv = self.hp_adv
@@ -510,11 +516,13 @@ class Combat():
 
             if self.hp <= 0:
                 self.vu()
+                print(self.liste_poke[i].get_nom())
                 self.liste_poke.pop(i)
                 self.hp = 0
                 self.health_bar()
-                if len(self.liste_poke)-1 >= 1:
+                if len(self.liste_poke) >= 1:
                     self.starter = self.liste_poke[i]
+                    print(self.liste_poke[i].get_nom())
                     self.fight()
                 self.hp = self.max_hp
                 if len(self.liste_poke) <=0: 
@@ -537,76 +545,6 @@ class Combat():
                 self.health_bar()
                 pygame.time.Clock().tick(60)
 
-
-
-    '''def choix_pokemon(self):
-        pygame.display.set_caption("Choix Pokemon")
-        pygame.display.update()
-
-        while True:
-            MENU_MOUSE_POS = pygame.mouse.get_pos()
-
-
-            REPLAY_BUTTON = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(100, 130), 
-                                text_input="???", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
-            
-            MENU_BUTTON = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(100, 230), 
-                                text_input="???", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
-            
-            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(50, 330), 
-                                text_input="???", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
-
-
-            for button in [REPLAY_BUTTON, MENU_BUTTON,QUIT_BUTTON]:
-
-                button.changeColor(MENU_MOUSE_POS)
-
-                button.update(self.__SCREEN)
-
-            
-            for event in pygame.event.get():
-
-                if event.type == pygame.QUIT:
-
-                    pygame.quit()
-
-                    sys.exit()
-
-                if event.type == pygame.MOUSEBUTTONDOWN:
-
-                    if REPLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                        num1 = random.randint(1,20)
-                        self.starter = Pokemon(num1)
-                        self.liste_poke.append(num1)
-                        self.animation = Animation(self.starter)
-                        self.animation.loadFrames(isFront=False)
-                        self.fight()
-                       
-
-
-                    if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
-                        num2 = random.randint(1,20)
-                        self.liste_poke.append(num2)
-                        self.starter = Pokemon(num2)
-                        self.animation = Animation(self.starter)
-                        self.animation.loadFrames(isFront=False)
-                        self.fight()
-                        
-                            
-
-
-
-                    if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
-                        num3 = random.randint(1,20)
-                        self.liste_poke.append(num3)
-                        self.starter = Pokemon(num3)
-                        self.animation = Animation(self.starter)
-                        self.animation.loadFrames(isFront=False)
-                        self.fight()
-                            
-
-
-            pygame.display.update()'''
 
 
     def vu(self):
@@ -641,12 +579,11 @@ class Combat():
         size_zone_text = (1000,200)
         zone_text = pygame.image.load("images\\background\menu\TextZone.png")
         zone_text = pygame.transform.scale(zone_text, size_zone_text)
-        lance_anim = True
         NEXT = pygame.image.load("images\\background\menu\\arrow_text.png")
         button_next_size = (50,50)
         NEXT = pygame.transform.scale(NEXT, button_next_size)
         self.initialis_combat()
-        while lance_anim : 
+        while self.running: 
 
             self.__SCREEN.blit(self.__zone, (0, 0))
             self.__SCREEN.blit(zone_text,(0, 500))

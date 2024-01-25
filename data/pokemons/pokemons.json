@@ -658,7 +658,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 32
+      "vu": 33
     },
     {
       "id": 9,
@@ -1069,7 +1069,7 @@
           "name": "Dard Mortel"
         }
       ],
-      "vu": 98
+      "vu": 99
     },
     {
       "id": 16,
@@ -1116,7 +1116,7 @@
           "name": "Cyclone"
         },
         {
-          "Level": 21,
+          "level": 21,
           "name": "Ouragan"
         },
         {
@@ -1203,7 +1203,7 @@
           "name": "Cyclone"
         },
         {
-          "Level": 22,
+          "level": 22,
           "name": "Ouragan"
         },
         {
@@ -1286,7 +1286,7 @@
           "name": "Cyclone"
         },
         {
-          "Level": 22,
+          "level": 22,
           "name": "Ouragan"
         },
         {

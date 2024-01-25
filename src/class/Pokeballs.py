@@ -1,9 +1,10 @@
 import json
 import pygame
-from Pokemon import Pokemon
+from Pokemon import Pokemon  # Assurez-vous que votre module Pokemon est correctement importé
 import sys
 from pygame import *
 from pygame.locals import *
+import random
 
 class Pokeballs():
     def __init__(self, id):
@@ -17,17 +18,30 @@ class Pokeballs():
         self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
         pygame.display.set_caption("Pokeballs")
         self.pokeballs = pygame.image.load("images\\pokeballs\\pokeballs.png")
+        self.pokeballs = pygame.transform.scale(self.pokeballs, (1000, 500))
         self.police_larger = pygame.font.Font("font\\Pokemon Classic.ttf", 30)
         self.police_medium = pygame.font.Font("font\\Pokemon Classic.ttf", 20)
         self.police_small = pygame.font.Font("font\\Pokemon Classic.ttf", 12)
         self.button_menu = pygame.image.load("images\\pokedex\\bouton exit.png")
-        self.button_menu = pygame.transform.scale(self.button_menu, (100, 100))
+        self.button_menu = pygame.transform.scale(self.button_menu, (60,60))
+        self.police_medium = pygame.font.Font("font\\Pokemon Classic.ttf", 20)
+        self.__choix = self.police_medium.render("Veuillez choisir une pokeball :", True, "black")
         largeur, hauteur = 1000, 700
         noir = (0, 0, 0)
         fenetre = pygame.display.set_mode((largeur, hauteur))
         fenetre.fill(noir)
         pygame.draw.rect(fenetre, noir, (100, 50, 200, 200))
+        
+        self.pok1 = Pokemon(random.randint(1, 20))
+        self.pok2 = Pokemon(random.randint(1, 20))
+        self.pok3 = Pokemon(random.randint(1, 20))
 
+        self.__imageFace = self.loadGif(self.__currentPos)
+        self.rect = self.__imageFace.get_rect()
+
+    def get_id(self):
+        return self.__id
+    
     def loadDescription(self):
             with open(r'data\\pokedex\\pokedex.json', 'r', encoding='utf-8') as file:
                 pokemonsDescription = json.load(file)
@@ -38,16 +52,23 @@ class Pokeballs():
             return pokemon['id'], self.__nom
 
     def loadGif(self, id):
-        self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{id}.gif")
-        self.__imageFace = pygame.transform.scale(self.__imageFace, (150, 150))
-        return self.__imageFace
+        image = pygame.image.load(f"images\\sprite_pokemon\\front\\{id}.gif")
+        image = pygame.transform.scale(image, (150, 150))
+        return image
 
     def recupereNomById(self, id):
         self.loadDescription()
         return self.__nom[id - 1]
     
+    def affichePokemon(self, pokemon_id):
+        pokemon_image = self.loadGif(pokemon_id)
+        self.SCREEN.blit(pokemon_image, (400, 200)) 
+
     def affichePokeballs(self):
-        self.pokeballs = pygame.transform.scale(self.pokeballs, (self.WIDTH, self.HEIGHT))
+
+        size_zone_text = (1000, 200)
+        zone_text = pygame.image.load("images\\background\\menu\\TextZone.png")
+        zone_text = pygame.transform.scale(zone_text, size_zone_text)
 
         musique = pygame.mixer.music.load("musique\\main menu\\Pokemon BlackWhite Music - Pokemon Center.mp3")
         mixer.music.set_volume(0.1)
@@ -78,24 +99,29 @@ class Pokeballs():
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
                             running = False
 
-                        if 329 <= event.pos[0] <= 389 and 303 <= event.pos[1] <= 360:
-                            print("Poke1")
-                    
-                        if 526 <= event.pos[0] <= 575 and 273 <= event.pos[1] <= 328:
-                            print("Poke2")
+                        if 331 <= event.pos[0] <= 388 and 215 <= event.pos[1] <= 260:
+                            self.__imageFace = self.loadGif(self.__currentPos)
+                            self.rect = self.__imageFace.get_rect()
 
-                        if 670 <= event.pos[0] <= 717 and 253 <= event.pos[1] <= 299:
-                            print("Poke3")
+                        if 526 <= event.pos[0] <= 573 and 197 <= event.pos[1] <= 236:
+                            self.affichePokemon(self.pok2.get_id())
 
+                        if 673 <= event.pos[0] <= 714 and 179 <= event.pos[1] <= 217:
+                            self.affichePokemon(self.pok3.get_id())
+
+
+            self.SCREEN.blit(self.__imageFace, self.rect)
             self.SCREEN.blit(self.pokeballs, (0, 0))
-            self.SCREEN.blit(self.button_menu, (875, 575))
+            self.SCREEN.blit(zone_text, (0, 500))
+            self.SCREEN.blit(self.__choix, (80, 550))
+            self.SCREEN.blit(self.button_menu, (926, 623))
 
             pygame.display.flip()
             pygame.display.update()
             
-pokeballs= Pokeballs(1)
+pokeballs = Pokeballs(1)
 pokeballs.affichePokeballs()
-
+pokeballs.affichePokemon()
 
 
 

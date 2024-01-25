@@ -37,7 +37,7 @@
           "name": "Poudre Toxik"
         }
       ],
-      "vu": 8
+      "vu": 27
     },
     {
       "id": 2,
@@ -80,7 +80,7 @@
           "name": "Tranch'Herbe"
         }
       ],
-      "vu": 9
+      "vu": 107
     },
     {
       "id": 3,
@@ -123,7 +123,7 @@
           "name": "Vampigraine"
         }
       ],
-      "vu": 13
+      "vu": 94
     },
     {
       "id": 4,
@@ -162,7 +162,7 @@
           "name": "Grozyeux"
         }
       ],
-      "vu": 13
+      "vu": 31
     },
     {
       "id": 5,
@@ -205,7 +205,7 @@
           "name": "Dracogriffe"
         }
       ],
-      "vu": 23
+      "vu": 27
     },
     {
       "id": 6,
@@ -248,7 +248,7 @@
           "name": "Lance-Flammes"
         }
       ],
-      "vu": 20
+      "vu": 19
     },
     {
       "id": 7,
@@ -287,7 +287,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 6
+      "vu": 85
     },
     {
       "id": 8,
@@ -330,7 +330,7 @@
           "name": "Hydrocanon"
         }
       ],
-      "vu": 17
+      "vu": 32
     },
     {
       "id": 9,
@@ -373,7 +373,7 @@
           "name": "Danse Pluie"
         }
       ],
-      "vu": 2
+      "vu": 16
     },
     {
       "id": 10,
@@ -435,7 +435,7 @@
           "name": "Charge"
         }
       ],
-      "vu": 120
+      "vu": 137
     },
     {
       "id": 12,
@@ -474,7 +474,7 @@
           "name": "Papillodanse"
         }
       ],
-      "vu": 109
+      "vu": 115
     },
     {
       "id": 13,
@@ -505,7 +505,7 @@
           "name": "Dard-Venin"
         }
       ],
-      "vu": 11
+      "vu": 15
     },
     {
       "id": 14,
@@ -536,7 +536,7 @@
           "name": "Dard-Venin"
         }
       ],
-      "vu": 24
+      "vu": 16
     },
     {
       "id": 15,
@@ -579,7 +579,7 @@
           "name": "Toile Gluante"
         }
       ],
-      "vu": 111
+      "vu": 98
     },
     {
       "id": 16,
@@ -618,7 +618,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 4
+      "vu": 9
     },
     {
       "id": 17,
@@ -657,7 +657,7 @@
           "name": "Picpic"
         }
       ],
-      "vu": 9
+      "vu": 13
     },
     {
       "id": 18,
@@ -700,7 +700,7 @@
           "name": "Atterrissage"
         }
       ],
-      "vu": 11
+      "vu": 12
     },
     {
       "id": 19,
@@ -739,7 +739,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 134
+      "vu": 128
     },
     {
       "id": 20,
@@ -778,7 +778,7 @@
           "name": "Croc de Mort"
         }
       ],
-      "vu": 71
+      "vu": 85
     }
   ]
 }

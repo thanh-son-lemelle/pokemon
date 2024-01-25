@@ -37,7 +37,7 @@
           "name": "Poudre Toxik"
         }
       ],
-      "vu": 49
+      "vu": 50
     },
     {
       "id": 2,
@@ -123,7 +123,7 @@
           "name": "Vampigraine"
         }
       ],
-      "vu": 80
+      "vu": 82
     },
     {
       "id": 4,
@@ -248,7 +248,7 @@
           "name": "Lance-Flammes"
         }
       ],
-      "vu": 76
+      "vu": 77
     },
     {
       "id": 7,
@@ -287,7 +287,7 @@
           "name": "Morsure"
         }
       ],
-      "vu": 76
+      "vu": 80
     },
     {
       "id": 8,
@@ -505,7 +505,7 @@
           "name": "Dard-Venin"
         }
       ],
-      "vu": 80
+      "vu": 86
     },
     {
       "id": 14,
@@ -700,7 +700,7 @@
           "name": "Atterrissage"
         }
       ],
-      "vu": 64
+      "vu": 78
     },
     {
       "id": 19,
@@ -778,7 +778,7 @@
           "name": "Croc de Mort"
         }
       ],
-      "vu": 58
+      "vu": 60
     }
   ]
 }

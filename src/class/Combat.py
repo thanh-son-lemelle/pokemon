@@ -401,7 +401,7 @@ class Combat():
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
         nombre_aleatoire = random.uniform(0, 100)
 
-        if probabilite_reussite >= nombre_aleatoire:
+        if probabilite_reussite <= nombre_aleatoire:
 
             if self.starter.get_abilityCategoryByName(self.__attaque) == "Physique":
                 degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))

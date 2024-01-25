@@ -29,11 +29,11 @@
           "name": "Charge"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Rugissement"
         },
         {
-          "level":3,
+          "level": 3,
           "name": "Fouet Lianes"
         },
         {
@@ -53,7 +53,7 @@
           "name": "Poudre Toxik"
         },
         {
-          "level":15,
+          "level": 15,
           "name": "Poudre Dodo"
         },
         {
@@ -85,7 +85,7 @@
           "name": "Lance-Soleil"
         }
       ],
-      "vu": 27
+      "vu": 35
     },
     {
       "id": 2,
@@ -120,11 +120,11 @@
           "name": "Rugissement"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Fouet Lianes"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Fouet Lianes"
         },
         {
@@ -140,7 +140,7 @@
           "name": "Poudre Toxik"
         },
         {
-          "level":15,
+          "level": 15,
           "name": "Poudre Dodo"
         },
         {
@@ -195,7 +195,7 @@
       },
       "abilities": [
         {
-          "level": "evolution",
+          "level": 0,
           "name": "Tempête Florale"
         },
         {
@@ -215,11 +215,7 @@
           "name": "Fouet Lianes"
         },
         {
-          "level": 1,
-          "name": "Fouet Lianes"
-        },
-        {
-          "level": 1,
+          "level": 2,
           "name": "Croissance"
         },
         {
@@ -235,7 +231,7 @@
           "name": "Poudre Toxik"
         },
         {
-          "level":15,
+          "level": 15,
           "name": "Poudre Dodo"
         },
         {
@@ -310,7 +306,7 @@
           "name": "Brouillard"
         },
         {
-          "level":12,
+          "level": 12,
           "name": "Draco-Souffle"
         },
         {
@@ -385,7 +381,7 @@
           "name": "Brouillard"
         },
         {
-          "level":12,
+          "level": 12,
           "name": "Draco-Souffle"
         },
         {
@@ -440,7 +436,7 @@
       },
       "abilities": [
         {
-          "level": "evolution",
+          "level": 0,
           "name": "Lame d'Air"
         },
         {
@@ -460,15 +456,15 @@
           "name": "Rugissement"
         },
         {
-          "level": 1,
+          "level": 2,
           "name": "Flammèche"
         },
         {
-          "level": 1,
+          "level": 3,
           "name": "Brouillard"
         },
         {
-          "level":12,
+          "level": 12,
           "name": "Draco-Souffle"
         },
         {
@@ -614,11 +610,11 @@
           "name": "Mimi-queue"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Pistolet à O"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Repli"
         },
         {
@@ -685,7 +681,7 @@
       },
       "abilities": [
         {
-          "level": "evolution",
+          "level": 0,
           "name": "Luminocanon"
         },
         {
@@ -697,11 +693,11 @@
           "name": "Mimi-queue"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Pistolet à O"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Repli"
         },
         {
@@ -745,7 +741,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 16
+      "vu": 17
     },
     {
       "id": 10,
@@ -784,7 +780,7 @@
           "name": "Piqûre"
         }
       ],
-      "vu": 114
+      "vu": 115
     },
     {
       "id": 11,
@@ -838,11 +834,11 @@
       },
       "abilities": [
         {
-          "level": "evolution",
+          "level": 0,
           "name": "Tornade"
         },
         {
-          "level":1,
+          "level": 1,
           "name": "Armure"
         },
         {
@@ -870,11 +866,11 @@
           "name": "Para-Spore"
         },
         {
-          "level":12,
+          "level": 12,
           "name": "Poudre Dodo"
         },
         {
-          "level":12,
+          "level": 12,
           "name": "Poudre Toxik"
         },
         {
@@ -975,7 +971,8 @@
         "speed": 1
       },
       "abilities": [
-        { "Evolution": true,
+        {
+          "Evolution": true,
           "level": 1,
           "name": "Armure"
         }
@@ -1020,7 +1017,7 @@
           "name": "Sécrétion"
         },
         {
-          "level": 1,
+          "level": 2,
           "name": "Piqûre"
         },
         {

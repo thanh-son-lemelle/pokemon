@@ -81,7 +81,7 @@ class Pokeballs():
         mixer.music.set_volume(0.1)
         mixer.music.play(-1)
 
- # Définit la taille de la zone de texte
+# Définit la taille de la zone de texte
         size_zone_text = (1000, 200)
 
 # Charge l'image de fond pour la zone de texte
@@ -94,7 +94,7 @@ class Pokeballs():
         self.SCREEN.blit(self.__choix, (80, 550))
         self.SCREEN.blit(self.button_menu, (926, 623))
 
- # Charge les images pour l'animation de chaque Pokemon
+# Charge les images pour l'animation de chaque Pokemon
         self.animation_pok1.loadFramesForPokeball()
         self.animation_pok2.loadFramesForPokeball()
         self.animation_pok3.loadFramesForPokeball()
@@ -124,7 +124,7 @@ class Pokeballs():
 # Affiche le choix du Pokémon
                             self.SCREEN.blit(self.__choix1, (80, 550))
 
- # Si le clic est dans la zone du Pokémon 1
+# Si le clic est dans la zone du Pokémon 1
                         if 331 <= event.pos[0] <= 388 and 215 <= event.pos[1] <= 260:
                             click_pok1 = True
                             click_pok2 = False
@@ -136,7 +136,7 @@ class Pokeballs():
                             click_pok2 = True
                             click_pok3 = False
 
- # Si le clic est dans la zone du Pokémon 3
+# Si le clic est dans la zone du Pokémon 3
                         if 673 <= event.pos[0] <= 714 and 179 <= event.pos[1] <= 217:
                             click_pok1 = False
                             click_pok2 = False

@@ -147,39 +147,39 @@ class Animation():
 """starter = Pokemon(3)
 animation = Animation(starter)"""
 """animation.loadFramesForCombat(isFront=False)"""
-adversaire = Pokemon(3)
-animationAdversaire = Animation(adversaire)
-animationAdversaire.loadFramesForPokeball()
+# adversaire = Pokemon(3)
+# animationAdversaire = Animation(adversaire)
+# animationAdversaire.loadFramesForPokeball()
 
 
 
 
-pygame.init()
+# pygame.init()
 
 
-screen = pygame.display.set_mode((animationAdversaire.sc_w, animationAdversaire.sc_h))
-animationAdversaire.clock = pygame.time.Clock()
-running = True
-while running:
-    for ev in pygame.event.get():
-        if ev.type == pygame.QUIT:
-            running = False
-            pygame.quit()
-            exit()
+# screen = pygame.display.set_mode((animationAdversaire.sc_w, animationAdversaire.sc_h))
+# animationAdversaire.clock = pygame.time.Clock()
+# running = True
+# while running:
+#     for ev in pygame.event.get():
+#         if ev.type == pygame.QUIT:
+#             running = False
+#             pygame.quit()
+#             exit()
 
 
-    bg = pygame.image.load("images\\background\\combat\\sprite_combat_background02.png")
-    bg = pygame.transform.scale(bg, (animationAdversaire.sc_w, animationAdversaire.sc_h))
-    screen.fill((255,255,255))
-    screen.blit(bg, (0,0))
-    """animation.displayBackAnimation()"""
+#     bg = pygame.image.load("images\\background\\combat\\sprite_combat_background02.png")
+#     bg = pygame.transform.scale(bg, (animationAdversaire.sc_w, animationAdversaire.sc_h))
+#     screen.fill((255,255,255))
+#     screen.blit(bg, (0,0))
+#     """animation.displayBackAnimation()"""
 
-    animationAdversaire.displayPokemonForPokeball(animationAdversaire.sc_w//2,animationAdversaire.sc_h//2)
-    screen.blit(animationAdversaire.background, (0,0))
+#     animationAdversaire.displayPokemonForPokeball(animationAdversaire.sc_w//2,animationAdversaire.sc_h//2)
+#     screen.blit(animationAdversaire.background, (0,0))
 
 
     
         
 
-    pygame.display.flip()
-    """animation.clock.tick(animation.FPS)"""
+#     pygame.display.flip()
+#     """animation.clock.tick(animation.FPS)"""

@@ -230,10 +230,7 @@ class Pokemon:
 
         abilities = []
         self.get_abilitiesFromPokemonData()
-        print(self.__name)
-        print(self.__abilities)
         for ability in self.__abilities:
-            print(ability["level"])
             abilityLevel = ability ["level"]
             if abilityLevel <= self.__level:
                 abilities.append(ability["name"])
@@ -368,4 +365,6 @@ class Pokemon:
         return image
 
     
-
+pokemon = Pokemon(1)
+print(pokemon.get_stats())
+print(pokemon.get_statAttack())

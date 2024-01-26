@@ -3,6 +3,7 @@ import json
 import pygame
 import sys
 import copy
+import random
 
 class Pokemon:
     def __init__(self, id ) -> None:
@@ -22,7 +23,7 @@ class Pokemon:
         self.__imageBack = None
         self.loadData()
         
-        self.__abilities = self.get_currentAbilities()
+        self.__abilities = self.get_initAbilities()
 
 #============================================================================
         # setter et getter
@@ -287,6 +288,24 @@ class Pokemon:
             # L'utilisateur choisi les 4 abilities qu'il veut garder
             self.chooseAbilities()
         self.__abilities = self.__abilities[0:4]
+        return self.__abilities
+    
+    def get_initAbilities(self):
+        self.get_AbilitiesByLevel()
+        if len(self.get_AbilitiesByLevel()) > 4:
+            self.chooseRandomAbility()
+        self.__abilities = self.__abilities[0:4]
+        return self.__abilities
+    
+    def chooseRandomAbility(self):
+        self.get_AbilitiesByLevel()
+        chooseAbilities = self.__abilities.copy()
+        self.__abilities = []
+        for i in range(4):
+            ability = random.choice(chooseAbilities)
+            self.__abilities.append(ability)
+            chooseAbilities.remove(ability)
+
         return self.__abilities
     
     def get_ability(self, index):   #fonctionnel

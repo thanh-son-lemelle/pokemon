@@ -141,7 +141,7 @@ class Animation():
         self.screen.blit(self.frames[self.current_frame], rect)
         self.current_frame += 1
         self.current_frame %= len(self.frames)
-        pygame.time.delay(int(self.delay[self.current_frame]*500))
+        pygame.time.delay(int(self.delay[self.current_frame]*1000))
         
 
 """starter = Pokemon(3)

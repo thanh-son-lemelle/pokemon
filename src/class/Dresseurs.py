@@ -39,6 +39,9 @@ class Dresseurs():
             pokemon.set_level(level)
             self.__listePokemons.append(pokemon)        
         return self.__listePokemons
+    
+    def addToRoster(self, pokemon):
+        self.__listePokemons.append(pokemon)
 
 
 """

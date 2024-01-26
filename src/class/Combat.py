@@ -56,9 +56,9 @@ class Combat():
             self.starter = self.starter
             self.adv = self.adv
             self.animation = Animation(self.starter)
-            self.animation.loadFrames(isFront=False)
+            self.animation.loadFramesForCombat(isFront=False)
             self.animationAdversaire = Animation(self.adv)
-            self.animationAdversaire.loadFrames()
+            self.animationAdversaire.loadFramesForCombat()
             self.max_hp = self.starter.get_statHp()
             self.max_hp_adv = self.adv.get_statHp()
 

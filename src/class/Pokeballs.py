@@ -1,6 +1,7 @@
 import json
 import pygame
-from Pokemon import Pokemon  # Assurez-vous que votre module Pokemon est correctement importé
+from Pokemon import Pokemon 
+from Animation import Animation
 import sys
 from pygame import *
 from pygame.locals import *
@@ -11,7 +12,6 @@ class Pokeballs():
         pygame.init()
         self.__id = id
         self.__nom = []
-        self.__imageFace = None
         self.__currentPos = 1
         self.WIDTH = 1000
         self.HEIGHT = 700
@@ -36,8 +36,9 @@ class Pokeballs():
         self.pok2 = Pokemon(random.randint(1, 20))
         self.pok3 = Pokemon(random.randint(1, 20))
 
-        self.__imageFace = self.loadGif(self.__currentPos)
-        self.rect = self.__imageFace.get_rect()
+        self.animation_pok1 = Animation(self.pok1)
+        self.animation_pok2 = Animation(self.pok2)
+        self.animation_pok3 = Animation(self.pok3)
 
     def get_id(self):
         return self.__id
@@ -59,13 +60,8 @@ class Pokeballs():
     def recupereNomById(self, id):
         self.loadDescription()
         return self.__nom[id - 1]
-    
-    def affichePokemon(self, pokemon_id):
-        pokemon_image = self.loadGif(pokemon_id)
-        self.SCREEN.blit(pokemon_image, (400, 200)) 
 
     def affichePokeballs(self):
-
         size_zone_text = (1000, 200)
         zone_text = pygame.image.load("images\\background\\menu\\TextZone.png")
         zone_text = pygame.transform.scale(zone_text, size_zone_text)
@@ -73,9 +69,18 @@ class Pokeballs():
         musique = pygame.mixer.music.load("musique\\main menu\\Pokemon BlackWhite Music - Pokemon Center.mp3")
         mixer.music.set_volume(0.1)
         mixer.music.play(-1)
+        self.SCREEN.blit(self.pokeballs, (0, 0))
+        self.SCREEN.blit(zone_text, (0, 500))
+        self.SCREEN.blit(self.__choix, (80, 550))
+        self.SCREEN.blit(self.button_menu, (926, 623))
+
+        self.animation_pok1.loadFramesForPokeball()
+        self.animation_pok2.loadFramesForPokeball()
+        self.animation_pok3.loadFramesForPokeball()
 
         running = True
         while running:
+            
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -100,28 +105,34 @@ class Pokeballs():
                             running = False
 
                         if 331 <= event.pos[0] <= 388 and 215 <= event.pos[1] <= 260:
-                            self.__imageFace = self.loadGif(self.__currentPos)
-                            self.rect = self.__imageFace.get_rect()
-
+                            self.SCREEN.blit(self.pokeballs, (0, 0))
+                            self.SCREEN.blit(zone_text, (0, 500))
+                            self.SCREEN.blit(self.__choix, (80, 550))
+                            self.SCREEN.blit(self.button_menu, (926, 623))
+                            self.animation_pok1.displayPokemonForPokeball (300, 100)
+                            pygame.display.update()
+                       
                         if 526 <= event.pos[0] <= 573 and 197 <= event.pos[1] <= 236:
-                            self.affichePokemon(self.pok2.get_id())
-
+                            self.SCREEN.blit(self.pokeballs, (0, 0))
+                            self.SCREEN.blit(zone_text, (0, 500))
+                            self.SCREEN.blit(self.__choix, (80, 550))
+                            self.SCREEN.blit(self.button_menu, (926, 623))
+                            self.animation_pok2.displayPokemonForPokeball (400, 100)
+                            pygame.display.update()
+                         
                         if 673 <= event.pos[0] <= 714 and 179 <= event.pos[1] <= 217:
-                            self.affichePokemon(self.pok3.get_id())
-
-
-            self.SCREEN.blit(self.__imageFace, self.rect)
-            self.SCREEN.blit(self.pokeballs, (0, 0))
-            self.SCREEN.blit(zone_text, (0, 500))
-            self.SCREEN.blit(self.__choix, (80, 550))
-            self.SCREEN.blit(self.button_menu, (926, 623))
+                            self.SCREEN.blit(self.pokeballs, (0, 0))
+                            self.SCREEN.blit(zone_text, (0, 500))
+                            self.SCREEN.blit(self.__choix, (80, 550))
+                            self.SCREEN.blit(self.button_menu, (926, 623))
+                            self.animation_pok3.displayPokemonForPokeball (500, 100)
+                            pygame.display.update()
 
             pygame.display.flip()
             pygame.display.update()
             
 pokeballs = Pokeballs(1)
 pokeballs.affichePokeballs()
-pokeballs.affichePokemon()
 
 
 

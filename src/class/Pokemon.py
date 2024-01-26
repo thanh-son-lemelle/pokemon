@@ -160,6 +160,28 @@ class Pokemon:
         return self.__stats["sp_defense"]
     
 #============================================================================
+            # setter des stats
+#============================================================================
+    def set_statHp(self, value):
+        self.__stats["hp"] += value
+    
+    def set_statAttack(self, value):
+        self.__stats["attack"] += value
+
+    def set_statDefense(self, value):
+        self.__stats["defense"] += value
+
+    def set_statSpeed(self, value):
+        self.__stats["speed"] += value
+    
+    def set_statSpecialAttack(self, value):
+        self.__stats["sp_attack"] += value
+
+    def set_statSpecialDefense(self, value):
+        self.__stats["sp_defense"] += value
+    
+    
+#============================================================================
         # gestion de l'xp, du level up et de l'évolution
 #============================================================================
 

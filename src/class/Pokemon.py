@@ -350,4 +350,3 @@ class Pokemon:
 
     
 
-starter = Pokemon (4)

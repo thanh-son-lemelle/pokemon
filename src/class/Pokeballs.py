@@ -29,6 +29,12 @@ class Pokeballs():
         self.button_menu = pygame.image.load("images\\pokedex\\bouton exit.png")
         self.button_menu = pygame.transform.scale(self.button_menu, (60,60))
 
+# Création des boutons "Oui" et "Non"
+        self.button_yes = pygame.image.load("images\\pokeballs\\yes.png")
+        self.button_no = pygame.image.load("images\\pokeballs\\no.png")
+        self.button_yes = pygame.transform.scale(self.button_yes, (100, 50))
+        self.button_no = pygame.transform.scale(self.button_no, (100, 50))
+
 # Création du texte de sélection
         self.__choix = self.police_medium.render("Veuillez choisir une pokeball : ", True, "black")
         
@@ -62,13 +68,11 @@ class Pokeballs():
                
             return pokemon['id'], self.__nom
     
-
 # Méthode loadGif : Cette méthode charge l'image animée (GIF) d'un Pokemon en fonction de son identifiant.
     def loadGif(self, id):
         image = pygame.image.load(f"images\\sprite_pokemon\\front\\{id}.gif")
         image = pygame.transform.scale(image, (150, 150))
         return image
-
 
 # Méthode affichePokeballs : Cette méthode affiche l'écran de sélection des Pokemon. 
 # gère les événements, 
@@ -88,11 +92,7 @@ class Pokeballs():
         zone_text = pygame.image.load("images\\background\\menu\\TextZone.png")
         zone_text = pygame.transform.scale(zone_text, size_zone_text)
 
-# Affiche les éléments de base sur la fenêtre
-        self.SCREEN.blit(self.pokeballs, (0, 0))
-        self.SCREEN.blit(zone_text, (0, 500))
-        self.SCREEN.blit(self.__choix, (80, 550))
-        self.SCREEN.blit(self.button_menu, (926, 623))
+
 
 # Charge les images pour l'animation de chaque Pokemon
         self.animation_pok1.loadFramesForPokeball()
@@ -108,21 +108,24 @@ class Pokeballs():
 # Boucle principale d'événements Pygame
         while running:
             for event in pygame.event.get(): 
+
 # Si l'utilisateur ferme la fenêtre, quitte le programme
                 if event.type == pygame.QUIT:
                     pygame.quit()
+
 # Si la touche ESC est enfoncée, quitte le programme
                     if event.key == pygame.K_ESCAPE:
                             pygame.quit()  
+
 # Si un bouton de la souris est cliqué
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1: 
+
 # Si le clic est dans la zone du bouton "Retour au menu"
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
+
 # Met fin à la boucle et retourne au menu principal
                             running = False
-# Affiche le choix du Pokémon
-                            self.SCREEN.blit(self.__choix1, (80, 550))
 
 # Si le clic est dans la zone du Pokémon 1
                         if 331 <= event.pos[0] <= 388 and 215 <= event.pos[1] <= 260:
@@ -141,7 +144,22 @@ class Pokeballs():
                             click_pok1 = False
                             click_pok2 = False
                             click_pok3 = True
+                        
+# Si le clic est dans la zone oui ou non 
+                        if click_pok1 or click_pok2 or click_pok3:
+                            if 100 <= event.pos[0] <= 200 and 600 <= event.pos[1] <= 650:
+                                click_pok1 = False
+                                click_pok2 = False
+                                click_pok3 = False
+                                running = False
+                                print("yes")
 
+                            if 300 <= event.pos[0] <= 400 and 600 <= event.pos[1] <= 650:
+                                click_pok1 = False
+                                click_pok2 = False
+                                click_pok3 = False
+                                print("no")
+          
 # Affichage du Pokémon sélectionné
             if click_pok1:
                 self.SCREEN.blit(self.pokeballs, (0, 0))
@@ -149,20 +167,33 @@ class Pokeballs():
                 self.SCREEN.blit(self.__choix1, (80, 550))
                 self.SCREEN.blit(self.button_menu, (926, 623))
                 self.animation_pok1.displayPokemonForPokeball (350, 100)
+                self.SCREEN.blit(self.button_yes, (100,600))
+                self.SCREEN.blit(self.button_no, (300,600))
 
-            if click_pok2:
+            elif click_pok2:
                 self.SCREEN.blit(self.pokeballs, (0, 0))
                 self.SCREEN.blit(zone_text, (0, 500))
                 self.SCREEN.blit(self.__choix2, (80, 550))
                 self.SCREEN.blit(self.button_menu, (926, 623))
                 self.animation_pok2.displayPokemonForPokeball (540, 100)
+                self.SCREEN.blit(self.button_yes, (100,600))
+                self.SCREEN.blit(self.button_no, (300,600))
 
-            if click_pok3:
+            elif click_pok3:
                 self.SCREEN.blit(self.pokeballs, (0, 0))
                 self.SCREEN.blit(zone_text, (0, 500))
                 self.SCREEN.blit(self.__choix3, (80, 550))
                 self.SCREEN.blit(self.button_menu, (926, 623))
                 self.animation_pok3.displayPokemonForPokeball (690, 100)
+                self.SCREEN.blit(self.button_yes, (100,600))
+                self.SCREEN.blit(self.button_no, (300,600))
+                
+# Affiche les éléments de base sur la fenêtre
+            else:
+                self.SCREEN.blit(self.pokeballs, (0, 0))
+                self.SCREEN.blit(zone_text, (0, 500))
+                self.SCREEN.blit(self.__choix, (80, 550))
+                self.SCREEN.blit(self.button_menu, (926, 623))
 
 # Mise à jour de l'affichage
             pygame.display.flip()

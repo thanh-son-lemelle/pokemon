@@ -164,30 +164,39 @@ class Pokedex():
         running = True
         while running:
             for event in pygame.event.get():
+
 # Si l'utilisateur ferme la fenêtre, quitte le programme
                 if event.type == pygame.QUIT:
                     pygame.quit()
+
 # Si une touche du clavier est enfoncée
                 if event.type == pygame.KEYDOWN:
+
 # Déplacement à droite dans le Pokedex
                     if event.key == pygame.K_RIGHT:
                         self.__currentPos += 1
                         if self.__currentPos > 20:
                             self.__currentPos = 1
+
 # Déplacement à gauche dans le Pokedex
                     elif event.key == pygame.K_LEFT:
                         self.__currentPos -= 1
                         if self.__currentPos <= 0:
                             self.__currentPos = 20
+
 # Touche ESC pour quitter le programme
                     elif event.key == pygame.K_ESCAPE:
                         pygame.quit()  
+
 # Si un bouton de la souris est cliqué
                 elif event.type == pygame.MOUSEBUTTONDOWN:
+
 # Si le bouton gauche est cliqué
                     if event.button == 1: 
+
 # Si le clic est dans la zone du bouton "Retour au menu"
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
+                            
 # Met fin à la boucle et retourne au menu principal
                             running = False
                             

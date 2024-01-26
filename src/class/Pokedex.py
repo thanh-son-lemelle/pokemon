@@ -44,7 +44,7 @@ class Pokedex():
         self.__affvu = self.police_small.render("Pokemon apperçu : ", True, "black")
         self.button_menu = pygame.image.load("images\\pokedex\\bouton exit.png")
         self.button_menu = pygame.transform.scale(self.button_menu, (100, 100))
-
+        
 
     def get_vu(self):
         return self.__vu

@@ -2,6 +2,7 @@ from Menu import Menu
 from Dresseurs import Dresseurs 
 from Pokemon import Pokemon
 from Combat import Combat
+from Pokeballs import Pokeballs
 
 while True:
     menu = Menu()   # Create an instance of the Menu
@@ -10,11 +11,11 @@ while True:
     if menu.get_playgame() == True:
         #creation du joueur
         #display pour rentrer en input le nom du joueur
+        
         joueur = Dresseurs("Sasha") #nom = input
-        joueur.getRoster(1,2)
-        print(joueur.get_nom())
-        print(Pokemon.get_nom(joueur.get_lisPokemons()[0]))
-        print(Pokemon.get_nom(joueur.get_lisPokemons()[1]))
+        joueur.getRoster(menu.get_pokemonChoisi())
+
+
         
         adversaire = Dresseurs()
         adversaire.getRoster(1,3)

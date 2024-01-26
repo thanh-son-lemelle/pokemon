@@ -385,8 +385,3 @@ class Pokemon:
         newWidth = int(multiplier * originalWidth)
         image = pygame.transform.scale(image, (newWidth, newHeight))
         return image
-
-    
-pokemon = Pokemon(1)
-print(pokemon.get_stats())
-print(pokemon.get_statAttack())

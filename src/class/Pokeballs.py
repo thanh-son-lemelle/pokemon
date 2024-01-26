@@ -8,16 +8,14 @@ from pygame import *
 from pygame.locals import *
 import random
 
+
 # Initialisation de la classe Pokeballs : 
 # en définissant divers attributs tels que la fenêtre Pygame, 
 # les polices, les images, et les Pokemon.
 class Pokeballs():
-    def __init__(self, id):
+    def __init__(self):
         pygame.init()
         pygame.display.set_caption("Pokeballs")
-        self.__id = id
-        self.__nom = []
-        self.__currentPos = 1
         self.WIDTH = 1000
         self.HEIGHT = 700
         self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
@@ -58,15 +56,10 @@ class Pokeballs():
         self.animation_pok2 = Animation(self.pok2)
         self.animation_pok3 = Animation(self.pok3)
 
-# Méthode loadDescription : Cette méthode charge les descriptions des Pokemon à partir d'un fichier JSON dans la liste __nom.
-    def loadDescription(self):
-            with open(r'data\\pokedex\\pokedex.json', 'r', encoding='utf-8') as file:
-                pokemonsDescription = json.load(file)
+        self.__pokemonChoisi = None
 
-            for pokemon in pokemonsDescription['pokemons']:
-                self.__nom.append(pokemon['nom'])
-               
-            return pokemon['id'], self.__nom
+    def get_PokemonChoisi(self):
+        return self.__pokemonChoisi
     
 # Méthode loadGif : Cette méthode charge l'image animée (GIF) d'un Pokemon en fonction de son identifiant.
     def loadGif(self, id):
@@ -125,6 +118,7 @@ class Pokeballs():
                         if 875 <= event.pos[0] <= 975 and 575 <= event.pos[1] <= 675:
 
 # Met fin à la boucle et retourne au menu principal
+                            
                             running = False
 
 # Si le clic est dans la zone du Pokémon 1
@@ -148,6 +142,13 @@ class Pokeballs():
 # Si le clic est dans la zone oui ou non 
                         if click_pok1 or click_pok2 or click_pok3:
                             if 100 <= event.pos[0] <= 200 and 600 <= event.pos[1] <= 650:
+                                if click_pok1:
+                                    self.__pokemonChoisi = self.pok1
+                                elif click_pok2:
+                                    self.__pokemonChoisi = self.pok2
+                                elif click_pok3:
+                                    self.__pokemonChoisi = self.pok3
+
                                 click_pok1 = False
                                 click_pok2 = False
                                 click_pok3 = False
@@ -198,9 +199,6 @@ class Pokeballs():
 # Mise à jour de l'affichage
             pygame.display.flip()
             pygame.display.update()
-            
-pokeballs = Pokeballs(1)
-pokeballs.affichePokeballs()
 
 
 

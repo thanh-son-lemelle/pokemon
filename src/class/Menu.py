@@ -15,7 +15,14 @@ class Menu():
         self.white = (255 , 255 , 255)
         self.BG = pygame.image.load("images\\background\\menu\\Fond pokemon.jpg")
         self.__playgame = False
+        self.__pokemonChoisi = None
 
+    def get_pokemonChoisi(self):
+        return self.__pokemonChoisi
+
+    def set_playgame(self):
+        self.__playgame = False
+        
     def get_playgame (self):
         return self.__playgame
     
@@ -68,9 +75,11 @@ class Menu():
 
                     #if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
                     if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        choixPokemon = Pokeballs()
+                        choixPokemon.affichePokeballs()
+                        self.__pokemonChoisi = choixPokemon.get_PokemonChoisi()
                         self.__playgame = True
-                        print(self.__playgame)
-                        running = False
+                        
                     
 
 

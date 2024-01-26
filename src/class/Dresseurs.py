@@ -10,9 +10,11 @@ class Dresseurs():
         self.itemsInventaire = ()
         if self.__nom is None:
             self.setRandomName()
-            self.getRoster(7)
+            self.getRoster()
 
-
+    def get_nom(self):
+        return self.__nom
+    
     def get_lisPokemons(self):
         return self.__listePokemons
 
@@ -31,7 +33,7 @@ class Dresseurs():
     def randomId(self):
         return random.randint(1, 20)
     
-    def getRoster(self, level, nombrePokemons=6 ):
+    def getRoster(self, level=1, nombrePokemons=6 ):
         while len(self.__listePokemons) < nombrePokemons:
             pokemon = Pokemon(random.randint(1, 20))
             pokemon.set_level(level)

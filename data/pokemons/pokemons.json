@@ -24,11 +24,68 @@
         "to": 2
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 3,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 6,
+          "name": "Croissance"
+        },
+        {
+          "level": 9,
+          "name": "Vampigraine"
+        },
+        {
+          "level": 12,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Dodo"
+        },
+        {
+          "level": 18,
+          "name": "Canon Graine"
+        },
+        {
+          "level": 21,
+          "name": "Bélier"
+        },
+        {
+          "level": 24,
+          "name": "Doux Parfum"
+        },
+        {
+          "level": 27,
+          "name": "Synthèse"
+        },
+        {
+          "level": 30,
+          "name": "Soucigraine"
+        },
+        {
+          "level": 33,
+          "name": "Mégafouet"
+        },
+        {
+          "level": 36,
+          "name": "Lance-Soleil"
+        }
       ],
-      "vu": 0
+      "vu": 35
     },
     {
       "id": 2,
@@ -54,12 +111,68 @@
         "to": 3
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Tranch'Herbe"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 1,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 9,
+          "name": "Vampigraine"
+        },
+        {
+          "level": 12,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Dodo"
+        },
+        {
+          "level": 20,
+          "name": "Canon Graine"
+        },
+        {
+          "level": 25,
+          "name": "Bélier"
+        },
+        {
+          "level": 30,
+          "name": "Doux Parfum"
+        },
+        {
+          "level": 35,
+          "name": "Synthèse"
+        },
+        {
+          "level": 40,
+          "name": "Soucigraine"
+        },
+        {
+          "level": 45,
+          "name": "Mégafouet"
+        },
+        {
+          "level": 50,
+          "name": "Lance-Soleil"
+        }
       ],
-      "vu": 0
+      "vu": 107
     },
     {
       "id": 3,
@@ -81,13 +194,76 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Tranch'Herbe"},
-        {"level": 25, "name": "Vampigraine"}
+        {
+          "level": 0,
+          "name": "Tempête Florale"
+        },
+        {
+          "level": 1,
+          "name": "Danse Fleurs"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 2,
+          "name": "Croissance"
+        },
+        {
+          "level": 9,
+          "name": "Vampigraine"
+        },
+        {
+          "level": 12,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Dodo"
+        },
+        {
+          "level": 20,
+          "name": "Canon Graine"
+        },
+        {
+          "level": 25,
+          "name": "Bélier"
+        },
+        {
+          "level": 30,
+          "name": "Doux Parfum"
+        },
+        {
+          "level": 37,
+          "name": "Synthèse"
+        },
+        {
+          "level": 44,
+          "name": "Soucigraine"
+        },
+        {
+          "level": 51,
+          "name": "Mégafouet"
+        },
+        {
+          "level": 58,
+          "name": "Lance-Soleil"
+        }
       ],
-      "vu": 0
+      "vu": 94
     },
     {
       "id": 4,
@@ -113,11 +289,56 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Griffe"},
-        {"level": 7, "name": "Flammèche"},
-        {"level": 10, "name": "Grozyeux"}
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Flammèche"
+        },
+        {
+          "level": 8,
+          "name": "Brouillard"
+        },
+        {
+          "level": 12,
+          "name": "Draco-Souffle"
+        },
+        {
+          "level": 17,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 20,
+          "name": "Tranche"
+        },
+        {
+          "level": 24,
+          "name": "Lance-Flammes"
+        },
+        {
+          "level": 28,
+          "name": "Grimace"
+        },
+        {
+          "level": 35,
+          "name": "Danse Flammes"
+        },
+        {
+          "level": 36,
+          "name": "Feu d'Enfer"
+        },
+        {
+          "level": 40,
+          "name": "Boutefeu"
+        }
       ],
-      "vu": 0
+      "vu": 31
     },
     {
       "id": 5,
@@ -143,12 +364,56 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Griffe"},
-        {"level": 7, "name": "Flammèche"},
-        {"level": 10, "name": "Grozyeux"},
-        {"level": 20, "name": "Dracogriffe"}
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Flammèche"
+        },
+        {
+          "level": 1,
+          "name": "Brouillard"
+        },
+        {
+          "level": 12,
+          "name": "Draco-Souffle"
+        },
+        {
+          "level": 19,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 24,
+          "name": "Tranche"
+        },
+        {
+          "level": 30,
+          "name": "Lance-Flammes"
+        },
+        {
+          "level": 37,
+          "name": "Grimace"
+        },
+        {
+          "level": 42,
+          "name": "Danse Flammes"
+        },
+        {
+          "level": 48,
+          "name": "Feu d'Enfer"
+        },
+        {
+          "level": 54,
+          "name": "Boutefeu"
+        }
       ],
-      "vu": 0
+      "vu": 27
     },
     {
       "id": 6,
@@ -170,13 +435,68 @@
         "speed": 5
       },
       "abilities": [
-        {"level": 1, "name": "Griffe"},
-        {"level": 7, "name": "Flammèche"},
-        {"level": 10, "name": "Grozyeux"},
-        {"level": 20, "name": "Dracogriffe"},
-        {"level": 40, "name": "Lance-Flammes"}
+        {
+          "level": 0,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 1,
+          "name": "Canicule"
+        },
+        {
+          "level": 1,
+          "name": "Draco-Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 2,
+          "name": "Flammèche"
+        },
+        {
+          "level": 3,
+          "name": "Brouillard"
+        },
+        {
+          "level": 12,
+          "name": "Draco-Souffle"
+        },
+        {
+          "level": 19,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 24,
+          "name": "Tranche"
+        },
+        {
+          "level": 30,
+          "name": "Lance-Flammes"
+        },
+        {
+          "level": 39,
+          "name": "Grimace"
+        },
+        {
+          "level": 46,
+          "name": "Danse Flammes"
+        },
+        {
+          "level": 54,
+          "name": "Feu d'Enfer"
+        },
+        {
+          "level": 62,
+          "name": "Boutefeu"
+        }
       ],
-      "vu": 0
+      "vu": 19
     },
     {
       "id": 7,
@@ -202,11 +522,60 @@
         "speed": 2
       },
       "abilities": [
-        {"level": 1, "name": "Pistolet à O"},
-        {"level": 7, "name": "Ecume"},
-        {"level": 10, "name": "Morsure"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 6,
+          "name": "Repli"
+        },
+        {
+          "level": 9,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 12,
+          "name": "Morsure"
+        },
+        {
+          "level": 15,
+          "name": "Vibraqua"
+        },
+        {
+          "level": 18,
+          "name": "Abri"
+        },
+        {
+          "level": 21,
+          "name": "Danse Pluie"
+        },
+        {
+          "level": 24,
+          "name": "Hydro-Queue"
+        },
+        {
+          "level": 27,
+          "name": "Exuviation"
+        },
+        {
+          "level": 30,
+          "name": "Mur de Fer"
+        },
+        {
+          "level": 33,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 36,
+          "name": "Aquatacle"
+        }
       ],
-      "vu": 0
+      "vu": 85
     },
     {
       "id": 8,
@@ -232,12 +601,64 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Pistolet à O"},
-        {"level": 7, "name": "Ecume"},
-        {"level": 10, "name": "Morsure"},
-        {"level": 22, "name": "Hydrocanon"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 1,
+          "name": "Pistolet à O"
+        },
+        {
+          "level": 1,
+          "name": "Repli"
+        },
+        {
+          "level": 9,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 12,
+          "name": "Morsure"
+        },
+        {
+          "level": 15,
+          "name": "Vibraqua"
+        },
+        {
+          "level": 20,
+          "name": "Abri"
+        },
+        {
+          "level": 25,
+          "name": "Danse Pluie"
+        },
+        {
+          "level": 30,
+          "name": "Hydro-Queue"
+        },
+        {
+          "level": 35,
+          "name": "Exuviation"
+        },
+        {
+          "level": 40,
+          "name": "Mur de Fer"
+        },
+        {
+          "level": 45,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 50,
+          "name": "Aquatacle"
+        }
       ],
-      "vu": 0
+      "vu": 33
     },
     {
       "id": 9,
@@ -259,13 +680,68 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Pistolet à O"},
-        {"level": 7, "name": "Ecume"},
-        {"level": 10, "name": "Morsure"},
-        {"level": 22, "name": "Hydrocanon"},
-        {"level": 42, "name": "Danse Pluie"}
+        {
+          "level": 0,
+          "name": "Luminocanon"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 1,
+          "name": "Pistolet à O"
+        },
+        {
+          "level": 1,
+          "name": "Repli"
+        },
+        {
+          "level": 9,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 12,
+          "name": "Morsure"
+        },
+        {
+          "level": 15,
+          "name": "Vibraqua"
+        },
+        {
+          "level": 20,
+          "name": "Abri"
+        },
+        {
+          "level": 25,
+          "name": "Danse Pluie"
+        },
+        {
+          "level": 30,
+          "name": "Hydro-Queue"
+        },
+        {
+          "level": 35,
+          "name": "Exuviation"
+        },
+        {
+          "level": 42,
+          "name": "Mur de Fer"
+        },
+        {
+          "level": 49,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 56,
+          "name": "Aquatacle"
+        }
       ],
-      "vu": 0
+      "vu": 3
     },
     {
       "id": 10,
@@ -291,9 +767,20 @@
         "speed": 2
       },
       "abilities": [
-        {"level": 1, "name": "Charge"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 9,
+          "name": "Piqûre"
+        }
       ],
-      "vu": 0
+      "vu": 115
     },
     {
       "id": 11,
@@ -319,9 +806,12 @@
         "speed": 1
       },
       "abilities": [
-        {"level": 1, "name": "Charge"}
+        {
+          "level": 1,
+          "name": "Armure"
+        }
       ],
-      "vu": 0
+      "vu": 137
     },
     {
       "id": 12,
@@ -343,12 +833,80 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Papillodanse"}
+        {
+          "level": 0,
+          "name": "Tornade"
+        },
+        {
+          "level": 1,
+          "name": "Armure"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Piqûre"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 4,
+          "name": "Ultrason"
+        },
+        {
+          "level": 8,
+          "name": "Chox Mental"
+        },
+        {
+          "level": 12,
+          "name": "Para-Spore"
+        },
+        {
+          "level": 12,
+          "name": "Poudre Dodo"
+        },
+        {
+          "level": 12,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 16,
+          "name": "Rafale Psy"
+        },
+        {
+          "level": 20,
+          "name": "Cyclone"
+        },
+        {
+          "level": 24,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 28,
+          "name": "Rune Protect"
+        },
+        {
+          "level": 32,
+          "name": "Bourdon"
+        },
+        {
+          "level": 36,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 40,
+          "name": "Poudre Fureur"
+        },
+        {
+          "level": 44,
+          "name": "Papillodanse"
+        }
       ],
-      "vu": 0
+      "vu": 115
     },
     {
       "id": 13,
@@ -374,9 +932,20 @@
         "speed": 2
       },
       "abilities": [
-        {"level": 1, "name": "Dard-Venin"}
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 9,
+          "name": "Piqûre"
+        }
       ],
-      "vu": 0
+      "vu": 15
     },
     {
       "id": 14,
@@ -402,9 +971,13 @@
         "speed": 1
       },
       "abilities": [
-        {"level": 1, "name": "Dard-Venin"}
+        {
+          "Evolution": true,
+          "level": 1,
+          "name": "Armure"
+        }
       ],
-      "vu": 0
+      "vu": 16
     },
     {
       "id": 15,
@@ -426,13 +999,77 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Dard-Venin"},
-        {"level": 3, "name": "Grozyeux"},
-        {"level": 7, "name": "Poudre Toxik"},
-        {"level": 13, "name": "Papillodanse"},
-        {"level": 30, "name": "Toile Gluante"}
+        {
+          "evolution": true,
+          "level": 1,
+          "name": "Furie"
+        },
+        {
+          "level": 1,
+          "name": "Armure"
+        },
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 2,
+          "name": "Piqûre"
+        },
+        {
+          "level": 11,
+          "name": "Taillade"
+        },
+        {
+          "level": 14,
+          "name": "Affilage"
+        },
+        {
+          "level": 17,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 20,
+          "name": "Puissance"
+        },
+        {
+          "level": 23,
+          "name": "Choc Venin"
+        },
+        {
+          "level": 26,
+          "name": "Assurance"
+        },
+        {
+          "level": 29,
+          "name": "Pics Toxik"
+        },
+        {
+          "level": 32,
+          "name": "Dard-Nuée"
+        },
+        {
+          "level": 35,
+          "name": "Direct Toxik"
+        },
+        {
+          "level": 38,
+          "name": "Hâte"
+        },
+        {
+          "level": 41,
+          "name": "Effort"
+        },
+        {
+          "level": 44,
+          "name": "Dard Mortel"
+        }
       ],
-      "vu": 0
+      "vu": 99
     },
     {
       "id": 16,
@@ -458,24 +1095,81 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 5,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Tornade"
+        },
+        {
+          "level": 13,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 17,
+          "name": "Cyclone"
+        },
+        {
+          "level": 21,
+          "name": "Ouragan"
+        },
+        {
+          "level": 25,
+          "name": "Danse PLumes"
+        },
+        {
+          "level": 29,
+          "name": "Coupe-Vent"
+        },
+        {
+          "level": 29,
+          "name": "Hâte"
+        },
+        {
+          "level": 33,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 37,
+          "name": "Atterrissage"
+        },
+        {
+          "level": 41,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 45,
+          "name": "Aéropique"
+        },
+        {
+          "level": 49,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 53,
+          "name": "Vent Violent"
+        }
       ],
-      "vu": 0
+      "vu": 9
     },
     {
       "id": 17,
-      "name": "Roucool",
+      "name": "Roucoups",
       "type1": "Normal",
       "type2": "Vol",
       "stats": {
-        "hp": 40,
-        "attack": 45,
-        "defense": 40,
-        "speed": 56,
-        "sp_attack": 35,
-        "sp_defense": 35
+        "hp": 63,
+        "attack": 60,
+        "defense": 55,
+        "speed": 71,
+        "sp_attack": 50,
+        "sp_defense": 50
       },
       "evolution": {
         "level": 18,
@@ -488,15 +1182,68 @@
         "speed": 3
       },
       "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 5,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Tornade"
+        },
+        {
+          "level": 13,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 17,
+          "name": "Cyclone"
+        },
+        {
+          "level": 22,
+          "name": "Ouragan"
+        },
+        {
+          "level": 27,
+          "name": "Danse PLumes"
+        },
+        {
+          "level": 32,
+          "name": "Hâte"
+        },
+        {
+          "level": 37,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 42,
+          "name": "Atterrissage"
+        },
+        {
+          "level": 47,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 52,
+          "name": "Aéropique"
+        },
+        {
+          "level": 57,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 62,
+          "name": "Vent Violent"
+        }
       ],
-      "vu": 0
+      "vu": 10
     },
     {
       "id": 18,
-      "name": "Roucoups",
+      "name": "Roucarnage",
       "type1": "Normal",
       "type2": "Vol",
       "stats": {
@@ -518,12 +1265,64 @@
         "speed": 4
       },
       "abilities": [
-        {"level": 1, "name": "Jet de Sable"},
-        {"level": 5, "name": "Rugissement"},
-        {"level": 12, "name": "Picpic"},
-        {"level": 25, "name": "Atterrissage"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 1,
+          "name": "Tornade"
+        },
+        {
+          "level": 13,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 17,
+          "name": "Cyclone"
+        },
+        {
+          "level": 22,
+          "name": "Ouragan"
+        },
+        {
+          "level": 27,
+          "name": "Danse PLumes"
+        },
+        {
+          "level": 32,
+          "name": "Hâte"
+        },
+        {
+          "level": 38,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 44,
+          "name": "Atterrissage"
+        },
+        {
+          "level": 50,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 56,
+          "name": "Aéropique"
+        },
+        {
+          "level": 62,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 68,
+          "name": "Vent Violent"
+        }
       ],
-      "vu": 0
+      "vu": 3
     },
     {
       "id": 19,
@@ -549,11 +1348,60 @@
         "to": 20
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 5, "name": "Mimi-queue"},
-        {"level": 13, "name": "Morsure"}
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 4,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 7,
+          "name": "Puissance"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        },
+        {
+          "level": 13,
+          "name": "Affilage"
+        },
+        {
+          "level": 16,
+          "name": "Bélier"
+        },
+        {
+          "level": 19,
+          "name": "Assurance"
+        },
+        {
+          "level": 22,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 25,
+          "name": "Coup Bas"
+        },
+        {
+          "level": 28,
+          "name": "Croc Fatal"
+        },
+        {
+          "level": 31,
+          "name": "Damoclès"
+        },
+        {
+          "level": 34,
+          "name": "Effort"
+        }
       ],
-      "vu": 0
+      "vu": 111
     },
     {
       "id": 20,
@@ -575,11 +1423,68 @@
         "speed": 5
       },
       "abilities": [
-        {"level": 1, "name": "Charge"},
-        {"level": 5, "name": "Mimi-queue"},
-        {"level": 13, "name": "Morsure"},
-        {"level": 30, "name": "Croc de Mort"}
-      ]
+        {
+          "level": 1,
+          "name": "Grimace"
+        },
+        {
+          "level": 1,
+          "name": "Danse Lames"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 4,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 7,
+          "name": "Puissance"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        },
+        {
+          "level": 13,
+          "name": "Affilage"
+        },
+        {
+          "level": 16,
+          "name": "Bélier"
+        },
+        {
+          "level": 19,
+          "name": "Assurance"
+        },
+        {
+          "level": 24,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 29,
+          "name": "Coup Bas"
+        },
+        {
+          "level": 34,
+          "name": "Croc Fatal"
+        },
+        {
+          "level": 39,
+          "name": "Damoclès"
+        },
+        {
+          "level": 44,
+          "name": "Effort"
+        }
+      ],
+      "vu": 61
     }
   ]
 }

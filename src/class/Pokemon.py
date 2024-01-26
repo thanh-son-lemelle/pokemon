@@ -3,6 +3,7 @@ import json
 import pygame
 import sys
 import copy
+import random
 
 class Pokemon:
     def __init__(self, id ) -> None:
@@ -13,7 +14,7 @@ class Pokemon:
         self.__type2 = None
         self.__stats = None
         self.__baseStats = None
-        self.__growth = None
+        self.__growth = None 
         self.__evolution = None
         self.__level = 1
         self.__xp = 0
@@ -22,7 +23,7 @@ class Pokemon:
         self.__imageBack = None
         self.loadData()
         
-        self.__abilities = self.get_currentAbilities()
+        self.__abilities = self.get_initAbilities()
 
 #============================================================================
         # setter et getter
@@ -159,6 +160,28 @@ class Pokemon:
         return self.__stats["sp_defense"]
     
 #============================================================================
+            # setter des stats
+#============================================================================
+    def set_statHp(self, value):
+        self.__stats["hp"] += value
+    
+    def set_statAttack(self, value):
+        self.__stats["attack"] += value
+
+    def set_statDefense(self, value):
+        self.__stats["defense"] += value
+
+    def set_statSpeed(self, value):
+        self.__stats["speed"] += value
+    
+    def set_statSpecialAttack(self, value):
+        self.__stats["sp_attack"] += value
+
+    def set_statSpecialDefense(self, value):
+        self.__stats["sp_defense"] += value
+    
+    
+#============================================================================
         # gestion de l'xp, du level up et de l'évolution
 #============================================================================
 
@@ -229,7 +252,6 @@ class Pokemon:
 
         abilities = []
         self.get_abilitiesFromPokemonData()
-        print (abilities)
         for ability in self.__abilities:
             abilityLevel = ability ["level"]
             if abilityLevel <= self.__level:
@@ -238,46 +260,71 @@ class Pokemon:
         return self.__abilities
     
     def chooseAbilities(self):
-        chooseAbilities = []
+    # Réinitialiser la liste des abilities
         self.get_AbilitiesByLevel()
-        chooseAbilities = self.__abilities
+        chooseAbilities = self.__abilities.copy()
         self.__abilities = []
+
         print(f"Choisissez les abilities de {self.__name}:")
-        dialogue1 =f"Choisissez les abilities de {self.__name}:"
+        dialogue1 = f"Choisissez les abilities de {self.__name}:"
         dialogue2 = ""
+
         for ability in chooseAbilities:
             print(f"  {ability}")
             dialogue2 += f"  {ability}"
+
         print("\n")
+        
         for i in range(4):
-            ability = input(f"Ability {i+1}: ")
             while True:
-                # Verifier que l'ability existe
+                ability = input(f"Ability {i+1}: ")
+
+                # Vérifier que l'ability existe et n'est pas déjà dans la liste
                 if ability not in chooseAbilities:
                     print("Ability invalide !")
                     dialogue3 = "Ability invalide !"
-                    ability = input(f"Ability {i+1}: ")
-                # Verifier que l'ability n'est pas déjà dans la liste
                 elif ability in self.__abilities:
                     print(f"{ability} est déjà dans la liste !")
                     dialogue4 = f"{ability} est déjà dans la liste !"
-                    ability = input(f"Ability {i+1}: ")
+                else:
+                    break
+
             self.__abilities.append(ability)
             print(self.__abilities)
+
         print("\n")
         print(f"Les abilities de {self.__name} sont maintenant:")
+        
         for ability in self.__abilities:
             print(f"  {ability}")
+
         print("\n")
         return self.__abilities
     
     def get_currentAbilities(self):
-        print("test") # a revoir me ressor deux listes vide
         self.get_AbilitiesByLevel()
         if len(self.get_AbilitiesByLevel()) > 4:
             # L'utilisateur choisi les 4 abilities qu'il veut garder
             self.chooseAbilities()
         self.__abilities = self.__abilities[0:4]
+        return self.__abilities
+    
+    def get_initAbilities(self):
+        self.get_AbilitiesByLevel()
+        if len(self.get_AbilitiesByLevel()) > 4:
+            self.chooseRandomAbility()
+        self.__abilities = self.__abilities[0:4]
+        return self.__abilities
+    
+    def chooseRandomAbility(self):
+        self.get_AbilitiesByLevel()
+        chooseAbilities = self.__abilities.copy()
+        self.__abilities = []
+        for i in range(4):
+            ability = random.choice(chooseAbilities)
+            self.__abilities.append(ability)
+            chooseAbilities.remove(ability)
+
         return self.__abilities
     
     def get_ability(self, index):   #fonctionnel
@@ -340,64 +387,6 @@ class Pokemon:
         return image
 
     
-
-# Test de la class
-"""
-starter = Pokemon (4)
-starter.set_level(50)
-print(starter.get_4abilities())
-print(starter.get_abilityStatsByIndex(0)) #marche pas
-print(starter.get_abilities())
-print(starter.get_abilityStats("Poudre Toxik")) #marche pas
-print(starter.get_AbilitiesByLevel())
-print(starter.get_ability_by_name("Poudre Toxik"))
-print(starter.get_abilityAccuracyByName("Poudre Toxik"))
-print(starter.get_abilityCategoryByName("Poudre Toxik"))
-print(starter.get_abilityPowerByName("Poudre Toxik"))
-print(starter.get_abilityTypeByName("Poudre Toxik"))
-print(starter.get_abilityStats("Poudre Toxik"))
-print(starter.get_abilityStatutChangeByName("Poudre Toxik")["turns"])
-print(starter.get_abilityStatutChangeByName("Poudre Toxik"))
-
-print(starter.get_ability(0))
-print(starter.get_pokemonData())
-
-
-
-pygame.init()
-
-largeur_fenetre = 1000
-hauteur_fenetre = 500
-
-
-fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-pygame.display.set_caption('Fenêtre Pygame avec Image')
-
-
-
-image = starter.get_imageFace()
-
-# Obtenir la position de l'image dans la fenêtre
-image_rect = image.get_rect()
-
-# Boucle principale
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-
-    # Effacer l'écran
-    fenetre.fill((255,255,255))  # Fond blanc
-
-    # Dessiner l'image
-    fenetre.blit(image, image_rect)
-
-
-    # Mettre à jour l'affichage
-    pygame.display.flip()
-
-    # Quitter Pygame
-pygame.quit()
-sys.exit()
-"""
+pokemon = Pokemon(1)
+print(pokemon.get_stats())
+print(pokemon.get_statAttack())

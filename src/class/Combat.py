@@ -401,12 +401,16 @@ class Combat():
     def multiplicateur_type(self):
         delay_time = 1000
         self.start_time = pygame.time.get_ticks()
-        i = 0
-        degats = 0
-        less_press = 0
-        degats_stat = 0
+        i = 0 # set d'un numéro à utiliser plus tard dans la fonction
+
+        degats = 0  # set des dégâts subit à 0
+
+        less_press = 0 # set de la baisse de precision à 0 
+        
+        degats_stat = 0 # set des dégat des staut à 0 (poison,brulure,etc...)
+
         capa_adv = self.adv.get_4abilities()[random.randint(0,3)]
-        while capa_adv == "-":
+        while capa_adv == "-": # Si l'adverssaire choissis une compétance non definie
             capa_adv = self.adv.get_4abilities()[random.randint(0,3)]
              
         size_capa = (1000,200)
@@ -417,88 +421,111 @@ class Combat():
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
         nombre_aleatoire = random.uniform(0, 100)
 
-        if probabilite_reussite >= nombre_aleatoire:
+        if probabilite_reussite >= nombre_aleatoire: #Si taux de reussite est supérieure au nombre aléatoire l'attque est reussi 
+
+            # Verif du type d'attaques du joueur = Physique , Special ou Statut
 
             if self.starter.get_abilityCategoryByName(self.__attaque) == "Physique":
+                #Calcul des dégats que va subir l'adverssaire 
                 degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))
 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Special":
+                #Calcul des dégats que va subir l'adverssaire 
                 degats = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statSpecialDefense()) / 50) + 2))
 
                 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Statut":
                 if self.starter.get_abilityStatutChangeByName(self.__attaque) == "Empoisonnement":
+                    #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                     degats_stat += 10 
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Brûlure":
+                    #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                     degats_stat = 10
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse de Précision":
+                    #set de la reduction de precision du pokemon adverse 
                     less_press = 10
 
             
-            
+             # Verif du type d'attaques de l'adverssaire = Physique , Special ou Statut
             
             if self.adv.get_abilityCategoryByName(capa_adv) == "Physique":
+                #Calcul des dégats que va subir le joueur 
                 degats = int((((((self.adv.get_level() * 0.4 + 2) * self.adv.get_statAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2)+ degats_stat)
 
             elif self.adv.get_abilityCategoryByName(capa_adv) == "Special":
+                #Calcul des dégats que va subir le joueur 
                 degats = int((((((self.adv.get_level() * 0.4 + 2) *self.adv.get_statSpecialAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2)+ degats_stat)
 
             elif self.adv.get_abilityCategoryByName(capa_adv) == "Statut":
+                #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                 if self.adv.get_abilityStatutChangeByName(capa_adv) == "Empoisonnement":
                     degats_stat += 10 
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Brûlure":
+                        #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                         degats_stat = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse de Précision":
+                    #set de la reduction de precision du pokemon Joueur 
                     less_press = 10
 
-
+            #Ajout de l'avantage type
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
+                #Calcul avantage type des capacité du joueur
                 self.multiplicateur_degat = file[self.starter.get_abilityTypeByName(self.__attaque)][self.adv.get_type1()]* file[self.starter.get_abilityTypeByName(self.__attaque)][self.adv.get_type2()]
+
+                #Mettre la valeurs des hp à jour pour la rappeler plus tard dans health_bar_adv
                 self.hp_adv -= degats * self.multiplicateur_degat + degats_stat
                 
+                #Calcul avantage type des capacité de l'adverssaire
                 self.multiplicateur_degat_adv = file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
+
+                #Mettre la valeurs des hp à jour pour la rappeler plus tard dans health_bar_player
                 self.hp -= degats * self.multiplicateur_degat_adv
                         
                        
                 
 
 
-                
+                #Condition changement de pokemon après K.O
                 
                 if self.hp_adv <= 0:
                                 self.vu()
-                                self.liste_poke_adv.pop(i)
-                                self.hp_adv = 0
-                                self.health_bar_player()
-                                self.health_bar_adv()
-                                if len(self.liste_poke_adv) >= 1:
-                                    self.adv = self.liste_poke_adv[i]
-                                    self.fight()
-                                self.max_hp_adv = self.hp_adv
-                                if len(self.liste_poke_adv) <=0: 
-                                    self.lvl_up()
-                                    self.Victoire()
+                                self.liste_poke_adv.pop(i) #Retirer le pokemon actuel
+                                self.hp_adv = 0 # Si pv inferiure à 0 --> les set à 0
+                                self.health_bar_player() #Afficher barre de vie player
+                                self.health_bar_adv() #Afficher barre de vie Adversse
+
+                                if len(self.liste_poke_adv) >= 1: #Si l'equipe pokemon possède un autres pokemon
+                                    self.adv = self.liste_poke_adv[i] #Set le pokemon
+                                    self.fight() #Retour au Combat
+
+                                self.max_hp_adv = self.hp_adv # Reset les pv au max
+
+                                if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
+                                    self.lvl_up() #Gagne xp
+                                    self.Victoire() #Ecran de Victoire
 
                 if self.hp <= 0:
                                 self.vu()
-                                print(self.liste_poke[i].get_nom())
-                                self.liste_poke.pop(i)
-                                self.hp = 0
-                                self.health_bar_player()
-                                self.health_bar_adv()
-                                if len(self.liste_poke) >= 1:
-                                    self.starter = self.liste_poke[i]
-                                    print(self.liste_poke[i].get_nom())
-                                    self.fight()
-                                self.hp = self.max_hp
-                                if len(self.liste_poke) <=0: 
-                                    self.Defaite()
+                                self.liste_poke.pop(i) # Retirer le pokemon actuel
+                                self.hp = 0 # Si pv inferiure à 0 --> les set à 0
+                                self.health_bar_player() #Afficher barre de vie player
+                                self.health_bar_adv() #Afficher barre de vie Adversse
 
+                                if len(self.liste_poke) >= 1: #Si l'equipe pokemon possède un autres pokemon
+                                    self.starter = self.liste_poke[i] #Set le pokemon
+                                    self.fight() #Retour au Combat
+
+                                self.hp = self.max_hp # Reset les pv au max
+
+                                if len(self.liste_poke) <=0: #Si aucun pokemon restant 
+                                    self.Defaite() # écran de défaite
+
+                #Mettre à jour les barre de vie à chaque appel de la def 
 
                 if self.hp_adv >= 1 and self.max_hp_adv >= 1:
                     self.ratio = self.hp / self.max_hp
@@ -508,10 +535,10 @@ class Combat():
 
                 
 
-        else:
+        else: # Si l'on rate nôtre attaque 
 
             
-            
+            #Thread pour afficher les message sans freeze la page 
             def perform_delayed_task():
                 while pygame.time.get_ticks() - self.start_time < delay_time:
                     self.rater = self.police_moyen.render("L'action a échoué", False, "red")
@@ -525,10 +552,25 @@ class Combat():
             
 
             if self.adv.get_abilityCategoryByName(capa_adv) == "Physique":
-                degats = int((((((self.adv.get_level() * 0.4 + 2) * self.adv.get_statAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2))
+                #Calcul des dégats que va subir le joueur 
+                degats = int((((((self.adv.get_level() * 0.4 + 2) * self.adv.get_statAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statDefense()) / 50) + 2)+ degats_stat)
 
             elif self.adv.get_abilityCategoryByName(capa_adv) == "Special":
-                degats = int((((((self.adv.get_level() * 0.4 + 2) *self.adv.get_statSpecialAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2))
+                #Calcul des dégats que va subir le joueur 
+                degats = int((((((self.adv.get_level() * 0.4 + 2) *self.adv.get_statSpecialAttack() * self.adv.get_abilityPowerByName(capa_adv)) / self.starter.get_statSpecialDefense()) / 50) + 2)+ degats_stat)
+
+            elif self.adv.get_abilityCategoryByName(capa_adv) == "Statut":
+                #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
+                if self.adv.get_abilityStatutChangeByName(capa_adv) == "Empoisonnement":
+                    degats_stat += 10 
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Brûlure":
+                        #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
+                        degats_stat = 10
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse de Précision":
+                    #set de la reduction de precision du pokemon Joueur 
+                    less_press = 10
 
 
            
@@ -538,40 +580,50 @@ class Combat():
 
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
+                #Calcul avantage type des capacité de l'adverssaire
                 self.multiplicateur_degat_adv = file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
+
+                #Mettre la valeurs des hp à jour pour la rappeler plus tard dans health_bar_player
                 self.hp -= degats * self.multiplicateur_degat_adv
 
 
             
-            
-            if self.hp_adv <= 0:
-                self.vu()
-                self.liste_poke_adv.pop(i)
-                self.hp_adv = 0
-                self.health_bar_player()
-                self.health_bar_adv()
-                if len(self.liste_poke_adv) >= 1:
-                    self.adv = self.liste_poke_adv[i]
-                    self.fight()
-                self.max_hp_adv = self.hp_adv
-                if len(self.liste_poke_adv) <=0: 
-                    self.lvl_up()
-                    self.Victoire()
+            #Condition changement de pokemon après K.O
+                
+                if self.hp_adv <= 0:
+                    self.vu()
+                    self.liste_poke_adv.pop(i) #Retirer le pokemon actuel
+                    self.hp_adv = 0 # Si pv inferiure à 0 --> les set à 0
+                    self.health_bar_player() #Afficher barre de vie player
+                    self.health_bar_adv() #Afficher barre de vie Adversse
 
-            if self.hp <= 0:
-                self.vu()
-                print(self.liste_poke[i].get_nom())
-                self.liste_poke.pop(i)
-                self.hp = 0
-                self.health_bar_player()
-                self.health_bar_adv()
-                if len(self.liste_poke) >= 1:
-                    self.starter = self.liste_poke[i]
-                    print(self.liste_poke[i].get_nom())
-                    self.fight()
-                self.hp = self.max_hp
-                if len(self.liste_poke) <=0: 
-                    self.Defaite()
+                    if len(self.liste_poke_adv) >= 1: #Si l'equipe pokemon possède un autres pokemon
+                        self.adv = self.liste_poke_adv[i] #Set le pokemon
+                        self.fight() #Retour au Combat
+
+                    self.max_hp_adv = self.hp_adv # Reset les pv au max
+
+                    if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
+                        self.lvl_up() #Gagne xp
+                        self.Victoire() #Ecran de Victoire
+
+                if self.hp <= 0:
+                    self.vu()
+                    self.liste_poke.pop(i) # Retirer le pokemon actuel
+                    self.hp = 0 # Si pv inferiure à 0 --> les set à 0
+                    self.health_bar_player() #Afficher barre de vie player
+                    self.health_bar_adv() #Afficher barre de vie Adversse
+
+                    if len(self.liste_poke) >= 1: #Si l'equipe pokemon possède un autres pokemon
+                        self.starter = self.liste_poke[i] #Set le pokemon
+                        self.fight() #Retour au Combat
+
+                    self.hp = self.max_hp # Reset les pv au max
+
+                    if len(self.liste_poke) <=0: #Si aucun pokemon restant 
+                        self.Defaite() # écran de défaite
+
+            #Mettre à jour les barre de vie à chaque appel de la def 
 
             if self.hp >= 1 and self.max_hp >= 1:
                     self.ratio = self.hp / self.max_hp
@@ -597,6 +649,8 @@ class Combat():
                 if i["id"] == self.adv.get_id():
                     i["vu"] += 1
                     print(i["vu"])
+
+    # Étape 2: Écrire dans le fichier JSON avec l'encodage UTF-8
 
         with open("data/pokemons/pokemons.json", "w",encoding="utf-8") as f:
             json.dump(file, f, indent=2,ensure_ascii=False)

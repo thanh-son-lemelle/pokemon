@@ -1,3 +1,4 @@
+# Importation des bibliothèques nécessaires
 import json
 import pygame
 from Pokemon import Pokemon 

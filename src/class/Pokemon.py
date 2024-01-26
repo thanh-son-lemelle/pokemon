@@ -229,7 +229,10 @@ class Pokemon:
 
         abilities = []
         self.get_abilitiesFromPokemonData()
+        print(self.__name)
+        print(self.__abilities)
         for ability in self.__abilities:
+            print(ability["level"])
             abilityLevel = ability ["level"]
             if abilityLevel <= self.__level:
                 abilities.append(ability["name"])
@@ -237,36 +240,44 @@ class Pokemon:
         return self.__abilities
     
     def chooseAbilities(self):
-        chooseAbilities = []
+    # Réinitialiser la liste des abilities
         self.get_AbilitiesByLevel()
-        chooseAbilities = self.__abilities
+        chooseAbilities = self.__abilities.copy()
         self.__abilities = []
+
         print(f"Choisissez les abilities de {self.__name}:")
-        dialogue1 =f"Choisissez les abilities de {self.__name}:"
+        dialogue1 = f"Choisissez les abilities de {self.__name}:"
         dialogue2 = ""
+
         for ability in chooseAbilities:
             print(f"  {ability}")
             dialogue2 += f"  {ability}"
+
         print("\n")
+        
         for i in range(4):
-            ability = input(f"Ability {i+1}: ")
             while True:
-                # Verifier que l'ability existe
+                ability = input(f"Ability {i+1}: ")
+
+                # Vérifier que l'ability existe et n'est pas déjà dans la liste
                 if ability not in chooseAbilities:
                     print("Ability invalide !")
                     dialogue3 = "Ability invalide !"
-                    ability = input(f"Ability {i+1}: ")
-                # Verifier que l'ability n'est pas déjà dans la liste
                 elif ability in self.__abilities:
                     print(f"{ability} est déjà dans la liste !")
                     dialogue4 = f"{ability} est déjà dans la liste !"
-                    ability = input(f"Ability {i+1}: ")
+                else:
+                    break
+
             self.__abilities.append(ability)
             print(self.__abilities)
+
         print("\n")
         print(f"Les abilities de {self.__name} sont maintenant:")
+        
         for ability in self.__abilities:
             print(f"  {ability}")
+
         print("\n")
         return self.__abilities
     

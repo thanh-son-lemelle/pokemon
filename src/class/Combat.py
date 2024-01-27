@@ -195,12 +195,14 @@ class Combat():
                     if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
                         self.__attaque = self.starter.get_4abilities()[0]
+                        print("att1",self.__attaque)
                         self.multiplicateur_type()
 
 
                     if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[1]
+                            print("att2",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
 
@@ -211,6 +213,7 @@ class Combat():
                     if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[2]
+                            print("att3",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -220,6 +223,7 @@ class Combat():
                     if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[3]
+                            print("att4",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -408,6 +412,8 @@ class Combat():
         
         degats_stat = 0 # set des dégat des staut à 0 (poison,brulure,etc...)
 
+        multiple_crit = 1
+
         capa_adv = self.adv.get_4abilities()[random.randint(0,3)]
         while capa_adv == "-": # Si l'adverssaire choissis une compétance non definie
             capa_adv = self.adv.get_4abilities()[random.randint(0,3)]
@@ -418,6 +424,8 @@ class Combat():
 
 
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
+        print("att test",self.__attaque)
+        print(self.starter.get_abilityAccuracyByName(self.__attaque))
         nombre_aleatoire = random.uniform(0, 100)
 
         if probabilite_reussite >= nombre_aleatoire: #Si taux de reussite est supérieure au nombre aléatoire l'attque est reussi 
@@ -426,11 +434,11 @@ class Combat():
 
             if self.starter.get_abilityCategoryByName(self.__attaque) == "Physique":
                 #Calcul des dégats que va subir l'adverssaire 
-                degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))
+                degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))*multiple_crit
 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Special":
                 #Calcul des dégats que va subir l'adverssaire 
-                degats = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statSpecialDefense()) / 50) + 2))
+                degats = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statSpecialDefense()) / 50) + 2))*multiple_crit
 
                 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Statut":
@@ -442,11 +450,65 @@ class Combat():
                     #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                     degats_stat = 10
 
-                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse de Précision":
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Coup critique":
+                    #set de la reduction de precision du pokemon adverse 
+                    multiple_crit = 1.25
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Paralysie":
+                    #set de la reduction de precision du pokemon adverse 
+                    less_press = 10
+                                
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Confusion":
                     #set de la reduction de precision du pokemon adverse 
                     less_press = 10
 
-            
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statDefense(30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statDefense(-30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statAttack(30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse attaque":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(-30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statSpeed(30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statSpeed(-30)
+
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse precision":
+                    #set de la reduction de precision du pokemon adverse 
+                    less_press = 10
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque et attaque speciale":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statAttack(30)
+                    self.starter.set_statSpecialAttack(30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque, defense speciale, vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statAttack(30)
+                    self.starter.set_statSpecialDefense(30)
+                    self.starter.set_statSpeed(30)
+
+                elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque, attaque speciale, vitesse, baisse defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statAttack(30)
+                    self.starter.set_statSpecialAttack(30)
+                    self.starter.set_statSpeed(30)
+                    self.adv.set_statDefense(-30)
+
              # Verif du type d'attaques de l'adverssaire = Physique , Special ou Statut
             
             if self.adv.get_abilityCategoryByName(capa_adv) == "Physique":
@@ -460,15 +522,71 @@ class Combat():
             elif self.adv.get_abilityCategoryByName(capa_adv) == "Statut":
                 #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                 if self.adv.get_abilityStatutChangeByName(capa_adv) == "Empoisonnement":
+                    #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                     degats_stat += 10 
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Brûlure":
-                        #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
-                        degats_stat = 10
+                    #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
+                    degats_stat = 10
 
-                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse de Précision":
-                    #set de la reduction de precision du pokemon Joueur 
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Coup critique":
+                    #set de la reduction de precision du pokemon adverse 
+                    multiple_crit = 1.25
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Paralysie":
+                    #set de la reduction de precision du pokemon adverse 
                     less_press = 10
+                                
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Confusion":
+                    #set de la reduction de precision du pokemon adverse 
+                    less_press = 10
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statDefense(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statDefense(-30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse attaque":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statAttack(-30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statSpeed(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statSpeed(-30)
+
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse precision":
+                    #set de la reduction de precision du pokemon adverse 
+                    less_press = 10
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque et attaque speciale":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+                    self.adv.set_statSpecialAttack(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, defense speciale, vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+                    self.adv.set_statSpecialDefense(30)
+                    self.adv.set_statSpeed(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, attaque speciale, vitesse, baisse defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+                    self.adv.set_statSpecialAttack(30)
+                    self.adv.set_statSpeed(30)
+                    self.starter.set_statDefense(-30)
 
             #Ajout de l'avantage type
             with open("data\pokemons\Type.json","r") as f: 
@@ -575,15 +693,71 @@ class Combat():
             elif self.adv.get_abilityCategoryByName(capa_adv) == "Statut":
                 #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                 if self.adv.get_abilityStatutChangeByName(capa_adv) == "Empoisonnement":
+                    #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
                     degats_stat += 10 
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Brûlure":
-                        #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
-                        degats_stat = 10
+                    #set des degat statut (le pokemon prendra x nombre de dégat en plus à cahque tour)
+                    degats_stat = 10
 
-                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse de Précision":
-                    #set de la reduction de precision du pokemon Joueur 
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Coup critique":
+                    #set de la reduction de precision du pokemon adverse 
+                    multiple_crit = 1.25
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Paralysie":
+                    #set de la reduction de precision du pokemon adverse 
                     less_press = 10
+                                
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Confusion":
+                    #set de la reduction de precision du pokemon adverse 
+                    less_press = 10
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statDefense(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statDefense(-30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse attaque":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statAttack(-30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statSpeed(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.starter.set_statSpeed(-30)
+
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse precision":
+                    #set de la reduction de precision du pokemon adverse 
+                    less_press = 10
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque et attaque speciale":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+                    self.adv.set_statSpecialAttack(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, defense speciale, vitesse":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+                    self.adv.set_statSpecialDefense(30)
+                    self.adv.set_statSpeed(30)
+
+                elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, attaque speciale, vitesse, baisse defense":
+                    #set de la reduction de precision du pokemon adverse 
+                    self.adv.set_statAttack(30)
+                    self.adv.set_statSpecialAttack(30)
+                    self.adv.set_statSpeed(30)
+                    self.starter.set_statDefense(-30)
 
 
            

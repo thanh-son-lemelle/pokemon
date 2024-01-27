@@ -130,12 +130,12 @@ class AjoutPokemon():
             self.SCREEN.blit(self.__descriptif, (330, 370))
             self.SCREEN.blit(self.__typeg, (70, 645))
             self.SCREEN.blit(self.__stats, (810, 130))
-            self.SCREEN.blit(self.__affHp, (820, 150))
-            self.SCREEN.blit(self.__affAttack, (820, 170))
-            self.SCREEN.blit(self.__affDefense, (820, 190))
-            self.SCREEN.blit(self.__affSpeed, (820, 210))
-            self.SCREEN.blit(self.__affSpAttack, (820, 230))
-            self.SCREEN.blit(self.__affSpDefense, (820, 250))
+            self.SCREEN.blit(self.__affHp, (800, 170))
+            self.SCREEN.blit(self.__affAttack, (800, 200))
+            self.SCREEN.blit(self.__affDefense, (800, 230))
+            self.SCREEN.blit(self.__affSpeed, (800, 260))
+            self.SCREEN.blit(self.__affSpAttack, (800, 290))
+            self.SCREEN.blit(self.__affSpDefense, (800, 320))
             self.SCREEN.blit(self.button_menu, (875, 5))
             
 

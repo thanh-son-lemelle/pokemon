@@ -84,7 +84,7 @@ class Combat():
             self.rater = self.police_moyen.render("L'action a échoué",True,"red")
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
             self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
-            self.aff_lvl = self.police.render("Lv : ", True, "black")
+            
             
     
         
@@ -116,8 +116,8 @@ class Combat():
         self.animation.loadFramesForCombat(isFront=False)
         self.animationAdversaire = Animation(self.adv)
         self.animationAdversaire.loadFramesForCombat()
-        self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
-        self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
+        self.__nom = self.police.render(self.starter.get_nom() , True, "black")
+        self.__adversaire = self.police.render(self.adv.get_nom() , True, "black")
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
         size_capa = (500,200)
         press = False
@@ -138,23 +138,34 @@ class Combat():
         self.health_bar_adv()
         self.animation.clock = pygame.time.Clock()
         rezize_capa_button = (200,50)
+
+
         capa_button = pygame.image.load("images\\button\images\\sprite_test3.png")
         capa_button = pygame.transform.scale(capa_button,rezize_capa_button)
+
+
+        barre_hp_player = pygame.image.load("images\HUD\combat\Barre-ennemi.png")
+        barre_hp_player = pygame.transform.scale(barre_hp_player,(250,70))
+        barre_hp_adv = pygame.image.load("images\HUD\combat\Barre-joueur.png")
+        barre_hp_adv = pygame.transform.scale(barre_hp_adv,(250,70))
+
+
         self.vu()
         self.zone_text = pygame.transform.scale(self.zone_text,(500,200))
         while self.running:
             self.__SCREEN.blit(capa, (0, 500))
             self.__SCREEN.blit(self.zone_text,(500,500))
             self.__SCREEN.blit(self.__zone, (0, 0))
-            self.__SCREEN.blit(self.__nom, (30, 5))
-            self.__SCREEN.blit(self.__adversaire, (700, 5))
-            self.__SCREEN.blit(self.aff_lvl,(30,40))
-            self.__SCREEN.blit(self.aff_lvl,(700,40))
-            self.__SCREEN.blit(self.lvl_start,(90,40))
-            self.__SCREEN.blit(self.lvl_adv,(760,40))
+            
             self.animation.displayBackAnimation()
 
             self.animationAdversaire.displayFrontAnimation()
+            self.__SCREEN.blit(barre_hp_player,(30,10))
+            self.__SCREEN.blit(barre_hp_adv,(700,10))
+            self.__SCREEN.blit(self.__nom, (46, 15))
+            self.__SCREEN.blit(self.__adversaire, (716, 15))
+            self.__SCREEN.blit(self.lvl_start,(230,19))
+            self.__SCREEN.blit(self.lvl_adv,(900,17))
             self.health_bar_player()
             self.health_bar_adv()
             
@@ -256,9 +267,9 @@ class Combat():
     def health_bar_player(self):
         
         # Dessiner la barre de vie du joueur
-        pygame.draw.rect(self.__SCREEN, (255,255,255), (30, 30, 250, 10))
-        pygame.draw.rect(self.__SCREEN, (0,255,0), (30, 30,250*self.ratio, 10))
-        pygame.draw.rect(self.__SCREEN, (0,0,0), (30, 30,250, 10),1)
+        pygame.draw.rect(self.__SCREEN, (255,255,255), (101, 48, 150, 10))
+        pygame.draw.rect(self.__SCREEN, (0,255,0), (101, 48,150*self.ratio, 10))
+        pygame.draw.rect(self.__SCREEN, (0,0,0), (101, 48,150, 10),1)
 
         
 
@@ -267,9 +278,9 @@ class Combat():
     def health_bar_adv(self):
         
         # Dessiner la barre de vie de l'adversaire
-        pygame.draw.rect(self.__SCREEN, (255,255,255), (700, 30, 250, 10))
-        pygame.draw.rect(self.__SCREEN, (0,255,0), (700, 30,250*self.ratio_adv, 10))
-        pygame.draw.rect(self.__SCREEN, (0,0,0), (700, 30,250, 10),1)
+        pygame.draw.rect(self.__SCREEN, (255,255,255), (778, 43, 150, 10))
+        pygame.draw.rect(self.__SCREEN, (0,255,0), (778, 43,150*self.ratio_adv, 10))
+        pygame.draw.rect(self.__SCREEN, (0,0,0), (778, 43,150, 10),1)
 
 
 

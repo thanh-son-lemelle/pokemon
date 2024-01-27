@@ -111,16 +111,14 @@ class Combat():
 
 
     def fight(self):
-        self.initialis_combat()
-        self.max_hp_adv = self.adv.get_statHp()
-        self.hp_adv = self.max_hp_adv 
-        self.ratio_adv = self.hp_adv / self.max_hp_adv
+      
+        self.animation = Animation(self.starter)
+        self.animation.loadFramesForCombat(isFront=False)
+        self.animationAdversaire = Animation(self.adv)
+        self.animationAdversaire.loadFramesForCombat()
         self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
         self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
-        self.max_hp = self.starter.get_statHp()
-        self.hp = self.max_hp
-        self.ratio = self.hp / self.max_hp
         size_capa = (500,200)
         press = False
         capa = pygame.image.load("images\\background\combat\panel.png")
@@ -136,7 +134,8 @@ class Combat():
         self.animationAdversaire.displayFrontAnimation()
                 
                 
-        
+        self.health_bar_player()
+        self.health_bar_adv()
         self.animation.clock = pygame.time.Clock()
         rezize_capa_button = (200,50)
         capa_button = pygame.image.load("images\\button\images\\sprite_test3.png")
@@ -499,11 +498,19 @@ class Combat():
                                 self.health_bar_player() #Afficher barre de vie player
                                 self.health_bar_adv() #Afficher barre de vie Adversse
 
+                                
+
+
+                                # Reset les pv au max
+
+                                self.max_hp_adv = self.adv.get_statHp()
+                                self.hp_adv = self.max_hp_adv 
+                                self.ratio_adv = self.hp_adv / self.max_hp_adv  
+
+
                                 if len(self.liste_poke_adv) >= 1: #Si l'equipe pokemon possède un autres pokemon
                                     self.adv = self.liste_poke_adv[i] #Set le pokemon
                                     self.fight() #Retour au Combat
-
-                                self.max_hp_adv = self.hp_adv # Reset les pv au max
 
                                 if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
                                     self.lvl_up() #Gagne xp
@@ -516,11 +523,17 @@ class Combat():
                                 self.health_bar_player() #Afficher barre de vie player
                                 self.health_bar_adv() #Afficher barre de vie Adversse
 
+                                
+
+                                # Reset les pv au max
+
+                                self.max_hp = self.starter.get_statHp()
+                                self.hp = self.max_hp
+                                self.ratio = self.hp / self.max_hp
+
                                 if len(self.liste_poke) >= 1: #Si l'equipe pokemon possède un autres pokemon
                                     self.starter = self.liste_poke[i] #Set le pokemon
                                     self.fight() #Retour au Combat
-
-                                self.hp = self.max_hp # Reset les pv au max
 
                                 if len(self.liste_poke) <=0: #Si aucun pokemon restant 
                                     self.Defaite() # écran de défaite
@@ -597,11 +610,16 @@ class Combat():
                     self.health_bar_player() #Afficher barre de vie player
                     self.health_bar_adv() #Afficher barre de vie Adversse
 
+                    
+
+                    # Reset les pv au max
+                    self.max_hp_adv = self.adv.get_statHp()
+                    self.hp_adv = self.max_hp_adv 
+                    self.ratio_adv = self.hp_adv / self.max_hp_adv 
+
                     if len(self.liste_poke_adv) >= 1: #Si l'equipe pokemon possède un autres pokemon
                         self.adv = self.liste_poke_adv[i] #Set le pokemon
                         self.fight() #Retour au Combat
-
-                    self.max_hp_adv = self.hp_adv # Reset les pv au max
 
                     if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
                         self.lvl_up() #Gagne xp
@@ -614,11 +632,18 @@ class Combat():
                     self.health_bar_player() #Afficher barre de vie player
                     self.health_bar_adv() #Afficher barre de vie Adversse
 
+                    
+
+                    # Reset les pv au max
+                    self.max_hp = self.starter.get_statHp()
+                    self.hp = self.max_hp
+                    self.ratio = self.hp / self.max_hp
+
+
                     if len(self.liste_poke) >= 1: #Si l'equipe pokemon possède un autres pokemon
                         self.starter = self.liste_poke[i] #Set le pokemon
                         self.fight() #Retour au Combat
 
-                    self.hp = self.max_hp # Reset les pv au max
 
                     if len(self.liste_poke) <=0: #Si aucun pokemon restant 
                         self.Defaite() # écran de défaite
@@ -659,6 +684,7 @@ class Combat():
 
 
     def start_anim(self):
+
         animationadversaire = Animation_dresseur()
         animationjoueur = Animation_dresseur()
         animationjoueur.load(isFront = False)

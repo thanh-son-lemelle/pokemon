@@ -40,7 +40,6 @@
           "level": 6,
           "name": "Croissance"
         },
-   
         {
           "level": 12,
           "name": "Tranch'Herbe"
@@ -681,7 +680,7 @@
           "name": "Piqûre"
         }
       ],
-      "vu": 118
+      "vu": 119
     },
     {
       "id": 11,
@@ -1266,7 +1265,7 @@
           "name": "Effort"
         }
       ],
-      "vu": 112
+      "vu": 113
     },
     {
       "id": 20,

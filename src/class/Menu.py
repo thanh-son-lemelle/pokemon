@@ -79,6 +79,7 @@ class Menu():
                         choixPokemon.affichePokeballs()
                         self.__pokemonChoisi = choixPokemon.get_PokemonChoisi()
                         self.__playgame = True
+                        break
                         
                     
 
@@ -98,6 +99,8 @@ class Menu():
                         pygame.quit()
 
                         sys.exit()
+            if self.__playgame:
+                break
 
 
             pygame.display.update()

@@ -104,7 +104,7 @@ class Combat():
         self.starter = self.liste_poke[0]
         print("Starter : ",self.liste_poke)
         print("Starter : ",self.liste_poke[0].get_nom())
-        print("Starter : ",self.liste_poke[1].get_nom())
+
         self.adv = self.liste_poke_adv[0]
         print("Adv : ",self.adv.get_nom())
         

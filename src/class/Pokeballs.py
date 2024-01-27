@@ -154,6 +154,7 @@ class Pokeballs():
                                 click_pok3 = False
                                 running = False
                                 print("yes")
+                                break
 
                             if 300 <= event.pos[0] <= 400 and 600 <= event.pos[1] <= 650:
                                 click_pok1 = False

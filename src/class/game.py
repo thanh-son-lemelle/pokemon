@@ -13,7 +13,9 @@ while True:
         #display pour rentrer en input le nom du joueur
         
         joueur = Dresseurs("Sasha") #nom = input
-        joueur.getRoster(menu.get_pokemonChoisi())
+        joueur.addToRoster(menu.get_pokemonChoisi())
+        print(Pokemon.get_nom(joueur.get_lisPokemons()[0]))
+        
 
 
         

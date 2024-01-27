@@ -40,10 +40,7 @@
           "level": 6,
           "name": "Croissance"
         },
-        {
-          "level": 9,
-          "name": "Vampigraine"
-        },
+   
         {
           "level": 12,
           "name": "Tranch'Herbe"
@@ -53,28 +50,12 @@
           "name": "Poudre Toxik"
         },
         {
-          "level": 15,
-          "name": "Poudre Dodo"
-        },
-        {
           "level": 18,
           "name": "Canon Graine"
         },
         {
           "level": 21,
           "name": "Bélier"
-        },
-        {
-          "level": 24,
-          "name": "Doux Parfum"
-        },
-        {
-          "level": 27,
-          "name": "Synthèse"
-        },
-        {
-          "level": 30,
-          "name": "Soucigraine"
         },
         {
           "level": 33,
@@ -128,10 +109,6 @@
           "name": "Fouet Lianes"
         },
         {
-          "level": 9,
-          "name": "Vampigraine"
-        },
-        {
           "level": 12,
           "name": "Tranch'Herbe"
         },
@@ -140,28 +117,12 @@
           "name": "Poudre Toxik"
         },
         {
-          "level": 15,
-          "name": "Poudre Dodo"
-        },
-        {
           "level": 20,
           "name": "Canon Graine"
         },
         {
           "level": 25,
           "name": "Bélier"
-        },
-        {
-          "level": 30,
-          "name": "Doux Parfum"
-        },
-        {
-          "level": 35,
-          "name": "Synthèse"
-        },
-        {
-          "level": 40,
-          "name": "Soucigraine"
         },
         {
           "level": 45,
@@ -219,10 +180,6 @@
           "name": "Croissance"
         },
         {
-          "level": 9,
-          "name": "Vampigraine"
-        },
-        {
           "level": 12,
           "name": "Tranch'Herbe"
         },
@@ -231,28 +188,12 @@
           "name": "Poudre Toxik"
         },
         {
-          "level": 15,
-          "name": "Poudre Dodo"
-        },
-        {
           "level": 20,
           "name": "Canon Graine"
         },
         {
           "level": 25,
           "name": "Bélier"
-        },
-        {
-          "level": 30,
-          "name": "Doux Parfum"
-        },
-        {
-          "level": 37,
-          "name": "Synthèse"
-        },
-        {
-          "level": 44,
-          "name": "Soucigraine"
         },
         {
           "level": 51,
@@ -441,10 +382,6 @@
         },
         {
           "level": 1,
-          "name": "Canicule"
-        },
-        {
-          "level": 1,
           "name": "Draco-Griffe"
         },
         {
@@ -531,10 +468,6 @@
           "name": "Mimi-queue"
         },
         {
-          "level": 6,
-          "name": "Repli"
-        },
-        {
           "level": 9,
           "name": "Tour Rapide"
         },
@@ -545,14 +478,6 @@
         {
           "level": 15,
           "name": "Vibraqua"
-        },
-        {
-          "level": 18,
-          "name": "Abri"
-        },
-        {
-          "level": 21,
-          "name": "Danse Pluie"
         },
         {
           "level": 24,
@@ -614,10 +539,6 @@
           "name": "Pistolet à O"
         },
         {
-          "level": 1,
-          "name": "Repli"
-        },
-        {
           "level": 9,
           "name": "Tour Rapide"
         },
@@ -628,14 +549,6 @@
         {
           "level": 15,
           "name": "Vibraqua"
-        },
-        {
-          "level": 20,
-          "name": "Abri"
-        },
-        {
-          "level": 25,
-          "name": "Danse Pluie"
         },
         {
           "level": 30,
@@ -697,10 +610,6 @@
           "name": "Pistolet à O"
         },
         {
-          "level": 1,
-          "name": "Repli"
-        },
-        {
           "level": 9,
           "name": "Tour Rapide"
         },
@@ -711,14 +620,6 @@
         {
           "level": 15,
           "name": "Vibraqua"
-        },
-        {
-          "level": 20,
-          "name": "Abri"
-        },
-        {
-          "level": 25,
-          "name": "Danse Pluie"
         },
         {
           "level": 30,
@@ -867,19 +768,11 @@
         },
         {
           "level": 12,
-          "name": "Poudre Dodo"
-        },
-        {
-          "level": 12,
           "name": "Poudre Toxik"
         },
         {
           "level": 16,
           "name": "Rafale Psy"
-        },
-        {
-          "level": 20,
-          "name": "Cyclone"
         },
         {
           "level": 24,
@@ -896,10 +789,6 @@
         {
           "level": 36,
           "name": "Vent Arrière"
-        },
-        {
-          "level": 40,
-          "name": "Poudre Fureur"
         },
         {
           "level": 44,
@@ -1112,10 +1001,6 @@
           "name": "Vive-Attaque"
         },
         {
-          "level": 17,
-          "name": "Cyclone"
-        },
-        {
           "level": 21,
           "name": "Ouragan"
         },
@@ -1134,10 +1019,6 @@
         {
           "level": 33,
           "name": "Cru-Ailes"
-        },
-        {
-          "level": 37,
-          "name": "Atterrissage"
         },
         {
           "level": 41,
@@ -1199,10 +1080,6 @@
           "name": "Vive-Attaque"
         },
         {
-          "level": 17,
-          "name": "Cyclone"
-        },
-        {
           "level": 22,
           "name": "Ouragan"
         },
@@ -1217,10 +1094,6 @@
         {
           "level": 37,
           "name": "Cru-Ailes"
-        },
-        {
-          "level": 42,
-          "name": "Atterrissage"
         },
         {
           "level": 47,
@@ -1282,10 +1155,6 @@
           "name": "Vive-Attaque"
         },
         {
-          "level": 17,
-          "name": "Cyclone"
-        },
-        {
           "level": 22,
           "name": "Ouragan"
         },
@@ -1300,10 +1169,6 @@
         {
           "level": 38,
           "name": "Cru-Ailes"
-        },
-        {
-          "level": 44,
-          "name": "Atterrissage"
         },
         {
           "level": 50,

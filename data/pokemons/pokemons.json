@@ -1349,6 +1349,859 @@
         }
       ],
       "vu": 61
+    },
+    {
+      "id": 21,
+      "name": "Piafabec",
+      "type1": "Normal",
+      "type2": "Vol",
+      "stats": {
+        "hp": 40,
+        "attack": 60,
+        "defense": 30,
+        "speed": 70,
+        "sp_attack": 31,
+        "sp_defense": 31
+      },
+      "evolution": {
+        "level": 20,
+        "to": 22
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Picpic"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 8,
+          "name": "Assurance"
+        },
+        {
+          "level": 11,
+          "name": "Furie"
+        },
+        {
+          "level": 15,
+          "name": "Aeropique"
+        },
+        {
+          "level": 18,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 22,
+          "name": "Bélier"
+        },
+        {
+          "level": 25,
+          "name": "Hâte"
+        },
+        {
+          "level": 32,
+          "name": "Atterrissage"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 22,
+      "name": "Rapasdepic",
+      "type1": "Normal",
+      "type2": "Vol",
+      "stats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 65,
+        "speed": 100,
+        "sp_attack": 61,
+        "sp_defense": 61
+      },
+      "abilities": [
+        {
+          "level": 41,
+          "name": "Tunnelier"
+        },
+        {
+          "level": 60,
+          "name": "Picore"
+        },
+        {
+          "level": 1,
+          "name": "Picpic"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 8,
+          "name": "Assurance"
+        },
+        {
+          "level": 11,
+          "name": "Furie"
+        },
+        {
+          "level": 15,
+          "name": "Aeropique"
+        },
+        {
+          "level": 18,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 23,
+          "name": "Bélier"
+        },
+        {
+          "level": 27,
+          "name": "Hâte"
+        },
+        {
+          "level": 32,
+          "name": "Puissance"
+        },
+        {
+          "level": 36,
+          "name": "Atterrissage"
+        },
+        {
+          "level": 41,
+          "name": "Bec Vrille"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 23,
+      "name": "Abo",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 35,
+        "attack": 60,
+        "defense": 44,
+        "speed": 55,
+        "sp_attack": 40,
+        "sp_defense": 54
+      },
+      "evolution": {
+        "level": 22,
+        "to": 24
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Ligotage"
+        },
+        {
+          "level": 1,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 4,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 9,
+          "name": "Morsure"
+        },
+        {
+          "level": 12,
+          "name": "Regard Médusant"
+        },
+        {
+          "level": 17,
+          "name": "Grincement"
+        },
+        {
+          "level": 20,
+          "name": "Acide"
+        },
+        {
+          "level": 25,
+          "name": "Avale"
+        },
+        {
+          "level": 25,
+          "name": "Relâche"
+        },
+        {
+          "level": 25,
+          "name": "Stockage"
+        },
+        {
+          "level": 28,
+          "name": "Bombe acide"
+        },
+        {
+          "level": 33,
+          "name": "Bombe beurk"
+        },
+        {
+          "level": 36,
+          "name": "Suc digestif"
+        },
+        {
+          "level": 38,
+          "name": "Eructation"
+        },
+        {
+          "level": 41,
+          "name": "Buée noire"
+        },
+        {
+          "level": 44,
+          "name": "Enroulement"
+        },
+        {
+          "level": 49,
+          "name": "Détricanon"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 24,
+      "name": "Arbok",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 60,
+        "attack": 95,
+        "defense": 69,
+        "speed": 80,
+        "sp_attack": 65,
+        "sp_defense": 79
+      },
+      "abilities": [
+        {
+          "level": 22,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 1,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 1,
+          "name": "Crocs éclair"
+        },
+        {
+          "level": 1,
+          "name": "Crocs givre"
+        },
+        {
+          "level": 1,
+          "name": "Ligotage"
+        },
+        {
+          "level": 1,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Morsure"
+        },
+        {
+          "level": 12,
+          "name": "Regard Médusant"
+        },
+        {
+          "level": 17,
+          "name": "Grincement"
+        },
+        {
+          "level": 20,
+          "name": "Acide"
+        },
+        {
+          "level": 27,
+          "name": "Avale"
+        },
+        {
+          "level": 27,
+          "name": "Relâche"
+        },
+        {
+          "level": 27,
+          "name": "Stockage"
+        },
+        {
+          "level": 32,
+          "name": "Bombe acide"
+        },
+        {
+          "level": 39,
+          "name": "Bombe beurk"
+        },
+        {
+          "level": 44,
+          "name": "Suc digestif"
+        },
+        {
+          "level": 48,
+          "name": "Eructation"
+        },
+        {
+          "level": 51,
+          "name": "Buée noire"
+        },
+        {
+          "level": 56,
+          "name": "Enroulement"
+        },
+        {
+          "level": 63,
+          "name": "Détricanon"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 25,
+      "name": "Pikachu",
+      "type1": "Electrik",
+      "type2": "None",
+      "stats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 40,
+        "speed": 90,
+        "sp_attack": 50,
+        "sp_defense": 50
+      },
+      "evolution": {
+        "level": 22,
+        "to": 26
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Frotte frimousse"
+        },
+        {
+          "level": 1,
+          "name": "Machination"
+        },
+        {
+          "level": 1,
+          "name": "Charme"
+        },
+        {
+          "level": 1,
+          "name": "Doux baiser"
+        },
+        {
+          "level": 1,
+          "name": "Camaraderie"
+        },
+        {
+          "level": 1,
+          "name": "Vive attaque"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 1,
+          "name": "Eclair"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Cage éclair"
+        },
+        {
+          "level": 8,
+          "name": "Reflet"
+        },
+        {
+          "level": 12,
+          "name": "Boule élek"
+        },
+        {
+          "level": 16,
+          "name": "Ruse"
+        },
+        {
+          "level": 20,
+          "name": "Etincelle"
+        },
+        {
+          "level": 24,
+          "name": "Hâte"
+        },
+        {
+          "level": 28,
+          "name": "Queue de fer"
+        },
+        {
+          "level": 32,
+          "name": "Coup d'jus"
+        },
+        {
+          "level": 36,
+          "name": "Tonnerre"
+        },
+        {
+          "level": 40,
+          "name": "Mur lumière"
+        },
+        {
+          "level": 44,
+          "name": "Fatal foudre"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 26,
+      "name": "Raichu",
+      "type1": "Electrik",
+      "type2": "None",
+      "stats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "speed": 117,
+        "sp_attack": 90,
+        "sp_defense": 80
+      },
+      "abilities": [
+        {
+          "level": 22,
+          "name": "Poing éclair"
+        },
+        {
+          "level": 1,
+          "name": "Camaraderie"
+        },
+        {
+          "level": 1,
+          "name": "Frotte frimousse"
+        },
+        {
+          "level": 1,
+          "name": "Doux baiser"
+        },
+        {
+          "level": 1,
+          "name": "Machination"
+        },
+        {
+          "level": 1,
+          "name": "Charme"
+        },
+        {
+          "level": 1,
+          "name": "Cage éclair"
+        },
+        {
+          "level": 1,
+          "name": "Reflet"
+        },
+        {
+          "level": 1,
+          "name": "Boule élek"
+        },
+        {
+          "level": 1,
+          "name": "Ruse"
+        },
+        {
+          "level": 1,
+          "name": "Etincelle"
+        },
+        {
+          "level": 1,
+          "name": "Hâte"
+        },
+        {
+          "level": 1,
+          "name": "Queue de fer"
+        },
+        {
+          "level": 1,
+          "name": "Coup d'jus"
+        },
+        {
+          "level": 1,
+          "name": "Mur lumière"
+        },
+        {
+          "level": 1,
+          "name": "Fatal foudre"
+        },
+        {
+          "level": 1,
+          "name": "Eclair"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Vive attaque"
+        },
+        {
+          "level": 5,
+          "name": "Tonnerre"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 27,
+      "name": "Sabelette",
+      "type1": "Sol",
+      "type2": "None",
+      "stats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 85,
+        "speed": 40,
+        "sp_attack": 20,
+        "sp_defense": 30
+      },
+      "evolution": {
+        "level": 22,
+        "to": 28
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Boul armure"
+        },
+        {
+          "level": 3,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 6,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Roulade"
+        },
+        {
+          "level": 12,
+          "name": "Taillade"
+        },
+        {
+          "level": 15,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 18,
+          "name": "Piétisol"
+        },
+        {
+          "level": 21,
+          "name": "Météores"
+        },
+        {
+          "level": 24,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 27,
+          "name": "Hâte"
+        },
+        {
+          "level": 30,
+          "name": "Tranche"
+        },
+        {
+          "level": 33,
+          "name": "Tunnel"
+        },
+        {
+          "level": 36,
+          "name": "Gyroballe"
+        },
+        {
+          "level": 39,
+          "name": "Danse Lames"
+        },
+        {
+          "level": 42,
+          "name": "Tempête de sable"
+        },
+        {
+          "level": 45,
+          "name": "Séisme"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 28,
+      "name": "Sablaireau",
+      "type1": "Sol",
+      "type2": "None",
+      "stats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 110,
+        "speed": 65,
+        "sp_attack": 45,
+        "sp_defense": 55
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Eclate griffe"
+        },
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Boul armure"
+        },
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Roulade"
+        },
+        {
+          "level": 12,
+          "name": "Taillade"
+        },
+        {
+          "level": 15,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 21,
+          "name": "Météores"
+        },
+        {
+          "level": 26,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 18,
+          "name": "Piétisol"
+        },
+        {
+          "level": 31,
+          "name": "Tourbi sable"
+        },
+        {
+          "level": 36,
+          "name": "Tranche"
+        },
+        {
+          "level": 41,
+          "name": "Tunnel"
+        },
+        {
+          "level": 51,
+          "name": "Danse Lames"
+        },
+        {
+          "level": 56,
+          "name": "Tempête de sable"
+        },
+        {
+          "level": 61,
+          "name": "Séisme"
+        },
+        {
+          "level": 46,
+          "name": "Gyroballe"
+        }
+
+      ],
+      "vu": 0
+    },
+    {
+      "id": 29,
+      "name": "Nidoran",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 55,
+        "attack": 47,
+        "defense": 52,
+        "speed": 41,
+        "sp_attack": 40,
+        "sp_defense": 40
+      },
+      "evolution": {
+        "level": 16,
+        "to": 30
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 5,
+          "name": "Griffe"
+        },
+        {
+          "level": 10,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 15,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 20,
+          "name": "Pics Toxik"
+        },
+        {
+          "level": 25,
+          "name": "Double pied"
+        },
+        {
+          "level": 30,
+          "name": "Morsure"
+        },
+        {
+          "level": 35,
+          "name": "Coup d'main"
+        },
+        {
+          "level": 40,
+          "name": "Toxik"
+        },
+        {
+          "level": 45,
+          "name": "Flatterie"
+        },
+        {
+          "level": 50,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 55,
+          "name": "Telluriforce"
+        }
+
+      ],
+      "vu": 0
+    },
+    {
+      "id": 30,
+      "name": "Nidorina",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 70,
+        "attack": 62,
+        "defense": 67,
+        "speed": 56,
+        "sp_attack": 55,
+        "sp_defense": 55
+      },
+      "evolution": {
+        "level": 36,
+        "to": 31
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 15,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 22,
+          "name": "Pics Toxik"
+        },
+        {
+          "level": 29,
+          "name": "Double pied"
+        },
+        {
+          "level": 36,
+          "name": "Morsure"
+        },
+        {
+          "level": 43,
+          "name": "Coup d'main"
+        },
+        {
+          "level": 50,
+          "name": "Toxik"
+        },
+        {
+          "level": 57,
+          "name": "Flatterie"
+        },
+        {
+          "level": 64,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 71,
+          "name": "Telluriforce"
+        }
+
+      ],
+      "vu": 0
     }
   ]
 }

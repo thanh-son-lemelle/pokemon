@@ -175,15 +175,14 @@ class Pokedex():
 # Déplacement à droite dans le Pokedex
                     if event.key == pygame.K_RIGHT:
                         self.__currentPos += 1
-                        if self.__currentPos > 20:
+                        if self.__currentPos > 30:
                             self.__currentPos = 1
 
 # Déplacement à gauche dans le Pokedex
                     elif event.key == pygame.K_LEFT:
                         self.__currentPos -= 1
                         if self.__currentPos <= 0:
-                            self.__currentPos = 20
-
+                            self.__currentPos = 30
 # Touche ESC pour quitter le programme
                     elif event.key == pygame.K_ESCAPE:
                         pygame.quit()  

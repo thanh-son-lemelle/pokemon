@@ -99,6 +99,56 @@
       "id": 20,
       "nom": "Rattatac",
       "description": "L'évolution de Rattata \nun rat plus grand \net plus agressif."
+    },
+    {
+      "id": 21,
+      "nom": "Piafabec",
+      "description": "Il vole en battant \nvigoureusement de ses petites ailes \net trouve ses proies dans les hautes \nherbes à l'aide de son bec."
+    },
+    {
+      "id": 22,
+      "nom": "Rapasdepic",
+      "description": "Très endurant \nil est capable de voler toute \nla journée grâce à ses grandes ailes. \nEn combat, il frappe ses ennemis \nà l'aide de son bec acéré."
+    },
+    {
+      "id": 23,
+      "nom": "Abo",
+      "description": "On le croise très souvent ndans les hautes herbes. \nIl agite rapidement sa langue \npour détecter le danger."
+    },
+    {
+      "id": 24,
+      "nom": "Arbok",
+      "description": "De nature tenace \nil ne lâche jamais sa proie \nune fois qu'il a décidé de la prendre en chasse."
+    },
+    {
+      "id": 25,
+      "nom": "Pikachu",
+      "description": "Quand il s'énerve \nil libère instantanément l'énergie \nemmagasinée dans les poches de ses joues."
+    },
+    {
+      "id": 26,
+      "nom": "Raichu",
+      "description": "Il se protège des décharges \ngrâce à sa queue qui \ndissipe l'électricité dans le sol."
+    },
+    {
+      "id": 27,
+      "nom": "Sabelette",
+      "description": "Il vit dans les profonds tunnels \nqu'il creuse. \nEn cas de danger il se roule en boule \npour encaisser les coups de ses adversaires."
+    },
+    {
+      "id": 28,
+      "nom": "Sablaireau",
+      "description": "Il attaque en se déplaçant \nrapidement et blesse ses adversaires \nà l'aide des piques sur son dos \net de ses griffes acérées."
+    },
+    {
+      "id": 29,
+      "nom": "Nidoran",
+      "description": "Bien que ce Pokémon rechigne \nà se battre une seule goutte \ndu poison sécrété par ses piquants \npeut s'avérer fatale."
+    },
+    {
+      "id": 30,
+      "nom": "Nidorina",
+      "description": "Lorsqu'il se sent menacé  \nce Pokémon dresse tous ses piquants. \nCes derniers poussent moins vite \nque ceux de Nidorino."
     }
   ]
 }

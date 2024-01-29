@@ -49,6 +49,7 @@ class Combat():
         self.get_nom = None
         self.running = True
         self.nom_dresseur = None
+        self.list_poke_mort = []
 
             
     def initialis_combat(self):
@@ -111,7 +112,6 @@ class Combat():
 
 
     def fight(self):
-      
         self.animation = Animation(self.starter)
         self.animation.loadFramesForCombat(isFront=False)
         self.animationAdversaire = Animation(self.adv)
@@ -168,6 +168,8 @@ class Combat():
             self.__SCREEN.blit(self.lvl_adv,(900,17))
             self.health_bar_player()
             self.health_bar_adv()
+                    
+                
             
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
@@ -274,6 +276,9 @@ class Combat():
         pygame.draw.rect(self.__SCREEN, (255,255,255), (101, 48, 150, 10))
         pygame.draw.rect(self.__SCREEN, (0,255,0), (101, 48,150*self.ratio, 10))
         pygame.draw.rect(self.__SCREEN, (0,0,0), (101, 48,150, 10),1)
+                    
+            
+        
 
         
 
@@ -321,6 +326,12 @@ class Combat():
 
 
     def Victoire(self):
+        for elem in range(len(self.list_poke_mort)):
+            if len(self.list_poke_mort) > 0:
+                print("elem = ",elem)
+                self.liste_poke.append(Pokemon(self.list_poke_mort[elem]))
+                self.list_poke_mort.pop(elem)
+
         pygame.mixer.music.stop()
         pygame.display.update()
         pygame.display.set_caption("Win Menu")
@@ -334,9 +345,6 @@ class Combat():
         while self.running:
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-
-            REPLAY_BUTTON = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(100, 130), 
-                                text_input="REPLAY", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
             
             MENU_BUTTON = Button(image=pygame.image.load("images\\button\images\sprite_test3.png"), pos=(100, 230), 
                                 text_input="MENU", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
@@ -345,7 +353,7 @@ class Combat():
                                 text_input="QUIT", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
 
 
-            for button in [REPLAY_BUTTON, MENU_BUTTON,QUIT_BUTTON]:
+            for button in [MENU_BUTTON,QUIT_BUTTON]:
 
                 button.changeColor(MENU_MOUSE_POS)
 
@@ -365,10 +373,7 @@ class Combat():
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
 
-                    if REPLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                        print("Test liste : ",self.liste_poke)
-                        # self.choix_pokemon()
-                       
+                   
 
 
                     if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
@@ -398,26 +403,73 @@ class Combat():
         size_capa = (1000, 700)
         Back = pygame.image.load("images\\background\menu\Loose.jpg")
         Back = pygame.transform.scale(Back, size_capa)
-        self.__SCREEN.blit(Back, (0, 0))
         self.__SCREEN.blit(self.loose, (150, 100))
         pygame.display.update()
+        while self.running:
+            self.__SCREEN.blit(Back, (0, 0))
+            
+            MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-        while True:
+
+           
+            MENU_BUTTON = Button(image=pygame.image.load("images\\button\\images\\button main.png"), pos=(100, 450), 
+                                text_input="MENU", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
+            
+            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\\images\\button main.png"), pos=(100, 550), 
+                                text_input="QUIT", font=self.police_moyen, base_color="#d7fcd4", hovering_color="White")
+
+
+            for button in [MENU_BUTTON,QUIT_BUTTON]:
+
+                button.changeColor(MENU_MOUSE_POS)
+
+                button.update(self.__SCREEN)
+
+            
             for event in pygame.event.get():
+
                 if event.type == pygame.QUIT:
+
                     pygame.quit()
+
                     sys.exit()
 
+
+
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+
+                       
+
+
+                    if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
+                         self.running = False
+                        
+                            
+
+
+
+                    if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        pygame.quit()
+
+                        sys.exit()
+                            
+
+
+            pygame.display.update()
 
         
         
 
     def multiplicateur_type(self):
+        
         delay_time = 1000
         self.start_time = pygame.time.get_ticks()
         i = 0 # set d'un numéro à utiliser plus tard dans la fonction
 
         degats = 0  # set des dégâts subit à 0
+
+        degats_j = 0
 
         less_press = 0 # set de la baisse de precision à 0 
         
@@ -445,11 +497,11 @@ class Combat():
 
             if self.starter.get_abilityCategoryByName(self.__attaque) == "Physique":
                 #Calcul des dégats que va subir l'adverssaire 
-                degats = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))*multiple_crit
+                degats_j = int((((((self.starter.get_level() * 0.4 + 2) * self.starter.get_statAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statDefense()) / 50) + 2))*multiple_crit
 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Special":
                 #Calcul des dégats que va subir l'adverssaire 
-                degats = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statSpecialDefense()) / 50) + 2))*multiple_crit
+                degats_j = int((((((self.starter.get_level() * 0.4 + 2) *self.starter.get_statSpecialAttack() * self.starter.get_abilityPowerByName(self.__attaque)) / self.adv.get_statSpecialDefense()) / 50) + 2))*multiple_crit
 
                 
             elif self.starter.get_abilityCategoryByName(self.__attaque) == "Statut":
@@ -462,39 +514,39 @@ class Combat():
                     degats_stat = 10
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Coup critique":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de multiple crit à 1.25 degat*1.25 
                     multiple_crit = 1.25
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Paralysie":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction du taux de reussite du pokemon adverse 
                     less_press = 10
                                 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Confusion":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction du taux de reussite du pokemon adverse 
                     less_press = 10
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de def pokemon 
                     self.starter.set_statDefense(30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction de def du pokemon adverse 
                     self.adv.set_statDefense(-30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att pokemon  
                     self.starter.set_statAttack(30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse attaque":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction d'att du pokemon adverse 
                     self.adv.set_statAttack(-30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la speed pokemon 
                     self.starter.set_statSpeed(30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Baisse vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction de speed du pokemon adverse 
                     self.adv.set_statSpeed(-30)
 
 
@@ -503,18 +555,18 @@ class Combat():
                     less_press = 10
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque et attaque speciale":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att et la def pokemon  
                     self.starter.set_statAttack(30)
                     self.starter.set_statSpecialAttack(30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque, defense speciale, vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att spé et la def spé et la speed du pokemon    
                     self.starter.set_statAttack(30)
                     self.starter.set_statSpecialDefense(30)
                     self.starter.set_statSpeed(30)
 
                 elif self.starter.get_abilityStatutChangeByName(self.__attaque) == "Augmente attaque, attaque speciale, vitesse, baisse defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att spé et la def spé et la speed du pokemon et la reduc de def de l'adverssaire
                     self.starter.set_statAttack(30)
                     self.starter.set_statSpecialAttack(30)
                     self.starter.set_statSpeed(30)
@@ -541,39 +593,39 @@ class Combat():
                     degats_stat = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Coup critique":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de multiple crit à 1.25 degat*1.25 
                     multiple_crit = 1.25
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Paralysie":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de le taux de reussite du pokemon adverse 
                     less_press = 10
                                 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Confusion":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de le taux de reussite du pokemon adverse 
                     less_press = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la  def du pokemon  
                     self.adv.set_statDefense(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction de def du pokemon adverse 
                     self.starter.set_statDefense(-30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set d'att du pokemon  
                     self.adv.set_statAttack(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse attaque":
-                    #set de la reduction de precision du pokemon adverse 
+                     #set de la reduction d'att du pokemon adverse 
                     self.starter.set_statAttack(-30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la speed du pokemon
                     self.adv.set_statSpeed(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction de spped du pokemon adverse 
                     self.starter.set_statSpeed(-30)
 
 
@@ -582,18 +634,18 @@ class Combat():
                     less_press = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque et attaque speciale":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att spé et la def spé et la speed du pokemon et la reduc de def de l'adverssaire
                     self.adv.set_statAttack(30)
                     self.adv.set_statSpecialAttack(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, defense speciale, vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att spé et la def spé et la speed du pokemon
                     self.adv.set_statAttack(30)
                     self.adv.set_statSpecialDefense(30)
                     self.adv.set_statSpeed(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, attaque speciale, vitesse, baisse defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att et la def pokemon  
                     self.adv.set_statAttack(30)
                     self.adv.set_statSpecialAttack(30)
                     self.adv.set_statSpeed(30)
@@ -605,8 +657,9 @@ class Combat():
                 #Calcul avantage type des capacité du joueur
                 self.multiplicateur_degat = file[self.starter.get_abilityTypeByName(self.__attaque)][self.adv.get_type1()]* file[self.starter.get_abilityTypeByName(self.__attaque)][self.adv.get_type2()]
 
+
                 #Mettre la valeurs des hp à jour pour la rappeler plus tard dans health_bar_adv
-                self.hp_adv -= degats * self.multiplicateur_degat + degats_stat
+                self.hp_adv -= degats_j * self.multiplicateur_degat + degats_stat
                 
                 #Calcul avantage type des capacité de l'adverssaire
                 self.multiplicateur_degat_adv = file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type1()]* file[self.adv.get_abilityTypeByName(capa_adv)][self.starter.get_type2()]
@@ -647,6 +700,7 @@ class Combat():
 
                 if self.hp <= 0:
                                 self.vu()
+                                self.list_poke_mort.append(self.liste_poke[i].get_id())
                                 self.liste_poke.pop(i) # Retirer le pokemon actuel
                                 self.hp = 0 # Si pv inferiure à 0 --> les set à 0
                                 self.health_bar_player() #Afficher barre de vie player
@@ -712,39 +766,39 @@ class Combat():
                     degats_stat = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Coup critique":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de multiple crit à 1.25 degat*1.25 
                     multiple_crit = 1.25
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Paralysie":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de le taux de reussite du pokemon adverse 
                     less_press = 10
                                 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Confusion":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de le taux de reussite du pokemon adverse 
                     less_press = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la  def du pokemon  
                     self.adv.set_statDefense(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction de def du pokemon adverse 
                     self.starter.set_statDefense(-30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set d'att du pokemon  
                     self.adv.set_statAttack(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse attaque":
-                    #set de la reduction de precision du pokemon adverse 
+                     #set de la reduction d'att du pokemon adverse 
                     self.starter.set_statAttack(-30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la speed du pokemon
                     self.adv.set_statSpeed(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Baisse vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de la reduction de spped du pokemon adverse 
                     self.starter.set_statSpeed(-30)
 
 
@@ -753,18 +807,18 @@ class Combat():
                     less_press = 10
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque et attaque speciale":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att spé et la def spé et la speed du pokemon et la reduc de def de l'adverssaire
                     self.adv.set_statAttack(30)
                     self.adv.set_statSpecialAttack(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, defense speciale, vitesse":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att spé et la def spé et la speed du pokemon
                     self.adv.set_statAttack(30)
                     self.adv.set_statSpecialDefense(30)
                     self.adv.set_statSpeed(30)
 
                 elif self.adv.get_abilityStatutChangeByName(capa_adv) == "Augmente attaque, attaque speciale, vitesse, baisse defense":
-                    #set de la reduction de precision du pokemon adverse 
+                    #set de l'att et la def pokemon  
                     self.adv.set_statAttack(30)
                     self.adv.set_statSpecialAttack(30)
                     self.adv.set_statSpeed(30)
@@ -812,6 +866,7 @@ class Combat():
 
                 if self.hp <= 0:
                     self.vu()
+                    self.list_poke_mort.append(self.liste_poke[i].get_id())
                     self.liste_poke.pop(i) # Retirer le pokemon actuel
                     self.hp = 0 # Si pv inferiure à 0 --> les set à 0
                     self.health_bar_player() #Afficher barre de vie player

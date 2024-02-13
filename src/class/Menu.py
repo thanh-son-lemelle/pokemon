@@ -78,7 +78,11 @@ class Menu():
                         choixPokemon = Pokeballs()
                         choixPokemon.affichePokeballs()
                         self.__pokemonChoisi = choixPokemon.get_PokemonChoisi()
-                        self.__playgame = True
+                        running = choixPokemon.get_running()
+                        if running == False:
+                            self.__playgame = False
+                        else:
+                            self.__playgame = True
                         break
                         
                     

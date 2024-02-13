@@ -46,8 +46,6 @@ class Combat():
         self.police_moyen = pygame.font.Font("font\Pokemon Classic.ttf", 20)
         self.police_grande = pygame.font.Font("font\Pokemon Classic.ttf", 40)
         self.text_bulle = pygame.font.Font("font\Pokemon Classic.ttf", 30)
-        self.win = self.police_grande.render("Victoire",True,"white")
-        self.loose = self.police_grande.render("Défaite",True,"white")
         self.get_nom = None
         self.running = True
         self.nom_dresseur = None
@@ -81,6 +79,8 @@ class Combat():
             self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
             
             self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
+            self.win = self.police_grande.render("Victoire",True,"white")
+            self.loose = self.police_grande.render("Défaite",True,"white")
 
             self.rater = self.police_moyen.render("L'action a échoué",True,"red")
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
@@ -91,20 +91,23 @@ class Combat():
         
 
     def get_liste_dresseurs(self,l,l1):
-        for i in l: #Ajout de pokemon à la liste du joueur
+        for i in l:
               self.liste_poke.append(i)
-        for i in l1: #Ajout de pokemon à la liste du Dresseur
+        for i in l1:
              self.liste_poke_adv.append(i)
 
 
-    def get_nom_adv(self,adv): #Méthode pour récuperer le nom du Dresseur
+    def get_nom_adv(self,adv):
         self.get_nom = adv
         self.nom_dresseur = self.text_bulle.render("Le Dresseur "+self.get_nom+" vous défie.",True,"black")
         
 
         self.starter = self.liste_poke[0]
+        print("Starter : ",self.liste_poke)
+        print("Starter : ",self.liste_poke[0].get_nom())
 
         self.adv = self.liste_poke_adv[0]
+        print("Adv : ",self.adv.get_nom())
         
 
 
@@ -205,12 +208,14 @@ class Combat():
                     if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
                         self.__attaque = self.starter.get_4abilities()[0]
+                        print("att1",self.__attaque)
                         self.multiplicateur_type()
 
 
                     if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[1]
+                            print("att2",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
 
@@ -221,6 +226,7 @@ class Combat():
                     if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[2]
+                            print("att3",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -230,6 +236,7 @@ class Combat():
                     if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[3]
+                            print("att4",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -295,27 +302,33 @@ class Combat():
     def lvl_up(self):
         if self.starter.get_level() <= 5:
             self.starter.set_xp(1000)
+            print(self.starter.get_level())
 
         elif 10 >= self.starter.get_level() <= 16:
             self.starter.set_xp(300)
+            print(self.starter.get_level())
             
 
 
         elif 16 >=self.starter.get_level() <= 30:
             self.starter.set_xp(150)
+            print(self.starter.get_level())
 
 
         elif 30 >=self.starter.get_level() <= 50:
             self.starter.set_xp(100)
+            print(self.starter.get_level())
         
         elif 50 >=self.starter.get_level():
             self.starter.set_xp(30)
+            print(self.starter.get_level())
 
 
 
     def Victoire(self):
         for elem in range(len(self.list_poke_mort)):
             if len(self.list_poke_mort) > 0:
+                print("elem = ",elem)
                 self.liste_poke.append(Pokemon(self.list_poke_mort[elem]))
                 self.list_poke_mort.pop(elem)
 
@@ -383,15 +396,17 @@ class Combat():
 
     def Defaite(self):
         pygame.mixer.music.stop()
+        self.max_hp_adv = self.adv.get_statHp()
+        self.hp_adv = self.max_hp_adv
         pygame.display.update()
         pygame.display.set_caption("Loose Menu")
         size_capa = (1000, 700)
         Back = pygame.image.load("images\\background\menu\Loose.jpg")
         Back = pygame.transform.scale(Back, size_capa)
+        self.__SCREEN.blit(self.loose, (150, 100))
         pygame.display.update()
         while self.running:
             self.__SCREEN.blit(Back, (0, 0))
-            self.__SCREEN.blit(self.loose, (150, 100))
             
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
@@ -472,8 +487,9 @@ class Combat():
 
 
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
-        nombre_aleatoire = random.uniform(0, 100) + less_press
-
+        print("att test",self.__attaque)
+        print(self.starter.get_abilityAccuracyByName(self.__attaque))
+        nombre_aleatoire = random.uniform(0, 100)
 
         if probabilite_reussite >= nombre_aleatoire: #Si taux de reussite est supérieure au nombre aléatoire l'attque est reussi 
 
@@ -893,9 +909,11 @@ class Combat():
             for i in file['pokemons']:
                 if i["id"] == self.starter.get_id():
                     i["vu"] += 1
+                    print(i["vu"])
+
                 if i["id"] == self.adv.get_id():
                     i["vu"] += 1
-                   
+                    print(i["vu"])
 
     # Étape 2: Écrire dans le fichier JSON avec l'encodage UTF-8
 
@@ -911,11 +929,9 @@ class Combat():
         animationjoueur = Animation_dresseur()
         animationjoueur.load(isFront = False)
         animationadversaire.load()
-
         size_zone_text = (1000,200)
         self.zone_text = pygame.image.load("images\\background\menu\TextZone.png")
         self.zone_text = pygame.transform.scale(self.zone_text, size_zone_text)
-
         NEXT = pygame.image.load("images\\background\menu\\arrow_text.png")
         button_next_size = (30,30)
         NEXT = pygame.transform.scale(NEXT, button_next_size)
@@ -935,7 +951,7 @@ class Combat():
             # appel de animation desserur 
             pygame.display.update()
           
-            for event in pygame.event.get(): #Condition pour fermer la page 
+            for event in pygame.event.get():
 
                 if event.type == pygame.QUIT:
 
@@ -945,5 +961,7 @@ class Combat():
 
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1: 
-                        if 0 <= event.pos[0] <= 1000 and 500 <= event.pos[1] <= 700: #Crée une zone de clic pour passer à la suite
+                        if 0 <= event.pos[0] <= 1000 and 500 <= event.pos[1] <= 700:
+                            #revoyer fonction retour d'anim
+                            
                             self.fight()

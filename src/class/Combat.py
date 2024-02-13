@@ -50,6 +50,8 @@ class Combat():
         self.running = True
         self.nom_dresseur = None
         self.list_poke_mort = []
+        self.win = self.police_grande.render("Victoire",True,"white")
+        self.loose = self.police_grande.render("Défaite",True,"white")
 
             
     def initialis_combat(self):
@@ -79,8 +81,7 @@ class Combat():
             self.__nom = self.police.render(self.starter.get_nom() + " :", True, "black")
             
             self.__adversaire = self.police.render(self.adv.get_nom() + " :", True, "black")
-            self.win = self.police_grande.render("Victoire",True,"white")
-            self.loose = self.police_grande.render("Défaite",True,"white")
+            
 
             self.rater = self.police_moyen.render("L'action a échoué",True,"red")
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
@@ -403,11 +404,11 @@ class Combat():
         size_capa = (1000, 700)
         Back = pygame.image.load("images\\background\menu\Loose.jpg")
         Back = pygame.transform.scale(Back, size_capa)
-        self.__SCREEN.blit(self.loose, (150, 100))
+        
         pygame.display.update()
         while self.running:
             self.__SCREEN.blit(Back, (0, 0))
-            
+            self.__SCREEN.blit(self.loose, (150, 100))
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
 

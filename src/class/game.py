@@ -18,7 +18,8 @@ while True:
 
         
         adversaire = Dresseurs()
-        adversaire.getRoster(1,3)
+        adversaire.setRandomName()
+        adversaire.getRoster(1,1)
 
 
         combat = Combat()

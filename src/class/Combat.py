@@ -54,6 +54,11 @@ class Combat():
         self.win = self.police_grande.render("Victoire",True,"white")
         self.loose = self.police_grande.render("Défaite",True,"white")
 
+        self.button_yes = pygame.image.load("images\\pokeballs\\yes.png")
+        self.button_no = pygame.image.load("images\\pokeballs\\no.png")
+        self.button_yes = pygame.transform.scale(self.button_yes, (100, 50))
+        self.button_no = pygame.transform.scale(self.button_no, (100, 50))
+
             
     def initialis_combat(self):
         if self.starter is not None:
@@ -87,6 +92,10 @@ class Combat():
             self.rater = self.police_moyen.render("L'action a échoué",True,"red")
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
             self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
+            self.new_capa = self.police_moyen.render("Souhaitez vous apprendre", True, "black")
+            self.forgot_capa = self.police.render("Choissir une capa à oublier", True, "black")
+
+            
             
             
     
@@ -114,6 +123,7 @@ class Combat():
 
 
     def fight(self):
+        l = []
         self.animation = Animation(self.starter)
         self.animation.loadFramesForCombat(isFront=False)
         self.animationAdversaire = Animation(self.adv)
@@ -172,7 +182,66 @@ class Combat():
             self.health_bar_adv()
                     
                 
-            
+            if self.manage_ability == True:
+                    self.sentence_capa = self.police_moyen.render(str(self.starter.get_currentAbilities()[4]), True, "black")
+                    self.__SCREEN.blit(self.new_capa,(525, 550))
+                    self.__SCREEN.blit(self.sentence_capa,(525, 570))
+                    self.__SCREEN.blit(self.button_yes,(525,620))
+                    self.__SCREEN.blit(self.button_no,(675,620))
+                    for event in pygame.event.get():
+
+                        if event.type == pygame.QUIT:
+
+                            pygame.quit()
+
+                            sys.exit()
+
+
+                        
+
+                        if event.type == pygame.MOUSEBUTTONDOWN:
+                            if event.button == 1: 
+
+                                if 25 <= event.pos[0] <= 221 and 526 <= event.pos[1] <= 570: #capa 1 
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    l.append(self.starter.get_4abilities()[1])
+                                    l.append(self.starter.get_4abilities()[2])
+                                    l.append(self.starter.get_4abilities()[3])
+                                    self.starter.chooseAbilities(l)
+                                    
+                                    
+
+                                if 25 <= event.pos[0] <= 221 and 626 <= event.pos[1] <= 671: # capa 2
+                                    l.append(self.starter.get_4abilities()[0])
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    l.append(self.starter.get_4abilities()[2])
+                                    l.append(self.starter.get_4abilities()[3])
+                                    self.starter.get_4abilities()[1] = self.starter.get_currentAbilities()[4]
+                                    self.starter.chooseAbilities(l)
+                              
+
+
+                                if 276 <= event.pos[0] <= 473 and 527 <= event.pos[1] <= 571: #capa 3
+                                    l.append(self.starter.get_4abilities()[0])
+                                    l.append(self.starter.get_4abilities()[1])
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    l.append(self.starter.get_4abilities()[3])
+                                    self.starter.get_4abilities()[2] = self.starter.get_currentAbilities()[4]
+                                    self.starter.chooseAbilities(l)
+                                  
+                                    
+                                    
+
+                                if 275 <= event.pos[0] <= 471 and 626 <= event.pos[1] <= 673: # capa 4
+                                    l.append(self.starter.get_4abilities()[0])
+                                    l.append(self.starter.get_4abilities()[1])
+                                    l.append(self.starter.get_4abilities()[2])
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    self.starter.get_4abilities()[3] = self.starter.get_currentAbilities()[4]
+                                    self.starter.chooseAbilities(l)
+
+
+
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
             ATT1 = Button(image= capa_button, pos=(125, 550), 
@@ -182,7 +251,7 @@ class Combat():
                                 text_input=self.starter.get_4abilities()[1], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT3 = Button(image= capa_button, pos=(375, 550), 
-                                text_input=self.starter, font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=self.starter.get_4abilities()[2], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT4 = Button(image= capa_button, pos=(375, 650), 
                                 text_input=self.starter.get_4abilities()[3], font=self.police, base_color="#000000", hovering_color="White")
@@ -698,6 +767,7 @@ class Combat():
                                 if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
                                     self.lvl_up() #Gagne xp
                                     if len(self.starter.get_currentAbilities()) > 4:
+                                        self.sentence_capa = self.police_moyen.render(str(self.starter.get_currentAbilities()[4]), True, "black")
                                         self.manage_ability = True
                                         if self.manage_ability == True:
                                             self.fight()

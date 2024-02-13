@@ -26,7 +26,7 @@ class Pokeballs():
         self.police_small = pygame.font.Font("font\\Pokemon Classic.ttf", 12)
         self.button_menu = pygame.image.load("images\\pokedex\\bouton exit.png")
         self.button_menu = pygame.transform.scale(self.button_menu, (60,60))
-
+        self.running = True
 # Création des boutons "Oui" et "Non"
         self.button_yes = pygame.image.load("images\\pokeballs\\yes.png")
         self.button_no = pygame.image.load("images\\pokeballs\\no.png")
@@ -58,6 +58,9 @@ class Pokeballs():
 
         self.__pokemonChoisi = None
 
+    def get_running(self):
+        return self.running
+    
     def get_PokemonChoisi(self):
         return self.__pokemonChoisi
     
@@ -93,13 +96,12 @@ class Pokeballs():
         self.animation_pok3.loadFramesForPokeball()
 
 # Variables de contrôle pour savoir quel Pokemon est sélectionné
-        running = True
         click_pok1 = False
         click_pok2 = False
         click_pok3 = False
 
 # Boucle principale d'événements Pygame
-        while running:
+        while self.running:
             for event in pygame.event.get(): 
 
 # Si l'utilisateur ferme la fenêtre, quitte le programme
@@ -119,7 +121,7 @@ class Pokeballs():
 
 # Met fin à la boucle et retourne au menu principal
                             
-                            running = False
+                            self.running = False
 
 # Si le clic est dans la zone du Pokémon 1
                         if 331 <= event.pos[0] <= 388 and 215 <= event.pos[1] <= 260:
@@ -152,7 +154,7 @@ class Pokeballs():
                                 click_pok1 = False
                                 click_pok2 = False
                                 click_pok3 = False
-                                running = False
+                                self.running = False
                                 print("yes")
                                 break
 

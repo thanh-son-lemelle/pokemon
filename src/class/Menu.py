@@ -78,8 +78,8 @@ class Menu():
                         choixPokemon = Pokeballs()
                         choixPokemon.affichePokeballs()
                         self.__pokemonChoisi = choixPokemon.get_PokemonChoisi()
-                        running = choixPokemon.get_running()
-                        if running == False:
+                        previousPage = choixPokemon.get_previousPage()
+                        if previousPage == True:
                             self.__playgame = False
                         else:
                             self.__playgame = True

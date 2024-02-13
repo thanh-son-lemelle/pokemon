@@ -23,11 +23,6 @@ while True:
         adversaire.setRandomName()
         adversaire.getRoster(1,1)
 
-        print(adversaire.get_nom())
-
-        print(Pokemon.get_nom(adversaire.get_lisPokemons()[0]))
-        print(Pokemon.get_nom(adversaire.get_lisPokemons()[1]))
-        print(Pokemon.get_nom(adversaire.get_lisPokemons()[2]))
 
         combat = Combat()
         combat.get_liste_dresseurs(joueur.get_lisPokemons(),adversaire.get_lisPokemons())

@@ -259,7 +259,12 @@ class Pokemon:
         self.__abilities = abilities
         return self.__abilities
     
-    def chooseAbilities(self):
+    def chooseAbilities(self, newlist): #test pending
+
+        self.__abilities = newlist
+        return self.__abilities
+    
+    def chooseAbilities(self): #test pending
     # Réinitialiser la liste des abilities
         self.get_AbilitiesByLevel()
         chooseAbilities = self.__abilities.copy()
@@ -302,11 +307,8 @@ class Pokemon:
         return self.__abilities
     
     def get_currentAbilities(self):
-        self.get_AbilitiesByLevel()
-        if len(self.get_AbilitiesByLevel()) > 4:
-            # L'utilisateur choisi les 4 abilities qu'il veut garder
-            self.chooseAbilities()
-        self.__abilities = self.__abilities[0:4]
+        self.__abilities=self.get_AbilitiesByLevel()
+        print(self.__abilities)
         return self.__abilities
     
     def get_initAbilities(self):
@@ -385,3 +387,5 @@ class Pokemon:
         newWidth = int(multiplier * originalWidth)
         image = pygame.transform.scale(image, (newWidth, newHeight))
         return image
+
+

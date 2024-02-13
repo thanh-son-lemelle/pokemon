@@ -50,6 +50,7 @@ class Combat():
         self.running = True
         self.nom_dresseur = None
         self.list_poke_mort = []
+        self.manage_ability = False
         self.win = self.police_grande.render("Victoire",True,"white")
         self.loose = self.police_grande.render("Défaite",True,"white")
 
@@ -181,7 +182,7 @@ class Combat():
                                 text_input=self.starter.get_4abilities()[1], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT3 = Button(image= capa_button, pos=(375, 550), 
-                                text_input=self.starter.get_4abilities()[2], font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=self.starter, font=self.police, base_color="#000000", hovering_color="White")
             
             ATT4 = Button(image= capa_button, pos=(375, 650), 
                                 text_input=self.starter.get_4abilities()[3], font=self.police, base_color="#000000", hovering_color="White")
@@ -397,8 +398,6 @@ class Combat():
 
     def Defaite(self):
         pygame.mixer.music.stop()
-        self.max_hp_adv = self.adv.get_statHp()
-        self.hp_adv = self.max_hp_adv
         pygame.display.update()
         pygame.display.set_caption("Loose Menu")
         size_capa = (1000, 700)
@@ -409,6 +408,7 @@ class Combat():
         while self.running:
             self.__SCREEN.blit(Back, (0, 0))
             self.__SCREEN.blit(self.loose, (150, 100))
+            
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
 
@@ -697,7 +697,12 @@ class Combat():
 
                                 if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
                                     self.lvl_up() #Gagne xp
-                                    self.Victoire() #Ecran de Victoire
+                                    if len(self.starter.get_currentAbilities()) > 4:
+                                        self.manage_ability = True
+                                        if self.manage_ability == True:
+                                            self.fight()
+                                    else :
+                                        self.Victoire() #Ecran de Victoire
 
                 if self.hp <= 0:
                                 self.vu()

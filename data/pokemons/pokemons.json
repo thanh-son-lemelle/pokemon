@@ -65,7 +65,7 @@
           "name": "Lance-Soleil"
         }
       ],
-      "vu": 36
+      "vu": 42
     },
     {
       "id": 2,
@@ -203,7 +203,7 @@
           "name": "Lance-Soleil"
         }
       ],
-      "vu": 99
+      "vu": 103
     },
     {
       "id": 4,
@@ -353,7 +353,7 @@
           "name": "Boutefeu"
         }
       ],
-      "vu": 31
+      "vu": 33
     },
     {
       "id": 6,
@@ -432,7 +432,7 @@
           "name": "Boutefeu"
         }
       ],
-      "vu": 30
+      "vu": 43
     },
     {
       "id": 7,
@@ -499,7 +499,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 93
+      "vu": 95
     },
     {
       "id": 8,
@@ -570,7 +570,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 38
+      "vu": 44
     },
     {
       "id": 9,
@@ -641,7 +641,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 12
+      "vu": 14
     },
     {
       "id": 10,
@@ -711,7 +711,7 @@
           "name": "Armure"
         }
       ],
-      "vu": 147
+      "vu": 151
     },
     {
       "id": 12,
@@ -794,7 +794,7 @@
           "name": "Papillodanse"
         }
       ],
-      "vu": 120
+      "vu": 125
     },
     {
       "id": 13,
@@ -833,7 +833,7 @@
           "name": "Piqûre"
         }
       ],
-      "vu": 19
+      "vu": 23
     },
     {
       "id": 14,
@@ -865,7 +865,7 @@
           "name": "Armure"
         }
       ],
-      "vu": 18
+      "vu": 20
     },
     {
       "id": 15,
@@ -957,7 +957,7 @@
           "name": "Dard Mortel"
         }
       ],
-      "vu": 106
+      "vu": 111
     },
     {
       "id": 16,
@@ -1036,7 +1036,7 @@
           "name": "Vent Violent"
         }
       ],
-      "vu": 16
+      "vu": 19
     },
     {
       "id": 17,
@@ -1111,7 +1111,7 @@
           "name": "Vent Violent"
         }
       ],
-      "vu": 16
+      "vu": 18
     },
     {
       "id": 18,
@@ -2051,7 +2051,6 @@
           "level": 46,
           "name": "Gyroballe"
         }
-
       ],
       "vu": 0
     },
@@ -2125,7 +2124,6 @@
           "level": 55,
           "name": "Telluriforce"
         }
-
       ],
       "vu": 0
     },
@@ -2199,7 +2197,6 @@
           "level": 71,
           "name": "Telluriforce"
         }
-
       ],
       "vu": 0
     }

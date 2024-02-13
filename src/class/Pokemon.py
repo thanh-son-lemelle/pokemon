@@ -117,8 +117,6 @@ class Pokemon:
     # Test de l'affichage des stats
     def afficherBaseStats(self):
             
-            print(f"#{self.__id} {self.__name} - Type: {self.__type1, self.__type2}")
-            print("Stats de base:")
             for baseStat, value in self.__baseStats.items():
                 print(f"  {baseStat.capitalize()}: {value}")
             print(f"  Level: {self.__level}")
@@ -188,11 +186,9 @@ class Pokemon:
     def set_xp(self, AddXp): # xp gagnée à définir dans la class Combat
         self.__xp += AddXp
 
-        print(f"{self.__name} a gagné {AddXp} xp !") 
         if self.__xp >= 100:
             while self.__xp >= 100:
                 self.level_up()
-                print(f"{self.__name} est maintenant niveau {self.__level} !")
                 self.__xp -= 100
                 if self.__evolution is not None:
                     if self.__level >= self.__evolution["level"]:
@@ -220,12 +216,10 @@ class Pokemon:
         # Prend les valeurs de l'évolution id name stat etc...
     def evolue (self):
         evolutionName = self.get_name_by_id(self.__id + 1)
-        print(f"{self.__name} a évolué en {evolutionName} !")
 
         self.__id = self.__evolution.get("to")
         self.loadData()
         self.updateStats()
-        print(self.afficherBaseStats())
 
     def get_name_by_id(self, idDonne):
         with open(r"data\pokemons\pokemons.json", "r", encoding="utf-8") as fichier:
@@ -265,15 +259,13 @@ class Pokemon:
         chooseAbilities = self.__abilities.copy()
         self.__abilities = []
 
-        print(f"Choisissez les abilities de {self.__name}:")
         dialogue1 = f"Choisissez les abilities de {self.__name}:"
         dialogue2 = ""
 
         for ability in chooseAbilities:
-            print(f"  {ability}")
             dialogue2 += f"  {ability}"
 
-        print("\n")
+
         
         for i in range(4):
             while True:
@@ -281,19 +273,14 @@ class Pokemon:
 
                 # Vérifier que l'ability existe et n'est pas déjà dans la liste
                 if ability not in chooseAbilities:
-                    print("Ability invalide !")
                     dialogue3 = "Ability invalide !"
                 elif ability in self.__abilities:
-                    print(f"{ability} est déjà dans la liste !")
                     dialogue4 = f"{ability} est déjà dans la liste !"
                 else:
                     break
 
             self.__abilities.append(ability)
-            print(self.__abilities)
 
-        print("\n")
-        print(f"Les abilities de {self.__name} sont maintenant:")
         
         for ability in self.__abilities:
             print(f"  {ability}")

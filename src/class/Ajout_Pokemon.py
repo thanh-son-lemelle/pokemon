@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 from Button import Button
-from TextInput import TextInputBox
+from Text_Input import TextInputBox
 from Dropdown_menu import DropdownMenu
 
 NOIR = (0, 0, 0)    
@@ -157,8 +157,8 @@ class AjoutPokemon():
                 self.SCREEN.blit(self.__imagePokemon, (80, 200))
             self.__loadImageBUTTON.update(self.SCREEN)
 
-            for i, ligne in enumerate(self.__tablcomp):
-                for j, cellule in enumerate(ligne):
+            for i, ligne in enumerate(self.__tablcomp): # itération sur les lignes
+                for j, cellule in enumerate(ligne): # itération sur les cellules
                     pygame.draw.rect(self.SCREEN, NOIR, (self.__x + j * (self.__cellule_largeur + self.__margeLargeur), self.__y + i * (self.__cellule_hauteur + self.__margeHauteur), self.__cellule_largeur, self.__cellule_hauteur), 2)
                     texte_surface = self.police_smallsmall.render(cellule, True, NOIR)
                     texte_rect = texte_surface.get_rect(center=(self.__x + j * (self.__cellule_largeur + self.__margeLargeur) + self.__cellule_largeur // 2,
@@ -232,9 +232,10 @@ class AjoutPokemon():
 
 
     #===============================================================================
-    #                               Méthode pour choisir une image
+    #                               Méthodes
     #===============================================================================
-            
+    
+    # Méthode qui permet de choisir une image
     def choisirImage(self):
         root = tk.Tk()
         root.withdraw()
@@ -242,6 +243,6 @@ class AjoutPokemon():
         return file_path
     
 
-
+    # Méthode qui retourne le chemin de l'image
     def get_previousPage(self):
         return self.previousPage

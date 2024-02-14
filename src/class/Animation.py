@@ -26,17 +26,17 @@ class Animation():
 #                               Animation pokémon 
 #                                General methode
 #================================================================================
+    # Méthode pour obtenir les délais des frames
     def get_delay(self, isFront = True):
         if isFront:
             for chemin in self.getPath():
+                # Findall utilise un pattern pour recuperer le delay
                 matches = re.findall(r'delay-(\d+\.\d+)s\.gif', chemin)
                 if matches:
                     for match in matches:
                         delay_value = float(match)
                         self.delay.append(delay_value)
-                    
-                else:
-                    print("Aucune correspondance trouvée dans front.")
+
         else:
             for chemin in self.getPath(isFront = False):
                 matches = re.findall(r'delay-(\d+\.\d+)s\.gif', chemin)
@@ -45,9 +45,7 @@ class Animation():
                         delay_value = float(match)
                         self.delay.append(delay_value)
                     
-                else:
-                    print("Aucune correspondance trouvée dans back.")
-
+    # Méthode pour obtenir les chemins des fichiers d'images
     def getPath(self, isFront = True):
         if isFront:
             fichiers = os.listdir(self.frontIdRepertory)
@@ -58,7 +56,7 @@ class Animation():
             chemins_fichiers = [os.path.join(self.backIdRepertory, fichier) for fichier in fichiers]
             return chemins_fichiers
 
-
+    # Méthode pour redimensionner une image
     def resizeImage(self, image, multiplier):
         originalWidth, originalHeight = image.get_size()
         newHeight = int(multiplier * originalHeight)
@@ -66,24 +64,12 @@ class Animation():
         image = pygame.transform.scale(image, (newWidth, newHeight))
         return image
     
-    def loadFramesForCombat(self, isFront = True):
     
-        if isFront:
-            self.get_delay()
-            for chemin in self.getPath():
-                frame = pygame.image.load(chemin).convert_alpha()
-                frame_resized = self.resizeImage(frame, 2)
-                self.frames.append(frame_resized)
-        else:
-            self.get_delay(isFront = False)
-            for chemin in self.getPath(isFront = False):
-                frame = pygame.image.load(chemin).convert_alpha()
-                frame_resized = self.resizeImage(frame, 3)
-                self.frames.append(frame_resized)
 #===============================================================================
 #                               Animation pokémon 
 #                             Display Pour Combat
 #================================================================================
+    # Méthode pour charger les frames pour le combat
     def loadFramesForCombat(self, isFront = True):
     
         if isFront:
@@ -98,7 +84,7 @@ class Animation():
                 frame = pygame.image.load(chemin).convert_alpha()
                 frame_resized = self.resizeImage(frame, 3)
                 self.frames.append(frame_resized)
-    
+    # Affiche l'animation du pokémon adverse
     def displayFrontAnimation(self):
             
             rect = self.frames[self.current_frame].get_rect()
@@ -107,7 +93,7 @@ class Animation():
             self.current_frame += 1
             self.current_frame %= len(self.frames)
             pygame.time.delay(int(self.delay[self.current_frame]*500))
-    
+    # Affiche l'animation du pokémon du joueur
     def displayBackAnimation(self): 
             rect = self.frames[self.current_frame].get_rect()
             rect.midbottom = (270,500)
@@ -121,6 +107,7 @@ class Animation():
 #                               Animation pokémon 
 #                             Display Pour Choix Pokémon
 #================================================================================
+            # Méthode pour charger les frames pour le choix du pokémon
     def loadFramesForPokeball(self):
             self.background = pygame.image.load(os.path.join("images", "background", "menu", "Area icon.png")).convert_alpha()
             self.background = pygame.transform.scale(self.background, (100, 130))
@@ -132,6 +119,7 @@ class Animation():
                 frame_resized = self.resizeImage(frame, 1)
                 self.frames.append(frame_resized)
 
+    # Affiche l'animation du pokémon dans un cadre
     def displayPokemonForPokeball(self, X, Y):
         rect = self.background.get_rect()
         rect.center = (X, Y)
@@ -142,44 +130,4 @@ class Animation():
         self.current_frame += 1
         self.current_frame %= len(self.frames)
         pygame.time.delay(int(self.delay[self.current_frame]*1000))
-        
-
-"""starter = Pokemon(3)
-animation = Animation(starter)"""
-"""animation.loadFramesForCombat(isFront=False)"""
-# adversaire = Pokemon(3)
-# animationAdversaire = Animation(adversaire)
-# animationAdversaire.loadFramesForPokeball()
-
-
-
-
-# pygame.init()
-
-
-# screen = pygame.display.set_mode((animationAdversaire.sc_w, animationAdversaire.sc_h))
-# animationAdversaire.clock = pygame.time.Clock()
-# running = True
-# while running:
-#     for ev in pygame.event.get():
-#         if ev.type == pygame.QUIT:
-#             running = False
-#             pygame.quit()
-#             exit()
-
-
-#     bg = pygame.image.load("images\\background\\combat\\sprite_combat_background02.png")
-#     bg = pygame.transform.scale(bg, (animationAdversaire.sc_w, animationAdversaire.sc_h))
-#     screen.fill((255,255,255))
-#     screen.blit(bg, (0,0))
-#     """animation.displayBackAnimation()"""
-
-#     animationAdversaire.displayPokemonForPokeball(animationAdversaire.sc_w//2,animationAdversaire.sc_h//2)
-#     screen.blit(animationAdversaire.background, (0,0))
-
-
-    
-        
-
-#     pygame.display.flip()
-#     """animation.clock.tick(animation.FPS)"""
+#===============================================================================

@@ -39,23 +39,3 @@ class Dresseurs():
     
     def addToRoster(self, pokemon):
         self.__listePokemons.append(pokemon)
-
-
-"""
-adversaire = Dresseurs()
-print(adversaire.setRandomName())
-print(adversaire.get_lisPokemons())
-print(Pokemon.get_nom(adversaire.get_lisPokemons()[0]))
-print(Pokemon.get_nom(adversaire.get_lisPokemons()[1]))
-print(Pokemon.get_nom(adversaire.get_lisPokemons()[2]))
-print(Pokemon.get_nom(adversaire.get_lisPokemons()[3]))
-print(Pokemon.get_nom(adversaire.get_lisPokemons()[4]))
-print(Pokemon.get_nom(adversaire.get_lisPokemons()[5]))
-
-print(Pokemon.get_level(adversaire.get_lisPokemons()[0]))
-print(Pokemon.get_level(adversaire.get_lisPokemons()[1]))
-print(Pokemon.get_level(adversaire.get_lisPokemons()[2]))
-print(Pokemon.get_level(adversaire.get_lisPokemons()[3]))
-print(Pokemon.get_level(adversaire.get_lisPokemons()[4]))
-print(Pokemon.get_level(adversaire.get_lisPokemons()[5]))
-"""

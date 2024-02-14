@@ -65,7 +65,7 @@
           "name": "Lance-Soleil"
         }
       ],
-      "vu": 49
+      "vu": 0
     },
     {
       "id": 2,
@@ -132,7 +132,7 @@
           "name": "Lance-Soleil"
         }
       ],
-      "vu": 127
+      "vu": 0
     },
     {
       "id": 3,
@@ -203,7 +203,7 @@
           "name": "Lance-Soleil"
         }
       ],
-      "vu": 175
+      "vu": 0
     },
     {
       "id": 4,
@@ -278,7 +278,7 @@
           "name": "Boutefeu"
         }
       ],
-      "vu": 70
+      "vu": 0
     },
     {
       "id": 5,
@@ -353,7 +353,7 @@
           "name": "Boutefeu"
         }
       ],
-      "vu": 57
+      "vu": 0
     },
     {
       "id": 6,
@@ -432,7 +432,7 @@
           "name": "Boutefeu"
         }
       ],
-      "vu": 145
+      "vu": 0
     },
     {
       "id": 7,
@@ -499,7 +499,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 108
+      "vu": 0
     },
     {
       "id": 8,
@@ -570,7 +570,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 75
+      "vu": 0
     },
     {
       "id": 9,
@@ -641,7 +641,7 @@
           "name": "Aquatacle"
         }
       ],
-      "vu": 77
+      "vu": 0
     },
     {
       "id": 10,
@@ -680,7 +680,7 @@
           "name": "Piqûre"
         }
       ],
-      "vu": 134
+      "vu": 0
     },
     {
       "id": 11,
@@ -711,7 +711,7 @@
           "name": "Armure"
         }
       ],
-      "vu": 178
+      "vu": 0
     },
     {
       "id": 12,
@@ -794,7 +794,7 @@
           "name": "Papillodanse"
         }
       ],
-      "vu": 170
+      "vu": 0
     },
     {
       "id": 13,
@@ -833,7 +833,7 @@
           "name": "Piqûre"
         }
       ],
-      "vu": 36
+      "vu": 0
     },
     {
       "id": 14,
@@ -865,7 +865,7 @@
           "name": "Armure"
         }
       ],
-      "vu": 48
+      "vu": 0
     },
     {
       "id": 15,
@@ -957,7 +957,7 @@
           "name": "Dard Mortel"
         }
       ],
-      "vu": 161
+      "vu": 0
     },
     {
       "id": 16,
@@ -1036,7 +1036,7 @@
           "name": "Vent Violent"
         }
       ],
-      "vu": 26
+      "vu": 0
     },
     {
       "id": 17,
@@ -1111,7 +1111,7 @@
           "name": "Vent Violent"
         }
       ],
-      "vu": 33
+      "vu": 0
     },
     {
       "id": 18,
@@ -1186,7 +1186,7 @@
           "name": "Vent Violent"
         }
       ],
-      "vu": 26
+      "vu": 0
     },
     {
       "id": 19,
@@ -1265,7 +1265,7 @@
           "name": "Effort"
         }
       ],
-      "vu": 146
+      "vu": 0
     },
     {
       "id": 20,
@@ -1348,7 +1348,7 @@
           "name": "Effort"
         }
       ],
-      "vu": 107
+      "vu": 0
     },
     {
       "id": 21,
@@ -1409,8 +1409,7 @@
           "name": "Atterrissage"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 22,
       "name": "Rapasdepic",
@@ -1482,8 +1481,7 @@
           "name": "Bec Vrille"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 23,
       "name": "Abo",
@@ -1571,8 +1569,7 @@
           "name": "Détricanon"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 24,
       "name": "Arbok",
@@ -1672,8 +1669,7 @@
           "name": "Détricanon"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 25,
       "name": "Pikachu",
@@ -1773,8 +1769,7 @@
           "name": "Fatal foudre"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 26,
       "name": "Raichu",
@@ -1874,8 +1869,7 @@
           "name": "Tonnerre"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 27,
       "name": "Sabelette",
@@ -1963,8 +1957,7 @@
           "name": "Séisme"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 28,
       "name": "Sablaireau",
@@ -2052,8 +2045,7 @@
           "name": "Gyroballe"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 29,
       "name": "Nidoran",
@@ -2125,8 +2117,7 @@
           "name": "Telluriforce"
         }
       ],
-      "vu": 0
-    },
+      "vu": 0    },
     {
       "id": 30,
       "name": "Nidorina",
@@ -2198,7 +2189,6 @@
           "name": "Telluriforce"
         }
       ],
-      "vu": 0
-    }
+      "vu": 0    }
   ]
 }

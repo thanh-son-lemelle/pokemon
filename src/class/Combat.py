@@ -10,6 +10,7 @@ from Animation import Animation
 from Dresseurs import Dresseurs
 from Animation_dresseur import Animation_dresseur
 import threading
+import time
 
 
 
@@ -88,6 +89,7 @@ class Combat():
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
             self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
             self.forgot_capa = self.police.render("Choissir une capa à oublier", True, "black")
+            self.next_page = self.police.render("Entrer pour continuer", True, "black")
 
             
             
@@ -108,16 +110,18 @@ class Combat():
         
 
         self.starter = self.liste_poke[0]
-        print("Starter : ",self.liste_poke)
-        print("Starter : ",self.liste_poke[0].get_nom())
 
         self.adv = self.liste_poke_adv[0]
-        print("Adv : ",self.adv.get_nom())
         
 
 
     def fight(self):
+        delay_time = 1000
         l = []
+        l.append(self.starter.get_4abilities()[0])
+        l.append(self.starter.get_4abilities()[1])
+        l.append(self.starter.get_4abilities()[2])
+        l.append(self.starter.get_4abilities()[3])
         self.animation = Animation(self.starter)
         self.animation.loadFramesForCombat(isFront=False)
         self.animationAdversaire = Animation(self.adv)
@@ -127,6 +131,7 @@ class Combat():
         self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
         size_capa = (500,200)
         press = False
+        
         capa = pygame.image.load("images\\background\combat\panel.png")
         capa = pygame.transform.scale(capa, size_capa)
         
@@ -180,6 +185,7 @@ class Combat():
                     self.sentence_capa = self.police.render("Pour apprendre "+str(self.starter.get_currentAbilities()[4]), True, "black")
                     self.__SCREEN.blit(self.forgot_capa,(525, 550))
                     self.__SCREEN.blit(self.sentence_capa,(525, 570))
+                    self.__SCREEN.blit(self.next_page,(525,590))
                     for event in pygame.event.get():
 
                         if event.type == pygame.QUIT:
@@ -189,12 +195,20 @@ class Combat():
                             sys.exit()
 
 
+
+                        if event.type == pygame.KEYDOWN:
+
+# Déplacement à droite dans le Pokedex
+                            if event.key == pygame.K_RETURN:
+                               self.Victoire()
                         
 
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             if event.button == 1: 
-
-                                if 25 <= event.pos[0] <= 221 and 526 <= event.pos[1] <= 570: #capa 1 
+                                press2 = False
+                                l = []
+                                if 25 <= event.pos[0] <= 221 and 526 <= event.pos[1] <= 570  and not press2: #capa 1 
+                                    press2 = True
                                     l.append(self.starter.get_currentAbilities()[4])
                                     l.append(self.starter.get_4abilities()[1])
                                     l.append(self.starter.get_4abilities()[2])
@@ -203,50 +217,76 @@ class Combat():
                                     
                                     
 
-                                if 25 <= event.pos[0] <= 221 and 626 <= event.pos[1] <= 671: # capa 2
+                                if 25 <= event.pos[0] <= 221 and 626 <= event.pos[1] <= 671  and not press2: # capa 2
+                                    press2 = True
                                     l.append(self.starter.get_4abilities()[0])
                                     l.append(self.starter.get_currentAbilities()[4])
                                     l.append(self.starter.get_4abilities()[2])
                                     l.append(self.starter.get_4abilities()[3])
-                                    self.starter.get_4abilities()[1] = self.starter.get_currentAbilities()[4]
                                     self.starter.chooseAbilities(l)
+                                    print(self.starter.__abilities)
                               
 
 
-                                if 276 <= event.pos[0] <= 473 and 527 <= event.pos[1] <= 571: #capa 3
+                                if 276 <= event.pos[0] <= 473 and 527 <= event.pos[1] <= 571  and not press2: #capa 3
+                                    press2 = True
                                     l.append(self.starter.get_4abilities()[0])
                                     l.append(self.starter.get_4abilities()[1])
                                     l.append(self.starter.get_currentAbilities()[4])
                                     l.append(self.starter.get_4abilities()[3])
-                                    self.starter.get_4abilities()[2] = self.starter.get_currentAbilities()[4]
                                     self.starter.chooseAbilities(l)
                                   
                                     
                                     
 
-                                if 275 <= event.pos[0] <= 471 and 626 <= event.pos[1] <= 673: # capa 4
+                                if 275 <= event.pos[0] <= 471 and 626 <= event.pos[1] <= 673  and not press2: # capa 4
+                                    press2 = True
                                     l.append(self.starter.get_4abilities()[0])
                                     l.append(self.starter.get_4abilities()[1])
                                     l.append(self.starter.get_4abilities()[2])
                                     l.append(self.starter.get_currentAbilities()[4])
-                                    self.starter.get_4abilities()[3] = self.starter.get_currentAbilities()[4]
                                     self.starter.chooseAbilities(l)
+
+
+
+                                ATT1 = Button(image= capa_button, pos=(125, 550), 
+                                text_input=l[0], font=self.police, base_color="#000000", hovering_color="White")
+            
+                                ATT2 = Button(image= capa_button, pos=(125, 650), 
+                                text_input=l[1], font=self.police, base_color="#000000", hovering_color="White")
+            
+                                ATT3 = Button(image= capa_button, pos=(375, 550), 
+                                text_input=l[2], font=self.police, base_color="#000000", hovering_color="White")
+            
+                                ATT4 = Button(image= capa_button, pos=(375, 650), 
+                                text_input=l[3], font=self.police, base_color="#000000", hovering_color="White")
+
+
+
+                            
+
+
+        
+
+
+                            
+
 
 
 
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
             ATT1 = Button(image= capa_button, pos=(125, 550), 
-                                text_input=self.starter.get_4abilities()[0], font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=l[0], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT2 = Button(image= capa_button, pos=(125, 650), 
-                                text_input=self.starter.get_4abilities()[1], font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=l[1], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT3 = Button(image= capa_button, pos=(375, 550), 
-                                text_input=self.starter.get_4abilities()[2], font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=l[2], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT4 = Button(image= capa_button, pos=(375, 650), 
-                                text_input=self.starter.get_4abilities()[3], font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=l[3], font=self.police, base_color="#000000", hovering_color="White")
 
 
             for button in [ATT1,ATT2,ATT3,ATT4]:

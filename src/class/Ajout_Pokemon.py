@@ -101,6 +101,8 @@ class AjoutPokemon():
         self.__input_description = TextInputBox(40, 540, 300, 100, 24)
         self.__dropdown = DropdownMenu(0, 0, 80, 16)
 
+        self.previousPage = False
+
     
 
     #===============================================================================
@@ -130,7 +132,7 @@ class AjoutPokemon():
                     if self.__loadImageBUTTON.checkForInput(MOUSE_POS):
                         self.displayImage = False
                         self.__imagePokemon = self.choisirImage()
-                        print(screen.__imagePokemon)
+                       
                         
                 self.input_box_name.handle_event(event)
                 self.input_box_id.handle_event(event)
@@ -216,6 +218,13 @@ class AjoutPokemon():
             self.SCREEN.blit(self.__affEvol2, (820, 540))
             self.SCREEN.blit(self.__affEvol3, (820, 600))
             self.SCREEN.blit(self.button_menu, (875, 5))
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1: 
+                        
+                        if 875 <= event.pos[0] <= 1000 and 5 <= event.pos[1] <= 105:
+                            self.previousPage = True
+                            running = False
             
 
             pygame.display.flip()
@@ -231,6 +240,8 @@ class AjoutPokemon():
         root.withdraw()
         file_path = filedialog.askopenfilename()
         return file_path
+    
 
-screen = AjoutPokemon()
-screen.displayAjoutPokemon()
+
+    def get_previousPage(self):
+        return self.previousPage

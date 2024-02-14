@@ -198,7 +198,6 @@ class Combat():
 
                         if event.type == pygame.KEYDOWN:
 
-# Déplacement à droite dans le Pokedex
                             if event.key == pygame.K_RETURN:
                                self.Victoire()
                         

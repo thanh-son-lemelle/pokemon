@@ -5,6 +5,7 @@ import pygame
 import sys
 from pygame import *
 from pygame.locals import *
+from Ajout_Pokemon import AjoutPokemon
 
 class Menu():
 
@@ -46,17 +47,20 @@ class Menu():
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
 
-            PLAY_BUTTON = Button(image=pygame.image.load("images\\button\\images\\button main.png"), pos=(100, 300), 
+            PLAY_BUTTON = Button(image=pygame.image.load("images\\button\\images\\button main.png"), pos=(100, 350), 
                                 text_input="PLAY", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
             
             POKEDEX_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 450), 
                                 text_input="POKEDEX", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
             
-            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 600), 
+            AJOUT_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 550), 
+                                text_input="AJOUT", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
+            
+            QUIT_BUTTON = Button(image=pygame.image.load("images\\button\images\\button main.png"), pos=(100, 650), 
                                 text_input="QUIT", font=self.get_font(20), base_color="#d7fcd4", hovering_color="White")
 
 
-            for button in [PLAY_BUTTON,POKEDEX_BUTTON,QUIT_BUTTON]:
+            for button in [PLAY_BUTTON,POKEDEX_BUTTON,AJOUT_BUTTON,QUIT_BUTTON]:
 
                 button.changeColor(MENU_MOUSE_POS)
 
@@ -89,10 +93,22 @@ class Menu():
 
 
 
-                    ##if PLAY_POKEDEX.checkForInput(MENU_MOUSE_POS):
                     if POKEDEX_BUTTON.checkForInput(MENU_MOUSE_POS):
                         pokedex = Pokedex(1)
                         pokedex.affichePokedex()
+
+
+
+
+                    if AJOUT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        new_poke = AjoutPokemon()
+                        new_poke.displayAjoutPokemon()
+                        previousPage1 = new_poke.get_previousPage()
+                        if previousPage1 == True:
+                            self.__playgame = False
+                        else:
+                            self.__playgame = True
+                        break
                         
 
                     

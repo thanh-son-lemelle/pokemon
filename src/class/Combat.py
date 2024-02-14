@@ -10,7 +10,6 @@ from Animation import Animation
 from Dresseurs import Dresseurs
 from Animation_dresseur import Animation_dresseur
 import threading
-import time
 
 
 
@@ -91,11 +90,6 @@ class Combat():
             self.forgot_capa = self.police.render("Choissir une capa à oublier", True, "black")
             self.next_page = self.police.render("Entrer pour continuer", True, "black")
 
-            
-            
-            
-    
-        
 
     def get_liste_dresseurs(self,l,l1):
         for i in l:
@@ -116,7 +110,6 @@ class Combat():
 
 
     def fight(self):
-        delay_time = 1000
         l = []
         l.append(self.starter.get_4abilities()[0])
         l.append(self.starter.get_4abilities()[1])
@@ -195,10 +188,8 @@ class Combat():
                             sys.exit()
 
 
-
                         if event.type == pygame.KEYDOWN:
 
-# Déplacement à droite dans le Pokedex
                             if event.key == pygame.K_RETURN:
                                self.Victoire()
                         
@@ -262,18 +253,6 @@ class Combat():
                                 text_input=l[3], font=self.police, base_color="#000000", hovering_color="White")
 
 
-
-                            
-
-
-        
-
-
-                            
-
-
-
-
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
             ATT1 = Button(image= capa_button, pos=(125, 550), 
@@ -305,7 +284,6 @@ class Combat():
                     sys.exit()
 
             
-
                 if event.type == pygame.MOUSEBUTTONDOWN:
 
                     if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
@@ -363,11 +341,6 @@ class Combat():
             self.animation.clock.tick(self.animation.FPS)
                 
 
-            
-
-
-
-
 
     def health_bar_player(self):
         
@@ -377,11 +350,6 @@ class Combat():
         pygame.draw.rect(self.__SCREEN, (0,0,0), (101, 48,150, 10),1)
                     
             
-        
-
-        
-
-
 
     def health_bar_adv(self):
         
@@ -390,12 +358,6 @@ class Combat():
         pygame.draw.rect(self.__SCREEN, (0,255,0), (778, 43,150*self.ratio_adv, 10))
         pygame.draw.rect(self.__SCREEN, (0,0,0), (778, 43,150, 10),1)
 
-
-
-
-
-        
-                   
 
 
     def lvl_up(self):
@@ -408,11 +370,9 @@ class Combat():
             print(self.starter.get_level())
             
 
-
         elif 16 >=self.starter.get_level() <= 30:
             self.starter.set_xp(150)
             print(self.starter.get_level())
-
 
         elif 30 >=self.starter.get_level() <= 50:
             self.starter.set_xp(100)
@@ -421,7 +381,6 @@ class Combat():
         elif 50 >=self.starter.get_level():
             self.starter.set_xp(30)
             print(self.starter.get_level())
-
 
 
     def Victoire(self):
@@ -467,19 +426,11 @@ class Combat():
                     sys.exit()
 
 
-
-
                 if event.type == pygame.MOUSEBUTTONDOWN:
-
-                   
-
 
                     if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
                          self.running = False
                         
-                            
-
-
 
                     if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                         pygame.quit()
@@ -531,33 +482,20 @@ class Combat():
 
                     sys.exit()
 
-
-
-
                 if event.type == pygame.MOUSEBUTTONDOWN:
-
-                       
-
 
                     if MENU_BUTTON.checkForInput(MENU_MOUSE_POS):
                          self.running = False
-                        
-                            
-
-
-
+   
                     if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                         pygame.quit()
 
                         sys.exit()
                             
-
-
             pygame.display.update()
 
         
         
-
     def multiplicateur_type(self):
         
         delay_time = 1000
@@ -584,7 +522,7 @@ class Combat():
 
 
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
-        nombre_aleatoire = random.uniform(0, 100)
+        nombre_aleatoire = random.uniform(0, 100) + less_press
 
         if probabilite_reussite >= nombre_aleatoire: #Si taux de reussite est supérieure au nombre aléatoire l'attque est reussi 
 
@@ -762,10 +700,6 @@ class Combat():
                 #Mettre la valeurs des hp à jour pour la rappeler plus tard dans health_bar_player
                 self.hp -= degats * self.multiplicateur_degat_adv
                         
-                       
-                
-
-
                 #Condition changement de pokemon après K.O
                 
                 if self.hp_adv <= 0:
@@ -775,15 +709,12 @@ class Combat():
                                 self.health_bar_player() #Afficher barre de vie player
                                 self.health_bar_adv() #Afficher barre de vie Adversse
 
-                                
-
 
                                 # Reset les pv au max
 
                                 self.max_hp_adv = self.adv.get_statHp()
                                 self.hp_adv = self.max_hp_adv 
                                 self.ratio_adv = self.hp_adv / self.max_hp_adv  
-
 
                                 if len(self.liste_poke_adv) >= 1: #Si l'equipe pokemon possède un autres pokemon
                                     self.adv = self.liste_poke_adv[i] #Set le pokemon
@@ -808,7 +739,6 @@ class Combat():
                                 self.health_bar_adv() #Afficher barre de vie Adversse
 
                                 
-
                                 # Reset les pv au max
 
                                 self.max_hp = self.starter.get_statHp()
@@ -831,7 +761,6 @@ class Combat():
                     self.health_bar_adv()
 
                 
-
         else: # Si l'on rate nôtre attaque 
 
             
@@ -840,7 +769,6 @@ class Combat():
                 while pygame.time.get_ticks() - self.start_time < delay_time:
                     self.rater = self.police_moyen.render("L'action a échoué", False, "red")
                     self.__SCREEN.blit(self.rater, (575, 575))
-                    
                     
                     pygame.time.Clock().tick(60)
 
@@ -925,12 +853,9 @@ class Combat():
                     self.adv.set_statSpeed(30)
                     self.starter.set_statDefense(-30)
 
-
-           
             pygame.display.update()
 
             
-
             with open("data\pokemons\Type.json","r") as f: 
                 file = json.load(f)
                 #Calcul avantage type des capacité de l'adverssaire
@@ -940,7 +865,6 @@ class Combat():
                 self.hp -= degats * self.multiplicateur_degat_adv
 
 
-            
             #Condition changement de pokemon après K.O
                 
                 if self.hp_adv <= 0:
@@ -974,7 +898,6 @@ class Combat():
                     self.health_bar_adv() #Afficher barre de vie Adversse
 
                     
-
                     # Reset les pv au max
                     self.max_hp = self.starter.get_statHp()
                     self.hp = self.max_hp
@@ -998,10 +921,6 @@ class Combat():
                     self.health_bar_adv()
             
           
-                
-
-
-
     def vu(self):
     # Étape 1: Lire le fichier JSON existant
         with open("data/pokemons/pokemons.json", "r",encoding="utf-8") as f:
@@ -1021,8 +940,6 @@ class Combat():
         with open("data/pokemons/pokemons.json", "w",encoding="utf-8") as f:
             json.dump(file, f, indent=2,ensure_ascii=False)
          
-
-
 
     def start_anim(self):
 
@@ -1063,6 +980,4 @@ class Combat():
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1: 
                         if 0 <= event.pos[0] <= 1000 and 500 <= event.pos[1] <= 700:
-                            #revoyer fonction retour d'anim
-                            
                             self.fight()

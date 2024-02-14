@@ -24,6 +24,7 @@ class Animation_dresseur():
         self.postionDepartJoueur = 1200
         self.nextStep = False
     
+    # Récupère les chemins des fichiers
     def get_path(self, isFront = True):
         if isFront:
             fichiers = os.listdir(self.spriteEnnemies)
@@ -33,17 +34,17 @@ class Animation_dresseur():
             fichiers = os.listdir(self.spriteJoueur)
             self.chemins_fichiers = [os.path.join(self.spriteJoueur, fichier) for fichier in fichiers]
             return self.chemins_fichiers
-        
+    
+    # Charge les images
     def load(self, isFront = True):
+        # Si c'est un dresseur adverse
         if isFront:
             chemin = random.choice(self.get_path())
             if chemin.endswith(".png"):
                 self.image = pygame.image.load(chemin).convert()
                 self.image.set_colorkey(self.image.get_at((0,0)))
                 self.image = pygame.transform.scale(self.image, (200, 200))
-            else:
-                print("Aucune correspondance trouvée dans front.")
-            
+        # Si c'est le joueur
         else:
             self.get_path(isFront = False)
             for chemin in self.chemins_fichiers:
@@ -55,6 +56,7 @@ class Animation_dresseur():
             self.image = self.frames[0]   
 
     def displayFrontSprite(self):
+        # animation de l'adversaire 
 
         if self.postionDepartAdversaire < 770:
             self.postionDepartAdversaire +=7
@@ -67,7 +69,7 @@ class Animation_dresseur():
 
 
     def displayBackSprite(self):
-
+        # animation du joueur
         if self.postionDepartJoueur > 270:
             self.postionDepartJoueur -=7
         
@@ -75,16 +77,10 @@ class Animation_dresseur():
         rect = self.image.get_rect()
         rect.midbottom = (self.postionDepartJoueur, 500) 
         self.screen.blit(self.image, rect)
-
-    def test(self):
-        self.image = self.frames[2]
-        rect = self.image.get_rect()
-        rect.midbottom = (270, 500)
-        self.screen.blit(self.image, rect)
         
-
+    # Charge les images pour l'animation de lancer de pokéball
+    # Non implémenté dans le jeu
     def displayLancerPokeball(self):
-
 
         if self.current_frame < len(self.frames):
             rect = self.image.get_rect()
@@ -104,51 +100,3 @@ class Animation_dresseur():
         else:
             self.nextStep = True
         return
-
-
-
-
-    
-
-
-"""
-adversaire = Dresseurs()
-joueur = Dresseurs()    
-animationadversaire = Animation_dresseur()
-animationjoueur = Animation_dresseur()
-animationjoueur.load(isFront = False)
-
-animationadversaire.load()
-pygame.init()
-
-
-screen = pygame.display.set_mode((animationjoueur.sc_w, animationjoueur.sc_h))
-animationjoueur.clock = pygame.time.Clock()
-running = True
-
-while running:
-    for ev in pygame.event.get():
-        if ev.type == pygame.QUIT:
-            running = False
-            pygame.quit()
-            exit()
-
-
-    bg = pygame.image.load("images\\background\\combat\\sprite_combat_background02.png")
-    bg = pygame.transform.scale(bg, (animationjoueur.sc_w, animationjoueur.sc_h))
-    screen.fill((255,255,255))
-    screen.blit(bg, (0,0))
-    if animationjoueur.nextStep == False:
-        animationadversaire.displayFrontSprite()
-        
-        animationjoueur.displayBackSprite()
-        if animationadversaire.nextStep == True:
-        animationjoueur.displayLancerPokeball()
-
-
-
-
-    
-    pygame.display.flip()
-    animationjoueur.clock.tick(animationjoueur.FPS)
-    """

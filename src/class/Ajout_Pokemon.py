@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 from Button import Button
-from TextInput import TextInputBox
+from Text_Input import TextInputBox
 from Dropdown_menu import DropdownMenu
 
 NOIR = (0, 0, 0)    

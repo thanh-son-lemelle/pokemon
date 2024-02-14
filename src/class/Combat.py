@@ -54,11 +54,6 @@ class Combat():
         self.win = self.police_grande.render("Victoire",True,"white")
         self.loose = self.police_grande.render("Défaite",True,"white")
 
-        self.button_yes = pygame.image.load("images\\pokeballs\\yes.png")
-        self.button_no = pygame.image.load("images\\pokeballs\\no.png")
-        self.button_yes = pygame.transform.scale(self.button_yes, (100, 50))
-        self.button_no = pygame.transform.scale(self.button_no, (100, 50))
-
             
     def initialis_combat(self):
         if self.starter is not None:
@@ -92,7 +87,6 @@ class Combat():
             self.rater = self.police_moyen.render("L'action a échoué",True,"red")
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
             self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
-            self.new_capa = self.police_moyen.render("Souhaitez vous apprendre", True, "black")
             self.forgot_capa = self.police.render("Choissir une capa à oublier", True, "black")
 
             
@@ -183,11 +177,9 @@ class Combat():
                     
                 
             if self.manage_ability == True:
-                    self.sentence_capa = self.police_moyen.render(str(self.starter.get_currentAbilities()[4]), True, "black")
-                    self.__SCREEN.blit(self.new_capa,(525, 550))
+                    self.sentence_capa = self.police.render("Pour apprendre "+str(self.starter.get_currentAbilities()[4]), True, "black")
+                    self.__SCREEN.blit(self.forgot_capa,(525, 550))
                     self.__SCREEN.blit(self.sentence_capa,(525, 570))
-                    self.__SCREEN.blit(self.button_yes,(525,620))
-                    self.__SCREEN.blit(self.button_no,(675,620))
                     for event in pygame.event.get():
 
                         if event.type == pygame.QUIT:
@@ -279,14 +271,12 @@ class Combat():
                     if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
                         self.__attaque = self.starter.get_4abilities()[0]
-                        print("att1",self.__attaque)
                         self.multiplicateur_type()
 
 
                     if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[1]
-                            print("att2",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
 
@@ -297,7 +287,6 @@ class Combat():
                     if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[2]
-                            print("att3",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -307,7 +296,6 @@ class Combat():
                     if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[3]
-                            print("att4",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -399,7 +387,6 @@ class Combat():
     def Victoire(self):
         for elem in range(len(self.list_poke_mort)):
             if len(self.list_poke_mort) > 0:
-                print("elem = ",elem)
                 self.liste_poke.append(Pokemon(self.list_poke_mort[elem]))
                 self.list_poke_mort.pop(elem)
 
@@ -557,8 +544,6 @@ class Combat():
 
 
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
-        print("att test",self.__attaque)
-        print(self.starter.get_abilityAccuracyByName(self.__attaque))
         nombre_aleatoire = random.uniform(0, 100)
 
         if probabilite_reussite >= nombre_aleatoire: #Si taux de reussite est supérieure au nombre aléatoire l'attque est reussi 

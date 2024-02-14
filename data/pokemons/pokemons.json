@@ -3,274 +3,2202 @@
     {
       "id": 1,
       "name": "Bulbizarre",
-      "type": "Plante/Poison",
+      "type1": "Plante",
+      "type2": "Poison",
       "stats": {
         "hp": 45,
         "attack": 49,
         "defense": 49,
-        "speed": 45
+        "speed": 45,
+        "sp_attack": 65,
+        "sp_defense": 65
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 2
       },
       "evolution": {
         "level": 16,
         "to": 2
-      }
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 3,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 6,
+          "name": "Croissance"
+        },
+        {
+          "level": 12,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 18,
+          "name": "Canon Graine"
+        },
+        {
+          "level": 21,
+          "name": "Bélier"
+        },
+        {
+          "level": 33,
+          "name": "Mégafouet"
+        },
+        {
+          "level": 36,
+          "name": "Lance-Soleil"
+        }
+      ],
+      "vu": 49
     },
     {
       "id": 2,
       "name": "Herbizarre",
-      "type": "Plante/Poison",
+      "type1": "Plante",
+      "type2": "Poison",
       "stats": {
         "hp": 60,
         "attack": 62,
         "defense": 63,
-        "speed": 60
+        "speed": 60,
+        "sp_attack": 80,
+        "sp_defense": 80
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "speed": 3
       },
       "evolution": {
         "level": 32,
         "to": 3
-      }
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 1,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 12,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 20,
+          "name": "Canon Graine"
+        },
+        {
+          "level": 25,
+          "name": "Bélier"
+        },
+        {
+          "level": 45,
+          "name": "Mégafouet"
+        },
+        {
+          "level": 50,
+          "name": "Lance-Soleil"
+        }
+      ],
+      "vu": 127
     },
     {
       "id": 3,
       "name": "Florizarre",
-      "type": "Plante/Poison",
+      "type1": "Plante",
+      "type2": "Poison",
       "stats": {
         "hp": 80,
         "attack": 82,
         "defense": 83,
-        "speed": 80
-      }
+        "speed": 80,
+        "sp_attack": 100,
+        "sp_defense": 100
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "speed": 4
+      },
+      "abilities": [
+        {
+          "level": 0,
+          "name": "Tempête Florale"
+        },
+        {
+          "level": 1,
+          "name": "Danse Fleurs"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Fouet Lianes"
+        },
+        {
+          "level": 2,
+          "name": "Croissance"
+        },
+        {
+          "level": 12,
+          "name": "Tranch'Herbe"
+        },
+        {
+          "level": 15,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 20,
+          "name": "Canon Graine"
+        },
+        {
+          "level": 25,
+          "name": "Bélier"
+        },
+        {
+          "level": 51,
+          "name": "Mégafouet"
+        },
+        {
+          "level": 58,
+          "name": "Lance-Soleil"
+        }
+      ],
+      "vu": 175
     },
     {
       "id": 4,
       "name": "Salamèche",
-      "type": "Feu",
+      "type1": "Feu",
+      "type2": "None",
       "stats": {
         "hp": 39,
         "attack": 52,
         "defense": 43,
-        "speed": 65
+        "speed": 65,
+        "sp_attack": 60,
+        "sp_defense": 50
       },
       "evolution": {
         "level": 16,
         "to": 5
-      }
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 3,
+        "defense": 1,
+        "speed": 3
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Flammèche"
+        },
+        {
+          "level": 8,
+          "name": "Brouillard"
+        },
+        {
+          "level": 12,
+          "name": "Draco-Souffle"
+        },
+        {
+          "level": 17,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 20,
+          "name": "Tranche"
+        },
+        {
+          "level": 24,
+          "name": "Lance-Flammes"
+        },
+        {
+          "level": 28,
+          "name": "Grimace"
+        },
+        {
+          "level": 35,
+          "name": "Danse Flammes"
+        },
+        {
+          "level": 36,
+          "name": "Feu d'Enfer"
+        },
+        {
+          "level": 40,
+          "name": "Boutefeu"
+        }
+      ],
+      "vu": 70
     },
     {
       "id": 5,
       "name": "Reptincel",
-      "type": "Feu",
+      "type1": "Feu",
+      "type2": "None",
       "stats": {
         "hp": 58,
         "attack": 64,
         "defense": 58,
-        "speed": 80
+        "speed": 80,
+        "sp_attack": 80,
+        "sp_defense": 65
       },
       "evolution": {
         "level": 36,
         "to": 6
-      }
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "speed": 4
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Flammèche"
+        },
+        {
+          "level": 1,
+          "name": "Brouillard"
+        },
+        {
+          "level": 12,
+          "name": "Draco-Souffle"
+        },
+        {
+          "level": 19,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 24,
+          "name": "Tranche"
+        },
+        {
+          "level": 30,
+          "name": "Lance-Flammes"
+        },
+        {
+          "level": 37,
+          "name": "Grimace"
+        },
+        {
+          "level": 42,
+          "name": "Danse Flammes"
+        },
+        {
+          "level": 48,
+          "name": "Feu d'Enfer"
+        },
+        {
+          "level": 54,
+          "name": "Boutefeu"
+        }
+      ],
+      "vu": 57
     },
     {
       "id": 6,
       "name": "Dracaufeu",
-      "type": "Feu/Vol",
+      "type1": "Feu",
+      "type2": "Vol",
       "stats": {
         "hp": 78,
         "attack": 84,
         "defense": 78,
-        "speed": 100
-      }
+        "speed": 100,
+        "sp_attack": 109,
+        "sp_defense": 85
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "speed": 5
+      },
+      "abilities": [
+        {
+          "level": 0,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 1,
+          "name": "Draco-Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 2,
+          "name": "Flammèche"
+        },
+        {
+          "level": 3,
+          "name": "Brouillard"
+        },
+        {
+          "level": 12,
+          "name": "Draco-Souffle"
+        },
+        {
+          "level": 19,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 24,
+          "name": "Tranche"
+        },
+        {
+          "level": 30,
+          "name": "Lance-Flammes"
+        },
+        {
+          "level": 39,
+          "name": "Grimace"
+        },
+        {
+          "level": 46,
+          "name": "Danse Flammes"
+        },
+        {
+          "level": 54,
+          "name": "Feu d'Enfer"
+        },
+        {
+          "level": 62,
+          "name": "Boutefeu"
+        }
+      ],
+      "vu": 145
     },
     {
       "id": 7,
       "name": "Carapuce",
-      "type": "Eau",
+      "type1": "Eau",
+      "type2": "None",
       "stats": {
         "hp": 44,
         "attack": 48,
         "defense": 65,
-        "speed": 43
+        "speed": 43,
+        "sp_attack": 50,
+        "sp_defense": 64
       },
       "evolution": {
         "level": 16,
         "to": 8
-      }
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 2,
+        "speed": 2
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-Queue"
+        },
+        {
+          "level": 9,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 12,
+          "name": "Morsure"
+        },
+        {
+          "level": 15,
+          "name": "Vibraqua"
+        },
+        {
+          "level": 24,
+          "name": "Hydro-Queue"
+        },
+        {
+          "level": 27,
+          "name": "Exuviation"
+        },
+        {
+          "level": 30,
+          "name": "Mur de Fer"
+        },
+        {
+          "level": 33,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 36,
+          "name": "Aquatacle"
+        }
+      ],
+      "vu": 108
     },
     {
       "id": 8,
       "name": "Carabaffe",
-      "type": "Eau",
+      "type1": "Eau",
+      "type2": "None",
       "stats": {
         "hp": 59,
         "attack": 63,
         "defense": 80,
-        "speed": 58
+        "speed": 58,
+        "sp_attack": 65,
+        "sp_defense": 80
       },
       "evolution": {
         "level": 36,
         "to": 9
-      }
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 3,
+        "speed": 3
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-Queue"
+        },
+        {
+          "level": 1,
+          "name": "Pistolet à O"
+        },
+        {
+          "level": 9,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 12,
+          "name": "Morsure"
+        },
+        {
+          "level": 15,
+          "name": "Vibraqua"
+        },
+        {
+          "level": 30,
+          "name": "Hydro-Queue"
+        },
+        {
+          "level": 35,
+          "name": "Exuviation"
+        },
+        {
+          "level": 40,
+          "name": "Mur de Fer"
+        },
+        {
+          "level": 45,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 50,
+          "name": "Aquatacle"
+        }
+      ],
+      "vu": 75
     },
     {
       "id": 9,
       "name": "Tortank",
-      "type": "Eau",
+      "type1": "Eau",
+      "type2": "None",
       "stats": {
         "hp": 79,
         "attack": 83,
         "defense": 100,
-        "speed": 78
-      }
+        "speed": 78,
+        "sp_attack": 85,
+        "sp_defense": 105
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 5,
+        "speed": 4
+      },
+      "abilities": [
+        {
+          "level": 0,
+          "name": "Luminocanon"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-Queue"
+        },
+        {
+          "level": 1,
+          "name": "Pistolet à O"
+        },
+        {
+          "level": 9,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 12,
+          "name": "Morsure"
+        },
+        {
+          "level": 15,
+          "name": "Vibraqua"
+        },
+        {
+          "level": 30,
+          "name": "Hydro-Queue"
+        },
+        {
+          "level": 35,
+          "name": "Exuviation"
+        },
+        {
+          "level": 42,
+          "name": "Mur de Fer"
+        },
+        {
+          "level": 49,
+          "name": "Hydrocanon"
+        },
+        {
+          "level": 56,
+          "name": "Aquatacle"
+        }
+      ],
+      "vu": 77
     },
     {
       "id": 10,
       "name": "Chenipan",
-      "type": "Insecte",
+      "type1": "Insecte",
+      "type2": "None",
       "stats": {
         "hp": 45,
         "attack": 30,
         "defense": 35,
-        "speed": 45
+        "speed": 45,
+        "sp_attack": 20,
+        "sp_defense": 20
       },
       "evolution": {
         "level": 7,
         "to": 11
-      }
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 1,
+        "defense": 1,
+        "speed": 2
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 9,
+          "name": "Piqûre"
+        }
+      ],
+      "vu": 134
     },
     {
       "id": 11,
       "name": "Chrysacier",
-      "type": "Insecte",
+      "type1": "Insecte",
+      "type2": "None",
       "stats": {
         "hp": 50,
         "attack": 20,
         "defense": 55,
-        "speed": 30
+        "speed": 30,
+        "sp_attack": 25,
+        "sp_defense": 25
       },
       "evolution": {
         "level": 10,
         "to": 12
-      }
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 3,
+        "speed": 1
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Armure"
+        }
+      ],
+      "vu": 178
     },
     {
       "id": 12,
       "name": "Papilusion",
-      "type": "Insecte/Vol",
+      "type1": "Insecte",
+      "type2": "Vol",
       "stats": {
         "hp": 60,
         "attack": 45,
         "defense": 50,
-        "speed": 70
-      }
+        "speed": 70,
+        "sp_attack": 90,
+        "sp_defense": 80
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 2,
+        "defense": 2,
+        "speed": 3
+      },
+      "abilities": [
+        {
+          "level": 0,
+          "name": "Tornade"
+        },
+        {
+          "level": 1,
+          "name": "Armure"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Piqûre"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 4,
+          "name": "Ultrason"
+        },
+        {
+          "level": 8,
+          "name": "Chox Mental"
+        },
+        {
+          "level": 12,
+          "name": "Para-Spore"
+        },
+        {
+          "level": 12,
+          "name": "Poudre Toxik"
+        },
+        {
+          "level": 16,
+          "name": "Rafale Psy"
+        },
+        {
+          "level": 24,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 28,
+          "name": "Rune Protect"
+        },
+        {
+          "level": 32,
+          "name": "Bourdon"
+        },
+        {
+          "level": 36,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 44,
+          "name": "Papillodanse"
+        }
+      ],
+      "vu": 170
     },
     {
       "id": 13,
       "name": "Aspicot",
-      "type": "Insecte/Poison",
+      "type1": "Insecte",
+      "type2": "Poison",
       "stats": {
         "hp": 40,
         "attack": 35,
         "defense": 30,
-        "speed": 50
+        "speed": 50,
+        "sp_attack": 20,
+        "sp_defense": 20
       },
       "evolution": {
         "level": 7,
         "to": 14
-      }
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 2
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 9,
+          "name": "Piqûre"
+        }
+      ],
+      "vu": 36
     },
     {
       "id": 14,
       "name": "Coconfort",
-      "type": "Insecte/Poison",
+      "type1": "Insecte",
+      "type2": "Poison",
       "stats": {
         "hp": 45,
         "attack": 25,
         "defense": 50,
-        "speed": 35
+        "speed": 35,
+        "sp_attack": 25,
+        "sp_defense": 25
       },
       "evolution": {
         "level": 10,
         "to": 15
-      }
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 3,
+        "speed": 1
+      },
+      "abilities": [
+        {
+          "Evolution": true,
+          "level": 1,
+          "name": "Armure"
+        }
+      ],
+      "vu": 48
     },
     {
       "id": 15,
       "name": "Dardargnan",
-      "type": "Insecte/Poison",
+      "type1": "Insecte",
+      "type2": "Poison",
       "stats": {
         "hp": 65,
         "attack": 80,
         "defense": 40,
-        "speed": 75
-      }
+        "speed": 75,
+        "sp_attack": 60,
+        "sp_defense": 40
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 2,
+        "speed": 3
+      },
+      "abilities": [
+        {
+          "evolution": true,
+          "level": 1,
+          "name": "Furie"
+        },
+        {
+          "level": 1,
+          "name": "Armure"
+        },
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Sécrétion"
+        },
+        {
+          "level": 2,
+          "name": "Piqûre"
+        },
+        {
+          "level": 11,
+          "name": "Taillade"
+        },
+        {
+          "level": 14,
+          "name": "Affilage"
+        },
+        {
+          "level": 17,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 20,
+          "name": "Puissance"
+        },
+        {
+          "level": 23,
+          "name": "Choc Venin"
+        },
+        {
+          "level": 26,
+          "name": "Assurance"
+        },
+        {
+          "level": 29,
+          "name": "Pics Toxik"
+        },
+        {
+          "level": 32,
+          "name": "Dard-Nuée"
+        },
+        {
+          "level": 35,
+          "name": "Direct Toxik"
+        },
+        {
+          "level": 38,
+          "name": "Hâte"
+        },
+        {
+          "level": 41,
+          "name": "Effort"
+        },
+        {
+          "level": 44,
+          "name": "Dard Mortel"
+        }
+      ],
+      "vu": 161
     },
     {
       "id": 16,
       "name": "Roucool",
-      "type": "Normal/Vol",
+      "type1": "Normal",
+      "type2": "Vol",
       "stats": {
         "hp": 40,
         "attack": 45,
         "defense": 40,
-        "speed": 56
+        "speed": 56,
+        "sp_attack": 35,
+        "sp_defense": 35
       },
       "evolution": {
         "level": 18,
         "to": 17
-      }
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 3
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 5,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Tornade"
+        },
+        {
+          "level": 13,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 21,
+          "name": "Ouragan"
+        },
+        {
+          "level": 25,
+          "name": "Danse PLumes"
+        },
+        {
+          "level": 29,
+          "name": "Coupe-Vent"
+        },
+        {
+          "level": 29,
+          "name": "Hâte"
+        },
+        {
+          "level": 33,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 41,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 45,
+          "name": "Aéropique"
+        },
+        {
+          "level": 49,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 53,
+          "name": "Vent Violent"
+        }
+      ],
+      "vu": 26
     },
     {
       "id": 17,
       "name": "Roucoups",
-      "type": "Normal/Vol",
+      "type1": "Normal",
+      "type2": "Vol",
       "stats": {
         "hp": 63,
         "attack": 60,
         "defense": 55,
-        "speed": 71
+        "speed": 71,
+        "sp_attack": 50,
+        "sp_defense": 50
       },
       "evolution": {
-        "level": 36,
+        "level": 18,
         "to": 18
-      }
+      },
+      "growth": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 1,
+        "speed": 3
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 5,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Tornade"
+        },
+        {
+          "level": 13,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 22,
+          "name": "Ouragan"
+        },
+        {
+          "level": 27,
+          "name": "Danse PLumes"
+        },
+        {
+          "level": 32,
+          "name": "Hâte"
+        },
+        {
+          "level": 37,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 47,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 52,
+          "name": "Aéropique"
+        },
+        {
+          "level": 57,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 62,
+          "name": "Vent Violent"
+        }
+      ],
+      "vu": 33
     },
     {
       "id": 18,
       "name": "Roucarnage",
-      "type": "Normal/Vol",
+      "type1": "Normal",
+      "type2": "Vol",
       "stats": {
-        "hp": 83,
-        "attack": 80,
-        "defense": 75,
-        "speed": 101
-      }
+        "hp": 63,
+        "attack": 60,
+        "defense": 55,
+        "speed": 71,
+        "sp_attack": 50,
+        "sp_defense": 50
+      },
+      "evolution": {
+        "level": 36,
+        "to": 18
+      },
+      "growth": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "speed": 4
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 1,
+          "name": "Tornade"
+        },
+        {
+          "level": 13,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 22,
+          "name": "Ouragan"
+        },
+        {
+          "level": 27,
+          "name": "Danse PLumes"
+        },
+        {
+          "level": 32,
+          "name": "Hâte"
+        },
+        {
+          "level": 38,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 50,
+          "name": "Vent Arrière"
+        },
+        {
+          "level": 56,
+          "name": "Aéropique"
+        },
+        {
+          "level": 62,
+          "name": "Lame d'Air"
+        },
+        {
+          "level": 68,
+          "name": "Vent Violent"
+        }
+      ],
+      "vu": 26
     },
     {
       "id": 19,
       "name": "Rattata",
-      "type": "Normal",
+      "type1": "Normal",
+      "type2": "None",
       "stats": {
         "hp": 30,
         "attack": 56,
         "defense": 35,
-        "speed": 72
+        "speed": 72,
+        "sp_attack": 25,
+        "sp_defense": 35
+      },
+      "growth": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 2,
+        "speed": 4
       },
       "evolution": {
         "level": 20,
         "to": 20
-      }
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-Queue"
+        },
+        {
+          "level": 4,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 7,
+          "name": "Puissance"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        },
+        {
+          "level": 13,
+          "name": "Affilage"
+        },
+        {
+          "level": 16,
+          "name": "Bélier"
+        },
+        {
+          "level": 19,
+          "name": "Assurance"
+        },
+        {
+          "level": 22,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 25,
+          "name": "Coup Bas"
+        },
+        {
+          "level": 28,
+          "name": "Croc Fatal"
+        },
+        {
+          "level": 31,
+          "name": "Damoclès"
+        },
+        {
+          "level": 34,
+          "name": "Effort"
+        }
+      ],
+      "vu": 146
     },
     {
       "id": 20,
       "name": "Rattatac",
-      "type": "Normal",
+      "type1": "Normal",
+      "type2": "None",
       "stats": {
         "hp": 55,
         "attack": 81,
         "defense": 60,
-        "speed": 97
-      }
+        "speed": 97,
+        "sp_attack": 50,
+        "sp_defense": 70
+      },
+      "growth": {
+        "hp": 5,
+        "attack": 5,
+        "defense": 4,
+        "speed": 5
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Grimace"
+        },
+        {
+          "level": 1,
+          "name": "Danse Lames"
+        },
+        {
+          "level": 1,
+          "name": "Charge"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-Queue"
+        },
+        {
+          "level": 4,
+          "name": "Vive-Attaque"
+        },
+        {
+          "level": 7,
+          "name": "Puissance"
+        },
+        {
+          "level": 10,
+          "name": "Morsure"
+        },
+        {
+          "level": 13,
+          "name": "Affilage"
+        },
+        {
+          "level": 16,
+          "name": "Bélier"
+        },
+        {
+          "level": 19,
+          "name": "Assurance"
+        },
+        {
+          "level": 24,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 29,
+          "name": "Coup Bas"
+        },
+        {
+          "level": 34,
+          "name": "Croc Fatal"
+        },
+        {
+          "level": 39,
+          "name": "Damoclès"
+        },
+        {
+          "level": 44,
+          "name": "Effort"
+        }
+      ],
+      "vu": 107
+    },
+    {
+      "id": 21,
+      "name": "Piafabec",
+      "type1": "Normal",
+      "type2": "Vol",
+      "stats": {
+        "hp": 40,
+        "attack": 60,
+        "defense": 30,
+        "speed": 70,
+        "sp_attack": 31,
+        "sp_defense": 31
+      },
+      "evolution": {
+        "level": 20,
+        "to": 22
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Picpic"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 8,
+          "name": "Assurance"
+        },
+        {
+          "level": 11,
+          "name": "Furie"
+        },
+        {
+          "level": 15,
+          "name": "Aeropique"
+        },
+        {
+          "level": 18,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 22,
+          "name": "Bélier"
+        },
+        {
+          "level": 25,
+          "name": "Hâte"
+        },
+        {
+          "level": 32,
+          "name": "Atterrissage"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 22,
+      "name": "Rapasdepic",
+      "type1": "Normal",
+      "type2": "Vol",
+      "stats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 65,
+        "speed": 100,
+        "sp_attack": 61,
+        "sp_defense": 61
+      },
+      "abilities": [
+        {
+          "level": 41,
+          "name": "Tunnelier"
+        },
+        {
+          "level": 60,
+          "name": "Picore"
+        },
+        {
+          "level": 1,
+          "name": "Picpic"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 8,
+          "name": "Assurance"
+        },
+        {
+          "level": 11,
+          "name": "Furie"
+        },
+        {
+          "level": 15,
+          "name": "Aeropique"
+        },
+        {
+          "level": 18,
+          "name": "Cru-Ailes"
+        },
+        {
+          "level": 23,
+          "name": "Bélier"
+        },
+        {
+          "level": 27,
+          "name": "Hâte"
+        },
+        {
+          "level": 32,
+          "name": "Puissance"
+        },
+        {
+          "level": 36,
+          "name": "Atterrissage"
+        },
+        {
+          "level": 41,
+          "name": "Bec Vrille"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 23,
+      "name": "Abo",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 35,
+        "attack": 60,
+        "defense": 44,
+        "speed": 55,
+        "sp_attack": 40,
+        "sp_defense": 54
+      },
+      "evolution": {
+        "level": 22,
+        "to": 24
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Ligotage"
+        },
+        {
+          "level": 1,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 4,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 9,
+          "name": "Morsure"
+        },
+        {
+          "level": 12,
+          "name": "Regard Médusant"
+        },
+        {
+          "level": 17,
+          "name": "Grincement"
+        },
+        {
+          "level": 20,
+          "name": "Acide"
+        },
+        {
+          "level": 25,
+          "name": "Avale"
+        },
+        {
+          "level": 25,
+          "name": "Relâche"
+        },
+        {
+          "level": 25,
+          "name": "Stockage"
+        },
+        {
+          "level": 28,
+          "name": "Bombe acide"
+        },
+        {
+          "level": 33,
+          "name": "Bombe beurk"
+        },
+        {
+          "level": 36,
+          "name": "Suc digestif"
+        },
+        {
+          "level": 38,
+          "name": "Eructation"
+        },
+        {
+          "level": 41,
+          "name": "Buée noire"
+        },
+        {
+          "level": 44,
+          "name": "Enroulement"
+        },
+        {
+          "level": 49,
+          "name": "Détricanon"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 24,
+      "name": "Arbok",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 60,
+        "attack": 95,
+        "defense": 69,
+        "speed": 80,
+        "sp_attack": 65,
+        "sp_defense": 79
+      },
+      "abilities": [
+        {
+          "level": 22,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 1,
+          "name": "Crocs Feu"
+        },
+        {
+          "level": 1,
+          "name": "Crocs éclair"
+        },
+        {
+          "level": 1,
+          "name": "Crocs givre"
+        },
+        {
+          "level": 1,
+          "name": "Ligotage"
+        },
+        {
+          "level": 1,
+          "name": "Groz'Yeux"
+        },
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Morsure"
+        },
+        {
+          "level": 12,
+          "name": "Regard Médusant"
+        },
+        {
+          "level": 17,
+          "name": "Grincement"
+        },
+        {
+          "level": 20,
+          "name": "Acide"
+        },
+        {
+          "level": 27,
+          "name": "Avale"
+        },
+        {
+          "level": 27,
+          "name": "Relâche"
+        },
+        {
+          "level": 27,
+          "name": "Stockage"
+        },
+        {
+          "level": 32,
+          "name": "Bombe acide"
+        },
+        {
+          "level": 39,
+          "name": "Bombe beurk"
+        },
+        {
+          "level": 44,
+          "name": "Suc digestif"
+        },
+        {
+          "level": 48,
+          "name": "Eructation"
+        },
+        {
+          "level": 51,
+          "name": "Buée noire"
+        },
+        {
+          "level": 56,
+          "name": "Enroulement"
+        },
+        {
+          "level": 63,
+          "name": "Détricanon"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 25,
+      "name": "Pikachu",
+      "type1": "Electrik",
+      "type2": "None",
+      "stats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 40,
+        "speed": 90,
+        "sp_attack": 50,
+        "sp_defense": 50
+      },
+      "evolution": {
+        "level": 22,
+        "to": 26
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Frotte frimousse"
+        },
+        {
+          "level": 1,
+          "name": "Machination"
+        },
+        {
+          "level": 1,
+          "name": "Charme"
+        },
+        {
+          "level": 1,
+          "name": "Doux baiser"
+        },
+        {
+          "level": 1,
+          "name": "Camaraderie"
+        },
+        {
+          "level": 1,
+          "name": "Vive attaque"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 1,
+          "name": "Eclair"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 4,
+          "name": "Cage éclair"
+        },
+        {
+          "level": 8,
+          "name": "Reflet"
+        },
+        {
+          "level": 12,
+          "name": "Boule élek"
+        },
+        {
+          "level": 16,
+          "name": "Ruse"
+        },
+        {
+          "level": 20,
+          "name": "Etincelle"
+        },
+        {
+          "level": 24,
+          "name": "Hâte"
+        },
+        {
+          "level": 28,
+          "name": "Queue de fer"
+        },
+        {
+          "level": 32,
+          "name": "Coup d'jus"
+        },
+        {
+          "level": 36,
+          "name": "Tonnerre"
+        },
+        {
+          "level": 40,
+          "name": "Mur lumière"
+        },
+        {
+          "level": 44,
+          "name": "Fatal foudre"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 26,
+      "name": "Raichu",
+      "type1": "Electrik",
+      "type2": "None",
+      "stats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "speed": 117,
+        "sp_attack": 90,
+        "sp_defense": 80
+      },
+      "abilities": [
+        {
+          "level": 22,
+          "name": "Poing éclair"
+        },
+        {
+          "level": 1,
+          "name": "Camaraderie"
+        },
+        {
+          "level": 1,
+          "name": "Frotte frimousse"
+        },
+        {
+          "level": 1,
+          "name": "Doux baiser"
+        },
+        {
+          "level": 1,
+          "name": "Machination"
+        },
+        {
+          "level": 1,
+          "name": "Charme"
+        },
+        {
+          "level": 1,
+          "name": "Cage éclair"
+        },
+        {
+          "level": 1,
+          "name": "Reflet"
+        },
+        {
+          "level": 1,
+          "name": "Boule élek"
+        },
+        {
+          "level": 1,
+          "name": "Ruse"
+        },
+        {
+          "level": 1,
+          "name": "Etincelle"
+        },
+        {
+          "level": 1,
+          "name": "Hâte"
+        },
+        {
+          "level": 1,
+          "name": "Queue de fer"
+        },
+        {
+          "level": 1,
+          "name": "Coup d'jus"
+        },
+        {
+          "level": 1,
+          "name": "Mur lumière"
+        },
+        {
+          "level": 1,
+          "name": "Fatal foudre"
+        },
+        {
+          "level": 1,
+          "name": "Eclair"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Vive attaque"
+        },
+        {
+          "level": 5,
+          "name": "Tonnerre"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 27,
+      "name": "Sabelette",
+      "type1": "Sol",
+      "type2": "None",
+      "stats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 85,
+        "speed": 40,
+        "sp_attack": 20,
+        "sp_defense": 30
+      },
+      "evolution": {
+        "level": 22,
+        "to": 28
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Boul armure"
+        },
+        {
+          "level": 3,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 6,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Roulade"
+        },
+        {
+          "level": 12,
+          "name": "Taillade"
+        },
+        {
+          "level": 15,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 18,
+          "name": "Piétisol"
+        },
+        {
+          "level": 21,
+          "name": "Météores"
+        },
+        {
+          "level": 24,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 27,
+          "name": "Hâte"
+        },
+        {
+          "level": 30,
+          "name": "Tranche"
+        },
+        {
+          "level": 33,
+          "name": "Tunnel"
+        },
+        {
+          "level": 36,
+          "name": "Gyroballe"
+        },
+        {
+          "level": 39,
+          "name": "Danse Lames"
+        },
+        {
+          "level": 42,
+          "name": "Tempête de sable"
+        },
+        {
+          "level": 45,
+          "name": "Séisme"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 28,
+      "name": "Sablaireau",
+      "type1": "Sol",
+      "type2": "None",
+      "stats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 110,
+        "speed": 65,
+        "sp_attack": 45,
+        "sp_defense": 55
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Eclate griffe"
+        },
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Boul armure"
+        },
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Jet de Sable"
+        },
+        {
+          "level": 9,
+          "name": "Roulade"
+        },
+        {
+          "level": 12,
+          "name": "Taillade"
+        },
+        {
+          "level": 15,
+          "name": "Tour Rapide"
+        },
+        {
+          "level": 21,
+          "name": "Météores"
+        },
+        {
+          "level": 26,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 18,
+          "name": "Piétisol"
+        },
+        {
+          "level": 31,
+          "name": "Tourbi sable"
+        },
+        {
+          "level": 36,
+          "name": "Tranche"
+        },
+        {
+          "level": 41,
+          "name": "Tunnel"
+        },
+        {
+          "level": 51,
+          "name": "Danse Lames"
+        },
+        {
+          "level": 56,
+          "name": "Tempête de sable"
+        },
+        {
+          "level": 61,
+          "name": "Séisme"
+        },
+        {
+          "level": 46,
+          "name": "Gyroballe"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 29,
+      "name": "Nidoran",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 55,
+        "attack": 47,
+        "defense": 52,
+        "speed": 41,
+        "sp_attack": 40,
+        "sp_defense": 40
+      },
+      "evolution": {
+        "level": 16,
+        "to": 30
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 5,
+          "name": "Griffe"
+        },
+        {
+          "level": 10,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 15,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 20,
+          "name": "Pics Toxik"
+        },
+        {
+          "level": 25,
+          "name": "Double pied"
+        },
+        {
+          "level": 30,
+          "name": "Morsure"
+        },
+        {
+          "level": 35,
+          "name": "Coup d'main"
+        },
+        {
+          "level": 40,
+          "name": "Toxik"
+        },
+        {
+          "level": 45,
+          "name": "Flatterie"
+        },
+        {
+          "level": 50,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 55,
+          "name": "Telluriforce"
+        }
+      ],
+      "vu": 0
+    },
+    {
+      "id": 30,
+      "name": "Nidorina",
+      "type1": "Poison",
+      "type2": "None",
+      "stats": {
+        "hp": 70,
+        "attack": 62,
+        "defense": 67,
+        "speed": 56,
+        "sp_attack": 55,
+        "sp_defense": 55
+      },
+      "evolution": {
+        "level": 36,
+        "to": 31
+      },
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Dard-Venin"
+        },
+        {
+          "level": 1,
+          "name": "Rugissement"
+        },
+        {
+          "level": 1,
+          "name": "Griffe"
+        },
+        {
+          "level": 1,
+          "name": "Mimi-queue"
+        },
+        {
+          "level": 15,
+          "name": "Combo griffe"
+        },
+        {
+          "level": 22,
+          "name": "Pics Toxik"
+        },
+        {
+          "level": 29,
+          "name": "Double pied"
+        },
+        {
+          "level": 36,
+          "name": "Morsure"
+        },
+        {
+          "level": 43,
+          "name": "Coup d'main"
+        },
+        {
+          "level": 50,
+          "name": "Toxik"
+        },
+        {
+          "level": 57,
+          "name": "Flatterie"
+        },
+        {
+          "level": 64,
+          "name": "Mâchouille"
+        },
+        {
+          "level": 71,
+          "name": "Telluriforce"
+        }
+      ],
+      "vu": 0
     }
   ]
 }

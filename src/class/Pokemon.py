@@ -81,7 +81,7 @@ class Pokemon:
         if len(self.__abilities) < 4:
             while len(self.__abilities) < 4:
                 self.__abilities.append("-")
-            
+        
         return self.__abilities[0:4]
     
     def get_vu(self):
@@ -264,51 +264,9 @@ class Pokemon:
         self.__abilities = newlist
         return self.__abilities
     
-    def chooseAbilities(self): #test pending
-    # Réinitialiser la liste des abilities
-        self.get_AbilitiesByLevel()
-        chooseAbilities = self.__abilities.copy()
-        self.__abilities = []
-
-        print(f"Choisissez les abilities de {self.__name}:")
-        dialogue1 = f"Choisissez les abilities de {self.__name}:"
-        dialogue2 = ""
-
-        for ability in chooseAbilities:
-            print(f"  {ability}")
-            dialogue2 += f"  {ability}"
-
-        print("\n")
-        
-        for i in range(4):
-            while True:
-                ability = input(f"Ability {i+1}: ")
-
-                # Vérifier que l'ability existe et n'est pas déjà dans la liste
-                if ability not in chooseAbilities:
-                    print("Ability invalide !")
-                    dialogue3 = "Ability invalide !"
-                elif ability in self.__abilities:
-                    print(f"{ability} est déjà dans la liste !")
-                    dialogue4 = f"{ability} est déjà dans la liste !"
-                else:
-                    break
-
-            self.__abilities.append(ability)
-            print(self.__abilities)
-
-        print("\n")
-        print(f"Les abilities de {self.__name} sont maintenant:")
-        
-        for ability in self.__abilities:
-            print(f"  {ability}")
-
-        print("\n")
-        return self.__abilities
     
     def get_currentAbilities(self):
         self.__abilities=self.get_AbilitiesByLevel()
-        print(self.__abilities)
         return self.__abilities
     
     def get_initAbilities(self):

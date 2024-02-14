@@ -87,6 +87,9 @@ class Combat():
             self.rater = self.police_moyen.render("L'action a échoué",True,"red")
             self.lvl_start = self.police.render(str(self.starter.get_level()) , True, "black")
             self.lvl_adv = self.police.render(str(self.adv.get_level()), True, "black")
+            self.forgot_capa = self.police.render("Choissir une capa à oublier", True, "black")
+
+            
             
             
     
@@ -114,6 +117,7 @@ class Combat():
 
 
     def fight(self):
+        l = []
         self.animation = Animation(self.starter)
         self.animation.loadFramesForCombat(isFront=False)
         self.animationAdversaire = Animation(self.adv)
@@ -172,7 +176,64 @@ class Combat():
             self.health_bar_adv()
                     
                 
-            
+            if self.manage_ability == True:
+                    self.sentence_capa = self.police.render("Pour apprendre "+str(self.starter.get_currentAbilities()[4]), True, "black")
+                    self.__SCREEN.blit(self.forgot_capa,(525, 550))
+                    self.__SCREEN.blit(self.sentence_capa,(525, 570))
+                    for event in pygame.event.get():
+
+                        if event.type == pygame.QUIT:
+
+                            pygame.quit()
+
+                            sys.exit()
+
+
+                        
+
+                        if event.type == pygame.MOUSEBUTTONDOWN:
+                            if event.button == 1: 
+
+                                if 25 <= event.pos[0] <= 221 and 526 <= event.pos[1] <= 570: #capa 1 
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    l.append(self.starter.get_4abilities()[1])
+                                    l.append(self.starter.get_4abilities()[2])
+                                    l.append(self.starter.get_4abilities()[3])
+                                    self.starter.chooseAbilities(l)
+                                    
+                                    
+
+                                if 25 <= event.pos[0] <= 221 and 626 <= event.pos[1] <= 671: # capa 2
+                                    l.append(self.starter.get_4abilities()[0])
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    l.append(self.starter.get_4abilities()[2])
+                                    l.append(self.starter.get_4abilities()[3])
+                                    self.starter.get_4abilities()[1] = self.starter.get_currentAbilities()[4]
+                                    self.starter.chooseAbilities(l)
+                              
+
+
+                                if 276 <= event.pos[0] <= 473 and 527 <= event.pos[1] <= 571: #capa 3
+                                    l.append(self.starter.get_4abilities()[0])
+                                    l.append(self.starter.get_4abilities()[1])
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    l.append(self.starter.get_4abilities()[3])
+                                    self.starter.get_4abilities()[2] = self.starter.get_currentAbilities()[4]
+                                    self.starter.chooseAbilities(l)
+                                  
+                                    
+                                    
+
+                                if 275 <= event.pos[0] <= 471 and 626 <= event.pos[1] <= 673: # capa 4
+                                    l.append(self.starter.get_4abilities()[0])
+                                    l.append(self.starter.get_4abilities()[1])
+                                    l.append(self.starter.get_4abilities()[2])
+                                    l.append(self.starter.get_currentAbilities()[4])
+                                    self.starter.get_4abilities()[3] = self.starter.get_currentAbilities()[4]
+                                    self.starter.chooseAbilities(l)
+
+
+
             MENU_MOUSE_POS = pygame.mouse.get_pos()
 
             ATT1 = Button(image= capa_button, pos=(125, 550), 
@@ -182,7 +243,7 @@ class Combat():
                                 text_input=self.starter.get_4abilities()[1], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT3 = Button(image= capa_button, pos=(375, 550), 
-                                text_input=self.starter, font=self.police, base_color="#000000", hovering_color="White")
+                                text_input=self.starter.get_4abilities()[2], font=self.police, base_color="#000000", hovering_color="White")
             
             ATT4 = Button(image= capa_button, pos=(375, 650), 
                                 text_input=self.starter.get_4abilities()[3], font=self.police, base_color="#000000", hovering_color="White")
@@ -210,14 +271,12 @@ class Combat():
                     if ATT1.checkForInput(MENU_MOUSE_POS) and not press:
                         press = True
                         self.__attaque = self.starter.get_4abilities()[0]
-                        print("att1",self.__attaque)
                         self.multiplicateur_type()
 
 
                     if ATT2.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[1]
-                            print("att2",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
 
@@ -228,7 +287,6 @@ class Combat():
                     if ATT3.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[2]
-                            print("att3",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -238,7 +296,6 @@ class Combat():
                     if ATT4.checkForInput(MENU_MOUSE_POS) and not press:
                             press = True
                             self.__attaque = self.starter.get_4abilities()[3]
-                            print("att4",self.__attaque)
                             if self.__attaque == "-":
                                 self.fight()
                             self.multiplicateur_type()
@@ -330,7 +387,6 @@ class Combat():
     def Victoire(self):
         for elem in range(len(self.list_poke_mort)):
             if len(self.list_poke_mort) > 0:
-                print("elem = ",elem)
                 self.liste_poke.append(Pokemon(self.list_poke_mort[elem]))
                 self.list_poke_mort.pop(elem)
 
@@ -488,8 +544,6 @@ class Combat():
 
 
         probabilite_reussite = self.starter.get_abilityAccuracyByName(self.__attaque) 
-        print("att test",self.__attaque)
-        print(self.starter.get_abilityAccuracyByName(self.__attaque))
         nombre_aleatoire = random.uniform(0, 100)
 
         if probabilite_reussite >= nombre_aleatoire: #Si taux de reussite est supérieure au nombre aléatoire l'attque est reussi 
@@ -698,6 +752,7 @@ class Combat():
                                 if len(self.liste_poke_adv) <=0: #Si aucun pokemon restant 
                                     self.lvl_up() #Gagne xp
                                     if len(self.starter.get_currentAbilities()) > 4:
+                                        self.sentence_capa = self.police_moyen.render(str(self.starter.get_currentAbilities()[4]), True, "black")
                                         self.manage_ability = True
                                         if self.manage_ability == True:
                                             self.fight()

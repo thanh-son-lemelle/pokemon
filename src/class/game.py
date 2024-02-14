@@ -2,7 +2,7 @@ from Menu import Menu
 from Dresseurs import Dresseurs 
 from Pokemon import Pokemon
 from Combat import Combat
-from Pokeballs import Pokeballs
+
 
 while True:
     menu = Menu()   # Create an instance of the Menu

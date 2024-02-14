@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 import json
 import pygame
-import sys
-import copy
 import random
 
 class Pokemon:
     def __init__(self, id ) -> None:
+        # Initialisation de l'objet Pokemon avec un ID
         self.__id = id
         self.__pokemonData = None
         self.__name = None
@@ -19,9 +18,7 @@ class Pokemon:
         self.__level = 1
         self.__xp = 0
         self.__abilities = []
-        self.__imageFace = None
-        self.__imageBack = None
-        self.loadData()
+        self.loadData() # Chargement des données du Pokémon depuis pokémon.json
         
         self.__abilities = self.get_initAbilities()
 
@@ -52,22 +49,14 @@ class Pokemon:
     def get_xp(self):
         return self.__xp
     
-    def get_imageFace(self):
-        self.__imageFace = self.resizeImage(self.__imageFace, 2) # à voir si Utile ou pas
-        return self.__imageFace
-    
-    def get_imageBack(self):
-        self.__imageBack = self.resizeImage(self.__imageBack, 2) # à voir si Utile ou pas
-        return self.__imageBack
     
     def get_level(self):
         return self.__level
     
     def set_level(self, level):
         while self.__level < level:
-            self.level_up()
-        
-    
+            self.level_up() # Monter de niveau jusqu'au niveau spécifié
+          
     def get_growth(self):
         return self.__growth
     
@@ -80,7 +69,7 @@ class Pokemon:
     def get_4abilities(self):
         if len(self.__abilities) < 4:
             while len(self.__abilities) < 4:
-                self.__abilities.append("-")
+                self.__abilities.append("-") # Ajouter des capacités vides si nécessaire
         
         return self.__abilities[0:4]
     
@@ -101,7 +90,7 @@ class Pokemon:
             if pokemon["id"] == self.__id:
                 self.__pokemonData = pokemon
                 break
-        # Si les données ont été trouvées, on les charge
+        # Si les données ont été trouvées, on les charges
         if self.__pokemonData:
             self.__name = self.__pokemonData.get("name")
             self.__type1 = self.__pokemonData.get("type1")
@@ -114,29 +103,6 @@ class Pokemon:
             self.__imageFace = pygame.image.load(f"images\\sprite_pokemon\\front\\{self.__id}.gif")
             self.__imageBack = pygame.image.load(f"images\\sprite_pokemon\\back\\{self.__id}.gif")
 
-    # Test de l'affichage des stats
-    def afficherBaseStats(self):
-            
-            print(f"#{self.__id} {self.__name} - Type: {self.__type1, self.__type2}")
-            print("Stats de base:")
-            for baseStat, value in self.__baseStats.items():
-                print(f"  {baseStat.capitalize()}: {value}")
-            print(f"  Level: {self.__level}")
-            print(f"  XP: {self.__xp}")
-            if self.__evolution:
-                print(f"Évolution: Niveau {self.__evolution['level']} vers {self.__evolution['to']}")
-            print("\n")
-
-    def afficherStats(self):
-        if self.__stats:
-
-            print(f"#{self.__id} {self.__name} - Type: {self.__type1, self.__type2}")
-            print("Stats actuelles:/niveau:")
-            for stat, value in self.__stats.items():
-                print(f"  {stat.capitalize()}: {value}")
-            print(f"  Level: {self.__level}")
-            print(f"  XP: {self.__xp}")
-            print("\n")
 #============================================================================
             # getter des stats
 #============================================================================
@@ -179,8 +145,7 @@ class Pokemon:
 
     def set_statSpecialDefense(self, value):
         self.__stats["sp_defense"] += value
-    
-    
+        
 #============================================================================
         # gestion de l'xp, du level up et de l'évolution
 #============================================================================
@@ -188,24 +153,20 @@ class Pokemon:
     def set_xp(self, AddXp): # xp gagnée à définir dans la class Combat
         self.__xp += AddXp
 
-        print(f"{self.__name} a gagné {AddXp} xp !") 
         if self.__xp >= 100:
             while self.__xp >= 100:
                 self.level_up()
-                print(f"{self.__name} est maintenant niveau {self.__level} !")
                 self.__xp -= 100
                 if self.__evolution is not None:
                     if self.__level >= self.__evolution["level"]:
                         self.evolue()
-                        # break (utile ou pas ?)
+    
     def level_up(self):
-
         self.__level += 1
         self.get_currentAbilities()
 
         self.growUp()
-        self.afficherBaseStats()
-        self.afficherStats()
+    
     def updateStats(self):
         self.__stats = self.__baseStats.copy()
 
@@ -215,41 +176,21 @@ class Pokemon:
                 self.__stats[stat] = int(((2 * self.__baseStats[stat] * self.__level)/100) + self.__level +10)
   
 
-
-
-        # Prend les valeurs de l'évolution id name stat etc...
+    # Prend les valeurs de l'évolution id name stat etc...
     def evolue (self):
-        evolutionName = self.get_name_by_id(self.__id + 1)
-        print(f"{self.__name} a évolué en {evolutionName} !")
-
         self.__id = self.__evolution.get("to")
         self.loadData()
         self.updateStats()
-        print(self.afficherBaseStats())
 
-    def get_name_by_id(self, idDonne):
-        with open(r"data\pokemons\pokemons.json", "r", encoding="utf-8") as fichier:
-            donnees = json.load(fichier)
-        # Rechercher les données du Pokémon avec l'ID correspondant
-        pokemonName = None
-        for pokemon in donnees["pokemons"]:
-            if pokemon["id"] == idDonne:
-                pokemonName = pokemon["name"]
-                break
-        if pokemonName:
-            evolutionName = pokemonName
-        return evolutionName
 #============================================================================
         # gestion des abilities
 #============================================================================
 
     def get_abilitiesFromPokemonData(self):
-
         self.__abilities = self.__pokemonData.get("abilities")
 
 
     def get_AbilitiesByLevel(self):
-
         abilities = []
         self.get_abilitiesFromPokemonData()
         for ability in self.__abilities:
@@ -260,7 +201,6 @@ class Pokemon:
         return self.__abilities
     
     def chooseAbilities(self, newlist): #test pending
-
         self.__abilities = newlist
         return self.__abilities
     
@@ -287,10 +227,10 @@ class Pokemon:
 
         return self.__abilities
     
-    def get_ability(self, index):   #fonctionnel
+    def get_ability(self, index):
         return self.__abilities[index]
     
-    def get_ability_by_name(self, name): #fonctionnel
+    def get_ability_by_name(self, name):
         for ability in self.__abilities:
             if ability == name:
                 return ability
@@ -304,7 +244,8 @@ class Pokemon:
             if ability["name"] == name:
                 return ability["stats"]
         return None
-    # Renvoie les stats de l'ability à l'index donné vu avec Lyes Hamici pour l'appel de la fonction plus facile à utiliser par la suite
+    
+    # Renvoie les stats de la compétence à l'index donné vu avec Lyes Hamici pour l'appel de la fonction plus facile à utiliser par la suite
     def get_abilityStatsByIndex(self, index):
         name = self.get_ability(index)
         return self.get_abilityStats(name)
@@ -334,16 +275,6 @@ class Pokemon:
     def get_abilityStatutChangeByName(self, name):
         abilityStats = self.get_abilityStats(name)
         return abilityStats["status_changes"]
-#============================================================================
-    # Traitement des images
-#============================================================================
-    
-    def resizeImage(self, image, multiplier):
-        newHeight = None
-        originalWidth, originalHeight = image.get_size()
-        newHeight = int(multiplier * originalHeight)
-        newWidth = int(multiplier * originalWidth)
-        image = pygame.transform.scale(image, (newWidth, newHeight))
-        return image
+
 
 
